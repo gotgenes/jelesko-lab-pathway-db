@@ -11,6 +11,7 @@ __email__ = 'chris DOT lasher <AT> gmail DOT com'
 
 import ftplib
 from optparse import OptionParser
+import os
 import sys
 import tarfile
 
@@ -41,7 +42,7 @@ ARGUMENTS:
     return cli_parser
 
 
-def connect_to_ncbi(site):
+def connect_to_ncbi(site=FTP_SITE):
     """
     Establish an FTP connection to NCBI.
 
@@ -50,7 +51,7 @@ def connect_to_ncbi(site):
 
     """
 
-    connection = ftplib.FTP(FTP_SITE)
+    connection = ftplib.FTP(site)
     # Log in as 'Anonymous' with password 'anonymous'
     connection.login()
     return connection
