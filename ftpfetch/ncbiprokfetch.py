@@ -77,6 +77,20 @@ def fetch_prok_genomes(connection, prok_genome_path, outfile):
     )
 
 
+def extract_genomes(tarball_name):
+    """
+    Extracts the genomes from the tarball.
+
+    :Parameters:
+    - `tarball_name`: the filename of the tarball file
+
+    """
+
+    archive = tarfile.open(tarball_name)
+    archive.extractall()
+    archive.close()
+
+
 def main(argv):
     # collect initial input from the user
     cli_parser = make_cli_parser()
@@ -98,9 +112,7 @@ def main(argv):
     download_file.close()
     print "Download finished."
     print "Unpacking tarball."
-    archive = tarfile.open(download_file)
-    archive.extractall()
-    archive.close()
+    extract_genomes(download_file.name)
     print "Finished unpacking."
 
 
