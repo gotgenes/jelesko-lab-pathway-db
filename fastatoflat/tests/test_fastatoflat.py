@@ -41,7 +41,7 @@ FEEGLLDRCPAPGPHPALVEGRRNSVKVEAEASRQ
                 'gi': '114052567',
                 'accession': 'NP_001039362.1',
                 'genus_species': 'NP_001039362.1',
-                'annotation': 'NGFI-A binding protein 2 [Bos taurus]'
+                'annotation': 'NGFI-A binding protein 2 [Bos taurus]',
                 'sequence': 'MHRAASPTAEQPPGGGDSARRTPQPRLKPSSRAMALPRTLGELQLYRVLQRANLLSYYETFIQQGGDDVQQLCEAGEEEFLEIMALVGMATKPLHVRRLQKALREWATNPGLFSQPVPAVPVSSIPLFKISETAGTRKGSMSNGHGSPGEKAGSARSFSPKSPLELGEKLSPLPGGPGAGDPRIWPGRSTPESDVGAGGEEEAGSPPFSPPAGGGGPEGTGAGGLAAAGTGGGPDRLEPEMVRMVVESVERIFRSFPRGDAGEVTSLLKLNKKLARSVGHIFEMDDNDSQKEEEIRKYSIIYGRFDSKRREGKQLSLHELTINEAAAQFCMRDNTLLLRRVELFSLSRQVARESTYLSSLKGSRLHPEELGGPPLKKLKQEVGEQSHSEIQQPPPGPESYAPPFRPSLEEDSASLSGESLDGHLQAVGSCPRLTPPPADLPLALPAHGLWSRHILQQTLMDEGLRLARLVSHDRVGRLSPCVPAKPPLAEFEEGLLDRCPAPGPHPALVEGRRNSVKVEAEASRQ'
             }
         ),
@@ -57,10 +57,10 @@ YIQVLGYLPSVPLLRYRSLAEAINELSPKRITIGQFITSSFEEFTA
                 'gi': '11466083',
                 'accession': 'NP_041730.1',
                 'genus_species': 'Neurospora crassa',
-                'annotation': 'hypothetical protein [Neurospora crassa]'
+                'annotation': 'hypothetical protein [Neurospora crassa]',
                 'sequence': 'MESGIPQDISEYLTVLNRSLVVLTSEDKIPEPHRDVIFNSDGTPNPNLPKDVQGRILKDPDFVEILRRRGFTDIATNGVPQGASTSCGLATYNVKELFKRYDELIMYADDGILCRQDPSTPDFSVEEAGVVQEPAKSGWIKQNGEFKKSVKFLGLEFIPANIPPLGEGEVKDYPRLRGATRNGSKMELSTELQFLCYLSYKLRIKVLRDLYIQVLGYLPSVPLLRYRSLAEAINELSPKRITIGQFITSSFEEFTA'
             }
-        )
+        ),
         (
             """\
 >gi|221229395|ref|YP_002502811.1| superoxide dismutase [Mycobacterium leprae Br4923]
@@ -72,20 +72,23 @@ QLYDQQANVSLGIIPLLQVDMWEHAFYLQYKNVKADYVKAFWNVVNWADVQSRYMAATSKTQGLIFD
                 'gi': '221229395',
                 'accession': 'YP_002502811.1',
                 'genus_species': 'Mycobacterium leprae Br4923',
-                'annotation': 'superoxide dismutase [Mycobacterium leprae Br4923]'
+                'annotation': 'superoxide dismutase [Mycobacterium leprae Br4923]',
                 'sequence': 'MAEYTLPDLDWDYAALEPHISGEINEIHHTKHHAAYVKGVNDALAKLDEARAKDDHSAIFLNEKNLAFHLGGHVNHSIWWKNLSPNGGDKPTGGLATDIDETFGSFDKFRAQFSAAANGLQGSGWAVLGYDTLGNKLLTFQLYDQQANVSLGIIPLLQVDMWEHAFYLQYKNVKADYVKAFWNVVNWADVQSRYMAATSKTQGLIFD'
             }
-        )
+        ),
     ]
-
-
 
     def test_parse_fasta_record(self):
         """parse_fasta_record()"""
 
-        pass
+        print "Running test."
+        for case, expected in self.records_and_expected:
+            self.assertEqual(
+                    fastatoflat.parse_fasta_record(case),
+                    expected
+            )
 
 
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     unittest.main()
