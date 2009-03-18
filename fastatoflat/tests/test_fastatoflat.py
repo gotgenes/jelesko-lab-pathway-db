@@ -79,12 +79,12 @@ QLYDQQANVSLGIIPLLQVDMWEHAFYLQYKNVKADYVKAFWNVVNWADVQSRYMAATSKTQGLIFD
     ]
 
     def test_parse_fasta_record(self):
-        """parse_fasta_record()"""
+        """parse_fasta_records()"""
 
         print "Running test."
         for case, expected in self.records_and_expected:
             self.assertEqual(
-                    fastatoflat.parse_fasta_record(case),
+                    fastatoflat.parse_fasta_records(case).next(),
                     expected
             )
 
