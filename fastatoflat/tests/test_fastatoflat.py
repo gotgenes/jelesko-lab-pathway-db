@@ -10,6 +10,7 @@ __author__ = 'Chris Lasher'
 __email__ = 'chris DOT lasher <AT> gmail DOT com'
 
 import os
+import StringIO
 import sys
 import unittest
 
@@ -40,7 +41,7 @@ FEEGLLDRCPAPGPHPALVEGRRNSVKVEAEASRQ
             {
                 'gi': '114052567',
                 'accession': 'NP_001039362.1',
-                'genus_species': 'NP_001039362.1',
+                'genus_species': 'Bos taurus',
                 'annotation': 'NGFI-A binding protein 2 [Bos taurus]',
                 'sequence': 'MHRAASPTAEQPPGGGDSARRTPQPRLKPSSRAMALPRTLGELQLYRVLQRANLLSYYETFIQQGGDDVQQLCEAGEEEFLEIMALVGMATKPLHVRRLQKALREWATNPGLFSQPVPAVPVSSIPLFKISETAGTRKGSMSNGHGSPGEKAGSARSFSPKSPLELGEKLSPLPGGPGAGDPRIWPGRSTPESDVGAGGEEEAGSPPFSPPAGGGGPEGTGAGGLAAAGTGGGPDRLEPEMVRMVVESVERIFRSFPRGDAGEVTSLLKLNKKLARSVGHIFEMDDNDSQKEEEIRKYSIIYGRFDSKRREGKQLSLHELTINEAAAQFCMRDNTLLLRRVELFSLSRQVARESTYLSSLKGSRLHPEELGGPPLKKLKQEVGEQSHSEIQQPPPGPESYAPPFRPSLEEDSASLSGESLDGHLQAVGSCPRLTPPPADLPLALPAHGLWSRHILQQTLMDEGLRLARLVSHDRVGRLSPCVPAKPPLAEFEEGLLDRCPAPGPHPALVEGRRNSVKVEAEASRQ'
             }
@@ -81,13 +82,13 @@ QLYDQQANVSLGIIPLLQVDMWEHAFYLQYKNVKADYVKAFWNVVNWADVQSRYMAATSKTQGLIFD
     def test_parse_fasta_record(self):
         """parse_fasta_records()"""
 
-        print "Running test."
         for case, expected in self.records_and_expected:
+            case = StringIO.StringIO(case)
+            result = fastatoflat.parse_fasta_records(case).next()
             self.assertEqual(
-                    fastatoflat.parse_fasta_records(case).next(),
+                    result,
                     expected
             )
-
 
 
 if __name__ == '__main__':
