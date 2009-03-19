@@ -112,10 +112,11 @@ def fasta_to_flatfile(fasta_fileh, outfileh):
 
     """
 
-    parsed_records = parse_fasta_to_dicts(fasta_fileh)
-    #TODO: Do stuff here
-    # ...
-    outfileh.write("\n".join(output))
+    parsed_dicts = parse_fasta_to_dicts(fasta_fileh)
+    out_strings = (fdict_to_str(parsed_dict) for parsed_dict in
+            parsed_dicts)
+    output = "\n".join(out_strings)
+    outfileh.write(output)
     outfileh.write("\n")
 
 
