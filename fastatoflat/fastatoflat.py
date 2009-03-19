@@ -87,6 +87,20 @@ def parse_fasta_to_dicts(fasta_fileh):
         yield record_to_dict(record)
 
 
+def fdict_to_str(fasta_dict):
+    """
+    Parses a FASTA dictionary to an output string.
+
+    :Parameters:
+    - `fasta_dict`: a dictionary from a parsed FASTA record
+
+    """
+
+    outstr = ("%(gi)s\t%(accession)s\t%(genus_species)s\t%(annotation)s"
+            "\t%(sequence)s" % fasta_dict)
+    return outstr
+
+
 def fasta_to_flatfile(fasta_fileh, outfileh):
     """
     Parses a FASTA file and writes out a flat file suitable for database
