@@ -15,6 +15,7 @@ import re
 import sys
 
 GENUS_SPECIES_RE = re.compile(r'\[(.+)\]')
+HEADER = "gi\taccession\tgenus_species\tannotation\tsequence\n"
 
 def make_cli_parser():
     """
@@ -61,7 +62,10 @@ def record_to_dict(fasta_record):
     description = split_header[4].strip()
     record_dict['annotation'] = description
     genus_species_match = GENUS_SPECIES_RE.search(description)
-    record_dict['genus_species'] = genus_species_match.group(1)
+    if genus_species_match:
+        record_dict['genus_species'] = genus_species_match.group(1)
+    else:
+        record_dict['genus_species'] = ''
     record_dict['sequence'] = fasta_record.seq.tostring()
     return record_dict
 
@@ -126,9 +130,16 @@ def main(argv):
     if not args:
         MSG = "Please provide the path to at least one FASTA file."
         cli_parser.error(MSG)
+    outfileh = open('outfile.txt', 'w')
+    outfileh.write(HEADER)
     for filename in args:
         print "Parsing %s" % filename
-    #TODO
+        fasta_fileh = open(filename)
+        fasta_to_flatfile(fasta_fileh, outfileh)
+        print "Output written to %s" % outfileh.name
+        fasta_fileh.close()
+
+    print "Finished processing files."
 
 
 if __name__ == '__main__':
