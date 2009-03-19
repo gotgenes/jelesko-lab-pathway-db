@@ -10,9 +10,30 @@ __author__ = 'Chris Lasher'
 __email__ = 'chris DOT lasher <AT> gmail DOT com'
 
 import Bio.SeqIO
+from optparse import OptionParser
 import re
+import sys
 
 GENUS_SPECIES_RE = re.compile(r'\[(.+)\]')
+
+def make_cli_parser():
+    """
+    Creates the command line interface parser.
+
+    """
+
+    usage = "\n".join([
+        """\
+python %prog [OPTIONS] FASTAFILE1 FASTAFILE2 ...
+
+ARGUMENTS:
+  FASTAFILE1, FASTAFILE2, ...: paths to one or more FASTA formatted files
+""",
+        __doc__
+    ])
+    cli_parser = OptionParser(usage)
+    return cli_parser
+
 
 def parse_fasta_records(fasta_fileh):
     """
@@ -47,3 +68,14 @@ def parse_fasta_records(fasta_fileh):
         yield record_dict
 
 
+def main(argv):
+    cli_parser = make_cli_parser()
+    opts, args = cli_parser.parse_args(argv)
+    if not args:
+        MSG = "Please provide the path to at least one FASTA file."
+        cli_parser.error(MSG)
+    #TODO
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
