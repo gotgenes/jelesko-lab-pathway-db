@@ -9,6 +9,7 @@ Tests for fastatoflat.py
 __author__ = 'Chris Lasher'
 __email__ = 'chris DOT lasher <AT> gmail DOT com'
 
+import Bio.SeqIO
 import os
 import StringIO
 import sys
@@ -79,12 +80,13 @@ QLYDQQANVSLGIIPLLQVDMWEHAFYLQYKNVKADYVKAFWNVVNWADVQSRYMAATSKTQGLIFD
         ),
     ]
 
-    def test_parse_fasta_record(self):
-        """parse_fasta_records()"""
+    def test_record_to_dict(self):
+        """record_to_dict()"""
 
         for case, expected in self.records_and_expected:
             case = StringIO.StringIO(case)
-            result = fastatoflat.parse_fasta_records(case).next()
+            record = Bio.SeqIO.parse(case, 'fasta').next()
+            result = fastatoflat.record_to_dict(record)
             self.assertEqual(
                     result,
                     expected
