@@ -57,6 +57,43 @@ def connect_to_ncbi(site=FTP_SITE):
     return connection
 
 
+def _parse_dir_listing(listing):
+    """
+    Parses an NCBI FTP directory listing and returns a list of
+    subdirectories.
+
+    :Parameters:
+    - `listing`: text output from an FTP dir listing
+
+    """
+
+    # we're looking for lines like the following:
+    # dr-xr-xr-x  52 ftp      anonymous     8192 Mar  6 20:26 genomes
+    # and returning the 'genomes' part
+    lines = listing.split('\n')
+    subdirs = []
+    for line in lines:
+        line = line.strip()
+        if line:
+            split_line = line.split()
+            if split_line[0].startswith('d'):
+                subdirs.append(split_line[-1])
+    return subdirs
+
+
+def list_subdirs(connection, directory):
+    """
+    Returns a list of subdirectories of a given directory.
+
+    :Parameters:
+    - `connection`: an established FTP connection
+    - `directory`: a directory to list
+
+    """
+
+    pass
+
+
 def fetch_prok_genomes(connection, prok_genome_path, outfile):
     """
     Get a listing of all the directories in the Prokaryotic (Bacteria)
