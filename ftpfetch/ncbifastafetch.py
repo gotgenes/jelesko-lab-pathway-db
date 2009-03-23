@@ -57,41 +57,6 @@ def connect_to_ncbi(site=FTP_SITE):
     return connection
 
 
-def _parse_dir_line(line, subdirs):
-    """
-    Parses an NCBI FTP directory listing and returns a list of
-    subdirectories.
-
-    :Parameters:
-    - `line`: a line from text output from an FTP dir listing
-    - `subdirs`: a list of known existing subdirectories
-
-    """
-
-    # we're looking for lines like the following:
-    # dr-xr-xr-x  52 ftp      anonymous     8192 Mar  6 20:26 genomes
-    # and returning the 'genomes' part
-    split_line = line.split()
-    if split_line[0].startswith('d'):
-        subdirs.append(split_line[-1])
-
-
-def list_subdirs(connection, directory):
-    """
-    Returns a list of subdirectories of a given directory.
-
-    :Parameters:
-    - `connection`: an established FTP connection
-    - `directory`: a directory to list
-
-    """
-
-    subdirs = []
-    connection.retrlines('LIST %s' % directory, lambda x:
-            _parse_dir_line(x, subdirs))
-    return subdirs
-
-
 def _identify_faa(line, faa_files):
     """
     Identify amino-acid FASTA formatted files in
