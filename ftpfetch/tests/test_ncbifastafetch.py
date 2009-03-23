@@ -48,5 +48,11 @@ None),
                 self.assertEqual(result, [])
 
 
+    def test_identify_faa(self):
+        """_identify_faa()"""
+
+        pass
+
+
 if __name__ == '__main__':
     unittest.main()

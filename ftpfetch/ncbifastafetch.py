@@ -63,7 +63,7 @@ def _parse_dir_line(line, subdirs):
     subdirectories.
 
     :Parameters:
-    - `listing`: text output from an FTP dir listing
+    - `line`: a line from text output from an FTP dir listing
     - `subdirs`: a list of known existing subdirectories
 
     """
@@ -91,6 +91,31 @@ def list_subdirs(connection, directory):
             _parse_dir_line(x, subdirs))
     return subdirs
 
+
+def _identify_faa(line, faa_files):
+    """
+    Identify amino-acid FASTA formatted files in
+
+    :Parameters:
+    - `line`: a line from text output from an FTP dir listing
+    - `faa_files`: a list of known existing FASTA files
+
+    """
+
+    pass
+
+
+def list_faa_files(listing):
+    """
+    Given a directory listing, returns a list of amino-acid FASTA
+    formatted files in the directory.
+
+    :Parameters:
+    - `listing`: text output from an FTP dir listing
+
+    """
+
+    pass
 
 def fetch_prok_genomes(connection, prok_genome_path, outfile):
     """
