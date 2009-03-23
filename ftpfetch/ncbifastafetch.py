@@ -10,6 +10,7 @@ __author__ = 'Chris Lasher'
 __email__ = 'chris DOT lasher <AT> gmail DOT com'
 
 import ftplib
+import ftpwalk
 from optparse import OptionParser
 import os
 import sys
@@ -57,7 +58,7 @@ def connect_to_ncbi(site=FTP_SITE):
     return connection
 
 
-def ncbi_fastawalk(connection, top):
+def fastawalk(connection, top):
     """
     Walks down the NCBI FTP directories and yields paths to found
     protein FASTA file.
@@ -71,10 +72,10 @@ def ncbi_fastawalk(connection, top):
     """
 
     # Make the FTP object's current directory to the top dir.
-    ftp.cwd(top)
-    top = ftp.pwd()
+    connection.cwd(top)
+    top = connection.pwd()
 
-    dirs, files = fastawalk._ftp_listdir(ftp)
+    dirs, files = ftpwalk._ftp_listdir(connection)
 
     discovered_fasta_files = ['/'.join(top, file) for file in
             _identify_faa(files)]
@@ -84,12 +85,8 @@ def ncbi_fastawalk(connection, top):
 
     for dname in dirs:
         path = '/'.join((top, dname))
-        #TODO
-        #for x in ftpwalk(ftp, path, topdown, onerror):
-            #yield x
-
-    #if not topdown:
-        #yield top, dirs, nondirs
+        for dir in dirs:
+            fastawalk(connection, path)
 
 
 def _identify_faa(file_list):
@@ -107,18 +104,6 @@ def _identify_faa(file_list):
             fasta_files.append(filename)
     return fasta_files
 
-
-def list_faa_files(listing):
-    """
-    Given a directory listing, returns a list of amino-acid FASTA
-    formatted files in the directory.
-
-    :Parameters:
-    - `listing`: text output from an FTP dir listing
-
-    """
-
-    pass
 
 def fetch_prok_genomes(connection, prok_genome_path, outfile):
     """
@@ -154,6 +139,13 @@ def extract_genomes(tarball_name):
     archive.close()
 
 
+def dbg_main():
+    connection = connect_to_ncbi()
+    fasta_files = []
+    for found_files in fastawalk(connection, '/genomes'):
+        fasta_files.extend(found_files)
+
+
 def main(argv):
     # collect initial input from the user
     cli_parser = make_cli_parser()
@@ -180,4 +172,5 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    #main(sys.argv[1:])
+    dbg_main()
