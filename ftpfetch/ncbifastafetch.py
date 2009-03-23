@@ -57,6 +57,36 @@ def connect_to_ncbi(site=FTP_SITE):
     return connection
 
 
+def ncbi_fastawalk(connection, top):
+    """
+    Walks down the NCBI FTP directories and yields paths to found
+    protein FASTA file.
+
+    NOTE: This returns an iterator.
+
+    :Parameters:
+    - `connection`: an established FTP connection
+    - `top`: the directory from which to start crawling down
+
+    """
+
+    # Make the FTP object's current directory to the top dir.
+    ftp.cwd(top)
+    top = ftp.pwd()
+
+    dirs, files = fastawalk._ftp_listdir(ftp)
+
+    fasta_files = _identify_faa(files)
+
+#    for dname in dirs:
+#        path = '/'.join((top, dname))
+#        for x in ftpwalk(ftp, path, topdown, onerror):
+#            yield x
+#
+#    if not topdown:
+#        yield top, dirs, nondirs
+
+
 def _identify_faa(line, faa_files):
     """
     Identify amino-acid FASTA formatted files in
