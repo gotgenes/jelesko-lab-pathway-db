@@ -76,15 +76,20 @@ def ncbi_fastawalk(connection, top):
 
     dirs, files = fastawalk._ftp_listdir(ftp)
 
-    fasta_files = _identify_faa(files)
+    discovered_fasta_files = ['/'.join(top, file) for file in
+            _identify_faa(files)]
 
-#    for dname in dirs:
-#        path = '/'.join((top, dname))
-#        for x in ftpwalk(ftp, path, topdown, onerror):
-#            yield x
-#
-#    if not topdown:
-#        yield top, dirs, nondirs
+    if discovered_fasta_files:
+        yield discovered_fasta_files
+
+    for dname in dirs:
+        path = '/'.join((top, dname))
+        #TODO
+        #for x in ftpwalk(ftp, path, topdown, onerror):
+            #yield x
+
+    #if not topdown:
+        #yield top, dirs, nondirs
 
 
 def _identify_faa(file_list):
