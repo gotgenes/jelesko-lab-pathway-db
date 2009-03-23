@@ -87,17 +87,20 @@ def ncbi_fastawalk(connection, top):
 #        yield top, dirs, nondirs
 
 
-def _identify_faa(line, faa_files):
+def _identify_faa(file_list):
     """
     Identify amino-acid FASTA formatted files in
 
     :Parameters:
-    - `line`: a line from text output from an FTP dir listing
-    - `faa_files`: a list of known existing FASTA files
+    - `file_list`: a list of filenames
 
     """
 
-    pass
+    fasta_files = []
+    for filename in file_list:
+        if filename.endswith('.faa') or filename == 'protein.fa.gz':
+            fasta_files.append(filename)
+    return fasta_files
 
 
 def list_faa_files(listing):
