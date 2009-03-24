@@ -71,22 +71,31 @@ def fastawalk(connection, top):
 
     """
 
+    # This is a recursive, depth-first-search type algorithm for
+    # "walking" down the FTP directory structure at NCBI. There are a
+    # couple of tricks here, but the important thing to note is that
+    # this algorithm stops recursing to lower levels any time it can
+    # find protein FASTA files in the "current" depth.
+
     # Make the FTP object's current directory to the top dir.
     connection.cwd(top)
     top = connection.pwd()
+    print "Exploring %s" % top
 
     dirs, files = ftpwalk._ftp_listdir(connection)
 
-    discovered_fasta_files = ['/'.join(top, file) for file in
+    discovered_fasta_files = ['/'.join((top, file)) for file in
             _identify_faa(files)]
 
     if discovered_fasta_files:
+        print "Discovered FASTA files."
         yield discovered_fasta_files
 
-    for dname in dirs:
-        path = '/'.join((top, dname))
-        for dir in dirs:
-            fastawalk(connection, path)
+    else:
+        for dname in dirs:
+            path = '/'.join((top, dname))
+            for fasta_files in fastawalk(connection, path):
+                yield fasta_files
 
 
 def _identify_faa(file_list):
@@ -144,6 +153,8 @@ def dbg_main():
     fasta_files = []
     for found_files in fastawalk(connection, '/genomes'):
         fasta_files.extend(found_files)
+    for path in fasta_files:
+        print path
 
 
 def main(argv):
