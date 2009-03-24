@@ -15,14 +15,27 @@ from optparse import OptionParser
 import os
 import sys
 import tarfile
+import time
 
 
 # NCBI's FTP site
 FTP_SITE = 'ftp.ncbi.nih.gov'
-# The main Prokaryote parent directory and tarball of genomes
-PROK_DIR = 'genomes/Bacteria'
-PROK_TARBALL = 'all.gbk.tar.gz'
 
+# this is a blacklist of directories we do not wish to descend into.
+# Ideally, we should move this into a configuration file, but for right
+# now, it will do to keep it here.
+BLACKLIST = set((
+        'BACENDS',
+        'CLONEEND',
+        'FOSMIDS',
+        'MapView',
+        'TARGET',
+        'TOOLS',
+        'WGS_BACTERIA_OLD',
+        'genomeprj',
+        'mapview',
+        'CLUSTERS',
+        ))
 
 def make_cli_parser():
     """
@@ -80,9 +93,14 @@ def fastawalk(connection, top):
     # Make the FTP object's current directory to the top dir.
     connection.cwd(top)
     top = connection.pwd()
-    print "Exploring %s" % top
+    print "Exploring %s/" % top
 
     dirs, files = ftpwalk._ftp_listdir(connection)
+
+    # So one trick we've learned is that if there's a subdirectory
+    # called 'protein' in the current directory, that one will have all
+    # the protein files in a file called 'protein.fa.gz'. We skip
+    # straight to that and then move on.
 
     discovered_fasta_files = ['/'.join((top, file)) for file in
             _identify_faa(files)]
@@ -92,10 +110,23 @@ def fastawalk(connection, top):
         yield discovered_fasta_files
 
     else:
-        for dname in dirs:
-            path = '/'.join((top, dname))
+        # We discovered that if there's a subdirectory called 'protein'
+        # in the current directory, that will contain a file called
+        # 'protein.fa.gz' that contains all the predicted proteins. This
+        # seems to be present when the genome hasn't been completely
+        # assembled.
+        if 'protein' in dirs:
+            path = '/'.join((top, 'protein'))
             for fasta_files in fastawalk(connection, path):
                 yield fasta_files
+        else:
+            for dname in dirs:
+                path = '/'.join((top, dname,))
+                if dname in BLACKLIST:
+                    print "Skipping %s" % path
+                else:
+                    for fasta_files in fastawalk(connection, path):
+                        yield fasta_files
 
 
 def _identify_faa(file_list):
