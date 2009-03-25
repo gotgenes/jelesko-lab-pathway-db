@@ -23,7 +23,7 @@ FTP_SITE = 'ftp.ncbi.nih.gov'
 # this is a blacklist of directories we do not wish to descend into.
 # Ideally, we should move this into a configuration file, but for right
 # now, it will do to keep it here.
-BLACKLIST = set((
+BLACKLIST = frozenset((
         'BACENDS',
         'CLONEEND',
         'FOSMIDS',
@@ -142,6 +142,67 @@ def _identify_faa(file_list):
         if filename.endswith('.faa') or filename == 'protein.fa.gz':
             fasta_files.append(filename)
     return fasta_files
+
+
+def download_fasta_files(connection, ftp_paths, dest_dir, skip_list=[]):
+    """
+    Download specified FASTA files.
+
+    NOTE: Files named protein.fa.gz will be renamed based off of their
+    organism directories. For example
+    `/genomes/Bos_taurus/protein/protein.fa.gz` will be downloaded as
+    `Bos_taurus.faa.gz` and then uncompressed as `Bos_taurus.faa`.
+
+    NOTE: The files retrieved will be the set of all those listed in
+    `ftp_paths` minus the set of those in `skip_list`.
+
+    NOTE: `skip_list` should only be the file names, not the complete
+    file paths.
+
+    :Parameters:
+    - `connection`: an established FTP connection
+    - `ftp_paths`: paths of files to retrieve from the NCBI FTP server
+    - `dest_dir`: directory to store the files in
+    - `skip_list`: a list of file names to avoid downloading
+
+    """
+
+    # Make skip_list a set for quicker lookups
+    skip_list = frozenset(skip_list)
+
+    for path in file_paths:
+        split_path = path.split('/')
+        filename = split_path[-1]
+        # we need to rename the file if it's protein.fa.gz, otherwise
+        # we'll just wind up overwriting files
+        if filename == 'protein.fa.gz':
+            # these files appear in
+            # /../../organism_name/protein/protein.fa.gz
+            # so just grab the organism name and rename it to that
+            organism_name = split_path[-3]
+            filename = '%s.faa.gz' % organism_name
+
+        # skip this file if it's in the skip list
+        if filename in skip_list:
+            print "Skipping %s" % path
+            continue
+
+        dest_path = os.path.sep.join((dest_dir, filename))
+        print "Retrieving %s" % path
+        print "Downloading to %s" % dest_path
+        download_fileh = open(dest_path, 'wb')
+        connection.retrbinary('RETR %s' % path, download_fileh.write)
+        download_fileh.close()
+
+        # if this is a gzipped file, we need to uncompress it
+        if filename.endswith('.gz'):
+            print "Uncompressing %s" % dest_path
+            zipfileh = gzip.open(dest_path)
+            outfileh = open(dest_path[:-3], 'w')
+            for line in zipfileh:
+                outfileh.write(line)
+            zipfileh.close()
+            outfileh.close()
 
 
 def dbg_main():
