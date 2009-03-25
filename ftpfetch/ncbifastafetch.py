@@ -14,7 +14,6 @@ import ftpwalk
 from optparse import OptionParser
 import os
 import sys
-import tarfile
 import time
 
 
@@ -143,40 +142,6 @@ def _identify_faa(file_list):
         if filename.endswith('.faa') or filename == 'protein.fa.gz':
             fasta_files.append(filename)
     return fasta_files
-
-
-def fetch_prok_genomes(connection, prok_genome_path, outfile):
-    """
-    Get a listing of all the directories in the Prokaryotic (Bacteria)
-    directory.
-
-    :Parameters:
-    - `connection`: an established FTP connection
-    - `prok_genome_path`: the path to the prokaryotic genomes GenBank
-      file
-    - `outfile`: a file handle to write data to (should be opened for
-      binary data)
-
-    """
-
-    connection.retrbinary(
-            'RETR %s' % prok_genome_path,
-            outfile.write
-    )
-
-
-def extract_genomes(tarball_name):
-    """
-    Extracts the genomes from the tarball.
-
-    :Parameters:
-    - `tarball_name`: the filename of the tarball file
-
-    """
-
-    archive = tarfile.open(tarball_name)
-    archive.extractall()
-    archive.close()
 
 
 def dbg_main():
