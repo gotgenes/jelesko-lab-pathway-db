@@ -11,6 +11,7 @@ __email__ = 'chris DOT lasher <AT> gmail DOT com'
 
 import ftplib
 import ftpwalk
+import gzip
 from optparse import OptionParser
 import os
 import sys
@@ -170,7 +171,9 @@ def download_fasta_files(connection, ftp_paths, dest_dir, skip_list=[]):
     # Make skip_list a set for quicker lookups
     skip_list = frozenset(skip_list)
 
-    for path in file_paths:
+    dest_dir = dest_dir.rstrip('/')
+
+    for path in ftp_paths:
         split_path = path.split('/')
         filename = split_path[-1]
         # we need to rename the file if it's protein.fa.gz, otherwise
