@@ -17,7 +17,7 @@ import re
 import sys
 import time
 
-GENUS_SPECIES_RE = re.compile(r'\[(.+)\]')
+GENUS_SPECIES_RE = re.compile(r'\[(.+?)\]')
 HEADER = "gi\taccession\tgenus_species\tannotation\tdownload_date\tsequence\n"
 
 def make_cli_parser():
@@ -64,9 +64,11 @@ def record_to_dict(fasta_record):
     record_dict['accession'] = split_header[3]
     description = split_header[4].strip()
     record_dict['annotation'] = description
-    genus_species_match = GENUS_SPECIES_RE.search(description)
-    if genus_species_match:
-        record_dict['genus_species'] = genus_species_match.group(1)
+    # We have to find all matches; sometimes there will be [blah blah]
+    # in the description. The very last one should be [Genus species].
+    genus_species_matches = GENUS_SPECIES_RE.findall(description)
+    if genus_species_matches:
+        record_dict['genus_species'] = genus_species_matches[-1]
     else:
         record_dict['genus_species'] = ''
     record_dict['sequence'] = fasta_record.seq.tostring()
