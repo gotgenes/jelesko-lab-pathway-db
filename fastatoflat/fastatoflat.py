@@ -10,12 +10,15 @@ __author__ = 'Chris Lasher'
 __email__ = 'chris DOT lasher <AT> gmail DOT com'
 
 import Bio.SeqIO
+import copy
 from optparse import OptionParser
+import os
 import re
 import sys
+import time
 
 GENUS_SPECIES_RE = re.compile(r'\[(.+)\]')
-HEADER = "gi\taccession\tgenus_species\tannotation\tsequence\n"
+HEADER = "gi\taccession\tgenus_species\tannotation\tdownload_date\tsequence\n"
 
 def make_cli_parser():
     """
@@ -91,37 +94,63 @@ def parse_fasta_to_dicts(fasta_fileh):
         yield record_to_dict(record)
 
 
-def fdict_to_str(fasta_dict):
+def fdict_to_str(fasta_dict, date):
     """
     Parses a FASTA dictionary to an output string.
 
     :Parameters:
     - `fasta_dict`: a dictionary from a parsed FASTA record
+    - `date`: the date the file was downloaded
 
     """
 
+    out_dict = copy.copy(fasta_dict)
+    out_dict['date'] = date
     outstr = ("%(gi)s\t%(accession)s\t%(genus_species)s\t%(annotation)s"
-            "\t%(sequence)s" % fasta_dict)
+            "\t%(date)s\t%(sequence)s" % out_dict)
     return outstr
 
 
-def fasta_to_flatfile(fasta_fileh, outfileh):
+def fasta_to_flatfile(fasta_fileh, file_date, outfileh):
     """
     Parses a FASTA file and writes out a flat file suitable for database
     import.
 
     :Parameters:
     - `fasta_fileh`: a FASTA file handle
+    - `file_date`: the date the file was downloaded
     - `outfileh`: file handle to write to
 
     """
 
     parsed_dicts = parse_fasta_to_dicts(fasta_fileh)
-    out_strings = (fdict_to_str(parsed_dict) for parsed_dict in
-            parsed_dicts)
-    output = "\n".join(out_strings)
-    outfileh.write(output)
-    outfileh.write("\n")
+
+    # we need a hack in case the genus and species name is provided;
+    # we'll use the last used value
+    last_genus_species = ''
+    for parsed_dict in parsed_dicts:
+        if not parsed_dict['genus_species']:
+            parsed_dict['genus_species'] = last_genus_species
+        out_string = fdict_to_str(parsed_dict, file_date)
+        outfileh.write(out_string)
+        outfileh.write("\n")
+        last_genus_species = parsed_dict['genus_species']
+
+
+def _get_file_ctime(filename):
+    """
+    Returns the file creation time of a given file in the following
+    format: YYYY-MM-DD HH:MM (ISO-8601 format)
+
+    :Parameters:
+    - `filename`: the file's name (path)
+
+    """
+
+    unix_time = os.path.getctime(filename)
+    file_ctime = time.strftime('%Y-%m-%d %H:%M',
+            time.localtime(unix_time))
+    return file_ctime
 
 
 def main(argv):
@@ -135,10 +164,12 @@ def main(argv):
     for filename in args:
         print "Parsing %s" % filename
         fasta_fileh = open(filename)
-        fasta_to_flatfile(fasta_fileh, outfileh)
+        download_time = _get_file_ctime(filename)
+        fasta_to_flatfile(fasta_fileh, download_time, outfileh)
         print "Output written to %s" % outfileh.name
         fasta_fileh.close()
 
+    outfileh.close()
     print "Finished processing files."
 
 
