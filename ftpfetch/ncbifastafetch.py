@@ -44,7 +44,7 @@ def make_cli_parser():
 
     """
 
-    usage = "\n\n".join([
+    usage = "\n".join([
         """\
 python %prog [OPTIONS] DEST_DIRECTORY
 
