@@ -45,14 +45,29 @@ def make_cli_parser():
 
     usage = "\n\n".join([
         """\
-python %prog [OPTIONS] DIRECTORY
+python %prog [OPTIONS] DEST_DIRECTORY
 
 ARGUMENTS:
-  DIRECTORY: the directory into which files will be deposited\
+  DEST_DIRECTORY: the path to the directory into which files will be
+  downloaded\
 """,
         __doc__,
     ])
     cli_parser = OptionParser(usage)
+    cli_parser.add_option(
+            '-l', '--listing',
+            help="load a file listing paths to files to retrieve"
+            " [NOTE: skips searching for files on NCBI's FTP site]"
+    )
+    cli_parser.add_option(
+            '-d', '--discovered',
+            help="store a list of discovered FASTA files on NCBI's FTP"
+            " site in this file [See also -l, --listing]"
+    )
+    cli_parser.add_option(
+            '-s', '--skiplist',
+            help="a file listing files to skip, one file name per line"
+    )
     return cli_parser
 
 
@@ -69,6 +84,22 @@ def connect_to_ncbi(site=FTP_SITE):
     # Log in as 'Anonymous' with password 'anonymous'
     connection.login()
     return connection
+
+
+def _identify_faa(file_list):
+    """
+    Identify amino-acid FASTA formatted files in
+
+    :Parameters:
+    - `file_list`: a list of filenames
+
+    """
+
+    fasta_files = []
+    for filename in file_list:
+        if filename.endswith('.faa') or filename == 'protein.fa.gz':
+            fasta_files.append(filename)
+    return fasta_files
 
 
 def fastawalk(connection, top):
@@ -129,20 +160,18 @@ def fastawalk(connection, top):
                         yield fasta_files
 
 
-def _identify_faa(file_list):
+def save_found_fasta_files(fasta_files, outfileh):
     """
-    Identify amino-acid FASTA formatted files in
+    Saves a list or iterable of FTP paths of FASTA files to a text file.
 
     :Parameters:
-    - `file_list`: a list of filenames
+    - `fasta_files`: a list or iterable of FTP paths of FASTA files
+    - `outfileh`: a file to save the paths to
 
     """
 
-    fasta_files = []
-    for filename in file_list:
-        if filename.endswith('.faa') or filename == 'protein.fa.gz':
-            fasta_files.append(filename)
-    return fasta_files
+    outfileh.write("\n".join(fasta_files))
+    outfileh.write("\n")
 
 
 def download_fasta_files(connection, ftp_paths, dest_dir, skip_list=[]):
@@ -210,15 +239,6 @@ def download_fasta_files(connection, ftp_paths, dest_dir, skip_list=[]):
             os.remove(dest_path)
 
 
-def dbg_main():
-    connection = connect_to_ncbi()
-    fasta_files = []
-    for found_files in fastawalk(connection, '/genomes'):
-        fasta_files.extend(found_files)
-    for path in fasta_files:
-        print path
-
-
 def main(argv):
     # collect initial input from the user
     cli_parser = make_cli_parser()
@@ -228,22 +248,20 @@ def main(argv):
     dir_path = args[0]
     if not os.path.isdir(dir_path):
         cli_parser.error("%s is not a directory." % dir_path)
-    os.chdir(dir_path)
 
-    # fetch the file from NCBI
+    # See if the user provided a list of files to obtain
+    if opts.listing:
+        #TODO
+        pass
+    # See if the user provided a list of files to skip
+    if opts.skiplist:
+        #TODO
+        pass
+
     print "Connecting to NCBI."
     ftp_connection = connect_to_ncbi(FTP_SITE)
-    download_file = open(PROK_TARBALL, 'wb')
-    prok_genome_path = '/'.join((PROK_DIR, PROK_TARBALL))
-    print "Fetching genomes tarball. This will take a while..."
-    fetch_prok_genomes(ftp_connection, prok_genome_path, download_file)
-    download_file.close()
-    print "Download finished."
-    print "Unpacking tarball."
-    extract_genomes(download_file.name)
-    print "Finished unpacking."
 
 
 if __name__ == '__main__':
-    #main(sys.argv[1:])
-    dbg_main()
+    main(sys.argv[1:])
+
