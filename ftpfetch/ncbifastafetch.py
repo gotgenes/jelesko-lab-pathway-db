@@ -20,6 +20,7 @@ import time
 
 # NCBI's FTP site
 FTP_SITE = 'ftp.ncbi.nih.gov'
+SEARCH_ROOT = '/genomes/'
 
 # this is a blacklist of directories we do not wish to descend into.
 # Ideally, we should move this into a configuration file, but for right
@@ -67,6 +68,11 @@ ARGUMENTS:
     cli_parser.add_option(
             '-s', '--skiplist',
             help="a file listing files to skip, one file name per line"
+    )
+    cli_parser.add_option(
+            '-r', '--root', default=SEARCH_ROOT,
+            help="set the root directory to search for FASTA files in"
+            " [Default: %default]"
     )
     return cli_parser
 
@@ -166,12 +172,28 @@ def save_found_fasta_files(fasta_files, outfileh):
 
     :Parameters:
     - `fasta_files`: a list or iterable of FTP paths of FASTA files
-    - `outfileh`: a file to save the paths to
+    - `outfileh`: a file handle to save the paths to
 
     """
 
     outfileh.write("\n".join(fasta_files))
     outfileh.write("\n")
+
+
+def load_found_fasta_files(infileh):
+    """
+    Load an iterable of FTP paths to FASTA files.
+
+    NOTE: Returns an iterator.
+
+    :Parameters:
+    - `infileh`: a file handle to read paths from, one path per line
+
+    """
+
+    for line in infileh:
+        if line:
+            yield line.rstrip()
 
 
 def download_fasta_files(connection, ftp_paths, dest_dir, skip_list=[]):
@@ -245,21 +267,44 @@ def main(argv):
     opts, args = cli_parser.parse_args(argv)
     if not len(args) == 1:
         cli_parser.error("Please provide one directory path.")
-    dir_path = args[0]
-    if not os.path.isdir(dir_path):
-        cli_parser.error("%s is not a directory." % dir_path)
+    dest_dir = args[0]
+    if not os.path.isdir(dest_dir):
+        cli_parser.error("%s is not a directory." % dest_dir)
 
-    # See if the user provided a list of files to obtain
-    if opts.listing:
-        #TODO
-        pass
     # See if the user provided a list of files to skip
     if opts.skiplist:
-        #TODO
-        pass
+        print "Reading files to skip from %s" % opts.skiplist
+        skipfile = open(opts.skiplist)
+        skip_list = [line.strip() for line in skipfile]
+    else:
+        skip_list = []
 
     print "Connecting to NCBI."
     ftp_connection = connect_to_ncbi(FTP_SITE)
+
+    # See if the user provided a list of files to obtain
+    if opts.listing:
+        print "Using list of FASTA files to retrieve at %s" % (
+                opts.listing)
+        list_fileh = open(opts.listing)
+        found_fasta_files = load_found_fasta_files(list_fileh)
+
+    else:
+        search_root = opts.root
+        found_fasta_files = fastawalk(ftp_connection, search_root)
+        if opts.discovered:
+            print "Discovering available FASTA files under %s" % (
+                    search_root)
+            found_fasta_files = list(found_fasta_files)
+            print "Saving discovered files to %s" % opts.discovered
+            discovered_fileh = open(opts.discovered, 'w')
+            save_found_fasta_files(found_fasta_files, discovered_fileh)
+
+    print "Downloading FASTA files."
+    download_fasta_files(ftp_connection, found_fasta_files, dest_dir,
+            skip_list)
+
+    print "Finished."
 
 
 if __name__ == '__main__':
