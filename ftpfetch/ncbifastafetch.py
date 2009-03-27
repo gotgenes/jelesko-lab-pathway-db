@@ -144,7 +144,8 @@ def fastawalk(connection, top):
 
     if discovered_fasta_files:
         print "Discovered FASTA files."
-        yield discovered_fasta_files
+        for discovered_file in discovered_fasta_files:
+            yield discovered_file
 
     else:
         # We discovered that if there's a subdirectory called 'protein'
