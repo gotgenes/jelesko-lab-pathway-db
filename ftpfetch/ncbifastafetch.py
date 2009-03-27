@@ -206,6 +206,8 @@ def download_fasta_files(connection, ftp_paths, dest_dir, skip_list=[]):
                 outfileh.write(line)
             zipfileh.close()
             outfileh.close()
+            # remove the compressed file
+            os.remove(dest_path)
 
 
 def dbg_main():
