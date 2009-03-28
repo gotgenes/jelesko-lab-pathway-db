@@ -241,6 +241,11 @@ def download_fasta_files(connection, ftp_paths, dest_dir, skip_list=[]):
         if filename in skip_list:
             print "Skipping %s" % path
             continue
+        # check to see if the user was trying to skip a compressed file
+        elif filename.endswith('.gz'):
+            if filename[:-3] in skip_list:
+                print "Skipping %s" % path
+                continue
 
         dest_path = os.path.sep.join((dest_dir, filename))
         print "Retrieving %s" % path
@@ -272,6 +277,12 @@ def main(argv):
     if not os.path.isdir(dest_dir):
         cli_parser.error("%s is not a directory." % dest_dir)
 
+    # check for incompatible options
+    if opts.listing and opts.discovered:
+        MSG = ("Can't use options --listing (-l) and --discovered (-d)"
+            " together.")
+        cli_parser.error(MSG)
+
     # See if the user provided a list of files to skip
     if opts.skiplist:
         print "Reading files to skip from %s" % opts.skiplist
@@ -293,6 +304,8 @@ def main(argv):
     else:
         search_root = opts.root
         found_fasta_files = fastawalk(ftp_connection, search_root)
+        # If the user wants to save this for a later run, we need to go
+        # ahead and discover all available FASTA files first.
         if opts.discovered:
             print "Discovering available FASTA files under %s" % (
                     search_root)
