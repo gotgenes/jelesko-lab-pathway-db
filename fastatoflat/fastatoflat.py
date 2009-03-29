@@ -66,9 +66,18 @@ def record_to_dict(fasta_record):
     assert len(split_header) == 5
     assert split_header[0] in ('gi', 'GI')
     record_dict['gi'] = split_header[1]
-    assert split_header[2] in ('ref', 'REF')
-    record_dict['accession'] = split_header[3]
     description = split_header[4].strip()
+    if split_header[2] in ('ref', 'REF'):
+        record_dict['accession'] = split_header[3]
+    # this is hear in case it's a mitochondrial sequence
+    # We're looking to pull information from a line like below.
+    #>gi|5819099|gnl|NCBI_MITO|ND1_10014 NADH dehydrogenase subunit 1 [Balaenoptera physalus]
+    elif split_header[3] == 'NCBI_MITO':
+        accession, junk = split_header[4].split(None, 1)
+        record_dict['accession'] = accession
+    else:
+        raise ValueError("Unrecognized FASTA header\n%s" %
+                fasta_record.description)
     record_dict['annotation'] = description
     # We have to find all matches; sometimes there will be [blah blah]
     # in the description. The very last one should be [Genus species].
