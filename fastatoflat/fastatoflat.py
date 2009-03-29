@@ -17,6 +17,8 @@ import re
 import sys
 import time
 
+OUTFILE_NAME = 'outfile.txt'
+
 GENUS_SPECIES_RE = re.compile(r'\[(.+?)\]')
 HEADER = "gi\taccession\tgenus_species\tannotation\tdownload_date\tsequence\n"
 
@@ -36,6 +38,10 @@ ARGUMENTS:
         __doc__
     ])
     cli_parser = OptionParser(usage)
+    cli_parser.add_option(
+            '-o', '--outfile', default=OUTFILE_NAME,
+            help="path to output file [Default: %default]"
+    )
     return cli_parser
 
 
@@ -161,14 +167,14 @@ def main(argv):
     if not args:
         MSG = "Please provide the path to at least one FASTA file."
         cli_parser.error(MSG)
-    outfileh = open('outfile.txt', 'w')
+    outfileh = open(opts.outfile, 'w')
     outfileh.write(HEADER)
     for filename in args:
         print "Parsing %s" % filename
         fasta_fileh = open(filename)
         download_time = _get_file_ctime(filename)
         fasta_to_flatfile(fasta_fileh, download_time, outfileh)
-        print "Output written to %s" % outfileh.name
+        print "Output written to %s" % opts.outfile
         fasta_fileh.close()
 
     outfileh.close()
