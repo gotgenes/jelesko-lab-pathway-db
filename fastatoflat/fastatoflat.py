@@ -63,7 +63,8 @@ def record_to_dict(fasta_record):
 
     record_dict = {}
     split_header = fasta_record.description.split('|')
-    assert len(split_header) == 5
+    assert len(split_header) == 5, "Unknown header format:\n%s" % (
+            fasta_record.description)
     assert split_header[0] in ('gi', 'GI')
     record_dict['gi'] = split_header[1]
     description = split_header[4].strip()
