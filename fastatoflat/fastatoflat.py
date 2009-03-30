@@ -67,7 +67,7 @@ def record_to_dict(fasta_record):
     assert split_header[0] in ('gi', 'GI')
     record_dict['gi'] = split_header[1]
     description = split_header[4].strip()
-    if split_header[2] in ('ref', 'REF'):
+    if split_header[2] in ('ref', 'REF', 'gb', 'GB'):
         record_dict['accession'] = split_header[3]
     # this is hear in case it's a mitochondrial sequence
     # We're looking to pull information from a line like below.
