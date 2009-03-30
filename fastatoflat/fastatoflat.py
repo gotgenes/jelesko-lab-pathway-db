@@ -42,6 +42,10 @@ ARGUMENTS:
             '-o', '--outfile', default=OUTFILE_NAME,
             help="path to output file [Default: %default]"
     )
+    cli_parser.add_option(
+            '-b', '--barrelon', action='store_true',
+            help="ignore possible errors in parsing"
+    )
     return cli_parser
 
 
@@ -63,8 +67,18 @@ def record_to_dict(fasta_record):
 
     record_dict = {}
     split_header = fasta_record.description.split('|')
-    assert len(split_header) == 5, "Unknown header format:\n%s" % (
-            fasta_record.description)
+    try:
+        assert len(split_header) == 5, "Unknown header format:\n%s" % (
+                fasta_record.description)
+    except AssertionError, e:
+        if opts.barrelon:
+            print "Possibly troublesome fasta header:\n%s" % (
+                    fasta_record.description)
+            print "Continuing on anyway..."
+            split_header = fasta_record.description.split('|', 4)
+        else:
+            raise e
+
     assert split_header[0] in ('gi', 'GI')
     record_dict['gi'] = split_header[1]
     description = split_header[4].strip()
