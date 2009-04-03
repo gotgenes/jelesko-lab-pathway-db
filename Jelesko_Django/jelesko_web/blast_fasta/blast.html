@@ -16,12 +16,13 @@
 {% if res %}
 <table cellspacing="5" border="1">
 <thead>
-	<tr><th>Part</th><th>Part length</th><th>E-value</th><th>Identities</th><th>Query start</th>
+	<tr><th>Select</th><th>Part</th><th>Part length</th><th>E-value</th><th>Identities</th><th>Query start</th>
 		<th>Part start</th><th>Query end</th><th>Part end</th></tr>
 </thead>
 <tbody>
         {% for record in res %}
-        <tr>
+        <tr>                   
+	  <td><INPUT TYPE = CHECKBOX Name="Entry"></td>
           {% for i in record %}
 	  <td>{{i}}</td>
           {% endfor %}

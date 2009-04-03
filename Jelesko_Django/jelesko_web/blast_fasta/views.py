@@ -34,10 +34,10 @@ def blast(request):
 	from Bio.Blast import NCBIStandalone
 	from Bio.Blast import NCBIXML
 	import os
-	my_blast_dir = "/Users/caiyizhi/Dropbox/Class/Problem_solving/Jelesko_Django/sequence_data/"
-	my_blast_file = "/Users/caiyizhi/Dropbox/Class/Problem_solving/Jelesko_Django/sequence_data/seq.fasta"
+	my_blast_dir = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/"
+	my_blast_file = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/seq.fasta"
 	sqfile = open(my_blast_file, "w")
-	my_blast_db = "/Users/caiyizhi/Dropbox/Class/Problem_solving/Jelesko_Django/sequence_data/db.fasta"
+	my_blast_db = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta"
 	if request.method == 'GET':
 		f = blastform(request.GET)
 		if not f.is_valid():
