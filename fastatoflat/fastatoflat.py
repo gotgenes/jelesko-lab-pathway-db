@@ -49,7 +49,7 @@ ARGUMENTS:
     return cli_parser
 
 
-def record_to_dict(fasta_record):
+def record_to_dict(fasta_record, ignore_errors=False):
     """
     Parses a FASTA record to a dictionary with the following keys:
 
@@ -62,6 +62,8 @@ def record_to_dict(fasta_record):
 
     :Parameters:
     - `fasta_record`: a SeqRecord object returned by Bio.SeqIO.parse()
+    - `ignore_errors`: ignore possible errors in parsing the FASTA
+      headers
 
     """
 
@@ -71,7 +73,7 @@ def record_to_dict(fasta_record):
         assert len(split_header) == 5, "Unknown header format:\n%s" % (
                 fasta_record.description)
     except AssertionError, e:
-        if opts.barrelon:
+        if ignore_errors:
             print "Possibly troublesome fasta header:\n%s" % (
                     fasta_record.description)
             print "Continuing on anyway..."
@@ -105,7 +107,7 @@ def record_to_dict(fasta_record):
     return record_dict
 
 
-def parse_fasta_to_dicts(fasta_fileh):
+def parse_fasta_to_dicts(fasta_fileh, ignore_errors=False):
     """
     Parses FASTA records, yielding a dictionary for each containing the
     following keys:
@@ -119,11 +121,13 @@ def parse_fasta_to_dicts(fasta_fileh):
 
     :Parameters:
     - `fasta_fileh`: a FASTA file handle
+    - `ignore_errors`: ignore possible errors in parsing the FASTA
+      header
 
     """
 
     for record in Bio.SeqIO.parse(fasta_fileh, 'fasta'):
-        yield record_to_dict(record)
+        yield record_to_dict(record, ignore_errors)
 
 
 def fdict_to_str(fasta_dict, date):
@@ -143,7 +147,8 @@ def fdict_to_str(fasta_dict, date):
     return outstr
 
 
-def fasta_to_flatfile(fasta_fileh, file_date, outfileh):
+def fasta_to_flatfile(fasta_fileh, file_date, outfileh,
+        ignore_errors=False):
     """
     Parses a FASTA file and writes out a flat file suitable for database
     import.
@@ -152,10 +157,12 @@ def fasta_to_flatfile(fasta_fileh, file_date, outfileh):
     - `fasta_fileh`: a FASTA file handle
     - `file_date`: the date the file was downloaded
     - `outfileh`: file handle to write to
+    - `ignore_errors`: ignore possible errors in parsing the FASTA
+      headers
 
     """
 
-    parsed_dicts = parse_fasta_to_dicts(fasta_fileh)
+    parsed_dicts = parse_fasta_to_dicts(fasta_fileh, ignore_errors)
 
     # we need a hack in case the genus and species name is provided;
     # we'll use the last used value
@@ -197,7 +204,8 @@ def main(argv):
         print "Parsing %s" % filename
         fasta_fileh = open(filename)
         download_time = _get_file_ctime(filename)
-        fasta_to_flatfile(fasta_fileh, download_time, outfileh)
+        fasta_to_flatfile(fasta_fileh, download_time, outfileh,
+                opts.barrelon)
         print "Output written to %s" % opts.outfile
         fasta_fileh.close()
 
