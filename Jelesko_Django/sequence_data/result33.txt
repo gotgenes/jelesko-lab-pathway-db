@@ -1,0 +1,101 @@
+ fasta35 seq.fasta db.fasta
+FASTA searches a protein or DNA sequence data bank version 35.04 Mar. 8, 2009
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+Query: gi|186511378|ref|NP_191913.3|, 1151 aa
+  1>>>gi|186511378|ref|NP_191913.3| Arabidopsis thaliana BRCA2(IV)/BRCA2A/EDA20/MEE43 (BREAST CANCER 2 LIKE 2A); pr - 1151 aa - 1151 aaresult33.txt
+Library: db.fasta 2146675 residues in  5377 sequences
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 9 library sequences
+  24     0     0:
+  26     0     0:
+  28     1     1:*
+  30    12     7:*=
+  32    32    29:===*
+  34    88    78:========*=
+  36   176   159:=================*==
+  38   276   264:=============================*=
+  40   396   368:========================================*===
+  42   492   449:=================================================*=====
+  44   497   496:=======================================================*
+  46   479   505:======================================================  *
+  48   458   483:===================================================  *
+  50   454   441:================================================*==
+  52   368   388:=========================================  *
+  54   331   331:====================================*
+  56   233   277:==========================    *
+  58   222   227:=========================*
+  60   174   184:====================*
+  62   159   147:================*=
+  64   116   117:============*
+  66    77    93:========= *
+  68    75    73:========*
+  70    62    57:======*
+  72    55    45:====*==
+  74    29    35:===*
+  76    19    27:==*
+  78    17    21:==*
+  80    12    16:=*
+  82    11    13:=*
+  84     6    10:=*
+  86    14     8:*=
+  88     9     6:*          inset = represents 1 library sequences
+  90     9     5:*
+  92     4     4:*         :===*
+  94     4     3:*         :==*=
+  96     1     2:*         :=*
+  98     4     2:*         :=*==
+ 100     1     1:*         :*
+ 102     0     1:*         :*
+ 104     0     1:*         :*
+ 106     0     1:*         :*
+ 108     1     0:=         *=
+ 110     0     0:          *
+ 112     0     0:          *
+ 114     0     0:          *
+ 116     0     0:          *
+ 118     0     0:          *
+>120     3     0:=         *===
+2146675 residues in  5377 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 5.2739+/-0.0016; mu= 14.4714+/- 0.094
+ mean_var=76.9836+/-16.765, 0's: 0 Z-trim: 3  B-trim: 67 in 2/46
+ Lambda= 0.146176
+ Kolmogorov-Smirnov  statistic: 0.0222 (N=29) at  44
+Algorithm: FASTA (3.5 Sept 2006) [optimized]
+Parameters: BL50 matrix (15:-5) ktup: 2
+ join: 39, opt: 27, open/ext: -10/-2, width:  16
+
+The best scores are:                                      opt bits E(5377)
+gi|186511378|ref|NP_191913.3| Arabidopsis thaliana (1151) 7536 1599.5       0
+gi|18411286|ref|NP_567168.1| Arabidopsis thaliana  ( 302)  109 32.8    0.25
+gi|79324957|ref|NP_001031563.1| Arabidopsis thalia ( 302)  109 32.8    0.25
+gi|18414224|ref|NP_567432.1| Arabidopsis thaliana  ( 281)   95 29.8     1.8
+gi|15236030|ref|NP_194892.1| Arabidopsis thaliana  ( 352)   89 28.7     5.1
+gi|186515615|ref|NP_001119101.1| Arabidopsis thali (1069)   94 30.1     5.8
+gi|15233868|ref|NP_194990.1| Arabidopsis thaliana  (1069)   94 30.1     5.8
+gi|15233621|ref|NP_193230.1| Arabidopsis thaliana  ( 650)   91 29.3     6.2
+gi|18413181|ref|NP_567344.1| Arabidopsis thaliana  ( 267)   86 27.9     6.5
+gi|30689988|ref|NP_195154.2| Arabidopsis thaliana  ( 783)   91 29.3     7.1
+gi|18420078|ref|NP_568030.1| Arabidopsis thaliana  ( 580)   88 28.6     8.8
+gi|42573077|ref|NP_974635.1| Arabidopsis thaliana  ( 192)   81 26.8      10
+gi|15236712|ref|NP_191922.1| Arabidopsis thaliana  ( 430)   85 27.9      11
+gi|145334175|ref|NP_001078468.1| Arabidopsis thali ( 219)   81 26.8      11
+gi|15233464|ref|NP_194645.1| Arabidopsis thaliana  ( 219)   81 26.8      11
+gi|15236931|ref|NP_192817.1| Arabidopsis thaliana  ( 480)   85 27.9      12
+gi|42566949|ref|NP_567579.2| Arabidopsis thaliana  ( 740)   86 28.3      14
+gi|15234486|ref|NP_192962.1| Arabidopsis thaliana  ( 436)   83 27.5      15
+gi|186512310|ref|NP_193946.2| Arabidopsis thaliana ( 367)   82 27.2      15
+gi|15234191|ref|NP_192057.1| Arabidopsis thaliana  ( 216)   79 26.4      15
+
+
+
+1151 residues in 1 query   sequences
+2146675 residues in 5377 library sequences
+ Scomplib [35.04]
+ start: Thu Apr  2 15:36:43 2009 done: Thu Apr  2 15:36:56 2009
+ Total Scan time:  0.670 Total Display time:  0.010
+
+Function used was FASTA [version 35.04 Mar. 8, 2009]

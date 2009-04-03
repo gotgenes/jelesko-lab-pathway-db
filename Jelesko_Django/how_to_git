@@ -1,0 +1,20 @@
+Global setup:
+
+  Download and install Git
+  git config --global user.name "Your Name"
+  git config --global user.email caiyizhi@gmail.com
+        
+
+Next steps:
+
+  mkdir jelesko_django
+  cd jelesko_django
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:caiyizhi/jelesko_django.git
+  git push origin master
+
+Get a copy from remote repository:
+git clone git://github.com/gotgenes/jelesko-lab-pathway-db.git

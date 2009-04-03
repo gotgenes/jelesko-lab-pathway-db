@@ -1,0 +1,5 @@
+  Database: db.fasta
+    Posted date:  Mar 31, 2009  9:03 AM
+  Number of letters in database: 2,146,675
+  Number of sequences in database:  5377
+  

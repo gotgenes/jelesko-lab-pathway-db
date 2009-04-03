@@ -1,0 +1,3 @@
+perl -lane 'if(/^\d+/){$seq=pop @F;print ">gi|",shift @F,"|ref|",shift @F,"| ",join(" ",@F),"\n$seq"}' parsed_fasta_output.txt  > db.fasta
+
+formatdb -i db.fasta -p T

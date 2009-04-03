@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>FASTA search</title>
+</head>
+<body>
+
+
+<form action="" method="GET">
+	<label><b>Your sequence in Fasta format:</b></label><br/>
+	{{form.seq}}<br/>
+	<label><b>Number of sequence scores to be shown: </b></label><br/>
+	{{form.number_sequence}}<br/>
+	<label><b>Upper E-value:</b></label><br/>
+	{{form.number_alignment_highest}}<br/>
+	<label><b>Lower E-value:</b></label><br/>
+	{{form.number_alignment_lowest}}<br/>
+	<label><b>Matrix file: </b></label><br/>
+	{{form.matrix_file}}<br/>
+	<input type="submit" name="submit_search" value="Search">
+</form>
+{% if res %}
+<table cellspacing="5" border="1">
+<thead>
+	<tr><th>Part</th><th>Part length</th><th>E-value</th><th>Identities</th><th>Query start</th>
+		<th>Part start</th><th>Query end</th><th>Part end</th></tr>
+</thead>
+<tbody>
+        {% for record in res %}
+        <tr>
+          {% for i in record %}
+	  <td>{{i}}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endif %}
+</body>
+</html>
