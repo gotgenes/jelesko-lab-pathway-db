@@ -6,6 +6,9 @@
 <body>
 
 
+<h1 style="text-align:center">BLAST search</h1>
+<hr/>
+
 <form action="" method="GET">
 	<label><b>Your sequence in Fasta format:</b></label><br/>
 	{{form.seq}}<br/>
@@ -13,6 +16,8 @@
 	<label><b>Set e-value cutoff:</b></label>{{form.evalue}}<label><br/>
 	<input type="submit" name="submit_search" value="Search">
 </form>
+
+<!-- Below shows the search result-->
 {% if res %}
 <table cellspacing="5" border="1">
 <thead>
@@ -22,7 +27,7 @@
 <tbody>
         {% for record in res %}
         <tr>                   
-	  <td><INPUT TYPE = CHECKBOX Name="Entry"></td>
+	  <td><INPUT TYPE = CHECKBOX Name="Entry"}></td>
           {% for i in record %}
 	  <td>{{i}}</td>
           {% endfor %}
@@ -30,6 +35,15 @@
         {% endfor %}
 </tbody>
 </table>
-{% endif %}
+{% endif %} 
+
+<p>
+Questions and comments:
+<a href="mailto:jelesko@vt.edu?subject=Hello%20again">
+Send Emails</a>
+</p>
+
 </body>
-</html>
+</html> 
+
+

@@ -1,0 +1,6 @@
+# fasta35 seq.fasta db.fasta
+FASTA searches a protein or DNA sequence data bank
+ version 35.04 Mar. 8, 2009
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+

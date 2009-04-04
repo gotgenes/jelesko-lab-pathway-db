@@ -20,12 +20,15 @@ class fastaform(forms.Form):
 	number_alignment_lowest = forms.FloatField(initial = 0.1) # -F limited number of alighments based on expected number of scores, set the lowes 
 	mfoptions = [('codaa.mat', 'codaa.mat'), ('idnaa.mat', 'idnaa.mat'), ('pam250.mat', 'pam250.mat'), ('pam120.mat', 'pam120.mat'), ('BLOSUM50', 'BLOSUM50')]
 	matrix_file = forms.ChoiceField(label="Matrix File", choices = mfoptions, initial = 'BLOSUM50')
-	
+
 def fasta(request):
 	"""docstring for fasta"""
-	if request.method == 'GET':
-		f = fastaform(request.GET)
-	return render_to_response('blast_fasta/fasta.html', {'form': f, 'res': ''})
+	import os	
+	cmd = 'ls -l ~ > testingouput.txt'
+	os.system(cmd)
+	file_hanld = open('testingouput.txt')
+	res = file_hanld.read()
+	return render_to_response('blast_fasta/index.html', {'res': res})
 	 
 	
 

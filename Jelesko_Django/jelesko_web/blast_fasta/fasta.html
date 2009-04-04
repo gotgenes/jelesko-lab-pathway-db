@@ -5,6 +5,8 @@
 </head>
 <body>
 
+<h1 style="text-align:center">FASTA search</h1>
+<hr/>
 
 <form action="" method="GET">
 	<label><b>Your sequence in Fasta format:</b></label><br/>
@@ -19,6 +21,8 @@
 	{{form.matrix_file}}<br/>
 	<input type="submit" name="submit_search" value="Search">
 </form>
+
+<!-- Below shows the search result-->
 {% if res %}
 <table cellspacing="5" border="1">
 <thead>
@@ -36,6 +40,13 @@
         {% endfor %}
 </tbody>
 </table>
-{% endif %}
+{% endif %} 
+<p>
+Questions and comments:
+<a href="mailto:jelesko@vt.edu?subject=Hello%20again">
+Send Emails
+</a>
+</p>
+
 </body>
 </html>
