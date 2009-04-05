@@ -4,7 +4,7 @@ drwxr-xr-x  164 caiyizhi  staff  5576 Feb 27 23:15 Bundles
 drwx------+   7 caiyizhi  staff   238 Apr  3 15:56 Desktop
 drwxr-xr-x    4 caiyizhi  staff   136 Feb  7 18:02 Disabled Bundles
 drwxr--r--+  40 caiyizhi  staff  1360 Mar 27 20:37 Documents
-drwx------@  56 caiyizhi  staff  1904 Apr  3 18:17 Downloads
+drwx------@  57 caiyizhi  staff  1938 Apr  4 16:45 Downloads
 drwxr-xr-x@  26 caiyizhi  staff   884 Apr  3 15:58 Dropbox
 drwx------+  79 caiyizhi  staff  2686 Mar 29 19:46 Library
 drwxr-xr-x    4 caiyizhi  staff   136 Feb  7 18:04 Manual

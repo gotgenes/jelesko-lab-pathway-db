@@ -7,6 +7,8 @@ class FASTADescription(object):
         self.score = score
         self.e = e
 
+
+
 fasta_file = open ('../../sequence_data/result33.txt')
 
 line = fasta_file.readline()

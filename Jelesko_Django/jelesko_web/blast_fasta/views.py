@@ -23,13 +23,22 @@ class fastaform(forms.Form):
 
 def fasta(request):
 	"""docstring for fasta"""
-	import os	
-	cmd = 'ls -l ~ > testingouput.txt'
-	os.system(cmd)
-	file_hanld = open('testingouput.txt')
-	res = file_hanld.read()
-	return render_to_response('blast_fasta/index.html', {'res': res})
-	 
+	import os
+	import parsing_fasta	
+	my_fasta_file = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_seq.fasta"
+	sqfile = open(my_fasta_file, "w")
+	if request.method == 'GET':
+		f = fastaform(request.GET)
+		if not f.is_valid():
+			return render_to_response('blast_fasta/fasta.html', {'form': f, 'res': ''})
+		else:
+			sqfile.write(f.cleaned_data["seq"])
+			sqfile.close()
+			cmd = 'cd /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/|rm fasta_output.txt|fasta35 fasta_seq.fasta db.fasta > fasta_output.txt'
+			os.system(cmd)
+			fasta_file = open('/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output.txt')
+		res = parsing_fasta.parsing_fasta(fasta_file)
+	return render_to_response('blast_fasta/fasta.html', {'form':f, 'res': res})    
 	
 
 def blast(request):
