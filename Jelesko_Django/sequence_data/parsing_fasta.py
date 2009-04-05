@@ -1,6 +1,7 @@
 def parsing_fasta(fasta_file):
 	"""docstring for parsing_fasta"""
 	line = fasta_file.readline()
+
 	while 1: 
 		line = fasta_file.readline()
 		if line.startswith("The best scores are:"):
@@ -24,7 +25,7 @@ def parsing_fasta(fasta_file):
 		words_info = info.split()
 		bit = words_info[-2].strip()
 		e_value = words_info[-1].strip()
-		alignments.append({'gi_number':gi_number, 'accession_ref': accession_ref, 'detail':detail, 'bit': bit, 'e_value': e_value}) 
+		alignments.append((gi_number, accession_ref, detail, bit, e_value)) 
 	#	alignments.append([desc, bit, e_value])
 
 	return alignments 

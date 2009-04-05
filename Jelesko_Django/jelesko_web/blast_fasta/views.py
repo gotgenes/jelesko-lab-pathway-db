@@ -34,9 +34,9 @@ def fasta(request):
 		else:
 			sqfile.write(f.cleaned_data["seq"])
 			sqfile.close()
-			cmd = 'cd /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/|rm fasta_output.txt|fasta35 fasta_seq.fasta db.fasta > fasta_output.txt'
+			cmd = 'rm /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output.txt|fasta35 /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_seq.fasta /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta > /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output2.txt'
 			os.system(cmd)
-			fasta_file = open('/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output.txt')
+			fasta_file = open('/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output2.txt')
 		res = parsing_fasta.parsing_fasta(fasta_file)
 	return render_to_response('blast_fasta/fasta.html', {'form':f, 'res': res})    
 	
