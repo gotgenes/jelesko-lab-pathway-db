@@ -1,10 +1,10 @@
-# fasta35 fasta_seq.fasta db.fasta
+# fasta35 -q seq.fasta db.fasta
 FASTA searches a protein or DNA sequence data bank
  version 35.04 Mar. 8, 2009
 Please cite:
  W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
 
-Query: fasta_seq.fasta
+Query: seq.fasta
   1>>>gi|186511378|ref|NP_191913.3| Arabidopsis thaliana BRCA2(IV)/BRCA2A/EDA20/MEE43 (BREAST CANCER 2 LIKE 2A); pr - 1151 aa
 Library: db.fasta 2146675 residues in  5377 sequences
 
@@ -486,7 +486,7 @@ gi|184 GLKNRVGERLDEANLGDVLLYDVELMQSLVEVFLKSRDPREDDVTAKASVAKLVDGYLAE
 1151 residues in 1 query   sequences
 2146675 residues in 5377 library sequences
  Scomplib [35.04]
- start: Sat Apr  4 19:06:58 2009 done: Sat Apr  4 19:06:59 2009
+ start: Sat Apr  4 01:47:51 2009 done: Sat Apr  4 01:47:52 2009
  Total Scan time:  0.660 Total Display time:  0.180
 
 Function used was FASTA [version 35.04 Mar. 8, 2009]

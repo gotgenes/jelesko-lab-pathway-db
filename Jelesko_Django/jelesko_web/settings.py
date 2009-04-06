@@ -77,5 +77,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'jelesko_web.blast_fasta'
+    'jelesko_web.blast_fasta',
+    'django.contrib.admin'
 )

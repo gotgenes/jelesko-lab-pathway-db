@@ -1,0 +1,26 @@
+total 16
+drwxr-xr-x    5 caiyizhi  staff   170 Jan 14 05:21 Applications
+drwxr-xr-x  164 caiyizhi  staff  5576 Feb 28 00:15 Bundles
+drwx------+   7 caiyizhi  staff   238 Apr  3 16:56 Desktop
+drwxr-xr-x    4 caiyizhi  staff   136 Feb  7 19:02 Disabled Bundles
+drwxr--r--+  40 caiyizhi  staff  1360 Mar 27 21:37 Documents
+drwx------@  56 caiyizhi  staff  1904 Apr  3 19:17 Downloads
+drwxr-xr-x@  26 caiyizhi  staff   884 Apr  3 16:58 Dropbox
+drwx------+  79 caiyizhi  staff  2686 Mar 29 20:46 Library
+drwxr-xr-x    4 caiyizhi  staff   136 Feb  7 19:04 Manual
+drwx------@  13 caiyizhi  staff   442 Mar 15 11:13 Movies
+drwxr--r--+   9 caiyizhi  staff   306 Feb 27 19:33 Music
+drwxr--r--+  16 caiyizhi  staff   544 Feb 15 01:36 Pictures
+drwxr-xr-x    5 caiyizhi  staff   170 Feb  7 19:02 PlugIns
+drwxr-xr-x+   6 caiyizhi  staff   204 Feb 26  2008 Public
+drwxr-xr-x    6 caiyizhi  staff   204 Feb  7 19:02 Review
+drwxr-xr-x+  37 caiyizhi  staff  1258 Mar 24 14:57 Sites
+drwxr-xr-x   12 caiyizhi  staff   408 Feb  7 19:04 Support
+drwxr-xr-x   24 caiyizhi  staff   816 Feb  7 19:02 Themes
+drwxr-xr-x   22 caiyizhi  staff   748 Feb  7 19:02 Tools
+drwxr-xr-x    4 caiyizhi  staff   136 Feb 25 16:27 bin
+drwxr-xr-x    7 caiyizhi  staff   238 Mar 25 10:10 blast-2.2.19
+lrwxr-xr-x    1 caiyizhi  staff    34 Mar 26 13:17 class -> /Users/caiyizhi/Documents/Classes/
+drwxr-xr-x    7 caiyizhi  staff   238 Mar 24 22:26 foobar
+lrwxr-xr-x    1 caiyizhi  staff    48 Mar 26 13:15 presentation -> /Users/caiyizhi/Documents/Research/Presentation/
+drwxr-xr-x    4 caiyizhi  staff   136 Jan  4 01:38 src
