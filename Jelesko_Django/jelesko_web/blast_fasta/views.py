@@ -1,4 +1,9 @@
 # Create your views here.
+sequence_data_dir = '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/'
+
+
+
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django import forms
@@ -18,7 +23,7 @@ class fastaform(forms.Form):
 	number_sequence = forms.FloatField(initial = 10)    # -b 
 	number_alignment_highest = forms.FloatField(initial = 10)   # -E limited number of alignments base on expected number of scores, set the highest
 	number_alignment_lowest = forms.FloatField(initial = 0.1) # -F limited number of alighments based on expected number of scores, set the lowes 
-	mfoptions = [('P250', 'pam250.mat'), ('P120', 'pam120.mat'), ('BL50', 'BLOSUM50')]
+	mfoptions = [('P250', 'pam250.mat'), ('P120', 'pam120.mat'), ('BL50', 'BLOSUM50'), ('BL62', 'BLOSUM62'), ('BL80', 'BLOSUM80')]
 	matrix_file = forms.ChoiceField(label="Matrix File", choices = mfoptions, initial = 'BL50')
 
 
@@ -26,7 +31,7 @@ def fasta(request):
 	"""docstring for fasta"""
 	import os
 	import parsing_fasta	
-	my_fasta_file = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_seq.fasta"
+	my_fasta_file = sequence_data_dir + "/fasta_seq.fasta"
 	sqfile = open(my_fasta_file, "w")
 	if request.method == 'GET':
 		f = fastaform(request.GET)
@@ -48,9 +53,9 @@ def fasta(request):
 			else:
 				F = f.cleaned_data["number_alignment_lowest"]
 			s = f.cleaned_data["matrix_file"]	
-			cmd = 'rm /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output.txt|fasta35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_seq.fasta /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta > /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output2.txt'
+			cmd = 'rm '+ sequence_data_dir + '/fasta_output.txt|fasta35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + '/fasta_seq.fasta '+ sequence_data_dir+'/db.fasta > '+ sequence_data_dir + '/fasta_output2.txt'
 			os.system(cmd)
-			fasta_file = open('/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_output2.txt')
+			fasta_file = open(sequence_data_dir + '/fasta_output2.txt')
 		res = parsing_fasta.parsing_fasta(fasta_file)
 	return render_to_response('blast_fasta/fasta.html', {'form':f, 'res': res})    
 	
@@ -60,10 +65,10 @@ def blast(request):
 	from Bio.Blast import NCBIStandalone
 	from Bio.Blast import NCBIXML
 	import os
-	my_blast_dir = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/"
-	my_blast_file = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/seq.fasta"
+	my_blast_dir = sequence_data_dir
+	my_blast_file = sequence_data_dir + "/seq.fasta"
 	sqfile = open(my_blast_file, "w")
-	my_blast_db = "/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta"
+	my_blast_db = sequence_data_dir + "/db.fasta"
 	if request.method == 'GET':
 		f = blastform(request.GET)
 		if not f.is_valid():

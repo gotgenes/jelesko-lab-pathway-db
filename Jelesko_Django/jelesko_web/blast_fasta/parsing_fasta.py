@@ -9,7 +9,8 @@ def parsing_fasta(fasta_file):
 			raise TypeError("Could not find the best scores lines")
 
 	alignments = []
-	while 1: 
+	while 1:
+# for line in fasta_file: 		 
 		line = fasta_file.readline()
 		line = line.rstrip()
 		if line == "":
