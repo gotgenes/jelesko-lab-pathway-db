@@ -1,0 +1,417 @@
+# ssearch35 fasta_seq.fasta db.fasta
+SSEARCH searches a sequence data bank
+ version 35.04 Mar. 8, 2009
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+Query: fasta_seq.fasta
+  1>>>gi|79324955|ref|NP_001031562.1| Arabidopsis thaliana unknown protein [Arabidopsis - 269 aa
+Library: db.fasta 2146675 residues in  5377 sequences
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 9 library sequences
+  24     0     0:
+  26     0     0:
+  28     0     1:*
+  30    17     7:*=
+  32    35    29:===*
+  34    93    78:========*==
+  36   163   160:=================*=
+  38   245   264:============================ *
+  40   394   368:========================================*===
+  42   469   449:=================================================*===
+  44   518   496:=======================================================*==
+  46   505   505:========================================================*
+  48   467   483:==================================================== *
+  50   404   441:=============================================   *
+  52   378   388:========================================== *
+  54   317   331:====================================*
+  56   253   277:============================= *
+  58   212   227:======================== *
+  60   198   184:====================*=
+  62   164   148:================*==
+  64   122   117:============*=
+  66    76    93:========= *
+  68    64    73:========*
+  70    68    57:======*=
+  72    49    45:====*=
+  74    45    35:===*=
+  76    24    27:==*
+  78    21    21:==*
+  80    20    16:=*=
+  82    15    13:=*
+  84    11    10:=*
+  86     5     8:*
+  88     4     6:*          inset = represents 1 library sequences
+  90     3     5:*
+  92     5     4:*         :===*=
+  94     5     3:*         :==*==
+  96     1     2:*         :=*
+  98     1     2:*         :=*
+ 100     2     1:*         :*=
+ 102     1     1:*         :*
+ 104     0     1:*         :*
+ 106     0     1:*         :*
+ 108     1     0:=         *=
+ 110     1     0:=         *=
+ 112     0     0:          *
+ 114     0     0:          *
+ 116     0     0:          *
+ 118     0     0:          *
+>120     1     0:=         *=
+2146675 residues in  5377 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 7.1250+/-0.00144; mu= 6.1894+/- 0.084
+ mean_var=62.3851+/-13.733, 0's: 0 Z-trim: 1  B-trim: 162 in 1/47
+ Lambda= 0.162380
+ Kolmogorov-Smirnov  statistic: 0.0154 (N=29) at  46
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (6.0 Mar 2007)
+Parameters: BL50 matrix (15:-5), open/ext: -10/-2
+ Scan time:  0.280
+
+The best scores are:                                      s-w bits E(5377)
+gi|79324955|ref|NP_001031562.1| Arabidopsis thalia ( 269) 1755 417.3 9.2e-118
+gi|30678679|ref|NP_191966.2| Arabidopsis thaliana  ( 607)  100 29.4     1.2
+gi|18413658|ref|NP_567381.1| Arabidopsis thaliana  ( 443)   95 28.3     1.9
+gi|79325123|ref|NP_001031646.1| Arabidopsis thalia ( 205)   86 26.4     3.4
+gi|18414467|ref|NP_567468.1| Arabidopsis thaliana  ( 287)   86 26.3       5
+gi|30685055|ref|NP_849413.1| Arabidopsis thaliana  ( 339)   87 26.5     5.1
+gi|30685058|ref|NP_567597.2| Arabidopsis thaliana  ( 352)   87 26.5     5.3
+gi|22328738|ref|NP_680717.1| Arabidopsis thaliana  ( 575)   88 26.6       8
+gi|79325979|ref|NP_001031764.1| Arabidopsis thalia ( 485)   86 26.2     9.1
+gi|18417806|ref|NP_567876.1| Arabidopsis thaliana  ( 485)   86 26.2     9.1
+gi|18411410|ref|NP_567182.1| Arabidopsis thaliana  ( 140)   77 24.4     9.3
+
+>>gi|79324955|ref|NP_001031562.1| Arabidopsis thaliana u  (269 aa)
+ s-w opt: 1755  Z-score: 2213.7  bits: 417.3 E(): 9.2e-118
+Smith-Waterman score: 1755; 100.0% identity (100.0% similar) in 269 aa overlap (1-269:1-269)
+
+               10        20        30        40        50        60
+gi|793 MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNSFLSKDSTGANGLLF
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|793 MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNSFLSKDSTGANGLLF
+               10        20        30        40        50        60
+
+               70        80        90       100       110       120
+gi|793 RFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDPFDSPTYHI
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|793 RFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDPFDSPTYHI
+               70        80        90       100       110       120
+
+              130       140       150       160       170       180
+gi|793 PEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYKVFDKALKRIQDDGQVRV
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|793 PEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYKVFDKALKRIQDDGQVRV
+              130       140       150       160       170       180
+
+              190       200       210       220       230       240
+gi|793 RIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGPQGAGKVYTEMFKDKA
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|793 RIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGPQGAGKVYTEMFKDKA
+              190       200       210       220       230       240
+
+              250       260         
+gi|793 EKEWKYTYLIVEILTPSPAKLMLESYLPA
+       :::::::::::::::::::::::::::::
+gi|793 EKEWKYTYLIVEILTPSPAKLMLESYLPA
+              250       260         
+
+>>gi|30678679|ref|NP_191966.2| Arabidopsis thaliana mala  (607 aa)
+ s-w opt: 100  Z-score: 111.0  bits: 29.4 E():  1.2
+Smith-Waterman score: 100; 22.8% identity (46.9% similar) in 303 aa overlap (1-266:1-292)
+
+               10        20        30         40        50         
+gi|793 MMMMNLLRRSAIAIGRQSKSKLASFSSATQ-PCSGIPKSSKRVFSNSFLSKDS-------
+       ::  :.   :  : . .....   ::.:   ::  . : .  .. . ...::.       
+gi|306 MMWKNIAGLSKAAAAARTHGSRRCFSTAIPGPCI-VHKRGADILHDPWFNKDTGFPLTER
+               10        20        30         40        50         
+
+               60        70        80        90       100          
+gi|793 --TGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAK-KEVTTV
+          :  :::     :..  :..   . :.:  : ::. . :. :: :    :: . .. .
+gi|306 DRLGIRGLL----PPRVMTCVQQCDRFIES--F-RSLENNTKGEPENVVALAKWRMLNRL
+      60            70        80           90       100       110  
+
+     110       120             130       140             150       
+gi|793 EDPFDSPTYHI------PEKPVTFTEGASYSLVILAGL-----GVA-GAAGYGVFKELIF
+       .:  ..  :..         :. .:  ..      .::     :.  .:   : .  .:.
+gi|306 HDRNETLYYRVLIDNIKDFAPIIYTPTVGLVCQNYSGLYRRPRGMYFSAKDKGEMMSMIY
+            120       130       140       150       160       170  
+
+          160       170       180        190       200             
+gi|793 Q---PKEYKVFDKALKRIQDDGQVRVR-IGSPIKGYGQETRNRAARQRIPNRVF------
+       .   :.   .     .::   :.. :. :: ::   :.     ::    :.::.      
+gi|306 NWPAPQVDMIVITDGSRILGLGDLGVQGIGIPI---GKLDMYVAAAGINPQRVLPIMLDV
+            180       190       200          210       220         
+
+        210       220       230          240       250       260   
+gi|793 -TDEDGVEHVEVNFYIRGPQGAGKVYTEM---FKDKAEKEWKYTYLIVEILTPSPAKLML
+        :... . . .. . .: :.  :. : :.   : . :  .:  . .  : .  . :   :
+gi|306 GTNNEKLLQNDLYLGVRQPRLEGEEYLEIIDEFMEAAFTRWPKAVVQFEDFQAKWAFGTL
+     230       240       250       260       270       280         
+
+                                                                   
+gi|793 ESYLPA                                                      
+       : :                                                         
+gi|306 ERYRKKFCMFNDDVQGTAGVALAGLLGTVRAQGRPISDFVNQKIVVVGAGSAGLGVTKMA
+     290       300       310       320       330       340         
+
+>>gi|18413658|ref|NP_567381.1| Arabidopsis thaliana Ran-  (443 aa)
+ s-w opt:  95  Z-score: 107.5  bits: 28.3 E():  1.9
+Smith-Waterman score: 95; 27.4% identity (57.3% similar) in 117 aa overlap (15-123:184-294)
+
+                               10        20        30        40    
+gi|793                 MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSK-RVF
+                                     :  :.:. .::::.     :  :::.  .:
+gi|184 IFSNNQSSDFSSSQSGFFSSQSGAFSSSPSGLISNSQTGSFSSGQ---FGTTKSSQPSLF
+           160       170       180       190          200       210
+
+            50        60        70        80        90             
+gi|793 SNSFLSKDSTGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQ-----
+       :.:  .  :..  :    : . ...: ....  ...:. : .. .:. :   :.:     
+gi|184 SGSQAGAISNSQPGT---FSSSHSGITSNSQTGSFSSGQFGQTKSSQPSLLSGSQAGAIS
+              220          230       240       250       260       
+
+      100       110         120       130       140       150      
+gi|793 QNKAKKEVTTVEDPFDS--PTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELI
+       .:. . . .. ..:: :  :   :: :                                 
+gi|184 SNQPSFQFSNSQSPFTSAVPPVSIPAKQDHSDDADGGDEQSQPSSPSVKKTEEKGITVVH
+       270       280       290       300       310       320       
+
+>>gi|79325123|ref|NP_001031646.1| Arabidopsis thaliana p  (205 aa)
+ s-w opt:  86  Z-score: 103.0  bits: 26.4 E():  3.4
+Smith-Waterman score: 86; 24.3% identity (50.9% similar) in 169 aa overlap (83-238:30-192)
+
+             60        70        80        90       100       110  
+gi|793 TGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDP
+                                     .  .: . . : :   ::  . . . ..  
+gi|793  MMMGLLMSGLIVSQANLPTAFASTPVFREYIDTFDGYSFKYP---QNWIQVRGAGADIF
+                10        20        30        40           50      
+
+            120       130       140       150         160          
+gi|793 FDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELI--FQPKEYKVFDKA--
+       : .:.    .  : :.  .: . . :  ::    .:  :... .  :.  .  :  .:  
+gi|793 FRDPVVLDENLSVEFSSPSSSNYTSLEDLGSPEEVGKRVLRQYLTEFMSTRLGVKRQANI
+         60        70        80        90       100       110      
+
+         170       180       190             200       210         
+gi|793 ---LKRIQDDGQVRVRIGSPIKGYGQET------RNRAARQRIPNRVFTDEDGVEHVEVN
+           .:. :::..  ..   ::.:....      ..:.:: .  :: .    :::. .. 
+gi|793 LSTSSRVADDGKLYYQVEVNIKSYANNNELAVMPQDRVARLEW-NRRYLAVLGVENDRL-
+        120       130       140       150        160       170     
+
+     220       230       240       250       260         
+gi|793 FYIRGPQGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA
+       . ::  :   ::. :  ::                               
+gi|793 YSIRL-QTPEKVFLEEEKDLRRVMDSFRVEKI                  
+           180       190       200                       
+
+>>gi|18414467|ref|NP_567468.1| Arabidopsis thaliana phot  (287 aa)
+ s-w opt:  86  Z-score: 100.0  bits: 26.3 E():    5
+Smith-Waterman score: 86; 24.3% identity (50.9% similar) in 169 aa overlap (83-238:112-274)
+
+             60        70        80        90       100       110  
+gi|793 TGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDP
+                                     .  .: . . : :   ::  . . . ..  
+gi|184 SMMMGLLMSGLIVSQANLPTAFASTPVFREYIDTFDGYSFKYP---QNWIQVRGAGADIF
+              90       100       110       120          130        
+
+            120       130       140       150         160          
+gi|793 FDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELI--FQPKEYKVFDKA--
+       : .:.    .  : :.  .: . . :  ::    .:  :... .  :.  .  :  .:  
+gi|184 FRDPVVLDENLSVEFSSPSSSNYTSLEDLGSPEEVGKRVLRQYLTEFMSTRLGVKRQANI
+      140       150       160       170       180       190        
+
+         170       180       190             200       210         
+gi|793 ---LKRIQDDGQVRVRIGSPIKGYGQET------RNRAARQRIPNRVFTDEDGVEHVEVN
+           .:. :::..  ..   ::.:....      ..:.:: .  :: .    :::. .. 
+gi|184 LSTSSRVADDGKLYYQVEVNIKSYANNNELAVMPQDRVARLEW-NRRYLAVLGVENDRL-
+      200       210       220       230       240        250       
+
+     220       230       240       250       260         
+gi|793 FYIRGPQGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA
+       . ::  :   ::. :  ::                               
+gi|184 YSIRL-QTPEKVFLEEEKDLRRVMDSFRVEKI                  
+        260        270       280                         
+
+>>gi|30685055|ref|NP_849413.1| Arabidopsis thaliana unkn  (339 aa)
+ s-w opt:  87  Z-score: 99.8  bits: 26.5 E():  5.1
+Smith-Waterman score: 87; 21.4% identity (49.1% similar) in 234 aa overlap (26-249:60-273)
+
+                    10        20        30        40         50    
+gi|793      MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSK-RVFSNSFLSKD---
+                                     .. :.  .:.::. . :  ...  ..:   
+gi|306 ATNEDTTTTTVITTTSIAGRGFNGGSCTTTTNNTSSLDGVPKGFRFRSTQQQQQQQDPSP
+      30        40        50        60        70        80         
+
+              60        70        80        90       100       110 
+gi|793 STGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVED
+       :  .. .:... . . :  ..:. .. ..   : . .: .: .   :.:: ...     .
+gi|306 SRRGGDVLLQWGQRKRSRASRAEIRSTTTITTTADDSSSSSGQGKIQSNKPQRRSM---N
+      90       100       110       120       130       140         
+
+             120       130       140       150       160           
+gi|793 PFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPK--EYKVFDKAL
+       :   :    :  :  :.           : ..    :. . :: .:  .  : .  . . 
+gi|306 PSMPPP---PPAPPIFS-----------GRSTNPRNGFVIGKESFFPSRNLEDRSANGSP
+        150          160                  170       180       190  
+
+     170       180           190       200       210       220     
+gi|793 KRIQDDGQVRVRIG----SPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGP
+       .: . .:..  : :    :: .    : :. .  ::  .  : :..  .: .::      
+gi|306 SRNNINGRMISRSGGSKRSPPSPDQIEKRSSVRDQR--QNGF-DHQQQQHQRVNRSESTA
+            200       210       220         230        240         
+
+         230       240       250       260                         
+gi|793 QGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA                
+       ::  .:  .  ..:: .::   :.                                    
+gi|306 QGHQEVEINGEREKATQEWPRIYIALSRKEKEEDFLVMKGTKLPHRPRKRAKNIDKALQF
+     250       260       270       280       290       300         
+
+>>gi|30685058|ref|NP_567597.2| Arabidopsis thaliana unkn  (352 aa)
+ s-w opt:  87  Z-score: 99.4  bits: 26.5 E():  5.3
+Smith-Waterman score: 87; 21.4% identity (49.1% similar) in 234 aa overlap (26-249:60-273)
+
+                    10        20        30        40         50    
+gi|793      MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSK-RVFSNSFLSKD---
+                                     .. :.  .:.::. . :  ...  ..:   
+gi|306 ATNEDTTTTTVITTTSIAGRGFNGGSCTTTTNNTSSLDGVPKGFRFRSTQQQQQQQDPSP
+      30        40        50        60        70        80         
+
+              60        70        80        90       100       110 
+gi|793 STGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVED
+       :  .. .:... . . :  ..:. .. ..   : . .: .: .   :.:: ...     .
+gi|306 SRRGGDVLLQWGQRKRSRASRAEIRSTTTITTTADDSSSSSGQGKIQSNKPQRRSM---N
+      90       100       110       120       130       140         
+
+             120       130       140       150       160           
+gi|793 PFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPK--EYKVFDKAL
+       :   :    :  :  :.           : ..    :. . :: .:  .  : .  . . 
+gi|306 PSMPPP---PPAPPIFS-----------GRSTNPRNGFVIGKESFFPSRNLEDRSANGSP
+        150          160                  170       180       190  
+
+     170       180           190       200       210       220     
+gi|793 KRIQDDGQVRVRIG----SPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGP
+       .: . .:..  : :    :: .    : :. .  ::  .  : :..  .: .::      
+gi|306 SRNNINGRMISRSGGSKRSPPSPDQIEKRSSVRDQR--QNGF-DHQQQQHQRVNRSESTA
+            200       210       220         230        240         
+
+         230       240       250       260                         
+gi|793 QGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA                
+       ::  .:  .  ..:: .::   :.                                    
+gi|306 QGHQEVEINGEREKATQEWPRIYIALSRKEKEEDFLVMKGTKLPHRPRKRAKNIDKALQF
+     250       260       270       280       290       300         
+
+>>gi|22328738|ref|NP_680717.1| Arabidopsis thaliana pent  (575 aa)
+ s-w opt:  88  Z-score: 96.3  bits: 26.6 E():    8
+Smith-Waterman score: 88; 24.8% identity (56.8% similar) in 125 aa overlap (129-250:384-505)
+
+      100       110       120       130       140       150        
+gi|793 QNKAKKEVTTVEDPFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQ
+                                     : : ..   :  :.  .::::  . ..  .
+gi|223 ALKLIRSMPFRPHAAVFGTLLGACRVHKNVELAEFAAEKLLQLNSQNAAGYVQLANIYAS
+           360       370       380       390       400       410   
+
+      160       170       180        190        200       210      
+gi|793 PKEYKVFDKALKRIQDDGQVRV-RIGSPIKGYGQ-ETRNRAARQRIPNRVFTDEDGVEHV
+        ....   .. ::..... :.: :.  :  ::.  : ::.. . :  .:.  . :.. : 
+gi|223 KNRWEDVARVRKRMKESNVVKVERVKVP--GYSWIEIRNKVHHFRSSDRIHPELDSI-HK
+           420       430       440         450       460        470
+
+        220        230       240       250       260               
+gi|793 EVNFYIRGPQGAG-KVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA      
+       ...   .  . :: :   :.   ..:.: :   :.                         
+gi|223 KLKELEKKMKLAGYKPELEFALHNVEEEQKEKLLLWHSEKLAVAFGCIKLPQGSQIQVFK
+              480       490       500       510       520       530
+
+gi|223 NLRICGDCHKAIKFISEIEKREIIVRDTTRFHHFKDGSCSCGDYW
+              540       550       560       570     
+
+>>gi|79325979|ref|NP_001031764.1| Arabidopsis thaliana u  (485 aa)
+ s-w opt:  86  Z-score: 95.3  bits: 26.2 E():  9.1
+Smith-Waterman score: 86; 25.4% identity (53.7% similar) in 134 aa overlap (17-147:194-317)
+
+                             10        20        30        40      
+gi|793               MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNS
+                                     ..::  .:  .::.  .: : .  . .  .
+gi|793 TSHDDYGLTSDVNVGEMSNTAVMEARKWLEEKKSGSSSKYKATEDGAGSPVDVAKSYMRA
+           170       180       190       200       210       220   
+
+         50        60        70        80        90         100    
+gi|793 FLSKDSTGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTS--KEPGNQQNKAKK
+        :   : .::.:   ::.: .:  ... :   ... :. :  .: :  ..  : :.. .:
+gi|793 RLPWGSPAANNL--DFRSP-SSARVQGTPLPYSAGNFSSSKLKRKSGSNQSWNIQDEIRK
+           230         240        250       260       270       280
+
+           110       120       130       140       150       160   
+gi|793 -EVTTVEDPFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYK
+        .. ..:. . ::.     .:       .::  .::   . : :                
+gi|793 VRAKATEEMLKSPSSVASLEP-------KYSPYVLATDMLKGNASSLNADGAVRNEQSRA
+              290       300              310       320       330   
+
+           170       180       190       200       210       220   
+gi|793 VFDKALKRIQDDGQVRVRIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIR
+                                                                   
+gi|793 LPNSAIPTSEHNQTTEANQAVKETGVLHTRSRGVGLEETFISTQGVKPSEDTNTAPQSGT
+           340       350       360       370       380       390   
+
+>>gi|18417806|ref|NP_567876.1| Arabidopsis thaliana unkn  (485 aa)
+ s-w opt:  86  Z-score: 95.3  bits: 26.2 E():  9.1
+Smith-Waterman score: 86; 25.4% identity (53.7% similar) in 134 aa overlap (17-147:194-317)
+
+                             10        20        30        40      
+gi|793               MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNS
+                                     ..::  .:  .::.  .: : .  . .  .
+gi|184 TSHDDYGLTSDVNVGEMSNTAVMEARKWLEEKKSGSSSKYKATEDGAGSPVDVAKSYMRA
+           170       180       190       200       210       220   
+
+         50        60        70        80        90         100    
+gi|793 FLSKDSTGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTS--KEPGNQQNKAKK
+        :   : .::.:   ::.: .:  ... :   ... :. :  .: :  ..  : :.. .:
+gi|184 RLPWGSPAANNL--DFRSP-SSARVQGTPLPYSAGNFSSSKLKRKSGSNQSWNIQDEIRK
+           230         240        250       260       270       280
+
+           110       120       130       140       150       160   
+gi|793 -EVTTVEDPFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYK
+        .. ..:. . ::.     .:       .::  .::   . : :                
+gi|184 VRAKATEEMLKSPSSVASLEP-------KYSPYVLATDMLKGNASSLNADGAVRNEQSRA
+              290       300              310       320       330   
+
+           170       180       190       200       210       220   
+gi|793 VFDKALKRIQDDGQVRVRIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIR
+                                                                   
+gi|184 LPNSAIPTSEHNQTTEANQAVKETGVLHTRSRGVGLEETFISTQGVKPSEDTNTAPQSGT
+           340       350       360       370       380       390   
+
+>>gi|18411410|ref|NP_567182.1| Arabidopsis thaliana acti  (140 aa)
+ s-w opt:  77  Z-score: 95.1  bits: 24.4 E():  9.3
+Smith-Waterman score: 77; 22.9% identity (58.3% similar) in 96 aa overlap (177-264:40-132)
+
+        150       160       170       180        190          200  
+gi|793 AGYGVFKELIFQPKEYKVFDKALKRIQDDGQVRV-RIGSPIKGYGQETR---NRAARQRI
+                                     ::.. ..:.: . : . :    .   :  .
+gi|184 VNDECKIKFLELKAKRTYRFIVFKIDEKAQQVQIEKLGNPEETYDDFTSSIPDDECRYAV
+      10        20        30        40        50        60         
+
+            210       220       230           240       250        
+gi|793 PNRVFTDEDGVEHVEVNFYIRGPQGAGKVYTEMF----KDKAEKEWKYTYLIVEILTPSP
+        .  :: ::. .. .. :.:     ...: ..:.    ::. ..: .   . ::. . .:
+gi|184 YDFDFTTEDNCQKSKI-FFIAWSPDTSRVRSKMLYASSKDRFKREME--GIQVELQATDP
+      70        80         90       100       110         120      
+
+      260            
+gi|793 AKLMLESYLPA   
+       ... :.        
+gi|184 SEMSLDIIKGRLNL
+        130       140
+
+
+
+269 residues in 1 query   sequences
+2146675 residues in 5377 library sequences
+ Scomplib [35.04]
+ start: Thu Apr  9 12:10:56 2009 done: Thu Apr  9 12:10:56 2009
+ Total Scan time:  0.280 Total Display time:  0.030
+
+Function used was SSEARCH [version 35.04 Mar. 8, 2009]

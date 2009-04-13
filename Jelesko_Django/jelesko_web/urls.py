@@ -15,5 +15,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # (r'^admin/(.*)', admin.site.root),
     (r'^blast/$', 'jelesko_web.blast_fasta.views.blast'), 
-    (r'^fasta/$', 'jelesko_web.blast_fasta.views.fasta')
+    (r'^fasta/$', 'jelesko_web.blast_fasta.views.fasta'),
+    (r'^ssearch/$', 'jelesko_web.blast_fasta.views.ssearch')
 )

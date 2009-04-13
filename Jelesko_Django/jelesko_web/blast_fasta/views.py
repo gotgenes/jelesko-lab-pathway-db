@@ -24,7 +24,9 @@ class fastaform(forms.Form):
 	number_alignment_highest = forms.FloatField(initial = 10)   # -E limited number of alignments base on expected number of scores, set the highest
 	number_alignment_lowest = forms.FloatField(initial = 0.1) # -F limited number of alighments based on expected number of scores, set the lowes 
 	mfoptions = [('P250', 'pam250.mat'), ('P120', 'pam120.mat'), ('BL50', 'BLOSUM50'), ('BL62', 'BLOSUM62'), ('BL80', 'BLOSUM80')]
-	matrix_file = forms.ChoiceField(label="Matrix File", choices = mfoptions, initial = 'BL50')
+	matrix_file = forms.ChoiceField(label="Matrix File", choices = mfoptions, initial = 'BLOSUM50') 
+	dboptions = [('/Users/caiyizhi/Desktop/db.fasta', 'Complete DB'), ('/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta', 'Sample DB')]
+	database_option = forms.ChoiceField(label="Database", choices = dboptions, initial = 'Sample DB')
 
 
 def fasta(request):
@@ -52,13 +54,47 @@ def fasta(request):
 				F = 0
 			else:
 				F = f.cleaned_data["number_alignment_lowest"]
-			s = f.cleaned_data["matrix_file"]	
-			cmd = 'rm '+ sequence_data_dir + '/fasta_output.txt|fasta35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + '/fasta_seq.fasta '+ sequence_data_dir+'/db.fasta > '+ sequence_data_dir + '/fasta_output2.txt'
+			s = f.cleaned_data["matrix_file"]
+			db = f.cleaned_data["database_option"]	
+			cmd = 'fasta35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + 'fasta_seq.fasta '+ str(db) +' > '+ sequence_data_dir + 'fasta_output.txt'
 			os.system(cmd)
-			fasta_file = open(sequence_data_dir + '/fasta_output2.txt')
+			fasta_file = open(sequence_data_dir + 'fasta_output.txt')
 		res = parsing_fasta.parsing_fasta(fasta_file)
 	return render_to_response('blast_fasta/fasta.html', {'form':f, 'res': res})    
 	
+def ssearch(request):
+	"""docstring for fasta"""
+	import os
+	import parsing_fasta	
+	my_fasta_file = sequence_data_dir + "/ssearch_seq.fasta"
+	sqfile = open(my_fasta_file, "w")
+	if request.method == 'GET':
+		f = fastaform(request.GET)
+		if not f.is_valid():
+			return render_to_response('blast_fasta/ssearch.html', {'form': f, 'res': ''})
+		else:
+			sqfile.write(f.cleaned_data["seq"])
+			sqfile.close()
+			if not f.cleaned_data["number_sequence"]:
+				b = 10
+			else:
+				b = f.cleaned_data["number_sequence"]
+			if not f.cleaned_data["number_alignment_highest"]:
+				E = 10
+			else:
+				E = f.cleaned_data["number_alignment_highest"]
+			if not f.cleaned_data["number_alignment_lowest"]:
+				F = 0
+			else:
+				F = f.cleaned_data["number_alignment_lowest"]
+			s = f.cleaned_data["matrix_file"]	
+			cmd = 'rm '+ sequence_data_dir + '/fasta_output.txt|ssearch35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + '/ssearch_seq.fasta '+ sequence_data_dir+'/db.fasta > '+ sequence_data_dir + '/ssearch_output.txt'
+			os.system(cmd)
+			fasta_file = open(sequence_data_dir + '/ssearch_output.txt')
+		res = parsing_fasta.parsing_fasta(fasta_file)
+	return render_to_response('blast_fasta/ssearch.html', {'form':f, 'res': res})
+
+
 
 def blast(request):
 	"""docstring for blast"""
