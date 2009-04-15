@@ -33,7 +33,8 @@ class fastaform(forms.Form):
 def fasta(request):
 	"""docstring for fasta"""
 	import os
-	import parsing_fasta2	
+	import parsing_fasta2
+	import time	
 	my_fasta_file = sequence_data_dir + "/fasta_seq.fasta"
 	sqfile = open(my_fasta_file, "w")
 	if request.method == 'GET':
@@ -58,10 +59,13 @@ def fasta(request):
 			s = f.cleaned_data["matrix_file"]
 			db = f.cleaned_data["database_option"]	
 			cmd = 'fasta35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + 'fasta_seq.fasta '+ str(db) +' > '+ sequence_data_dir + 'fasta_output.txt'
+			start = time.clock()
 			os.system(cmd)
+			end = time.clock()
+			duration = end - start
 			fasta_file = open(sequence_data_dir + 'fasta_output.txt')
 		res = parsing_fasta2.parsing_fasta(fasta_file)
-	return render_to_response('blast_fasta/fasta.html', {'form':f, 'res': res})    
+	return render_to_response('blast_fasta/fasta.html', {'form':f, 'res': res, 'duration':duration})    
 	
 def ssearch(request):
 	"""docstring for fasta"""
