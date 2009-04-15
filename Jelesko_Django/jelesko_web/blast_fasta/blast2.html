@@ -21,15 +21,15 @@
 {% if res %}
 <table cellspacing="5" border="1">
 <thead>
-	<tr><th>Check</th><th>GI</th><th>E-value</th></tr>
+	<tr><th>Check</th><th>GI</th><th>E-value</th><th>Accession</th><th>Genus_species</th><th>Annotation</th><th>Download_date</th></tr>
 </thead>
 <tbody>
         {% for record in res %}
         <tr>                   
 	  <td><INPUT TYPE = CHECKBOX Name="Entry"}></td>
-          {% for i in record %}
-	  <td>{{i}}</td>
-          {% endfor %}
+	          {% for i in record %}
+		  <td>{{i}}</td>
+	          {% endfor %}
         </tr>
         {% endfor %}
 </tbody>

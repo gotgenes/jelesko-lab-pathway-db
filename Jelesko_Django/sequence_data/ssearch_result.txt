@@ -1,417 +1,953 @@
-# ssearch35 fasta_seq.fasta db.fasta
+# ssearch35 seq.fasta db.fasta
 SSEARCH searches a sequence data bank
  version 35.04 Mar. 8, 2009
 Please cite:
  T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
  W.R. Pearson (1991) Genomics 11:635-650
 
-Query: fasta_seq.fasta
-  1>>>gi|79324955|ref|NP_001031562.1| Arabidopsis thaliana unknown protein [Arabidopsis - 269 aa
-Library: db.fasta 2146675 residues in  5377 sequences
+Query: seq.fasta
+  1>>>gi|186511378|ref|NP_191913.3| Arabidopsis thaliana BRCA2(IV)/BRCA2A/EDA20/MEE43 (BREAST CANCER 2 LIKE 2 - 1202 aa
+Library: db.fasta 3315795 residues in  8964 sequences
 
        opt      E()
-< 20     0     0:
-  22     0     0:           one = represents 9 library sequences
+< 20     1     0:=
+  22     0     0:           one = represents 15 library sequences
   24     0     0:
-  26     0     0:
-  28     0     1:*
-  30    17     7:*=
-  32    35    29:===*
-  34    93    78:========*==
-  36   163   160:=================*=
-  38   245   264:============================ *
-  40   394   368:========================================*===
-  42   469   449:=================================================*===
-  44   518   496:=======================================================*==
-  46   505   505:========================================================*
-  48   467   483:==================================================== *
-  50   404   441:=============================================   *
-  52   378   388:========================================== *
-  54   317   331:====================================*
-  56   253   277:============================= *
-  58   212   227:======================== *
-  60   198   184:====================*=
-  62   164   148:================*==
-  64   122   117:============*=
-  66    76    93:========= *
-  68    64    73:========*
-  70    68    57:======*=
-  72    49    45:====*=
-  74    45    35:===*=
-  76    24    27:==*
-  78    21    21:==*
-  80    20    16:=*=
-  82    15    13:=*
-  84    11    10:=*
-  86     5     8:*
-  88     4     6:*          inset = represents 1 library sequences
-  90     3     5:*
-  92     5     4:*         :===*=
-  94     5     3:*         :==*==
-  96     1     2:*         :=*
-  98     1     2:*         :=*
- 100     2     1:*         :*=
- 102     1     1:*         :*
- 104     0     1:*         :*
- 106     0     1:*         :*
- 108     1     0:=         *=
- 110     1     0:=         *=
- 112     0     0:          *
- 114     0     0:          *
+  26     3     0:=
+  28    14     2:*
+  30    33    12:*==
+  32    47    48:===*
+  34   145   129:========*=
+  36   287   266:=================*==
+  38   398   439:===========================  *
+  40   530   613:====================================    *
+  42   657   749:============================================     *
+  44   802   827:====================================================== *
+  46   842   842:========================================================*
+  48   825   806:=====================================================*=
+  50   795   736:=================================================*===
+  52   710   647:===========================================*====
+  54   572   552:====================================*==
+  56   446   461:==============================*
+  58   422   379:=========================*===
+  60   296   307:====================*
+  62   257   246:================*=
+  64   188   196:=============*
+  66   144   155:==========*
+  68   111   122:========*
+  70    86    95:======*
+  72    87    74:====*=
+  74    50    58:===*
+  76    43    45:==*
+  78    45    35:==*
+  80    24    27:=*
+  82    23    21:=*
+  84    14    17:=*
+  86    15    13:*
+  88     9    10:*          inset = represents 1 library sequences
+  90     8     8:*
+  92     8     6:*         :=====*==
+  94     5     5:*         :====*
+  96     3     4:*         :===*
+  98     2     3:*         :==*
+ 100     3     2:*         :=*=
+ 102     3     2:*         :=*=
+ 104     1     1:*         :*
+ 106     1     1:*         :*
+ 108     1     1:*         :*
+ 110     4     1:*         :*===
+ 112     1     0:=         *=
+ 114     1     0:=         *=
  116     0     0:          *
  118     0     0:          *
->120     1     0:=         *=
-2146675 residues in  5377 sequences
-Statistics:  Expectation_n fit: rho(ln(x))= 7.1250+/-0.00144; mu= 6.1894+/- 0.084
- mean_var=62.3851+/-13.733, 0's: 0 Z-trim: 1  B-trim: 162 in 1/47
- Lambda= 0.162380
- Kolmogorov-Smirnov  statistic: 0.0154 (N=29) at  46
+>120     2     0:=         *==
+3315795 residues in  8964 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 9.9585+/-0.00093; mu= 0.0876+/- 0.053
+ mean_var=73.5222+/-16.069, 0's: 0 Z-trim: 2  B-trim: 140 in 2/46
+ Lambda= 0.149577
+ Kolmogorov-Smirnov  statistic: 0.0190 (N=29) at  44
 Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (6.0 Mar 2007)
 Parameters: BL50 matrix (15:-5), open/ext: -10/-2
- Scan time:  0.280
+ Scan time:  1.400
 
-The best scores are:                                      s-w bits E(5377)
-gi|79324955|ref|NP_001031562.1| Arabidopsis thalia ( 269) 1755 417.3 9.2e-118
-gi|30678679|ref|NP_191966.2| Arabidopsis thaliana  ( 607)  100 29.4     1.2
-gi|18413658|ref|NP_567381.1| Arabidopsis thaliana  ( 443)   95 28.3     1.9
-gi|79325123|ref|NP_001031646.1| Arabidopsis thalia ( 205)   86 26.4     3.4
-gi|18414467|ref|NP_567468.1| Arabidopsis thaliana  ( 287)   86 26.3       5
-gi|30685055|ref|NP_849413.1| Arabidopsis thaliana  ( 339)   87 26.5     5.1
-gi|30685058|ref|NP_567597.2| Arabidopsis thaliana  ( 352)   87 26.5     5.3
-gi|22328738|ref|NP_680717.1| Arabidopsis thaliana  ( 575)   88 26.6       8
-gi|79325979|ref|NP_001031764.1| Arabidopsis thalia ( 485)   86 26.2     9.1
-gi|18417806|ref|NP_567876.1| Arabidopsis thaliana  ( 485)   86 26.2     9.1
-gi|18411410|ref|NP_567182.1| Arabidopsis thaliana  ( 140)   77 24.4     9.3
+The best scores are:                                      s-w bits E(8964)
+gi|186511378                                       (1151) 7536 1632.3       0
+gi|145339871                                       (1047)  129 34.0    0.67
+gi|42523564                                        ( 333)  114 31.5     1.1
+gi|186515528                                       ( 727)  119 32.1     1.7
+gi|79324957                                        ( 302)  109 30.5     2.1
+gi|18411286                                        ( 302)  109 30.5     2.1
+gi|42524143                                        ( 924)  120 32.1     2.1
+gi|22329097                                        ( 837)  119 32.0     2.1
+gi|79480107                                        ( 941)  118 31.7       3
+gi|22328931                                        ( 586)  112 30.7     3.6
+gi|42524400                                        (1009)  115 31.0     5.1
+gi|42523102                                        ( 765)  112 30.5     5.3
+gi|15235727                                        ( 354)  104 29.3     5.6
+gi|42567389                                        ( 886)  113 30.6     5.7
+gi|42524665                                        ( 367)  102 28.9       8
+gi|15235571                                        ( 250)   98 28.3     8.2
+gi|79325003                                        ( 250)   98 28.3     8.2
+gi|42523126                                        (2828)  121 31.5     9.7
 
->>gi|79324955|ref|NP_001031562.1| Arabidopsis thaliana u  (269 aa)
- s-w opt: 1755  Z-score: 2213.7  bits: 417.3 E(): 9.2e-118
-Smith-Waterman score: 1755; 100.0% identity (100.0% similar) in 269 aa overlap (1-269:1-269)
+>>gi|186511378                                            (1151 aa)
+ s-w opt: 7536  Z-score: 8756.9  bits: 1632.3 E():    0
+Smith-Waterman score: 7536; 100.0% identity (100.0% similar) in 1151 aa overlap (52-1202:1-1151)
 
-               10        20        30        40        50        60
-gi|793 MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNSFLSKDSTGANGLLF
+              30        40        50        60        70        80 
+gi|186 DDNABINDINGARABIDKPSISTHALIANAMSTWQLFPDSSGDGFRWEVAGRILQSVSDS
+                                     ::::::::::::::::::::::::::::::
+gi|186                               MSTWQLFPDSSGDGFRWEVAGRILQSVSDS
+                                             10        20        30
+
+              90       100       110       120       130       140 
+gi|186 TPTKALESTAPLPSMADLLLQGCSKLIAREEAMPGEIPMFRTGLGKSVVLKESSIAKAKS
        ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-gi|793 MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNSFLSKDSTGANGLLF
-               10        20        30        40        50        60
+gi|186 TPTKALESTAPLPSMADLLLQGCSKLIAREEAMPGEIPMFRTGLGKSVVLKESSIAKAKS
+               40        50        60        70        80        90
 
-               70        80        90       100       110       120
-gi|793 RFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDPFDSPTYHI
+             150       160       170       180       190       200 
+gi|186 ILAEKVTYSDLRNTNCSIPQMRQVDTAETLPMFRTASGKSVPLKESSIAKAMSILGSDKI
        ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-gi|793 RFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDPFDSPTYHI
-               70        80        90       100       110       120
+gi|186 ILAEKVTYSDLRNTNCSIPQMRQVDTAETLPMFRTASGKSVPLKESSIAKAMSILGSDKI
+              100       110       120       130       140       150
 
-              130       140       150       160       170       180
-gi|793 PEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYKVFDKALKRIQDDGQVRV
+             210       220       230       240       250       260 
+gi|186 IDSDNVLPRESGFGVSNSLFQTASNKKVNVSSAGLARAKALLGLEEDDLNGFNHVNQSSS
        ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-gi|793 PEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYKVFDKALKRIQDDGQVRV
-              130       140       150       160       170       180
+gi|186 IDSDNVLPRESGFGVSNSLFQTASNKKVNVSSAGLARAKALLGLEEDDLNGFNHVNQSSS
+              160       170       180       190       200       210
 
-              190       200       210       220       230       240
-gi|793 RIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGPQGAGKVYTEMFKDKA
+             270       280       290       300       310       320 
+gi|186 SSQQHGWSGLKTHEEFDATVVKHHSGTPGQYEDYVSGKRSEVLNPSLKVPPTKFQTAGGK
        ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-gi|793 RIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGPQGAGKVYTEMFKDKA
-              190       200       210       220       230       240
+gi|186 SSQQHGWSGLKTHEEFDATVVKHHSGTPGQYEDYVSGKRSEVLNPSLKVPPTKFQTAGGK
+              220       230       240       250       260       270
 
-              250       260         
-gi|793 EKEWKYTYLIVEILTPSPAKLMLESYLPA
-       :::::::::::::::::::::::::::::
-gi|793 EKEWKYTYLIVEILTPSPAKLMLESYLPA
-              250       260         
+             330       340       350       360       370       380 
+gi|186 SLSVSAEALKRARNLLGDPELGSFFDDVAGGDQFFTPEKDERLSDIAINNGSANRGYIAH
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 SLSVSAEALKRARNLLGDPELGSFFDDVAGGDQFFTPEKDERLSDIAINNGSANRGYIAH
+              280       290       300       310       320       330
 
->>gi|30678679|ref|NP_191966.2| Arabidopsis thaliana mala  (607 aa)
- s-w opt: 100  Z-score: 111.0  bits: 29.4 E():  1.2
-Smith-Waterman score: 100; 22.8% identity (46.9% similar) in 303 aa overlap (1-266:1-292)
+             390       400       410       420       430       440 
+gi|186 EEKTSNKHTPNSFVSPLWSSSKQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLS
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 EEKTSNKHTPNSFVSPLWSSSKQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLS
+              340       350       360       370       380       390
 
-               10        20        30         40        50         
-gi|793 MMMMNLLRRSAIAIGRQSKSKLASFSSATQ-PCSGIPKSSKRVFSNSFLSKDS-------
-       ::  :.   :  : . .....   ::.:   ::  . : .  .. . ...::.       
-gi|306 MMWKNIAGLSKAAAAARTHGSRRCFSTAIPGPCI-VHKRGADILHDPWFNKDTGFPLTER
-               10        20        30         40        50         
+             450       460       470       480       490       500 
+gi|186 NNRSLASDMAVNNSKVNGFIPRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGK
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 NNRSLASDMAVNNSKVNGFIPRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGK
+              400       410       420       430       440       450
 
-               60        70        80        90       100          
-gi|793 --TGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAK-KEVTTV
-          :  :::     :..  :..   . :.:  : ::. . :. :: :    :: . .. .
-gi|306 DRLGIRGLL----PPRVMTCVQQCDRFIES--F-RSLENNTKGEPENVVALAKWRMLNRL
-      60            70        80           90       100       110  
+             510       520       530       540       550       560 
+gi|186 TVSVSPFKRPRISSFKTPSKKHALQASSGLSVVSCDTLTSKKVLSTRYPEKSPRVYIKDF
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 TVSVSPFKRPRISSFKTPSKKHALQASSGLSVVSCDTLTSKKVLSTRYPEKSPRVYIKDF
+              460       470       480       490       500       510
 
-     110       120             130       140             150       
-gi|793 EDPFDSPTYHI------PEKPVTFTEGASYSLVILAGL-----GVA-GAAGYGVFKELIF
-       .:  ..  :..         :. .:  ..      .::     :.  .:   : .  .:.
-gi|306 HDRNETLYYRVLIDNIKDFAPIIYTPTVGLVCQNYSGLYRRPRGMYFSAKDKGEMMSMIY
-            120       130       140       150       160       170  
+             570       580       590       600       610       620 
+gi|186 FGMHPTATTRMDYVPDHVRRIKSSNADKYVFCDESSSNKVGAETFLQMLAESGASLQHAS
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 FGMHPTATTRMDYVPDHVRRIKSSNADKYVFCDESSSNKVGAETFLQMLAESGASLQHAS
+              520       530       540       550       560       570
 
-          160       170       180        190       200             
-gi|793 Q---PKEYKVFDKALKRIQDDGQVRVR-IGSPIKGYGQETRNRAARQRIPNRVF------
-       .   :.   .     .::   :.. :. :: ::   :.     ::    :.::.      
-gi|306 NWPAPQVDMIVITDGSRILGLGDLGVQGIGIPI---GKLDMYVAAAGINPQRVLPIMLDV
-            180       190       200          210       220         
+             630       640       650       660       670       680 
+gi|186 RKWVTNHYRWIVWKLACYDIYYPAKCRGNFLTITNVLEELKYRYEREVNHGHCSAIKRIL
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 RKWVTNHYRWIVWKLACYDIYYPAKCRGNFLTITNVLEELKYRYEREVNHGHCSAIKRIL
+              580       590       600       610       620       630
 
-        210       220       230          240       250       260   
-gi|793 -TDEDGVEHVEVNFYIRGPQGAGKVYTEM---FKDKAEKEWKYTYLIVEILTPSPAKLML
-        :... . . .. . .: :.  :. : :.   : . :  .:  . .  : .  . :   :
-gi|306 GTNNEKLLQNDLYLGVRQPRLEGEEYLEIIDEFMEAAFTRWPKAVVQFEDFQAKWAFGTL
-     230       240       250       260       270       280         
+             690       700       710       720       730       740 
+gi|186 SGDAPASSMMVLCISAINPKTDNDSQEAHCSDSCSNVKVELTDGWYSMNAALDVVLTKQL
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 SGDAPASSMMVLCISAINPKTDNDSQEAHCSDSCSNVKVELTDGWYSMNAALDVVLTKQL
+              640       650       660       670       680       690
 
+             750       760       770       780       790       800 
+gi|186 NAGKLFVGQKLRILGAGLSGWATPTSPLEAVISSTICLLLNINGTYRAHWADRLGFCKEI
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 NAGKLFVGQKLRILGAGLSGWATPTSPLEAVISSTICLLLNINGTYRAHWADRLGFCKEI
+              700       710       720       730       740       750
+
+             810       820       830       840       850       860 
+gi|186 GVPLALNCIKCNGGPVPKTLAGIKRIYPILYKERLGEKKSIVRSERIESRIIQLHNQRRS
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 GVPLALNCIKCNGGPVPKTLAGIKRIYPILYKERLGEKKSIVRSERIESRIIQLHNQRRS
+              760       770       780       790       800       810
+
+             870       880       890       900       910       920 
+gi|186 ALVEGIMCEYQRGINGVHSQNDTDSEEGAKIFKLLETAAEPEFLMAEMSPEQLRSFTTYK
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 ALVEGIMCEYQRGINGVHSQNDTDSEEGAKIFKLLETAAEPEFLMAEMSPEQLRSFTTYK
+              820       830       840       850       860       870
+
+             930       940       950       960       970       980 
+gi|186 AKFEAAQQMRKEKSVAETLEDAGLGERNVTPFMRIRLVGLTSLSYEGEHNPKEGIVTIWD
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 AKFEAAQQMRKEKSVAETLEDAGLGERNVTPFMRIRLVGLTSLSYEGEHNPKEGIVTIWD
+              880       890       900       910       920       930
+
+             990      1000      1010      1020      1030      1040 
+gi|186 PTERQRTELTEGKIYMMKGLVPINSDSEILYLHARGSSSRWQPLSPKDSENFQPFFNPRK
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 PTERQRTELTEGKIYMMKGLVPINSDSEILYLHARGSSSRWQPLSPKDSENFQPFFNPRK
+              940       950       960       970       980       990
+
+            1050      1060      1070      1080      1090      1100 
+gi|186 PISLSNLGEIPLSSEFDIAAYVVYVGNAYTDVLQKKQWVFVTDGSAQHSGEISNSLLAIS
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 PISLSNLGEIPLSSEFDIAAYVVYVGNAYTDVLQKKQWVFVTDGSAQHSGEISNSLLAIS
+             1000      1010      1020      1030      1040      1050
+
+            1110      1120      1130      1140      1150      1160 
+gi|186 FSTSFMDDSSVSHISHNLVGSVVGFCNLIKRAKDVTNEIWVAEAAENSVYFINAEAAYSS
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+gi|186 FSTSFMDDSSVSHISHNLVGSVVGFCNLIKRAKDVTNEIWVAEAAENSVYFINAEAAYSS
+             1060      1070      1080      1090      1100      1110
+
+            1170      1180      1190      1200  
+gi|186 HLKTSSAHIQTWAKLSSSKSVIHELRQRVLSIIGACKSPSC
+       :::::::::::::::::::::::::::::::::::::::::
+gi|186 HLKTSSAHIQTWAKLSSSKSVIHELRQRVLSIIGACKSPSC
+             1120      1130      1140      1150 
+
+>>gi|145339871                                            (1047 aa)
+ s-w opt: 129  Z-score: 119.6  bits: 34.0 E(): 0.67
+Smith-Waterman score: 129; 20.3% identity (53.0% similar) in 542 aa overlap (4-460:468-1002)
+
+                                          10        20        30   
+gi|186                            NBINDINGSINGLESTRANDEDDNABINDINGA
+                                     ..:: : ..  .: :. :     .:.::::
+gi|145 SHPENHLVANSELTSTPVTEKKKRQKKSSKDQINLSATAATATTASREI----VNEINGA
+       440       450       460       470       480           490   
+
+            40         50        60        70         80           
+gi|186 RABIDKPSISTHA-LIANAMSTWQLFPDSSGDGFRWEV-AGRILQSVSD--------STP
+        ...:. . .... ::..  .  .   .  :. .. .: .:. . : .:        : :
+gi|145 PGNVDRVDATSESCLISQRENLGK--ENEIGEKIKEDVGSGKAIPSSADNIQTDKRVSYP
+           500       510         520       530       540       550 
+
+                 90                    100       110       120     
+gi|186 TKALE-----STAPLP---------SMADL----LLQGCSKLIAREEAMPGEIPMFRTGL
+        . ::     .:.:           :  :.         ::.:. :.   :.: . ..: 
+gi|145 DNQLEVSSGLTTGPTTEKKKRQKKSSKNDINKSTAATTTSKIIVNEREKMGDILVDKVGS
+             560       570       580       590       600       610 
+
+         130       140       150         160        170            
+gi|186 GKSVVLKESSIAKAKSILAEKVTYSD--LRNTNCSIPQMRQV-DTAETLPMFRTA----S
+       :.....  ..:  :... .  .. .   . . . .. .. .: :. . .:  :.:    .
+gi|145 GEATLIGADKIQAASDLHVAGMASTPHAFVQESKTLDHIGKVTDSEHEVPKERVAIDADQ
+             620       630       640       650       660       670 
+
+      180        190       200         210         220             
+gi|186 GKSVP-LKESSIAKAMSILGSDKIIDS--DNVLPRE--SGFGVSNSL------FQTASNK
+       .:::   :..:  :: .    : ..::  .:: : .  .: : .: .      .:  .. 
+gi|145 AKSVKSTKKKSSRKAKTPAKEDTLVDSGAQNVEPIKVVDGEGHDNVIRNVLDSLQQRNEA
+             680       690       700       710       720       730 
+
+       230            240         250       260       270          
+gi|186 KVNVSSAGL-----ARAKALLGLEEDD--LNGFNHVNQSSSSSQQHGWSGLKTHEEFDA-
+       . :. ..:      .. :  :.. :.   ...... ...  . .. : .. :  .. :. 
+gi|145 EENMEKSGKKSSKRSKKKDSLNIVEEAQVVDSLQQKKEAEENLEKSGKKSSKRSKKKDSL
+             740       750       760       770       780       790 
+
+     280       290       300           310       320               
+gi|186 TVVKHHSGTPGQYEDYVSGKRSEVLNP----SLKVPPTKFQTAGGKSL------SVSAEA
+       ..:.. .    . .. .. . : . ::    .: .:  :   .... :      . ..: 
+gi|145 NIVEEAQVLSVEVNNVAQEEASPINNPKDTDALFTPAKKNTESNASPLKKIIEVTDNTED
+             800       810       820       830       840       850 
+
+     330             340       350             360       370       
+gi|186 LKRARNL------LGDPELGSFFDDVAGG----DQFF--TPEKDERLSDIAINNGSANRG
+       ..:. ..      .::   .:  ::..::    ::    :  : :. : . .. :..  :
+gi|145 INRSMQVQKENAGMGDNIGSSQKDDIVGGANKQDQVTGGTKSKKEKKS-LDLHPGGSIDG
+             860       870       880       890        900       910
+
+       380       390       400          410             420        
+gi|186 YIAHEEKTSNKHTPNSFVSPLWSSSKQ---FSSVNLENLASGGNL------IKKFDAAVD
+        .  .:  .  .  .: .: : : .:.    :.:.: .    :..      .:: . .: 
+gi|145 SMKMKETKGRVQPSSSGTSQLQSMAKNDRSGSKVDLSDAPMKGTVNNKKEAVKKSSKSVT
+              920       930       940       950       960       970
+
+      430       440       450       460       470       480        
+gi|186 ETDCALNATHGLSNNRSLASDMAVNNSKVNGFIPRGRQPGRPADQPLVDITNRRDTAYAY
+        .   .:...  .  .........:.: .: :                            
+gi|145 VNKSKMNVNNKEKAVKKISNSVTANKSTTNFFKDAEEDESKTTTSDSTKAPSDSSSDNDS
+              980       990      1000      1010      1020      1030
+
+      490       500       510       520       530       540        
+gi|186 NKQDSTQKKRLGKTVSVSPFKRPRISSFKTPSKKHALQASSGLSVVSCDTLTSKKVLSTR
                                                                    
-gi|793 ESYLPA                                                      
-       : :                                                         
-gi|306 ERYRKKFCMFNDDVQGTAGVALAGLLGTVRAQGRPISDFVNQKIVVVGAGSAGLGVTKMA
-     290       300       310       320       330       340         
+gi|145 DVTSSMHMKQGILSTQI                                           
+             1040                                                  
 
->>gi|18413658|ref|NP_567381.1| Arabidopsis thaliana Ran-  (443 aa)
- s-w opt:  95  Z-score: 107.5  bits: 28.3 E():  1.9
-Smith-Waterman score: 95; 27.4% identity (57.3% similar) in 117 aa overlap (15-123:184-294)
+>>gi|42523564                                             (333 aa)
+ s-w opt: 114  Z-score: 115.4  bits: 31.5 E():  1.1
+Smith-Waterman score: 114; 23.3% identity (53.9% similar) in 232 aa overlap (817-1030:97-320)
 
-                               10        20        30        40    
-gi|793                 MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSK-RVF
-                                     :  :.:. .::::.     :  :::.  .:
-gi|184 IFSNNQSSDFSSSQSGFFSSQSGAFSSSPSGLISNSQTGSFSSGQ---FGTTKSSQPSLF
-           160       170       180       190          200       210
+        790       800       810       820          830       840   
+gi|186 YRAHWADRLGFCKEIGVPLALNCIKCNGGPVPKTLAGIKRIY---PILYKERLGEKKSIV
+                                     .::. . .:.:    : .  :   .  :.:
+gi|425 AEGMFIVEKKNNIIEVRMNEYSGKRTWLNILPKANTQLKKIEITGPAMPTEVQLRGGSVV
+         70        80        90       100       110       120      
 
-            50        60        70        80        90             
-gi|793 SNSFLSKDSTGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQ-----
-       :.:  .  :..  :    : . ...: ....  ...:. : .. .:. :   :.:     
-gi|184 SGSQAGAISNSQPGT---FSSSHSGITSNSQTGSFSSGQFGQTKSSQPSLLSGSQAGAIS
-              220          230       240       250       260       
+           850       860        870           880       890        
+gi|186 RSERIESRIIQLHNQRRSALV-EGIMCEY-QRGINGV--H-SQNDTDSEEGAKIFKLLET
+        ..  ..  ..: . : .::   : .  : :.:  .:  : .. ..::  :.  .: .. 
+gi|425 AQKWNKDLKVSLTQGRVAALNGAGTLQVYVQKGDVSVSDHLGKVEADSYSGSMTLKNIQG
+        130       140       150       160       170       180      
 
-      100       110         120       130       140       150      
-gi|793 QNKAKKEVTTVEDPFDS--PTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELI
-       .:. . . .. ..:: :  :   :: :                                 
-gi|184 SNQPSFQFSNSQSPFTSAVPPVSIPAKQDHSDDADGGDEQSQPSSPSVKKTEEKGITVVH
-       270       280       290       300       310       320       
+      900       910       920       930       940       950        
+gi|186 AAEPEFLMAEMSPEQLRSFTTYKAKFEAAQQMRKEKSVAETLEDAGLGERNVTPFM-RIR
+        .:  .. ..:. :..:.: : .:.  ::.  ... ..     ..: :  :.  :. ::.
+gi|425 DVEASLFSGQMNIEKVRGFLTVSAQQSAAKVNQSNGTIQF---ESGKGSLNIQGFQGRIE
+        190       200       210       220          230       240   
 
->>gi|79325123|ref|NP_001031646.1| Arabidopsis thaliana p  (205 aa)
- s-w opt:  86  Z-score: 103.0  bits: 26.4 E():  3.4
-Smith-Waterman score: 86; 24.3% identity (50.9% similar) in 169 aa overlap (83-238:30-192)
+               960       970       980       990      1000         
+gi|186 --------LVGLTSLSYEGEHNPKEGIVTIWDPTERQRTELTEGKIYMMKGLVPINSDSE
+                .:.: :. : . . : : :.:  :     .     ... ..: . . :. .
+gi|425 GQNQDAAITIGMT-LDSEVDVKSKSGKVSIQTPPGSGASL----NLMTVEGEIVVPSELR
+           250        260       270       280           290        
 
-             60        70        80        90       100       110  
-gi|793 TGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDP
-                                     .  .: . . : :   ::  . . . ..  
-gi|793  MMMGLLMSGLIVSQANLPTAFASTPVFREYIDTFDGYSFKYP---QNWIQVRGAGADIF
-                10        20        30        40           50      
+    1010       1020      1030      1040      1050      1060        
+gi|186 ILYLHARGS-SSRWQPLSPKDSENFQPFFNPRKPISLSNLGEIPLSSEFDIAAYVVYVGN
+       .  : :. :  .: .  .:. :                                      
+gi|425 VTKLSAEKSVRGRLRGDAPRGSIFVRSQDGTISVK                         
+      300       310       320       330                            
 
-            120       130       140       150         160          
-gi|793 FDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELI--FQPKEYKVFDKA--
-       : .:.    .  : :.  .: . . :  ::    .:  :... .  :.  .  :  .:  
-gi|793 FRDPVVLDENLSVEFSSPSSSNYTSLEDLGSPEEVGKRVLRQYLTEFMSTRLGVKRQANI
-         60        70        80        90       100       110      
+>>gi|186515528                                            (727 aa)
+ s-w opt: 119  Z-score: 112.2  bits: 32.1 E():  1.7
+Smith-Waterman score: 119; 24.4% identity (51.4% similar) in 311 aa overlap (258-555:138-422)
 
-         170       180       190             200       210         
-gi|793 ---LKRIQDDGQVRVRIGSPIKGYGQET------RNRAARQRIPNRVFTDEDGVEHVEVN
-           .:. :::..  ..   ::.:....      ..:.:: .  :: .    :::. .. 
-gi|793 LSTSSRVADDGKLYYQVEVNIKSYANNNELAVMPQDRVARLEW-NRRYLAVLGVENDRL-
-        120       130       140       150        160       170     
+       230       240       250       260       270             280 
+gi|186 KVNVSSAGLARAKALLGLEEDDLNGFNHVNQSSSSSQQHGWSGL--KTHEE----FDATV
+                                     . ::....:  :    : ::.     :   
+gi|186 DSSESDSESDSDLSSPSFLSSSSHERQKKRKRSSKKDKHRRSKQRDKRHEKKRSMRDKRP
+       110       120       130       140       150       160       
 
-     220       230       240       250       260         
-gi|793 FYIRGPQGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA
-       . ::  :   ::. :  ::                               
-gi|793 YSIRL-QTPEKVFLEEEKDLRRVMDSFRVEKI                  
-           180       190       200                       
+             290       300       310       320       330        340
+gi|186 VKHHSGTPGQYEDYVSGKRSEVLNPSLKVPPTKFQTAGGKSLSVSAEAL-KRARNLLGDP
+        ..   .: . ::  ::... . . ....   : .   ..  . :: :. :.:..:    
+gi|186 KRKSRRSPDSLEDSNSGSEASLSDVNVEIGAKKRKHRVSRRTGNSAPAVEKEAESLHQGK
+       170       180       190       200       210       220       
 
->>gi|18414467|ref|NP_567468.1| Arabidopsis thaliana phot  (287 aa)
- s-w opt:  86  Z-score: 100.0  bits: 26.3 E():    5
-Smith-Waterman score: 86; 24.3% identity (50.9% similar) in 169 aa overlap (83-238:112-274)
+               350           360       370       380       390     
+gi|186 ELG-SFFDDVA----GGDQFFTPEKDERLSDIAINNGSANRGYIAHEEKTSNKHTPNSFV
+       . : ..... .    : ..  . . ..:  ::. .. : .:.     ..: .: :    :
+gi|186 RKGPDLLENRGLRSNGISDAASEQISDRQPDIVDDHPSKSRSRSLSPKRTVSKSTS---V
+       230       240       250       260       270       280       
 
-             60        70        80        90       100       110  
-gi|793 TGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVEDP
-                                     .  .: . . : :   ::  . . . ..  
-gi|184 SMMMGLLMSGLIVSQANLPTAFASTPVFREYIDTFDGYSFKYP---QNWIQVRGAGADIF
-              90       100       110       120          130        
+         400       410       420       430       440       450     
+gi|186 SPLWSSSKQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLSNNRSLASDMAVNNS
+       ::  :.::. ::    :   ::    : .  :          ..:.:.:  .      .:
+gi|186 SPRRSQSKSPSSSPRWN---GGRSPAKGSRQV----------KNLTNSRRESP-----GS
+          290       300          310                 320           
 
-            120       130       140       150         160          
-gi|793 FDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELI--FQPKEYKVFDKA--
-       : .:.    .  : :.  .: . . :  ::    .:  :... .  :.  .  :  .:  
-gi|184 FRDPVVLDENLSVEFSSPSSSNYTSLEDLGSPEEVGKRVLRQYLTEFMSTRLGVKRQANI
-      140       150       160       170       180       190        
+         460       470       480       490       500        510    
+gi|186 KVNGFIPRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTV-SVSPFKRPRIS
+       . .:   : :.: . ...  : . ..:: . . .:. : .  :  : : : ::  : ::.
+gi|186 EEKGRHVR-RSPTKSVSRSPVRVKKERDISRSPSKSLSRSPLRSPKRVISRSPV-RGRIA
+        330        340       350       360       370        380    
 
-         170       180       190             200       210         
-gi|793 ---LKRIQDDGQVRVRIGSPIKGYGQET------RNRAARQRIPNRVFTDEDGVEHVEVN
-           .:. :::..  ..   ::.:....      ..:.:: .  :: .    :::. .. 
-gi|184 LSTSSRVADDGKLYYQVEVNIKSYANNNELAVMPQDRVARLEW-NRRYLAVLGVENDRL-
-      200       210       220       230       240        250       
+          520       530       540       550       560       570    
+gi|186 SFKTPSKKHALQASSGLSVVSCDTLTSKKVLSTRYPEKSPRVYIKDFFGMHPTATTRMDY
+         ..::.. . .:: : :.       :..   .: : .: :                   
+gi|186 --RSPSRSPVRSASRG-SLGRGPLRRSSRRSPSRSPVRSSRRSLSRSPIQLSRRSLSRSP
+            390        400       410       420       430       440 
 
-     220       230       240       250       260         
-gi|793 FYIRGPQGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA
-       . ::  :   ::. :  ::                               
-gi|184 YSIRL-QTPEKVFLEEEKDLRRVMDSFRVEKI                  
-        260        270       280                         
-
->>gi|30685055|ref|NP_849413.1| Arabidopsis thaliana unkn  (339 aa)
- s-w opt:  87  Z-score: 99.8  bits: 26.5 E():  5.1
-Smith-Waterman score: 87; 21.4% identity (49.1% similar) in 234 aa overlap (26-249:60-273)
-
-                    10        20        30        40         50    
-gi|793      MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSK-RVFSNSFLSKD---
-                                     .. :.  .:.::. . :  ...  ..:   
-gi|306 ATNEDTTTTTVITTTSIAGRGFNGGSCTTTTNNTSSLDGVPKGFRFRSTQQQQQQQDPSP
-      30        40        50        60        70        80         
-
-              60        70        80        90       100       110 
-gi|793 STGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVED
-       :  .. .:... . . :  ..:. .. ..   : . .: .: .   :.:: ...     .
-gi|306 SRRGGDVLLQWGQRKRSRASRAEIRSTTTITTTADDSSSSSGQGKIQSNKPQRRSM---N
-      90       100       110       120       130       140         
-
-             120       130       140       150       160           
-gi|793 PFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPK--EYKVFDKAL
-       :   :    :  :  :.           : ..    :. . :: .:  .  : .  . . 
-gi|306 PSMPPP---PPAPPIFS-----------GRSTNPRNGFVIGKESFFPSRNLEDRSANGSP
-        150          160                  170       180       190  
-
-     170       180           190       200       210       220     
-gi|793 KRIQDDGQVRVRIG----SPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGP
-       .: . .:..  : :    :: .    : :. .  ::  .  : :..  .: .::      
-gi|306 SRNNINGRMISRSGGSKRSPPSPDQIEKRSSVRDQR--QNGF-DHQQQQHQRVNRSESTA
-            200       210       220         230        240         
-
-         230       240       250       260                         
-gi|793 QGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA                
-       ::  .:  .  ..:: .::   :.                                    
-gi|306 QGHQEVEINGEREKATQEWPRIYIALSRKEKEEDFLVMKGTKLPHRPRKRAKNIDKALQF
-     250       260       270       280       290       300         
-
->>gi|30685058|ref|NP_567597.2| Arabidopsis thaliana unkn  (352 aa)
- s-w opt:  87  Z-score: 99.4  bits: 26.5 E():  5.3
-Smith-Waterman score: 87; 21.4% identity (49.1% similar) in 234 aa overlap (26-249:60-273)
-
-                    10        20        30        40         50    
-gi|793      MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSK-RVFSNSFLSKD---
-                                     .. :.  .:.::. . :  ...  ..:   
-gi|306 ATNEDTTTTTVITTTSIAGRGFNGGSCTTTTNNTSSLDGVPKGFRFRSTQQQQQQQDPSP
-      30        40        50        60        70        80         
-
-              60        70        80        90       100       110 
-gi|793 STGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTSKEPGNQQNKAKKEVTTVED
-       :  .. .:... . . :  ..:. .. ..   : . .: .: .   :.:: ...     .
-gi|306 SRRGGDVLLQWGQRKRSRASRAEIRSTTTITTTADDSSSSSGQGKIQSNKPQRRSM---N
-      90       100       110       120       130       140         
-
-             120       130       140       150       160           
-gi|793 PFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPK--EYKVFDKAL
-       :   :    :  :  :.           : ..    :. . :: .:  .  : .  . . 
-gi|306 PSMPPP---PPAPPIFS-----------GRSTNPRNGFVIGKESFFPSRNLEDRSANGSP
-        150          160                  170       180       190  
-
-     170       180           190       200       210       220     
-gi|793 KRIQDDGQVRVRIG----SPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIRGP
-       .: . .:..  : :    :: .    : :. .  ::  .  : :..  .: .::      
-gi|306 SRNNINGRMISRSGGSKRSPPSPDQIEKRSSVRDQR--QNGF-DHQQQQHQRVNRSESTA
-            200       210       220         230        240         
-
-         230       240       250       260                         
-gi|793 QGAGKVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA                
-       ::  .:  .  ..:: .::   :.                                    
-gi|306 QGHQEVEINGEREKATQEWPRIYIALSRKEKEEDFLVMKGTKLPHRPRKRAKNIDKALQF
-     250       260       270       280       290       300         
-
->>gi|22328738|ref|NP_680717.1| Arabidopsis thaliana pent  (575 aa)
- s-w opt:  88  Z-score: 96.3  bits: 26.6 E():    8
-Smith-Waterman score: 88; 24.8% identity (56.8% similar) in 125 aa overlap (129-250:384-505)
-
-      100       110       120       130       140       150        
-gi|793 QNKAKKEVTTVEDPFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQ
-                                     : : ..   :  :.  .::::  . ..  .
-gi|223 ALKLIRSMPFRPHAAVFGTLLGACRVHKNVELAEFAAEKLLQLNSQNAAGYVQLANIYAS
-           360       370       380       390       400       410   
-
-      160       170       180        190        200       210      
-gi|793 PKEYKVFDKALKRIQDDGQVRV-RIGSPIKGYGQ-ETRNRAARQRIPNRVFTDEDGVEHV
-        ....   .. ::..... :.: :.  :  ::.  : ::.. . :  .:.  . :.. : 
-gi|223 KNRWEDVARVRKRMKESNVVKVERVKVP--GYSWIEIRNKVHHFRSSDRIHPELDSI-HK
-           420       430       440         450       460        470
-
-        220        230       240       250       260               
-gi|793 EVNFYIRGPQGAG-KVYTEMFKDKAEKEWKYTYLIVEILTPSPAKLMLESYLPA      
-       ...   .  . :: :   :.   ..:.: :   :.                         
-gi|223 KLKELEKKMKLAGYKPELEFALHNVEEEQKEKLLLWHSEKLAVAFGCIKLPQGSQIQVFK
-              480       490       500       510       520       530
-
-gi|223 NLRICGDCHKAIKFISEIEKREIIVRDTTRFHHFKDGSCSCGDYW
-              540       550       560       570     
-
->>gi|79325979|ref|NP_001031764.1| Arabidopsis thaliana u  (485 aa)
- s-w opt:  86  Z-score: 95.3  bits: 26.2 E():  9.1
-Smith-Waterman score: 86; 25.4% identity (53.7% similar) in 134 aa overlap (17-147:194-317)
-
-                             10        20        30        40      
-gi|793               MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNS
-                                     ..::  .:  .::.  .: : .  . .  .
-gi|793 TSHDDYGLTSDVNVGEMSNTAVMEARKWLEEKKSGSSSKYKATEDGAGSPVDVAKSYMRA
-           170       180       190       200       210       220   
-
-         50        60        70        80        90         100    
-gi|793 FLSKDSTGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTS--KEPGNQQNKAKK
-        :   : .::.:   ::.: .:  ... :   ... :. :  .: :  ..  : :.. .:
-gi|793 RLPWGSPAANNL--DFRSP-SSARVQGTPLPYSAGNFSSSKLKRKSGSNQSWNIQDEIRK
-           230         240        250       260       270       280
-
-           110       120       130       140       150       160   
-gi|793 -EVTTVEDPFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYK
-        .. ..:. . ::.     .:       .::  .::   . : :                
-gi|793 VRAKATEEMLKSPSSVASLEP-------KYSPYVLATDMLKGNASSLNADGAVRNEQSRA
-              290       300              310       320       330   
-
-           170       180       190       200       210       220   
-gi|793 VFDKALKRIQDDGQVRVRIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIR
+          580       590       600       610       620       630    
+gi|186 VPDHVRRIKSSNADKYVFCDESSSNKVGAETFLQMLAESGASLQHASRKWVTNHYRWIVW
                                                                    
-gi|793 LPNSAIPTSEHNQTTEANQAVKETGVLHTRSRGVGLEETFISTQGVKPSEDTNTAPQSGT
-           340       350       360       370       380       390   
+gi|186 TRLSRRSLSRSPIRSPRKSVSRSPVRSSRKSVSRSPVRSSRRRISRSPVRSSRKSVSRSP
+             450       460       470       480       490       500 
 
->>gi|18417806|ref|NP_567876.1| Arabidopsis thaliana unkn  (485 aa)
- s-w opt:  86  Z-score: 95.3  bits: 26.2 E():  9.1
-Smith-Waterman score: 86; 25.4% identity (53.7% similar) in 134 aa overlap (17-147:194-317)
+>>gi|79324957                                             (302 aa)
+ s-w opt: 109  Z-score: 110.7  bits: 30.5 E():  2.1
+Smith-Waterman score: 109; 25.9% identity (56.6% similar) in 166 aa overlap (156-319:46-199)
 
-                             10        20        30        40      
-gi|793               MMMMNLLRRSAIAIGRQSKSKLASFSSATQPCSGIPKSSKRVFSNS
-                                     ..::  .:  .::.  .: : .  . .  .
-gi|184 TSHDDYGLTSDVNVGEMSNTAVMEARKWLEEKKSGSSSKYKATEDGAGSPVDVAKSYMRA
-           170       180       190       200       210       220   
+         130       140       150       160       170       180     
+gi|186 GKSVVLKESSIAKAKSILAEKVTYSDLRNTNCSIPQMRQVDTAETLPMFRTASGKSVPLK
+                                     .: . ..  ::..  ::.  ..:..: :: 
+gi|793 TAGCGGERPDTYVCHLNQSPWDVIPVSSSGDCELTNL--VDSSWFLPLSSSSSSSSPPLI
+          20        30        40        50          60        70   
 
-         50        60        70        80        90         100    
-gi|793 FLSKDSTGANGLLFRFRNPQASICTEARPKNINSSYFTRSFASRTS--KEPGNQQNKAKK
-        :   : .::.:   ::.: .:  ... :   ... :. :  .: :  ..  : :.. .:
-gi|184 RLPWGSPAANNL--DFRSP-SSARVQGTPLPYSAGNFSSSKLKRKSGSNQSWNIQDEIRK
-           230         240        250       260       270       280
+         190       200       210       220        230       240    
+gi|186 ESSIAKAMSILGSDKIIDSDNVLPRESGFGVSNSLFQT-ASNKKVNVSSAGLARAKALLG
+       .. :..  :. :. .. : ...  :   :. : :  :. .: .:.:...:   . :  ..
+gi|793 HKFIGEEDSFNGNVSLGDCNDTAQR---FNSSVSSNQSLVSVEKLNLNAA--EEDKYAIS
+            80        90          100       110       120          
 
-           110       120       130       140       150       160   
-gi|793 -EVTTVEDPFDSPTYHIPEKPVTFTEGASYSLVILAGLGVAGAAGYGVFKELIFQPKEYK
-        .. ..:. . ::.     .:       .::  .::   . : :                
-gi|184 VRAKATEEMLKSPSSVASLEP-------KYSPYVLATDMLKGNASSLNADGAVRNEQSRA
-              290       300              310       320       330   
+           250       260       270       280       290       300   
+gi|186 LE-EDDLNGFNHVNQSSSSSQQHGWSGLKTHEEFDATVVKHHSGTPGQYEDYVSGKRSEV
+        : :: ..  .  ...: . . .  : .::  . :  ::     .: . .   :::.  :
+gi|793 PEVEDPMDQSDDYDKKSEALEPN--SPVKTSGD-DEKVVVTIPTAPKRGRPRGSGKK--V
+      130       140       150          160       170       180     
 
-           170       180       190       200       210       220   
-gi|793 VFDKALKRIQDDGQVRVRIGSPIKGYGQETRNRAARQRIPNRVFTDEDGVEHVEVNFYIR
+           310       320       330       340       350       360   
+gi|186 LNPSLKVPPTKFQTAGGKSLSVSAEALKRARNLLGDPELGSFFDDVAGGDQFFTPEKDER
+         :.:: :   .  .:                                            
+gi|793 SAPALKNPYEFYYYSGFGPRWGRKRGGSDDEKMVINDSKKSRSSASSSSDEDGHKTAAFG
+           190       200       210       220       230       240   
+
+>>gi|18411286                                             (302 aa)
+ s-w opt: 109  Z-score: 110.7  bits: 30.5 E():  2.1
+Smith-Waterman score: 109; 25.9% identity (56.6% similar) in 166 aa overlap (156-319:46-199)
+
+         130       140       150       160       170       180     
+gi|186 GKSVVLKESSIAKAKSILAEKVTYSDLRNTNCSIPQMRQVDTAETLPMFRTASGKSVPLK
+                                     .: . ..  ::..  ::.  ..:..: :: 
+gi|184 TAGCGGERPDTYVCHLNQSPWDVIPVSSSGDCELTNL--VDSSWFLPLSSSSSSSSPPLI
+          20        30        40        50          60        70   
+
+         190       200       210       220        230       240    
+gi|186 ESSIAKAMSILGSDKIIDSDNVLPRESGFGVSNSLFQT-ASNKKVNVSSAGLARAKALLG
+       .. :..  :. :. .. : ...  :   :. : :  :. .: .:.:...:   . :  ..
+gi|184 HKFIGEEDSFNGNVSLGDCNDTAQR---FNSSVSSNQSLVSVEKLNLNAA--EEDKYAIS
+            80        90          100       110       120          
+
+           250       260       270       280       290       300   
+gi|186 LE-EDDLNGFNHVNQSSSSSQQHGWSGLKTHEEFDATVVKHHSGTPGQYEDYVSGKRSEV
+        : :: ..  .  ...: . . .  : .::  . :  ::     .: . .   :::.  :
+gi|184 PEVEDPMDQSDDYDKKSEALEPN--SPVKTSGD-DEKVVVTIPTAPKRGRPRGSGKK--V
+      130       140       150          160       170       180     
+
+           310       320       330       340       350       360   
+gi|186 LNPSLKVPPTKFQTAGGKSLSVSAEALKRARNLLGDPELGSFFDDVAGGDQFFTPEKDER
+         :.:: :   .  .:                                            
+gi|184 SAPALKNPYEFYYYSGFGPRWGRKRGGSDDEKMVINDSKKSRSSASSSSDEDGHKTAAFG
+           190       200       210       220       230       240   
+
+>>gi|42524143                                             (924 aa)
+ s-w opt: 120  Z-score: 110.5  bits: 32.1 E():  2.1
+Smith-Waterman score: 120; 23.6% identity (48.1% similar) in 478 aa overlap (34-478:44-478)
+
+            10        20        30        40         50        60  
+gi|186 NDINGSINGLESTRANDEDDNABINDINGARABIDKP-SISTHALIANAMSTWQLFPDSS
+                                     :... :  :: :  :  ..:  . ::    
+gi|425 NRGSAFVQALVAVGVVGVMIYFLSPTVIKHRSQVTKTASIITARLALHSMVDYTLF----
+            20        30        40        50        60             
+
+             70         80        90       100       110           
+gi|186 GDGFRWEVAGRILQ-SVSDSTPTKALESTAPLPSMADLLLQGCSKLIAREE--AMPGEIP
+       :   ::  .   .: : . ::: ::.:  .   :.  ::..  :  . :    : : ..:
+gi|425 GIRQRWCFSESWMQESCGASTPPKAVEILSHPRSVERLLMKQESVDFLRAIGIANPEKVP
+      70        80        90       100       110       120         
+
+     120       130        140       150       160        170       
+gi|186 MFRTGLGKSVVLKE-SSIAKAKSILAEKVTYSDLRNTNCSIPQMRQV-DTAETLPMF-RT
+       . . :... . : . :..  . .:.:      ::.. .  . :.. . :.  ..: . : 
+gi|425 L-EDGISQEINLANFSTMHPVYKIVA------DLKGYTVEFIQIQITRDVRAAIPEYGRE
+     130        140       150             160       170       180  
+
+        180       190       200         210       220       230    
+gi|186 ASGKSVPLKESSIAKAMSILGSDKIIDSD--NVLPRESGFGVSNSLFQTASNKKVNVSSA
+       .  : :    .:  :.. . ::.:.  ..  .: ::: :   : .:. .:.. ...  ::
+gi|425 VYLKVVVRLLNSQKKVIEV-GSSKLETTSFVGVYPREVG---SFALL-VAGDLRLDKESA
+            190       200        210       220           230       
+
+          240       250       260       270       280       290    
+gi|186 GLARAKALLGLEEDDLNGFNHVNQSSSSSQQHGWSGLKTHEEFDATVVKHHSGTPGQYED
+             . ::.      :  . .: .:  :   . ::  .    .. . :   .:    :
+gi|425 ------SDLGV------GGAYFKQHGSREQTIKYPGLTFESPVFVNGAIHLPKAPDLAVD
+             240             250       260       270       280     
+
+          300              310       320       330       340       
+gi|186 YVSGKRSEVLNPS-------LKVPPTKFQTAGGKSLSVSAEALKRARNLLGDPELGSFFD
+        . :  . : .:        :   : : ...  .  :.. .. .   :.    ..:.:  
+gi|425 IAEG--DTVYTPVTFKDKVILGYGPIKRENVEFRPRSAGNQVDQFWSNIR---QFGGFQK
+           290       300       310       320       330          340
+
+       350       360          370       380           390       400
+gi|186 DVAGGDQFFTPEKD---ERLSDIAINNGSANRGYIA----HEEKTSNKHTPNSFVSPLWS
+        :         :.:   . ::  : . :. : . .:    ::..  : .:  .  : : .
+gi|425 GVE-----VDGERDLGLDYLSGYATGAGNPNANLMALCKRHEDRKYNLNTTAN--SQLTG
+                   350       360       370       380         390   
+
+                410       420       430             440         450
+gi|186 S--SKQFSSVNLENLASGGNLIKKFDAAVDET------DCALNATHGLSNNRSLASD--M
+       .  ::. :. : .   . :::..     ::.       .  :    ::..  . .:   :
+gi|425 ALLSKSGSKYNYRLALTDGNLFNPQTKEVDKPTVRNFFSSDLLKDWGLTSRATPVSKFKM
+           400       410       420       430       440       450   
+
+              460       470       480       490       500       510
+gi|186 AVNNSKVNGFIPRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTVSVSPFKR
+         .: .:.: .:     :  . .: .:.                                
+gi|425 RFGNLEVEGEVP---LDGTVTLEPKIDLRPLERSIERQLSAAEAGLDDARRDLNQAARAV
+           460          470       480       490       500       510
+
+>>gi|22329097                                             (837 aa)
+ s-w opt: 119  Z-score: 110.5  bits: 32.0 E():  2.1
+Smith-Waterman score: 119; 24.4% identity (51.4% similar) in 311 aa overlap (258-555:248-532)
+
+       230       240       250       260       270             280 
+gi|186 KVNVSSAGLARAKALLGLEEDDLNGFNHVNQSSSSSQQHGWSGL--KTHEE----FDATV
+                                     . ::....:  :    : ::.     :   
+gi|223 DSSESDSESDSDLSSPSFLSSSSHERQKKRKRSSKKDKHRRSKQRDKRHEKKRSMRDKRP
+       220       230       240       250       260       270       
+
+             290       300       310       320       330        340
+gi|186 VKHHSGTPGQYEDYVSGKRSEVLNPSLKVPPTKFQTAGGKSLSVSAEAL-KRARNLLGDP
+        ..   .: . ::  ::... . . ....   : .   ..  . :: :. :.:..:    
+gi|223 KRKSRRSPDSLEDSNSGSEASLSDVNVEIGAKKRKHRVSRRTGNSAPAVEKEAESLHQGK
+       280       290       300       310       320       330       
+
+               350           360       370       380       390     
+gi|186 ELG-SFFDDVA----GGDQFFTPEKDERLSDIAINNGSANRGYIAHEEKTSNKHTPNSFV
+       . : ..... .    : ..  . . ..:  ::. .. : .:.     ..: .: :    :
+gi|223 RKGPDLLENRGLRSNGISDAASEQISDRQPDIVDDHPSKSRSRSLSPKRTVSKSTS---V
+       340       350       360       370       380       390       
+
+         400       410       420       430       440       450     
+gi|186 SPLWSSSKQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLSNNRSLASDMAVNNS
+       ::  :.::. ::    :   ::    : .  :          ..:.:.:  .      .:
+gi|223 SPRRSQSKSPSSSPRWN---GGRSPAKGSRQV----------KNLTNSRRESP-----GS
+          400       410          420                 430           
+
+         460       470       480       490       500        510    
+gi|186 KVNGFIPRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTV-SVSPFKRPRIS
+       . .:   : :.: . ...  : . ..:: . . .:. : .  :  : : : ::  : ::.
+gi|223 EEKGRHVR-RSPTKSVSRSPVRVKKERDISRSPSKSLSRSPLRSPKRVISRSPV-RGRIA
+        440        450       460       470       480        490    
+
+          520       530       540       550       560       570    
+gi|186 SFKTPSKKHALQASSGLSVVSCDTLTSKKVLSTRYPEKSPRVYIKDFFGMHPTATTRMDY
+         ..::.. . .:: : :.       :..   .: : .: :                   
+gi|223 --RSPSRSPVRSASRG-SLGRGPLRRSSRRSPSRSPVRSSRRSLSRSPIQLSRRSLSRSP
+            500        510       520       530       540       550 
+
+          580       590       600       610       620       630    
+gi|186 VPDHVRRIKSSNADKYVFCDESSSNKVGAETFLQMLAESGASLQHASRKWVTNHYRWIVW
                                                                    
-gi|184 LPNSAIPTSEHNQTTEANQAVKETGVLHTRSRGVGLEETFISTQGVKPSEDTNTAPQSGT
-           340       350       360       370       380       390   
+gi|223 TRLSRRSLSRSPIRSPRKSVSRSPVRSSRKSVSRSPVRSSRRRISRSPVRSSRKSVSRSP
+             560       570       580       590       600       610 
 
->>gi|18411410|ref|NP_567182.1| Arabidopsis thaliana acti  (140 aa)
- s-w opt:  77  Z-score: 95.1  bits: 24.4 E():  9.3
-Smith-Waterman score: 77; 22.9% identity (58.3% similar) in 96 aa overlap (177-264:40-132)
+>>gi|79480107                                             (941 aa)
+ s-w opt: 118  Z-score: 108.0  bits: 31.7 E():    3
+Smith-Waterman score: 118; 19.8% identity (49.8% similar) in 656 aa overlap (73-706:85-670)
 
-        150       160       170       180        190          200  
-gi|793 AGYGVFKELIFQPKEYKVFDKALKRIQDDGQVRV-RIGSPIKGYGQETR---NRAARQRI
-                                     ::.. ..:.: . : . :    .   :  .
-gi|184 VNDECKIKFLELKAKRTYRFIVFKIDEKAQQVQIEKLGNPEETYDDFTSSIPDDECRYAV
-      10        20        30        40        50        60         
+             50        60        70        80        90         100
+gi|186 STHALIANAMSTWQLFPDSSGDGFRWEVAGRILQSVSDSTPTKALEST--APLPSMADLL
+                                     ... : .. .:.   ...  : . . .:  
+gi|794 IPYHRREIRGAPHMDSLVSIYKNMEDASGIKLFVSQNNPSPSDKEKQVRDASVEKASDKN
+           60        70        80        90       100       110    
 
-            210       220       230           240       250        
-gi|793 PNRVFTDEDGVEHVEVNFYIRGPQGAGKVYTEMF----KDKAEKEWKYTYLIVEILTPSP
-        .  :: ::. .. .. :.:     ...: ..:.    ::. ..: .   . ::. . .:
-gi|184 YDFDFTTEDNCQKSKI-FFIAWSPDTSRVRSKMLYASSKDRFKREME--GIQVELQATDP
-      70        80         90       100       110         120      
+              110       120       130       140       150       160
+gi|186 LQGCSKLIAREEAMPGEIPMFRTGLGKSVVLKESSIAKAKSILAEKVTYSDLRNTNCSIP
+        ::  :  : ..   :.   . .     .:.: :: .: .  : ....  .: . . :. 
+gi|794 RQGSRKGRASKRNEYGKTKEIDVDAPGPIVMKPSSQTKKRVQLLQNLSAESLTKPTESVE
+          120       130       140       150       160       170    
 
-      260            
-gi|793 AKLMLESYLPA   
-       ... :.        
-gi|184 SEMSLDIIKGRLNL
-        130       140
+              170       180       190       200       210       220
+gi|186 QMRQVDTAETLPMFRTASGKSVPLKESSIAKAMSILGSDKIIDSDNVLPRESGFGVSNSL
+         ..        ..:     :.  ::....  . .   :   :..:   :      :..:
+gi|794 TAEKPKDYTENTVIRLDEHPSLN-KEGNLSPFFWLRDED---DGENSSQRTE----SDQL
+          180       190        200       210          220          
+
+              230       240       250       260       270       280
+gi|186 FQTASNKKVNVSSAGLARAKALLGLEEDDLNGFNHVNQSSSSSQQHGWSGLKTHEEFDAT
+       . :.    ::: : .             ::   .: . :. . ::.   :    . ::. 
+gi|794 LGTTP---VNVPSFS-------------DLMDSDHESPSKEDEQQKPNPG----DMFDSE
+        230                       240       250       260          
+
+                290          300       310       320       330     
+gi|186 VVK--HHSGTPGQYEDYVSGK---RSEVLNPSLKVPPTKFQTAGGKSLSVSAEALKRARN
+       . .  ..  .:    . :..:   :.:.   . :.: .:  ..  :. ....     :: 
+gi|794 MFEWTQRPCSPEILPSPVKAKVLGRDEIDLTQKKLPKVKVASSKCKNRKAGSARNTVARR
+        270       280       290       300       310       320      
+
+         340       350       360       370       380       390     
+gi|186 LLGDPELGSFFDDVAGGDQFFTPEKDERLSDIAINNGSANRGYIAHEEKTSNKHTPNSFV
+        .:  .  .. ...:.    .. ..: : .     .:.  :. .  .:... :..  : .
+gi|794 SIGVSQEDNMESSAAAT---ISEQQDSRGT-----SGTIIRNDVNTDENVKAKRATRSKA
+        330       340          350            360       370        
+
+         400       410       420       430       440         450   
+gi|186 SPLWSSSKQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLS--NNRSLASDMAVN
+       .    :..  :..:. : :.: .  :.  ...  .      .: ..  :. ::..... .
+gi|794 Q----STRVQSDLNVSNEADGKQGTKRKRSSIKSSP-----AHPIAGPNELSLGTEIVGK
+          380       390       400       410            420         
+
+           460         470       480       490       500       510 
+gi|186 NSKVNGFIPRGRQPGR--PADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTVSVSPFKRP
+       ... ..  :   .: .  :...: .   .:...:      .:. :   ::: . .  :. 
+gi|794 GDQDQAHGPSDTHPEKRSPTEKPSLKKRGRKSNA------SSSLKDLSGKTQKKTSEKKL
+     430       440       450       460             470       480   
+
+             520        530       540       550       560          
+gi|186 RISSFKTPSKKHALQA-SSGLSVVSCDTLTSKKVLSTRYPEKSPRVYIKDFFGMH-----
+       ...:    ::  : :  ..:. ... .   .:.  ..:  .::  .  ::   :.     
+gi|794 KLDSHMISSK--ATQPHGNGILTAGLNQGGDKQ--DSRNNRKS--TVGKDDHTMQVIEKC
+           490         500       510         520         530       
+
+         570       580       590         600       610       620   
+gi|186 PTATTRMDYVPDHVRRIKSSNADKYV--FCDESSSNKVGAETFLQMLAESGASLQHASRK
+        : .   .    :.:: ..: . :..  ::. : ......:    . .:  ..  ... :
+gi|794 STINKSSSGGSAHLRRCNGSLTKKFTCAFCQCSEDTEASGEMTHYYRGEPVSADFNGGSK
+       540       550       560       570       580       590       
+
+           630       640       650       660       670       680   
+gi|186 WVTNHYRWIVWKLACYDIYYPAKCRGNFLTITNVLEELKYRYEREVNHGHCSAIKRILSG
+        .  :     :     ..:.      : :::.:.  ::     :... . : ..:    :
+gi|794 VIHVHKNCAEWA---PNVYF------NDLTIVNLDVELTRS--RRISCS-CCGLKGAALG
+       600          610             620         630        640     
+
+              690       700       710       720       730       740
+gi|186 DAPAS---SMMVLCISAINPKTDNDSQEAHCSDSCSNVKVELTDGWYSMNAALDVVLTKQ
+           :   :. : : . : :.   :.                                  
+gi|794 CYNKSCKNSFHVTCAKLI-PECRWDNVKFVMLCPLDASIKLPCEEANSKDRKCKRTPKEP
+         650       660        670       680       690       700    
+
+>>gi|22328931                                             (586 aa)
+ s-w opt: 112  Z-score: 106.5  bits: 30.7 E():  3.6
+Smith-Waterman score: 112; 20.6% identity (54.4% similar) in 344 aa overlap (145-467:276-586)
+
+          120       130       140       150       160       170    
+gi|186 PGEIPMFRTGLGKSVVLKESSIAKAKSILAEKVTYSDLRNTNCSIPQMRQVDTAETLPMF
+                                     ::   .: .. . .  . .:  .  . :. 
+gi|223 LVEEEEAARRRKAELLERKKRKKLRQKEQREKDQKKDAKEDESTTSEEQQYPAEPSSPLS
+         250       260       270       280       290       300     
+
+          180            190       200       210       220         
+gi|186 RTASGK-----SVPLKESSIAKAMSILGSDKIIDSDNVLPRESGFGVSNSLFQTASNKKV
+        .....     :.:. .::  .  ..: ...  .:.. .:  .:.  .... . .. ...
+gi|223 VASDSEAQTPDSLPIDDSSSLEEPQVLETNNGRNSETQVPMVDGLDNGQNMERRSGRRQM
+         310       320       330       340       350       360     
+
+     230       240          250         260       270       280    
+gi|186 NVSSAGLARAKALLGLEED---DLNGF--NHVNQSSSSSQQHGWSGLKTHEEFDATVVKH
+       . :. :.       :.. :   .:.:.  : .:... ..  . ::    ..  .  ....
+gi|223 QRSQQGMPN-----GFHADHAPNLGGMRKNGTNRDARANTTKVWS----RKSDNPKLISQ
+         370            380       390       400           410      
+
+          290       300       310       320       330       340    
+gi|186 HSGTPGQYEDYVSGKRSEVLNPSLKVPPTKFQTAGGKSLSVSAEALKRARNLLGDPELGS
+       :...  : .     : :: .  ::.:   .....: .. .  .:. .:....   :  .:
+gi|223 HAAVTQQDQT----KSSEFIVGSLSV---SIRNSGEHNQTKCSEGERRTKTVEVKP--AS
+        420           430          440       450       460         
+
+          350       360       370       380       390       400    
+gi|186 FFDDVAGGDQFFTPEKDERLSDIAINNGSANRGYIAHEEKTSNKHTPNSFVSPLWSSSKQ
+         . :    ... : ...  .  ..: :....     :.: ::  ::.  :.     : :
+gi|223 EQSTV----KIWRPVSSQGRKTSTVN-GNTDK-----EDKRSNPTTPE--VKNAHHISLQ
+       470           480        490            500         510     
+
+          410       420              430       440           450   
+gi|186 FSSVNLENLASGGNLIKKFDAA-------VDETDCALNATHGLSNN----RSLASDMAVN
+       :.  : :  :  ..  :.  .:        .::: . : ::  ::.    ::     : .
+gi|223 FN--NHEAKAFLAKRWKEATSAEHVTLVLSQETDISGNNTHESSNGVITARSKLRTKAEK
+           520       530       540       550       560       570   
+
+           460       470       480       490       500       510   
+gi|186 NSKVNGFIPRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTVSVSPFKRPRI
+       ..::. ..:. : :                                              
+gi|223 GTKVK-YVPKQRIP                                              
+            580                                                    
+
+>>gi|42524400                                             (1009 aa)
+ s-w opt: 115  Z-score: 103.7  bits: 31.0 E():  5.1
+Smith-Waterman score: 115; 20.8% identity (50.6% similar) in 332 aa overlap (70-383:581-898)
+
+      40        50        60        70        80        90         
+gi|186 PSISTHALIANAMSTWQLFPDSSGDGFRWEVAGRILQSVSDSTPTKALESTAPLPSMA-D
+                                     : . .:   .::     ...  :: ..  .
+gi|425 MLVSESQERMSYAVSPNHLMDFMNLARHMGVEAFVLGEFTDSGSFDIFHGKEPLAKLKLE
+              560       570       580       590       600       610
+
+      100       110        120       130       140       150       
+gi|186 LLLQGCSKLIAREE-AMPGEIPMFRTGLGKSVVLKESSIAKAKSILAEKVTYSDLRNTNC
+       .: .: :..  . .   : .   .  . ::. .  ..  :  :..::.        :.  
+gi|425 FLHEGLSRMKLKAHFDGPKQYQEYFRAEGKAPLTGNDLAAALKKVLANP-------NVAS
+              620       630       640       650              660   
+
+       160        170       180       190       200          210   
+gi|186 SIPQMRQVD-TAETLPMFRTASGKSVPLKESSIAKAMSILGSDK---IIDSDNVLPRESG
+         : .:  :  ..     .  .::.    ... .  .:. :.:    .  :... :. : 
+gi|425 REPLVRYYDHEVQGATRVKPYGGKTQSGANDAGVLDLSVHGGDDNNAVAVSNGLCPQFSW
+           670       680       690       700       710       720   
+
+           220        230       240       250       260       270  
+gi|186 FGVSNSLFQTASNKKV-NVSSAGLARAKALLGLEEDDLNGFNHVNQSSSSSQQHGWSGLK
+       .  .  . : : ...: :. ..:   ::  :    :..   . . ..:. .  :  . : 
+gi|425 YD-TYLMAQKAVDESVRNLVATGADPAKMAL---VDNFCWPDPTPKASNPDAAHKMAQLV
+            730       740       750          760       770         
+
+              280          290       300       310       320       
+gi|186 THEE--FDATVVKHH---SGTPGQYEDYVSGKRSEVLNPSLKVPPTKFQTAGGKSLSVSA
+             .::... .    ::  .. .:.. :: .   . ...:::: . :: ..  ... 
+gi|425 RACAGLYDAALAYRAPFVSGKDSMKNDFI-GKTKGGDTVKISVPPTLLVTAMAQVPDATK
+     780       790       800        810       820       830        
+
+       330             340       350       360       370       380 
+gi|186 EALKRARN------LLGDPELGSFFDDVAGGDQFFTPEKDERLSDIAINNGSANRGYIAH
+        :    .:      ::: :   :.. .: . ..: .::.  .  ..: :.    : . ::
+gi|425 TAPGFFQNAGDLIYLLGTPTQ-SLYASVLS-QEFTVPESAPEYPNLARNKDLYFRIFTAH
+      840       850        860        870       880       890      
+
+             390       400       410       420       430       440 
+gi|186 EEKTSNKHTPNSFVSPLWSSSKQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLS
+       ..                                                          
+gi|425 QKTLLQSCHDISEGGLMTALAESGFGNNLGMKLNLESFTWNELWSETGSLFVVSVKPADK
+        900       910       920       930       940       950      
+
+>>gi|42523102                                             (765 aa)
+ s-w opt: 112  Z-score: 103.4  bits: 30.5 E():  5.3
+Smith-Waterman score: 112; 23.9% identity (51.1% similar) in 305 aa overlap (159-424:377-665)
+
+      130       140       150       160       170       180        
+gi|186 VVLKESSIAKAKSILAEKVTYSDLRNTNCSIPQMRQVDTAETLPMFRTASGKSV--PLKE
+                                     : :  :  : .. :  . :.: :.  ::  
+gi|425 KLISQLDFKIRAEESGGVYVYNVRHGDAEKIAQTLQGVTKDAAP--KPATGGSLLSPLGS
+        350       360       370       380       390         400    
+
+        190       200       210       220       230            240 
+gi|186 SSIAKAMSILGSDKIIDSDNVLPRESGFGVSNSLFQTASNKKVNV-----SSAGLARAKA
+       ...   . :.:.:  : .:..         .:::. :::..  .:     :.    : ..
+gi|425 QGMQAPQEIFGGDVKITADKT---------TNSLIVTASKQDYDVVLNILSKIDTPRDQV
+          410       420                430       440       450     
+
+                  250         260       270       280       290    
+gi|186 -----LLGLEEDDLN--GFNHVNQSSSSSQQHGWSGLKTHEEFDATVVKHHSGTPGQYED
+            .. .  .: :  :... . ..:.  . :..::.. ..: .      .:  :    
+gi|425 FVEAIIMEMSVNDGNSWGIGYYQYGDSGYGKVGFNGLSNINDFLSP-----TGGSGAVIG
+         460       470       480       490       500            510
+
+          300           310           320       330       340      
+gi|186 YVSGKRSEVLNP----SLKVPPT----KFQTAGGKSLSVSAEALKRARNLLGDPELGSFF
+       . .::  :: .:    .::.:      .:  .. :.  .:.  :    :  :. :.:.  
+gi|425 FGQGKTVEVTDPVSKTTLKIPSLLGFINFLKTAKKANILSTPQLMTLDNQEGELEVGDKV
+              520       530       540       550       560       570
+
+               350       360       370            380        390   
+gi|186 ---DDV----AGGDQFFTPEKDERLSDIAIN---NGSAN--RGYIAHE-EKTSNKHTPNS
+          ..:    ..:    ::. ..    .::.   . ..:  :  : ..  . :.  ::..
+gi|425 VVGENVQNVGTSGTTVRTPQFEDATIKLAIKPFISPASNQIRMEIKQQVAQLSTASTPKA
+              580       590       600       610       620       630
+
+              400        410       420       430       440         
+gi|186 F---VSPLWSSS-KQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLSNNRSLASD
+       :   ..:: . : :   .::  . .  :.:.:. :                         
+gi|425 FQDSTQPLAKRSLKTVINVNNGDTVVLGGLMKEQDQESVTKVPLLGDIPIIGWLFKSRTI
+              640       650       660       670       680       690
+
+     450       460       470       480       490       500         
+gi|186 MAVNNSKVNGFIPRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTVSVSPFK
+                                                                   
+gi|425 VKDKTNMVVFLTPKIVRNNIEANAIVSKKLDERVDFVKAQGGVDPYGAKLDEIRRKAEAP
+              700       710       720       730       740       750
+
+>>gi|15235727                                             (354 aa)
+ s-w opt: 104  Z-score: 103.0  bits: 29.3 E():  5.6
+Smith-Waterman score: 104; 21.6% identity (52.1% similar) in 315 aa overlap (313-623:18-308)
+
+            290       300       310       320       330       340  
+gi|186 KHHSGTPGQYEDYVSGKRSEVLNPSLKVPPTKFQTAGGKSLSVSAEALKRARNLLGDP-E
+                                     ::.:..      .:   :..... :  : .
+gi|152              MQSEFLELRQRIKESIRTKMQSGDTIIAPTSQTQLHQSKSNL--PYD
+                            10        20        30        40       
+
+             350       360       370       380       390       400 
+gi|186 LGSFFDDVAGGDQFFTPEKDERLSDIAINNGSANRGYIAHEEKTSNKHTPNSFVSPLWSS
+       .::::    : .:     .  . :   ..: ..   ..   .. .:     ::   . . 
+gi|152 FGSFF----GPSQTVIASRVLQESKPLLENETSAAKML---NSIQNVCLIRSFFFTFLTL
+          50            60        70           80        90        
+
+             410       420       430       440       450       460 
+gi|186 SKQFSSVNLENLASGGNLIKKFDAAVDETDCALNATHGLSNNRSLASDMAVNNSKVNGFI
+       .:. ::: : : ::: .  ..    ...   . . .  .:.. .:  ..    ..  .  
+gi|152 QKK-SSV-LMNDASGTKNANEVKRKAEKLKDGRDYSFLFSDDAQLPVSIKEPPTSRPSST
+      100         110       120       130       140       150      
+
+             470       480       490       500       510           
+gi|186 PRGRQPGRPADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTVSVSPFKRPRISS--FKTP
+           :: ::...  :.  .:.:.:   .:. : .::  :.  :    .::  :.  ..  
+gi|152 ESQMQP-RPGSSNNVQAHTREDSAINSQKRKSMNKK--GQPSSKLGHQRPLSSTKPLRHD
+        160        170       180       190         200       210   
+
+     520        530       540       550       560       570        
+gi|186 SKKHAL-QASSGLSVVSCDTLTSKKVLSTRYPEKSPRVYIKDFFGMHPTATTRMDYVPDH
+       ::.. . : . .: ..  .   .:. : .. : :  ::  :      :.  .. : . . 
+gi|152 SKQQRVEQRNVSLELTRSQLPPAKHQLISKPPLK--RVKKK------PVKMSEDDLALQM
+           220       230       240         250             260     
+
+      580       590       600       610       620       630        
+gi|186 VRRIKSSNADKYVFCDESSSNKVGAETFLQMLAESGASLQHASRKWVTNHYRWIVWKLAC
+       ::..   ..:...  ::. ...    .: ... :   : . :...               
+gi|152 VRKM--CKTDRFAGRDEDYDDRCMEANFDDIMREEKRSERLAKKEDAEQLRLVEEEERVR
+           270       280       290       300       310       320   
+
+      640       650       660       670       680       690        
+gi|186 YDIYYPAKCRGNFLTITNVLEELKYRYEREVNHGHCSAIKRILSGDAPASSMMVLCISAI
+                                                                   
+gi|152 RQKKQKLSHLKNCGLGLKNLRVSNFKVTFLL                             
+           330       340       350                                 
+
+>>gi|42567389                                             (886 aa)
+ s-w opt: 113  Z-score: 102.9  bits: 30.6 E():  5.7
+Smith-Waterman score: 113; 21.5% identity (50.5% similar) in 321 aa overlap (396-694:154-445)
+
+         370       380       390       400       410       420     
+gi|186 DIAINNGSANRGYIAHEEKTSNKHTPNSFVSPLWSSSKQFSSVNLENLASGGNLIKKFDA
+                                     .:. ::.   :...:  : .. ...:... 
+gi|425 ANAIRVLCRIIDGTLLTQIERYLKQAIVDKNPVVSSAALVSGLHL--LKTNPEIVKRWSN
+           130       140       150       160         170       180 
+
+            430       440       450       460       470       480  
+gi|186 AVDE---TDCALNATHGLSNNRSLASDMAVNNSKVNGFIPRGRQPGRPADQPLVDITNR-
+        :.:   .  ::   :.:.  ... ..  .  ::. : . ::   .  :.  :.  :.. 
+gi|425 EVQEGIQSRSALVQFHALALLHQIRQNDRLAVSKLVGSLTRGSVRSPLAQCLLIRYTSQV
+             190       200       210       220       230       240 
+
+              490       500       510       520       530       540
+gi|186 -RDTAYAYNKQDSTQKKRLGKTVSVSPFKRPRISSFKTPSKKHALQASSGLSVVSCDTLT
+        :: :   :. .: ..          :: .   : ..  ..   :.:.   ...  : .:
+gi|425 IRDMA---NHGQSGER----------PFYEFLESCLRHKAEMVILEAAR--AITELDGVT
+                250                 260       270         280      
+
+              550       560       570              580        590  
+gi|186 SKKVLSTRYPEKSPRVYIKDFFGMHPTATTRMDYVPD-------HVRRIKSSNAD-KYVF
+       :.        : .: . . ..:   :  . :.  :         :   . . : : . ..
+gi|425 SR--------ELTPAITVLQLFLSSPRPVLRFAAVRTLNKVAMTHPMAVTNCNIDMESLI
+                290       300       310       320       330        
+
+            600       610       620       630         640          
+gi|186 CDESSSNKVGAETFLQMLAESGASLQHASRKWVTNHYRWIV--WKLACYD------IYYP
+        :.. :  ... ..  .:  .. :  .   : .:: .  :.  .:..  :      . .:
+gi|425 SDQNRS--IATLAITTLLKTGNESSVERLMKQITNFMSDIADEFKIVVVDAIRSLCVKFP
+      340         350       360       370       380       390      
+
+          650        660       670       680       690       700   
+gi|186 AKCRGNFLTITNVL-EELKYRYEREVNHGHCSAIKRILSGDAPASSMMVLCISAINPKTD
+        : :. .  ..:.: ::  ..:.: .  .  . :. :   ::  :... ::         
+gi|425 LKYRSLMTFLSNILREEGGFEYKRAIVDSIVTIIRDI--PDAKESGLLHLCEFIEDCEFT
+        400       410       420       430         440       450    
+
+           710       720       730       740       750       760   
+gi|186 NDSQEAHCSDSCSNVKVELTDGWYSMNAALDVVLTKQLNAGKLFVGQKLRILGAGLSGWA
+                                                                   
+gi|425 YLSTQILHFLGIEGPNTSDPSKYIRYIYNRVHLENATVRAAAVSTLAKFGFMVESLKPRI
+          460       470       480       490       500       510    
+
+>>gi|42524665                                             (367 aa)
+ s-w opt: 102  Z-score: 100.3  bits: 28.9 E():    8
+Smith-Waterman score: 102; 25.5% identity (56.9% similar) in 102 aa overlap (500-599:78-179)
+
+     470       480       490       500       510       520         
+gi|186 PADQPLVDITNRRDTAYAYNKQDSTQKKRLGKTVSVSPFKRPRISSFKTPSKKHALQASS
+                                     ::.::..: .   ::..   ... :.    
+gi|425 VFNGDTLWALSDDRGKFGEPRFYGFDLKISGKSVSLNPKSVSFISGLPKTGERAAILDPE
+        50        60        70        80        90       100       
+
+     530        540       550       560        570       580       
+gi|186 GLSVV-SCDTLTSKKVLSTRYPEKSPRVYIKDFFGM-HPTATTRMDYVPDHVRRIKSSNA
+       ::... : : :.:..  ..  :.. ::..  :  :  .        ..:. . . :..  
+gi|425 GLALLPSGDLLVSSEGDNNSKPREMPRIFRIDPQGAWKADLPIPAKFLPESIGQQKQGVQ
+       110       120       130       140       150       160       
+
+       590       600       610       620       630       640       
+gi|186 DKYVFCDESSSNKVGAETFLQMLAESGASLQHASRKWVTNHYRWIVWKLACYDIYYPAKC
+       ..  :   ::::                                                
+gi|425 NNLSFEGLSSSNDGKVLFASVETSLFQDYVAGEEEKGDWLRILKYEDKPEKGYQPVAEYA
+       170       180       190       200       210       220       
+
+>>gi|15235571                                             (250 aa)
+ s-w opt:  98  Z-score: 100.1  bits: 28.3 E():  8.2
+Smith-Waterman score: 98; 24.7% identity (52.7% similar) in 186 aa overlap (811-989:80-246)
+
+              790       800       810       820       830          
+gi|186 LNINGTYRAHWADRLGFCKEIGVPLALNCIKCNGGPVPKTLAGIKRIYPI-LYKERLGEK
+                                     .: ..: :     .. . :  . .:   ::
+gi|152 GGGGGGAPVEGEEAVKGKGRISDEKQKLYEQCLNAPCP-----VRYLTPQEIEREAQREK
+      50        60        70        80             90       100    
+
+     840       850       860       870          880       890      
+gi|186 KSIVRSERIESRIIQLHNQRRSALVEGIMCEYQR-GINGVH--SQNDTDSEEGAKIFKLL
+        ... .:. ..  ::   .. .:   :.  : .: :  :.   : .  ..::  : .:: 
+gi|152 LGLISKEKQRDMEIQ---KKGGAASMGVTDEPMRIGTPGLDYISLGIFEAEELPK-YKLT
+          110          120       130       140       150        160
+
+        900       910       920       930         940       950    
+gi|186 ETAAEPEFLMAEMSPEQLRSFTTYKAKFEAAQQMRKE--KSVAETLEDAGLGERNVTPFM
+       :   . : :  :.:   .:     .:   :  ...:   ... :.:. :.: : ..::: 
+gi|152 E--EDGERLAKEYSKVLMREHRERRAAETALLNLKKSAIEALPENLKKAAL-EPDLTPFP
+                170       180       190       200        210       
+
+          960       970        980       990      1000      1010   
+gi|186 RIRLVGLTSLSYEGEHNPKEGIVT-IWDPTERQRTELTEGKIYMMKGLVPINSDSEILYL
+         :  :...:.      : :: .  . : .... ..                        
+gi|152 ANR--GMATLT-----PPIEGYLEKVMDAAKKSSSKEKLR                    
+       220              230       240       250                    
+
+          1020      1030      1040      1050      1060      1070   
+gi|186 HARGSSSRWQPLSPKDSENFQPFFNPRKPISLSNLGEIPLSSEFDIAAYVVYVGNAYTDV
+
+>>gi|79325003                                             (250 aa)
+ s-w opt:  98  Z-score: 100.1  bits: 28.3 E():  8.2
+Smith-Waterman score: 98; 24.7% identity (52.7% similar) in 186 aa overlap (811-989:80-246)
+
+              790       800       810       820       830          
+gi|186 LNINGTYRAHWADRLGFCKEIGVPLALNCIKCNGGPVPKTLAGIKRIYPI-LYKERLGEK
+                                     .: ..: :     .. . :  . .:   ::
+gi|793 GGGGGGAPVEGEEAVKGKGRISDEKQKLYEQCLNAPCP-----VRYLTPQEIEREAQREK
+      50        60        70        80             90       100    
+
+     840       850       860       870          880       890      
+gi|186 KSIVRSERIESRIIQLHNQRRSALVEGIMCEYQR-GINGVH--SQNDTDSEEGAKIFKLL
+        ... .:. ..  ::   .. .:   :.  : .: :  :.   : .  ..::  : .:: 
+gi|793 LGLISKEKQRDMEIQ---KKGGAASMGVTDEPMRIGTPGLDYISLGIFEAEELPK-YKLT
+          110          120       130       140       150        160
+
+        900       910       920       930         940       950    
+gi|186 ETAAEPEFLMAEMSPEQLRSFTTYKAKFEAAQQMRKE--KSVAETLEDAGLGERNVTPFM
+       :   . : :  :.:   .:     .:   :  ...:   ... :.:. :.: : ..::: 
+gi|793 E--EDGERLAKEYSKVLMREHRERRAAETALLNLKKSAIEALPENLKKAAL-EPDLTPFP
+                170       180       190       200        210       
+
+          960       970        980       990      1000      1010   
+gi|186 RIRLVGLTSLSYEGEHNPKEGIVT-IWDPTERQRTELTEGKIYMMKGLVPINSDSEILYL
+         :  :...:.      : :: .  . : .... ..                        
+gi|793 ANR--GMATLT-----PPIEGYLEKVMDAAKKSSSKEKLR                    
+       220              230       240       250                    
+
+          1020      1030      1040      1050      1060      1070   
+gi|186 HARGSSSRWQPLSPKDSENFQPFFNPRKPISLSNLGEIPLSSEFDIAAYVVYVGNAYTDV
+
+>>gi|42523126                                             (2828 aa)
+ s-w opt: 121  Z-score: 98.7  bits: 31.5 E():  9.7
+Smith-Waterman score: 121; 29.6% identity (56.0% similar) in 159 aa overlap (93-244:19-168)
+
+             70        80        90       100         110       120
+gi|186 GDGFRWEVAGRILQSVSDSTPTKALESTAPLPSMADLLLQGCS-KL-IAREEAMPGEIPM
+                                     : :.. ..: ::: .: :: :.. :  .  
+gi|425             MNCTFLNTIYLTQQAKRLLLSFSLMVLAGCSLELQIAAENSTPTTLKW
+                           10        20        30        40        
+
+              130       140        150       160         170       
+gi|186 FRTGLGKSVVLKESSIAKAKSILAEK-VTYSDLRNTNCSIPQM--RQVDTAET--LPMFR
+          .::.. .::   :   :. . :. : :  .:. .:. : .   .:  :::  :: : 
+gi|425 SSDSLGQQGLLKAEWILPEKADIKEQQVLY--FRGDSCATPILPVANVGPAETSHLPTFT
+       50        60        70          80        90       100      
+
+         180       190       200       210       220       230     
+gi|186 TASGKSVPLKESSIAKAMSILGSDKIIDSDNVLPRESGFGVSNSLFQTASNKKVNVSSAG
+         .:    .:   ..:  :. .:.     .: .   ..:.. .:: :.  :.  ::..: 
+gi|425 PEDGVEYTFKVFVLSKDGSVASSS----CSNPITYFGAFSI-ESLSQSIINEG-NVTAAP
+        110       120       130           140        150        160
+
+         240       250       260       270       280       290     
+gi|186 LARAKALLGLEEDDLNGFNHVNQSSSSSQQHGWSGLKTHEEFDATVVKHHSGTPGQYEDY
+       . ..  :::                                                   
+gi|425 F-KGTCLLGSSIEFSAAATPLLTFTCSDRQWTQNLDFSSLPNLYSGDLIATVTAPGGTPK
+               170       180       190       200       210         
 
 
 
-269 residues in 1 query   sequences
-2146675 residues in 5377 library sequences
+1202 residues in 1 query   sequences
+3315795 residues in 8964 library sequences
  Scomplib [35.04]
- start: Thu Apr  9 12:10:56 2009 done: Thu Apr  9 12:10:56 2009
- Total Scan time:  0.280 Total Display time:  0.030
+ start: Mon Apr 13 10:46:40 2009 done: Mon Apr 13 10:46:42 2009
+ Total Scan time:  1.400 Total Display time:  0.360
 
 Function used was SSEARCH [version 35.04 Mar. 8, 2009]

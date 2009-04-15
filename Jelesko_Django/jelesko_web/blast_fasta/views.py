@@ -26,13 +26,14 @@ class fastaform(forms.Form):
 	mfoptions = [('P250', 'pam250.mat'), ('P120', 'pam120.mat'), ('BL50', 'BLOSUM50'), ('BL62', 'BLOSUM62'), ('BL80', 'BLOSUM80')]
 	matrix_file = forms.ChoiceField(label="Matrix File", choices = mfoptions, initial = 'BLOSUM50') 
 	dboptions = [('/Users/caiyizhi/Desktop/db.fasta', 'Complete DB'), ('/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta', 'Sample DB')]
-	database_option = forms.ChoiceField(label="Database", choices = dboptions, initial = 'Sample DB')
+	database_option = forms.ChoiceField(label="Database", choices = dboptions, initial = 'Sample DB')        
+
 
 
 def fasta(request):
 	"""docstring for fasta"""
 	import os
-	import parsing_fasta	
+	import parsing_fasta2	
 	my_fasta_file = sequence_data_dir + "/fasta_seq.fasta"
 	sqfile = open(my_fasta_file, "w")
 	if request.method == 'GET':
@@ -59,14 +60,14 @@ def fasta(request):
 			cmd = 'fasta35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + 'fasta_seq.fasta '+ str(db) +' > '+ sequence_data_dir + 'fasta_output.txt'
 			os.system(cmd)
 			fasta_file = open(sequence_data_dir + 'fasta_output.txt')
-		res = parsing_fasta.parsing_fasta(fasta_file)
+		res = parsing_fasta2.parsing_fasta(fasta_file)
 	return render_to_response('blast_fasta/fasta.html', {'form':f, 'res': res})    
 	
 def ssearch(request):
 	"""docstring for fasta"""
 	import os
-	import parsing_fasta	
-	my_fasta_file = sequence_data_dir + "/ssearch_seq.fasta"
+	import parsing_fasta2	
+	my_fasta_file = sequence_data_dir + "ssearch_seq.fasta"
 	sqfile = open(my_fasta_file, "w")
 	if request.method == 'GET':
 		f = fastaform(request.GET)
@@ -87,17 +88,20 @@ def ssearch(request):
 				F = 0
 			else:
 				F = f.cleaned_data["number_alignment_lowest"]
-			s = f.cleaned_data["matrix_file"]	
-			cmd = 'rm '+ sequence_data_dir + '/fasta_output.txt|ssearch35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + '/ssearch_seq.fasta '+ sequence_data_dir+'/db.fasta > '+ sequence_data_dir + '/ssearch_output.txt'
+			s = f.cleaned_data["matrix_file"]
+			db = f.cleaned_data["database_option"] 
+			cmd = 'ssearch35 -b '+ str(b) + ' -E '+ str(E) + ' -F ' +str(F) + ' -s ' +str(s) + ' '+ sequence_data_dir + 'ssearch_seq.fasta '+ str(db) +' > '+ sequence_data_dir + 'ssearch_output.txt'
 			os.system(cmd)
 			fasta_file = open(sequence_data_dir + '/ssearch_output.txt')
-		res = parsing_fasta.parsing_fasta(fasta_file)
+		res = parsing_fasta2.parsing_fasta(fasta_file)
 	return render_to_response('blast_fasta/ssearch.html', {'form':f, 'res': res})
 
 
+from models import Protein
 
 def blast(request):
 	"""docstring for blast"""
+	from models import Protein
 	from Bio.Blast import NCBIStandalone
 	from Bio.Blast import NCBIXML
 	import os
@@ -126,5 +130,16 @@ def blast(request):
 			for br in blast_records:
 				for a in br.alignments:
 					for hsp in a.hsps:
-						res.append((a.accession,a.length,hsp.expect,hsp.identities,hsp.query_start,hsp.sbjct_start,hsp.query_end,hsp.sbjct_end))
-	return render_to_response('blast_fasta/blast.html', {'form': f,'res':res})
+						title_desc = a.title.split('|')
+						gi_number = title_desc[-1]
+						b = Protein.objects.get(gi = gi_number)
+						accession = b.accession.strip()
+						genus_species = b.genus_species.strip()
+						annotation = b.annotation.strip()
+						download_date = b.download_date
+						res.append((gi_number,hsp.expect, accession, genus_species, annotation, download_date))
+	return render_to_response('blast_fasta/blast2.html', {'form': f,'res':res})   
+	
+	
+	
+	
