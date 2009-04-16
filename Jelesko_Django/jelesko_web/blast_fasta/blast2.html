@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Blast search</title>
+</head>
+<body>
+
+
+<h1 style="text-align:center">BLAST search</h1>
+<hr/>
+
+<form action="" method="GET">
+	<label><b>Your sequence in Fasta format:</b></label><br/>
+	{{form.seq}}<br/>
+
+	<label><b>Set e-value cutoff:</b></label>{{form.evalue}}<label><br/>
+	<input type="submit" name="submit_search" value="Search">
+</form>
+
+<!-- Below shows the search result-->
+{% if res %}
+<table cellspacing="5" border="1">
+<thead>
+	<tr><th>Check</th><th>GI</th><th>E-value</th><th>Accession</th><th>Genus_species</th><th>Annotation</th><th>Download_date</th></tr>
+</thead>
+<tbody>
+        {% for record in res %}
+        <tr>                   
+	  <td><INPUT TYPE = CHECKBOX Name="Entry"}></td>
+	          {% for i in record %}
+		  <td>{{i}}</td>
+	          {% endfor %}
+        </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endif %} 
+
+<p>
+Questions and comments:
+<a href="mailto:jelesko@vt.edu?subject=Hello%20again">
+Send Emails</a>
+</p>
+
+</body>
+</html> 
+
+

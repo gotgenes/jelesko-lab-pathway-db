@@ -20,12 +20,10 @@ def parsing_fasta(fasta_file):
 		info = line[position:]
 		words_desc = desc.split('|')
 		gi_number = words_desc[1].strip()
-		accession_ref = words_desc[3].strip()
-		detail = words_desc[4].strip()
 		words_info = info.split()
 		bit = words_info[-2].strip()
 		e_value = words_info[-1].strip()
-		alignments.append({'gi_number':gi_number, 'accession_ref': accession_ref, 'detail':detail, 'bit': bit, 'e_value': e_value}) 
+		alignments.append({'gi_number':gi_number, 'bit': bit, 'e_value': e_value}) 
 	#	alignments.append([desc, bit, e_value])
 
 	return alignments 
