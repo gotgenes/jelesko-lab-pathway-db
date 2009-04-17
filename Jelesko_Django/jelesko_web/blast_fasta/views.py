@@ -1,15 +1,21 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-sequence_data_dir = \
-    '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/'
+# fill this in with the appropriate path
+SEQUENCE_DATA_DIR = ''
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django import forms
+from models import Protein
 
+from Bio.Blast import NCBIStandalone
+from Bio.Blast import NCBIXML
+import os
+import parsing_fasta2
+import time
 
-class blastform(forms.Form):
+class BlastForm(forms.Form):
 
     seq = forms.CharField(widget=forms.Textarea)
     evalue = forms.FloatField(initial=1)  # initial only for unbound form, not here because get data from GET
@@ -23,14 +29,7 @@ class blastform(forms.Form):
         ]
 
 
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response
-from django import forms
-
-
-class fastaform(forms.Form):
-
-    """docstring for fastaform"""
+class FastaForm(forms.Form):
 
     seq = forms.CharField(widget=forms.Textarea)
     number_sequence = forms.FloatField(initial=10)  # -b
@@ -50,15 +49,11 @@ class fastaform(forms.Form):
 
 
 def fasta(request):
-    """docstring for fasta"""
 
-    import os
-    import parsing_fasta2
-    import time
-    my_fasta_file = sequence_data_dir + '/fasta_seq.fasta'
+    my_fasta_file = SEQUENCE_DATA_DIR + '/fasta_seq.fasta'
     sqfile = open(my_fasta_file, 'w')
     if request.method == 'GET':
-        f = fastaform(request.GET)
+        f = FastaForm(request.GET)
         if not f.is_valid():
             return render_to_response('blast_fasta/fasta.html', {'form'
                     : f, 'res': ''})
@@ -80,28 +75,25 @@ def fasta(request):
             s = f.cleaned_data['matrix_file']
             db = f.cleaned_data['database_option']
             cmd = 'fasta35 -b ' + str(b) + ' -E ' + str(E) + ' -F '\
-                 + str(F) + ' -s ' + str(s) + ' ' + sequence_data_dir\
+                 + str(F) + ' -s ' + str(s) + ' ' + SEQUENCE_DATA_DIR\
                  + 'fasta_seq.fasta ' + str(db) + ' > '\
-                 + sequence_data_dir + 'fasta_output.txt'
+                 + SEQUENCE_DATA_DIR + 'fasta_output.txt'
             start = time.clock()
             os.system(cmd)
             end = time.clock()
             duration = end - start
-            fasta_file = open(sequence_data_dir + 'fasta_output.txt')
+            fasta_file = open(SEQUENCE_DATA_DIR + 'fasta_output.txt')
         res = parsing_fasta2.parsing_fasta(fasta_file)
     return render_to_response('blast_fasta/fasta.html', {'form': f,
                               'res': res, 'duration': duration})
 
 
 def ssearch(request):
-    """docstring for fasta"""
 
-    import os
-    import parsing_fasta2
-    my_fasta_file = sequence_data_dir + 'ssearch_seq.fasta'
+    my_fasta_file = SEQUENCE_DATA_DIR + 'ssearch_seq.fasta'
     sqfile = open(my_fasta_file, 'w')
     if request.method == 'GET':
-        f = fastaform(request.GET)
+        f = FastaForm(request.GET)
         if not f.is_valid():
             return render_to_response('blast_fasta/ssearch.html',
                     {'form': f, 'res': ''})
@@ -123,32 +115,25 @@ def ssearch(request):
             s = f.cleaned_data['matrix_file']
             db = f.cleaned_data['database_option']
             cmd = 'ssearch35 -b ' + str(b) + ' -E ' + str(E) + ' -F '\
-                 + str(F) + ' -s ' + str(s) + ' ' + sequence_data_dir\
+                 + str(F) + ' -s ' + str(s) + ' ' + SEQUENCE_DATA_DIR\
                  + 'ssearch_seq.fasta ' + str(db) + ' > '\
-                 + sequence_data_dir + 'ssearch_output.txt'
+                 + SEQUENCE_DATA_DIR + 'ssearch_output.txt'
             os.system(cmd)
-            fasta_file = open(sequence_data_dir + '/ssearch_output.txt')
+            fasta_file = open(SEQUENCE_DATA_DIR + '/ssearch_output.txt')
         res = parsing_fasta2.parsing_fasta(fasta_file)
     return render_to_response('blast_fasta/ssearch.html', {'form': f,
                               'res': res})
 
 
-from models import Protein
-
-
 def blast(request):
     """docstring for blast"""
 
-    from models import Protein
-    from Bio.Blast import NCBIStandalone
-    from Bio.Blast import NCBIXML
-    import os
-    my_blast_dir = sequence_data_dir
-    my_blast_file = sequence_data_dir + '/seq.fasta'
+    my_blast_dir = SEQUENCE_DATA_DIR
+    my_blast_file = SEQUENCE_DATA_DIR + '/seq.fasta'
     sqfile = open(my_blast_file, 'w')
-    my_blast_db = sequence_data_dir + '/db.fasta'
+    my_blast_db = SEQUENCE_DATA_DIR + '/db.fasta'
     if request.method == 'GET':
-        f = blastform(request.GET)
+        f = BlastForm(request.GET)
         if not f.is_valid():
             return render_to_response('blast_fasta/blast.html', {'form'
                     : f, 'res': ''})  # do sth else
@@ -188,5 +173,4 @@ def blast(request):
                             ))
     return render_to_response('blast_fasta/blast2.html', {'form': f,
                               'res': res})
-
 
