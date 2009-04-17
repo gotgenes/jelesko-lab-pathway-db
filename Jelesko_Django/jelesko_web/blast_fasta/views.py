@@ -4,6 +4,14 @@
 # fill this in with the appropriate path
 SEQUENCE_DATA_DIR = ''
 
+# fill this in with appropriate paths to BLASTDB formatted Databases
+BLASTDB_DBS = [
+        # Example:
+        #('/Users/caiyizhi/Desktop/db.fasta', 'Complete DB'),
+]
+# This should be one of the above. e.g., 'Complete DB'
+INITIAL_DB_CHOICE = ''
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django import forms
@@ -31,62 +39,93 @@ class BlastForm(forms.Form):
 
 class FastaForm(forms.Form):
 
+    # the user-input FASTA formatted protein sequence
     seq = forms.CharField(widget=forms.Textarea)
-    number_sequence = forms.FloatField(initial=10)  # -b
-    number_alignment_highest = forms.FloatField(initial=10)  # -E limited number of alignments base on expected number of scores, set the highest
-    number_alignment_lowest = forms.FloatField(initial=0.1)  # -F limited number of alighments based on expected number of scores, set the lowes
-    mfoptions = [('P250', 'pam250.mat'), ('P120', 'pam120.mat'), ('BL50'
-                 , 'BLOSUM50'), ('BL62', 'BLOSUM62'), ('BL80',
-                 'BLOSUM80')]
-    matrix_file = forms.ChoiceField(label='Matrix File',
-                                    choices=mfoptions,
-                                    initial='BLOSUM50')
-    dboptions = [('/Users/caiyizhi/Desktop/db.fasta', 'Complete DB'),
-                 ('/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta'
-                 , 'Sample DB')]
-    database_option = forms.ChoiceField(label='Database',
-            choices=dboptions, initial='Sample DB')
+    # -b "Number of sequence scores to be shown on output."
+    number_sequence = forms.FloatField(initial=10)
+    # -E "Limit the number of scores and alignments shown based on the
+    # expected number of scores." Overrides the expectation value.
+    number_alignment_highest = forms.FloatField(initial=10)
+    # -F "Limit the number of scores and alignments shown based on the
+    # expected number of scores." Sets the highest E-value shown.
+    number_alignment_lowest = forms.FloatField(initial=0.1)
+    mfoptions = [
+            ('P250', 'pam250.mat'),
+            ('P120', 'pam120.mat'),
+            ('BL50', 'BLOSUM50'),
+            ('BL62', 'BLOSUM62'),
+            ('BL80', 'BLOSUM80')
+    ]
+    matrix_file = forms.ChoiceField(
+            label='Matrix File',
+            choices=mfoptions,
+            initial='BLOSUM50'
+    )
+    dboptions = BLAST_DBS
+    database_option = forms.ChoiceField(
+            label='Database',
+            choices=dboptions,
+            initial=INITIAL_DB_CHOICE
+    )
 
 
 def fasta(request):
 
+    # TODO: All of these files need to be made into temporary files of
+    # temporary names so that they don't get fricking overwritten when
+    # multiple users use the system!
+
+    # TODO: Add parameter validation.
+
     my_fasta_file = SEQUENCE_DATA_DIR + '/fasta_seq.fasta'
     sqfile = open(my_fasta_file, 'w')
-    if request.method == 'GET':
-        f = FastaForm(request.GET)
+    # the form was submitted
+    if request.method == 'POST':
+        # this will allow the form to remain "filled out"
+        f = FastaForm(request.POST)
         if not f.is_valid():
             return render_to_response('blast_fasta/fasta.html', {'form'
                     : f, 'res': ''})
-        else:
-            sqfile.write(f.cleaned_data['seq'])
-            sqfile.close()
-            if not f.cleaned_data['number_sequence']:
-                b = 10
-            else:
-                b = f.cleaned_data['number_sequence']
-            if not f.cleaned_data['number_alignment_highest']:
-                E = 10
-            else:
-                E = f.cleaned_data['number_alignment_highest']
-            if not f.cleaned_data['number_alignment_lowest']:
-                F = 0
-            else:
-                F = f.cleaned_data['number_alignment_lowest']
-            s = f.cleaned_data['matrix_file']
-            db = f.cleaned_data['database_option']
-            cmd = 'fasta35 -b ' + str(b) + ' -E ' + str(E) + ' -F '\
-                 + str(F) + ' -s ' + str(s) + ' ' + SEQUENCE_DATA_DIR\
-                 + 'fasta_seq.fasta ' + str(db) + ' > '\
-                 + SEQUENCE_DATA_DIR + 'fasta_output.txt'
-            start = time.clock()
-            os.system(cmd)
-            end = time.clock()
-            duration = end - start
-            fasta_file = open(SEQUENCE_DATA_DIR + 'fasta_output.txt')
-        res = parsing_fasta2.parsing_fasta(fasta_file)
-    return render_to_response('blast_fasta/fasta.html', {'form': f,
-                              'res': res, 'duration': duration})
 
+        sqfile.write(f.cleaned_data['seq'])
+        sqfile.close()
+        if not f.cleaned_data['number_sequence']:
+            b = 10
+        else:
+            b = f.cleaned_data['number_sequence']
+        if not f.cleaned_data['number_alignment_highest']:
+            E = 10
+        else:
+            E = f.cleaned_data['number_alignment_highest']
+        if not f.cleaned_data['number_alignment_lowest']:
+            F = 0
+        else:
+            F = f.cleaned_data['number_alignment_lowest']
+        s = f.cleaned_data['matrix_file']
+        db = f.cleaned_data['database_option']
+        # TODO: This could be made nicer using string formatting.
+        cmd = 'fasta35 -b ' + str(b) + ' -E ' + str(E) + ' -F '\
+             + str(F) + ' -s ' + str(s) + ' ' + SEQUENCE_DATA_DIR\
+             + 'fasta_seq.fasta ' + str(db) + ' > '\
+             + SEQUENCE_DATA_DIR + 'fasta_output.txt'
+        start = time.clock()
+        os.system(cmd)
+        end = time.clock()
+        duration = end - start
+        fasta_file = open(SEQUENCE_DATA_DIR + 'fasta_output.txt')
+        res = parsing_fasta2.parsing_fasta(fasta_file)
+        return render_to_response(
+                'blast_fasta/fasta.html',
+                {'form': f, 'res': res, 'duration': duration}
+        )
+
+    # user has not sent a POST request; present user with blank form
+    else:
+        form = FastaForm()
+        return render_to_response(
+                'blast_fasta/fasta.html',
+                {'form': form}
+        )
 
 def ssearch(request):
 
