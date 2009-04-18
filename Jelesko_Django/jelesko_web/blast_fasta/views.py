@@ -26,15 +26,12 @@ import time
 class BlastForm(forms.Form):
 
     seq = forms.CharField(widget=forms.Textarea)
-    evalue = forms.FloatField(initial=1)  # initial only for unbound form, not here because get data from GET
-    wsoptions = [
-        ('9', '9'),
-        ('10', '10'),
-        ('11', '11'),
-        ('12', '12'),
-        ('14', '14'),
-        ('16', '16'),
-        ]
+    evalue = forms.FloatField(initial=1)
+    wordsize = forms.IntegerField(
+            label='Word Size',
+            choices=wsoptions,
+            initial=3
+            )
 
 
 class FastaForm(forms.Form):
