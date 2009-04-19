@@ -36,7 +36,7 @@ Dumps the proteins in the proteins table out to a FASTA formatted file."
                     Seq(record.sequence, IUPAC.protein),
                     record.gi
             )
-            yield seq_req
+            yield seq_rec
 
 
     def handle_noargs(self, **options):
