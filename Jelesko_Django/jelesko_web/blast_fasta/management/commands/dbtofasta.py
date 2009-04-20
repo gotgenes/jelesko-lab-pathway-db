@@ -40,7 +40,7 @@ NOTE: This will only write the GIs (or equivalent) for the header line.\
                     record.gi
             )
             # skip records which, for whatever reason, have no sequence
-            if len(seq_rec)
+            if len(seq_rec):
                 yield seq_rec
             else:
                 continue
