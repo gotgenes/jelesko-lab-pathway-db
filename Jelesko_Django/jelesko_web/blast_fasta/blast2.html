@@ -14,11 +14,14 @@
 	{{form.seq}}<br/>
 
 	<label><b>Set e-value cutoff:</b></label>{{form.evalue}}<label><br/>
+	<label><b>Target database: </b></label><br/>
+	{{form.database_option}}<br/>
 	<input type="submit" name="submit_search" value="Search">
 </form>
 
 <!-- Below shows the search result-->
-{% if res %}
+{% if res %} 
+<h3 id="it_takes">It takes {{duration}} minutes</h3> 
 <table cellspacing="5" border="1">
 <thead>
 	<tr><th>Check</th><th>GI</th><th>E-value</th><th>Accession</th><th>Genus_species</th><th>Annotation</th><th>Download_date</th></tr>
