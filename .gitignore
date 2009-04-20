@@ -1,1 +1,9 @@
 *.pyc
+*.swp
+*.aux
+*.log
+*.dvi
+*.pdf
+*.bbl
+tags
+TAGS

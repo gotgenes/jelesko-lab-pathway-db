@@ -81,10 +81,25 @@ def record_to_dict(fasta_record, ignore_errors=False):
         else:
             raise e
 
+    # TODO: this line below will need to become an if statement for the
+    # sake of the JGI sequences or any other sequences not from NCBI
     assert split_header[0] in ('gi', 'GI')
+
     record_dict['gi'] = split_header[1]
     description = split_header[4].strip()
-    if split_header[2] in ('ref', 'REF', 'gb', 'GB'):
+    if split_header[2] in (
+            'ref',
+            'gb',
+            'emb',
+            'pdb',
+            'dbj',
+            'sp',
+            'tpd',
+            'tpe',
+            'tpg',
+            'pir',
+            'prf',
+            ):
         record_dict['accession'] = split_header[3]
     # this is hear in case it's a mitochondrial sequence
     # We're looking to pull information from a line like below.
