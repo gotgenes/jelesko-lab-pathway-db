@@ -15,14 +15,17 @@ from optparse import make_option
 from jelesko_web.blast_fasta.models import Protein
 
 from Bio.Seq import Seq
-from Bio import SeqIO
+from Bio.SeqIO.FastaIO import FastaWriter
 from Bio.SeqRecord import SeqRecord
 from Bio.Alphabet import IUPAC
 
 class Command(NoArgsCommand):
 
-    help="\
-Dumps the proteins in the proteins table out to a FASTA formatted file."
+    help="""\
+Dumps the proteins in the proteins table out to a FASTA formatted file.
+
+NOTE: This will only write the GIs (or equivalent) for the header line.\
+"""
     option_list = NoArgsCommand.option_list + (
             make_option(
                 '-o', '--outfile', default='jeleskodb.faa',
@@ -46,7 +49,8 @@ Dumps the proteins in the proteins table out to a FASTA formatted file."
         records = Protein.objects.all()
         seqs = self._records_to_seqs(records)
         print "Writing records to %s" % outfilename
-        SeqIO.write(seqs, outfileh, 'fasta')
+        writer = FastaWriter(outfileh, record2title=lambda x: x.id)
+        writer.write_file(seqs)
         outfileh.close()
         print "Done."
 
