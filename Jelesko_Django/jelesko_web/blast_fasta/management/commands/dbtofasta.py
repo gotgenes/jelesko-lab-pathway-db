@@ -36,10 +36,14 @@ NOTE: This will only write the GIs (or equivalent) for the header line.\
     def _records_to_seqs(self, records):
         for record in records:
             seq_rec = SeqRecord(
-                    Seq(record.sequence, IUPAC.protein),
+                    Seq(record.sequence.strip(), IUPAC.protein),
                     record.gi
             )
-            yield seq_rec
+            # skip records which, for whatever reason, have no sequence
+            if len(seq_rec)
+                yield seq_rec
+            else:
+                continue
 
 
     def handle_noargs(self, **options):
