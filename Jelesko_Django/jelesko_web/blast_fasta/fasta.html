@@ -27,14 +27,14 @@
 <!-- Below shows the search result-->
 {% if res %}
 <h3 id="it_takes">It takes {{duration}} minutes</h3>
-<table cellspacing="5" border="1">
+<table cellspacing="5" border="1" bgcolor="honeydew">
 <thead>
 	<tr><th>Check</th><th>GI</th><th>Bit</th><th>E-Value</th><th>Accession</th><th>Genus_species</th><th>Annotation</th><th>Download_date</th></tr>
 </thead>
 <tbody>
         {% for record in res %}
         <tr>
-		<td><INPUT TYPE = CHECKBOX Name={{record.gi_number}} id = {{record.gi_number}}></td>
+		<td><INPUT TYPE = CHECKBOX Name=gi_number value = {{record.gi_number}}></td>
 			<td><a href="http://www.ncbi.nlm.nih.gov/protein/{{record.gi_number}}" target="_blank">{{record.gi_number}} </a></td>
 			<td>{{record.bit}}</td>
 			<td>{{record.e_value}}</td>
