@@ -1,14 +1,24 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# fill this in with the appropriate path
-SEQUENCE_DATA_DIR = ''
+# Fill this in with the appropriate path; this is the location where
+# output files from runs will be stored. It should be writeable by the
+# user Django runs under (e.g., www-data for most Linux/Unix systems)
+OUTPUT_DIR = ''
+OUTPUT_DIR = OUTPUT_DIR.rstrip(os.sep)
 
-# fill this in with appropriate paths to BLASTDB formatted Databases
+# Fill this in with appropriate options of BLASTDB formatted databases
 BLASTDB_DBS = [
         # Example:
-        #('/Users/caiyizhi/Desktop/db.fasta', 'Complete DB'),
+        #('completedb', 'Complete DB'),
 ]
+
+# Specify paths to the actual databases
+BLAST_DB_PATHS = {
+        # Example:
+        #'completedb': '/var/local/blastdbs/complete.db',
+}
+
 # This should be one of the above. e.g., 'Complete DB'
 INITIAL_DB_CHOICE = ''
 
@@ -21,6 +31,7 @@ from Bio.Blast import NCBIStandalone
 from Bio.Blast import NCBIXML
 import os
 import parsing_fasta2
+import tempfile
 import time
 
 class BlastForm(forms.Form):
@@ -35,6 +46,8 @@ class BlastForm(forms.Form):
 
 
 class FastaForm(forms.Form):
+
+    # TODO: Add parameter validation.
 
     # the user-input FASTA formatted protein sequence
     seq = forms.CharField(widget=forms.Textarea)
@@ -68,14 +81,12 @@ class FastaForm(forms.Form):
 
 def fasta(request):
 
-    # TODO: All of these files need to be made into temporary files of
-    # temporary names so that they don't get fricking overwritten when
-    # multiple users use the system!
-
     # TODO: Add parameter validation.
 
-    my_fasta_file = SEQUENCE_DATA_DIR + '/fasta_seq.fasta'
-    sqfile = open(my_fasta_file, 'w')
+    timestr = time.strftime('%Y-%m-%d_%H:%M:%S', time.localtime())
+    query_filename = os.sep.join(SEQUENCE_DATA_DIR, 'query-%s.faa' % (
+            timestr))
+    query_file = open(query_filename, 'w')
     # the form was submitted
     if request.method == 'POST':
         # this will allow the form to remain "filled out"
@@ -84,8 +95,8 @@ def fasta(request):
             return render_to_response('blast_fasta/fasta.html', {'form'
                     : f, 'res': ''})
 
-        sqfile.write(f.cleaned_data['seq'])
-        sqfile.close()
+        query_file.write(f.cleaned_data['seq'])
+        query_file.close()
         if not f.cleaned_data['number_sequence']:
             b = 10
         else:
@@ -100,17 +111,22 @@ def fasta(request):
             F = f.cleaned_data['number_alignment_lowest']
         s = f.cleaned_data['matrix_file']
         db = f.cleaned_data['database_option']
-        # TODO: This could be made nicer using string formatting.
-        cmd = 'fasta35 -b ' + str(b) + ' -E ' + str(E) + ' -F '\
-             + str(F) + ' -s ' + str(s) + ' ' + SEQUENCE_DATA_DIR\
-             + 'fasta_seq.fasta ' + str(db) + ' > '\
-             + SEQUENCE_DATA_DIR + 'fasta_output.txt'
+
+        outfile_name = os.sep.join(OUTPUT_DIR,
+                '%s_fasta_results.txt' % timestr)
+        cmd = ('fasta35', '-q', '-b', b, '-E', E, '-F', F, '-s', s, '-O',
+                outfile_name, query_filename, subject
+        )
         start = time.clock()
-        os.system(cmd)
+        subprocess.check_call(cmd)
         end = time.clock()
         duration = end - start
-        fasta_file = open(SEQUENCE_DATA_DIR + 'fasta_output.txt')
-        res = parsing_fasta2.parsing_fasta(fasta_file)
+        fasta_output = open(outfile_name)
+        res = parsing_fasta2.parsing_fasta(fasta_output)
+        fasta_output.close()
+        # later, these should be stored in the database
+        os.remove(query_filename)
+        os.remove(fasta_output)
         return render_to_response(
                 'blast_fasta/fasta.html',
                 {'form': f, 'res': res, 'duration': duration}
