@@ -145,8 +145,10 @@ def fasta(request):
                 OUTPUT_DIR,
                 '%s_fasta_results.txt' % timestr
         ))
-        cmd = ('fasta35', '-q', '-b', b, '-E', E, '-F', F, '-s', s, '-O',
-                outfile_name, query_filename, subject, kt
+        cmd = (
+                'fasta35', '-q', '-b', str(b), '-E', str(E), '-F',
+                str(F), '-s', s, '-O', outfile_name, query_filename,
+                subject, kt
         )
         start = time.clock()
         subprocess.check_call(cmd)
