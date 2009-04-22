@@ -1,6 +1,19 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render_to_response
+from django import forms
+from models import Protein
+
+from Bio.Blast import NCBIStandalone
+from Bio.Blast import NCBIXML
+import os
+import parsing_fasta2
+import tempfile
+import time
+
+
 # Fill this in with the appropriate path; this is the location where
 # output files from runs will be stored. It should be writeable by the
 # user Django runs under (e.g., www-data for most Linux/Unix systems)
@@ -8,7 +21,7 @@ OUTPUT_DIR = ''
 OUTPUT_DIR = OUTPUT_DIR.rstrip(os.sep)
 
 # Fill this in with appropriate options of BLASTDB formatted databases
-BLASTDB_DBS = [
+BLAST_DBS = [
         # Example:
         #('completedb', 'Complete DB'),
 ]
@@ -22,27 +35,14 @@ BLAST_DB_PATHS = {
 # This should be one of the above. e.g., 'Complete DB'
 INITIAL_DB_CHOICE = ''
 
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response
-from django import forms
-from models import Protein
-
-from Bio.Blast import NCBIStandalone
-from Bio.Blast import NCBIXML
-import os
-import parsing_fasta2
-import tempfile
-import time
-
 class BlastForm(forms.Form):
 
     seq = forms.CharField(widget=forms.Textarea)
     evalue = forms.FloatField(initial=1)
     wordsize = forms.IntegerField(
             label='Word Size',
-            choices=wsoptions,
             initial=3
-            )
+    )
 
 
 class FastaForm(forms.Form):
@@ -95,8 +95,12 @@ def fasta(request):
     # TODO: Add parameter validation.
 
     timestr = time.strftime('%Y-%m-%d_%H:%M:%S', time.localtime())
-    query_filename = os.sep.join(SEQUENCE_DATA_DIR, 'query-%s.faa' % (
-            timestr))
+    query_filename = os.sep.join(
+            (
+                OUTPUT_DIR,
+                'query-%s.faa' % (timestr)
+            )
+    )
     query_file = open(query_filename, 'w')
     # the form was submitted
     if request.method == 'POST':
