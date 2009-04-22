@@ -1,4 +1,4 @@
-# fasta35 -b 20.0 -E 20.0 -F -1.0 -s BL50 /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_seq.fasta /Users/caiyizhi/Desktop/db.fasta
+# fasta35 -b 20.0 -E 20.0 -F 0 -s BL50 /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_seq.fasta /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta 1
 FASTA searches a protein or DNA sequence data bank
  version 35.04 Mar. 8, 2009
 Please cite:
@@ -6,135 +6,94 @@ Please cite:
 
 Query: /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/fasta_seq.fasta
   1>>>A622  - 310 aa
-Library: /Users/caiyizhi/Desktop/db.fasta 1287725337 residues in 3657662 sequences
+Library: /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pa 3315795 residues in  8964 sequences
 
        opt      E()
-< 20    89     0:=
-  22    32     0:=          one = represents 5651 library sequences
-  24    44     3:*
-  26   130    77:*
-  28   699   829:*
-  30  3822  5036:*
-  32 16143 19472:===*
-  34 46722 52806:=========*
-  36 104313 108451:===================*
-  38 175673 179229:===============================*
-  40 246867 250009:============================================*
-  42 301261 305605:======================================================*
-  44 329838 337111:===========================================================*
-  46 339010 343356:===========================================================*
-  48 317324 328724:========================================================= *
-  50 293560 299962:==================================================== *
-  52 256653 263716:==============================================*
-  54 228884 225260:=======================================*=
-  56 185626 188161:=================================*
-  58 157378 154477:===========================*
-  60 127245 125135:======================*
-  62 104496 100321:=================*=
-  64 83847 79785:==============*
-  66 67435 63060:===========*
-  68 53889 49601:========*=
-  70 43291 38871:======*=
-  72 34972 30374:=====*=
-  74 28438 23681:====*=
-  76 23307 18432:===*=
-  78 17145 14327:==*=
-  80 13240 11124:=*=
-  82 10606  8510:=*
-  84  8229  6741:=*
-  86  6569  5216:*=
-  88  5174  4036:*          inset = represents 68 library sequences
-  90  4298  3123:*
-  92  3373  2416:*         :===================================*====
-  94  2845  1869:*         :===========================*============
-  96  2316  1446:*         :=====================*=============
-  98  1859  1119:*         :================*===========
- 100  1577   866:*         :============*===========
- 102  1407   670:*         :=========*===========
- 104  1172   518:*         :=======*==========
- 106   980   401:*         :=====*=========
- 108   896   310:*         :====*=========
- 110   706   240:*         :===*=======
- 112   534   186:*         :==*=====
- 114   438   144:*         :==*====
- 116   350   111:*         :=*====
- 118   407    86:*         :=*====
->120  2552    67:*         :*=====================================
-1287725336 residues in 3657661 sequences
-Statistics:  Expectation_n fit: rho(ln(x))= 5.2592+/-0.000197; mu= 9.2235+/- 0.011
- mean_var=76.0286+/-16.243, 0's: 0 Z-trim: 14  B-trim: 3929 in 1/59
- Lambda= 0.147091
- statistics sampled from 60000 to 3655297 sequences
- Kolmogorov-Smirnov  statistic: 0.0170 (N=29) at  52
+< 20     0     0:
+  22     0     0:           one = represents 15 library sequences
+  24     1     0:=
+  26     0     0:
+  28     5     2:*
+  30    22    12:*=
+  32    87    48:===*==
+  34   144   129:========*=
+  36   276   266:=================*=
+  38   474   439:=============================*==
+  40   645   612:========================================*==
+  42   786   748:=================================================*===
+  44   852   825:======================================================*==
+  46   778   841:====================================================    *
+  48   784   805:=====================================================*
+  50   681   734:==============================================  *
+  52   622   646:========================================== *
+  54   533   551:====================================*
+  56   517   461:==============================*====
+  58   367   378:=========================*
+  60   275   306:=================== *
+  62   231   246:================*
+  64   182   195:============*
+  66   136   154:==========*
+  68   122   121:========*
+  70    91    95:======*
+  72    61    74:====*
+  74    68    58:===*=
+  76    37    45:==*
+  78    46    35:==*=
+  80    30    27:=*
+  82    29    21:=*
+  84    15    17:=*
+  86    10    13:*
+  88    11    10:*          inset = represents 1 library sequences
+  90     8     8:*
+  92     3     6:*         :===  *
+  94     1     5:*         :=   *
+  96     8     4:*         :===*====
+  98     5     3:*         :==*==
+ 100     4     2:*         :=*==
+ 102     1     2:*         :=*
+ 104     0     1:*         :*
+ 106     1     1:*         :*
+ 108     0     1:*         :*
+ 110     0     1:*         :*
+ 112     0     0:          *
+ 114     0     0:          *
+ 116     0     0:          *
+ 118     0     0:          *
+>120    15     0:=         *===============
+3315795 residues in  8964 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 5.8242+/-0.00091; mu= 10.1537+/- 0.052
+ mean_var=69.3453+/-15.252, 0's: 0 Z-trim: 15  B-trim: 569 in 1/47
+ Lambda= 0.154016
+ Kolmogorov-Smirnov  statistic: 0.0235 (N=29) at  44
 Algorithm: FASTA (3.5 Sept 2006) [optimized]
-Parameters: BL50 matrix (15:-5) ktup: 2
- join: 37, opt: 25, open/ext: -10/-2, width:  16
- Scan time: 220.370
+Parameters: BL50 matrix (15:-5) ktup: 1
+ join: 43, opt: 31, open/ext: -10/-2, width:  32
+ Scan time:  2.040
 
-The best scores are:                                      opt bits E(3657661)
-gi|18410820                                        ( 310) 1294 283.6 1.5e-74
-gi|15234993                                        ( 308) 1287 282.1 4.1e-74
-gi|15222190                                        ( 323) 1284 281.5 6.6e-74
-gi|115468044                                       ( 312) 1198 263.3   2e-68
-gi|15223574                                        ( 310) 1166 256.5 2.2e-66
-gi|115434036                                       ( 314) 1042 230.1 1.9e-58
-gi|115434034                                       ( 318) 1015 224.4   1e-56
-gi|15236146                                        ( 306)  948 210.2 1.8e-52
-gi|115448169                                       ( 306)  902 200.4 1.6e-49
-gi|115488076                                       ( 312)  892 198.3 7.1e-49
-gi|115488088                                       ( 314)  865 192.6 3.8e-47
-gi|15222571                                        ( 317)  827 184.5   1e-44
-gi|15236330                                        ( 317)  793 177.3 1.5e-42
-gi|15222191                                        ( 322)  755 169.3 4.1e-40
-gi|115468098                                       ( 215)  654 147.7 8.5e-34
-gi|115452023                                       ( 394)  568 129.6 4.2e-28
-gi|115488078                                       ( 174)  487 112.2 3.3e-23
-gi|70995732                                        ( 314)  350 83.3   3e-14
-gi|46112816                                        ( 322)  343 81.8 8.5e-14
-gi|67903656                                        ( 359)  335 80.2   3e-13
-
->>gi|18410820                                             (310 aa)
- initn: 1270 init1: 723 opt: 1294  Z-score: 1488.9  bits: 283.6 E(): 1.5e-74
-Smith-Waterman score: 1294; 63.2% identity (86.8% similar) in 310 aa overlap (2-309:1-309)
-
-               10        20        30        40        50        60
-A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
-        ...::::::.:::::::::.:::.:::.:: ::::.::.::..: :.: ...::. :::
-gi|184  MATEKSKILVIGGTGYIGKFLVEASAKAGHSTFALVREATLSDPVKGKTVQSFKDLGVT
-                10        20        30        40        50         
-
-               70        80        90       100       110       120
-A622   LLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFDVD
-       .: ::....:::.::::::::::::::..:. ::..::.:::::::.::::::::: :::
-gi|184 ILHGDLNDHESLVKAIKQVDVVISTVGSMQILDQTKIISAIKEAGNVKRFLPSEFGVDVD
-      60        70        80        90       100       110         
-
-              130       140       150       160       170          
-A622   HARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEA--KTPPRDKV
-       .. :.::: : :: :..::: ::::::::::.. . :. ..::.: :.:    .::::::
-gi|184 RTSAVEPAKSAFAGKIQIRRTIEAEGIPYTYAVTGCFGGYYLPTLVQFEPGLTSPPRDKV
-     120       130       140       150       160       170         
-
-      180       190       200       210       220       230        
-A622   VIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKIGK
-       .:.:::: ::.  ::::::.:::.:::::::::: :...:  : ::.::::.::: ::::
-gi|184 TILGDGNAKAVINKEEDIAAYTIKAVDDPRTLNKILYIKPSNNTLSMNEIVTLWEKKIGK
-     180       190       200       210       220       230         
-
-      240       250       260       270       280       290        
-A622   TLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYPKVK
-       .::: .: ::..:. .::.:.:. . :.: :.::::::. :. ..:  ::::.:::: ::
-gi|184 SLEKTHLPEEQLLKSIQESPIPINVVLSINHAVFVNGDT-NISIEPSFGVEASELYPDVK
-     240       250       260       270        280       290        
-
-      300       310
-A622   YTTVDEFYNKFV
-       ::.:::. . : 
-gi|184 YTSVDEYLSYFA
-      300       310
+The best scores are:                                      opt bits E(8964)
+gi|15234993                                        ( 308) 1287 293.7 3.4e-80
+gi|15236146                                        ( 306)  948 218.3 1.6e-57
+gi|15236330                                        ( 317)  793 183.9 3.8e-47
+gi|15236930                                        ( 395)  170 45.5 2.2e-05
+gi|42524311                                        ( 283)  150 41.0 0.00035
+gi|42521779                                        ( 330)  139 38.6  0.0022
+gi|30689062                                        ( 324)  130 36.6  0.0087
+gi|186515880                                       ( 305)  128 36.1   0.011
+gi|15234163                                        ( 344)  128 36.2   0.012
+gi|42524087                                        ( 284)  124 35.2   0.019
+gi|42572789                                        ( 201)  120 34.3   0.026
+gi|42572791                                        ( 253)  120 34.3   0.032
+gi|30678677                                        ( 327)  120 34.4   0.041
+gi|30687527                                        ( 354)  111 32.4    0.17
+gi|22328777                                        ( 596)  114 33.1    0.18
+gi|42523190                                        ( 347)   91 27.9     3.7
+gi|42523666                                        ( 456)   90 27.8     5.6
+gi|42522750                                        ( 201)   84 26.3     6.7
+gi|42521870                                        ( 454)   88 27.3     7.6
+gi|42521928                                        ( 326)   86 26.8     7.6
 
 >>gi|15234993                                             (308 aa)
- initn: 1307 init1: 1283 opt: 1287  Z-score: 1480.9  bits: 282.1 E(): 4.1e-74
+ initn: 1285 init1: 1285 opt: 1287  Z-score: 1543.2  bits: 293.7 E(): 3.4e-80
 Smith-Waterman score: 1287; 61.8% identity (86.4% similar) in 309 aa overlap (3-310:1-308)
 
                10        20        30        40        50        60
@@ -173,208 +132,8 @@ A622   TTVDEFYNKFV
 gi|152 TTVDEILNQYV
        300        
 
->>gi|15222190                                             (323 aa)
- initn: 1289 init1: 713 opt: 1284  Z-score: 1477.1  bits: 281.5 E(): 6.6e-74
-Smith-Waterman score: 1284; 61.0% identity (86.7% similar) in 315 aa overlap (2-309:1-315)
-
-               10        20        30        40        50        60
-A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
-        ..:::::::.:::::.::: ..:.:.:.:: :.::.::..:..:.:.: ...::..:::
-gi|152  MASEKSKILVIGGTGHIGKLIIEASVKAGHSTLALVREASLSDPNKGKTVQNFKDFGVT
-                10        20        30        40        50         
-
-               70        80        90       100       110       120
-A622   LLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFDVD
-       :: ::....:::.:::::.::::::::..:. ::..::.:::::::.:::::::::.:::
-gi|152 LLHGDLNDHESLVKAIKQADVVISTVGSMQILDQTKIISAIKEAGNVKRFLPSEFGMDVD
-      60        70        80        90       100       110         
-
-              130       140       150       160       170          
-A622   HARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEA--KTPPRDKV
-       .. :.::: : :. :.. :: ::::::::::.. :.:: ..::.: :::    .::::::
-gi|152 KSSAVEPAKSAFGRKLQTRRDIEAEGIPYTYLVTNYFAGYYLPTLVQLEPGLTSPPRDKV
-     120       130       140       150       160       170         
-
-      180            190       200       210       220       230   
-A622   VIFGDGNPK-----AIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWE
-        :::::: :     :.  ::::::.:::.::::::::::::.. :: : ::.::::.:::
-gi|152 KIFGDGNVKVEYFIAVINKEEDIAAYTIKAVDDPRTLNKTLYINPPNNTLSMNEIVTLWE
-     180       190       200       210       220       230         
-
-           240       250       260       270       280       290   
-A622   DKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATEL
-        ::::..::.:.:::.:.. .::.:.:. . :.: :.:::.::..:: ..:  : ::.::
-gi|152 KKIGKSVEKIYMSEEQIFKSIQESPVPFNVLLSINHAVFVKGDQTNFTIEPSFGFEASEL
-     240       250       260       270       280       290         
-
-           300       310       
-A622   YPKVKYTTVDEFYNKFV       
-       :: .:::..::. . :        
-gi|152 YPDIKYTSIDEYLSYFALGTSLNT
-     300       310       320   
-
->>gi|115468044                                            (312 aa)
- initn: 1195 init1: 1172 opt: 1198  Z-score: 1378.7  bits: 263.3 E(): 2e-68
-Smith-Waterman score: 1198; 57.5% identity (84.0% similar) in 306 aa overlap (5-310:7-312)
-
-                 10        20        30        40        50        
-A622     MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYG
-             : :..:.::::::::.:.: .::.  : : .:.:. .  .: :. ... :.. :
-gi|115 MAAAGKEPSRVLVIGGTGYIGRYIVAASAREDHLTSVLVRDPAPADPAKAAVLQGFRDSG
-               10        20        30        40        50        60
-
-       60        70        80        90       100       110        
-A622   VTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFD
-       .::. ::. ...::. :::..:::::.::  :..::. ::.:::::::.:::.:::.: :
-gi|115 ATLVKGDLYGHQSLVAAIKSADVVISAVGYAQLADQTRIISAIKEAGNVKRFFPSEYGND
-               70        80        90       100       110       120
-
-      120       130       140       150       160       170        
-A622   VDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPRDKV
-       :::..:.::. :..: :.::::.:::::::::::  :.::  :::.:.:   :  : :::
-gi|115 VDHVHAVEPVKSVYATKARIRRVIEAEGIPYTYVSSNFFAGRFLPSLAQAWIKGLPTDKV
-              130       140       150       160       170       180
-
-      180       190       200       210       220       230        
-A622   VIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKIGK
-       .:.:::: :.... :::..::::.:::::::::: :..:: .:::: ::.::::: :.::
-gi|115 IILGDGNVKGVFATEEDVGTYTIKAVDDPRTLNKILYLRPSSNILSHNELVSLWEKKVGK
-              190       200       210       220       230       240
-
-      240       250       260       270       280       290        
-A622   TLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYPKVK
-       :....:. :...:. .::.: :: . :.: :::.:.:: .:::..:  ::::::::: ::
-gi|115 TFDRVYIPEDEVLKKIQESPAPLNVVLSINHSVWVKGDHTNFEIEPSFGVEATELYPDVK
-              250       260       270       280       290       300
-
-      300       310
-A622   YTTVDEFYNKFV
-       ::::::. :.:.
-gi|115 YTTVDEYLNRFL
-              310  
-
->>gi|15223574                                             (310 aa)
- initn: 1160 init1: 534 opt: 1166  Z-score: 1342.1  bits: 256.5 E(): 2.2e-66
-Smith-Waterman score: 1166; 58.8% identity (82.8% similar) in 308 aa overlap (7-310:3-310)
-
-               10        20        30        40        50        60
-A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
-             ::::.::.:: ::: ::: :::::: ::::.::..:..: :..:.. ::. :::
-gi|152     MTSKILVIGATGLIGKVLVEESAKSGHATFALVREASLSDPVKAQLVERFKDLGVT
-                   10        20        30        40        50      
-
-               70        80        90         100       110        
-A622   LLFGDISNQESLLKAIKQVDVVISTVGGQQ--FTDQVNIIKAIKEAGNIKRFLPSEFGFD
-       .:.:..:..:::.:::::::::::.::  :  . .:.::: ::::.::.::::::::: :
-gi|152 ILYGSLSDKESLVKAIKQVDVVISAVGRFQTEILNQTNIIDAIKESGNVKRFLPSEFGND
-         60        70        80        90       100       110      
-
-      120       130       140       150       160         170      
-A622   VDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQ--LEAKTPPRD
-       ::.. ::::. : :  :..::: :::  ::::::. . :: .:.: :::  :. ..::::
-gi|152 VDRTVAIEPTLSEFITKAQIRRAIEAAKIPYTYVVSGCFAGLFVPCLGQCHLRLRSPPRD
-        120       130       140       150       160       170      
-
-        180       190       200       210       220       230      
-A622   KVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKI
-       :: :.  :: :::   ::::..::..:::::::::: :...::  :.: :..:.:::.::
-gi|152 KVSIYDTGNGKAIVNTEEDIVAYTLKAVDDPRTLNKILYIHPPNYIVSQNDMVGLWEEKI
-        180       190       200       210       220       230      
-
-        240       250       260       270       280       290      
-A622   GKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYPK
-       :::::: :.:::..:. .::.  :.   ... :...:..: ..: ..:  ::::.::::.
-gi|152 GKTLEKTYVSEEELLKTIQESKPPMDFLVGLIHTILVKSDFTSFTIDPSFGVEASELYPE
-        240       250       260       270       280       290      
-
-        300       310
-A622   VKYTTVDEFYNKFV
-       ::::.:::: :.:.
-gi|152 VKYTSVDEFLNRFI
-        300       310
-
->>gi|115434036                                            (314 aa)
- initn: 1002 init1: 573 opt: 1042  Z-score: 1199.8  bits: 230.1 E(): 1.9e-58
-Smith-Waterman score: 1042; 49.4% identity (81.2% similar) in 308 aa overlap (5-310:8-314)
-
-                  10        20        30        40        50       
-A622      MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSY
-              .::.::..:::::::...: .::. :::: ::.:. . ..: ::.:...:.. 
-gi|115 MASGGEEKKSRILVVGGTGYIGRHVVLASARLGHPTTALVRDLSPSDPAKSQLLQSFRDA
-               10        20        30        40        50        60
-
-        60        70        80        90       100         110     
-A622   GVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAG--NIKRFLPSEF
-       ::::: ::. .. :::.:....::::::.:. :..::...: ::::.:  :..:::::::
-gi|115 GVTLLHGDLYDHASLLSAVRDADVVISTLGALQIADQTKLIAAIKEGGGGNVRRFLPSEF
-               70        80        90       100       110       120
-
-         120       130       140       150       160       170     
-A622   GFDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPR
-       :.: ::. :.::: :.:. :. .:: .:: :.:::::. :.:: . ::..::    . : 
-gi|115 GLDPDHTGAVEPARSIFTGKAAVRRAVEAAGVPYTYVVSNYFAGYALPTIGQNLPPARPV
-              130       140       150       160       170       180
-
-         180       190       200       210       220       230     
-A622   DKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDK
-       :.:::.:::  :...:.: ::.:::. :. :::. :::...::  : .: .:.:.::: :
-gi|115 DSVVILGDGATKVVFVEEGDIGTYTVLAAVDPRAENKTVNIRPAKNAVSHEELVALWEKK
-              190       200       210       220       230       240
-
-         240       250       260       270       280       290     
-A622   IGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYP
-        :: ::..:. :. .:. .::. .::   :.: :. .. :....  ..: :.::::.:.:
-gi|115 TGKKLERVYVPEDAVLKQIQESEIPLNIVLSIAHAGYIRGETTT-PLDPATAVEATQLFP
-              250       260       270       280        290         
-
-         300       310
-A622   KVKYTTVDEFYNKFV
-        :.:::::.. :...
-gi|115 DVQYTTVDDYLNRLL
-     300       310    
-
->>gi|115434034                                            (318 aa)
- initn: 970 init1: 494 opt: 1015  Z-score: 1168.7  bits: 224.4 E(): 1e-56
-Smith-Waterman score: 1015; 48.6% identity (78.1% similar) in 311 aa overlap (4-310:9-318)
-
-                    10        20        30        40        50     
-A622        MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFK
-               . ::.::..:::::::...: .::. :::: ::.:. . ..: :..:. ::.
-gi|115 MASGGDQTTTKSRILVVGGTGYIGRHVVAASARLGHPTTALVRDLAPSDPAKAQLLHTFR
-               10        20        30        40        50        60
-
-          60        70        80        90       100         110   
-A622   SYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGN--IKRFLPS
-       . ::::: ::. .. :::.:....:::::.: . :  ::. .: ::::::.  ..::.::
-gi|115 DAGVTLLHGDLHDHASLLRAVRDADVVISAVRATQVPDQTRLIDAIKEAGGGRVRRFIPS
-               70        80        90       100       110       120
-
-           120         130       140       150       160       170 
-A622   EFGFDVDH--ARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAK
-       :::.:  .  . :.::. :... :: ::: .:: :::.::: ::.:: : ::..::.  :
-gi|115 EFGMDPGRGASAAVEPVRSMYGSKVGIRRAVEAAGIPHTYVACNYFAGFALPSIGQFMPK
-              130       140       150       160       170       180
-
-             180       190       200       210       220       230 
-A622   TPPRDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSL
-       . : :.:::.:.:. :...:.: ::.:::. :. :::. :::::.::::: .: .:.::.
-gi|115 AAPVDSVVILGEGHTKVVFVEEGDIGTYTVLAAVDPRAENKTLHIRPPANTMSHDELVSM
-              190       200       210       220       230       240
-
-             240       250       260       270       280       290 
-A622   WEDKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEAT
-       :: : :: ::..:. :. .:  ..:   :  . ..: :...  :. ..  .. :  ::::
-gi|115 WEKKTGKKLERVYVPEDAVLTKIKELEYPKNVLVSIAHAAYCRGEMSS-PLDDPQDVEAT
-              250       260       270       280        290         
-
-             300       310
-A622   ELYPKVKYTTVDEFYNKFV
-       .:::...::::::. : ..
-gi|115 QLYPEIQYTTVDEYLNTLL
-     300       310        
-
 >>gi|15236146                                             (306 aa)
- initn: 954 init1: 799 opt: 948  Z-score: 1092.1  bits: 210.2 E(): 1.8e-52
+ initn: 988 init1: 804 opt: 948  Z-score: 1136.2  bits: 218.3 E(): 1.6e-57
 Smith-Waterman score: 948; 47.1% identity (79.1% similar) in 306 aa overlap (5-310:6-306)
 
                 10        20        30        40        50         
@@ -413,168 +172,8 @@ A622   TTVDEFYNKFV
 gi|152 MTVSEFLDTLL
          300      
 
->>gi|115448169                                            (306 aa)
- initn: 879 init1: 692 opt: 902  Z-score: 1039.4  bits: 200.4 E(): 1.6e-49
-Smith-Waterman score: 902; 43.6% identity (77.7% similar) in 305 aa overlap (6-310:7-306)
-
-                10        20        30        40        50         
-A622    MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGV
-             .:..:..:.:: .:  ::..:  .:::::::.:   :  :... : .     :.
-gi|115 MCEEATRSRVLVVGATGRLGGCLVRASLAAGHPTFALVRPHHLAVPDSAPLTSL---AGA
-               10        20        30        40        50          
-
-      60        70        80        90       100       110         
-A622   TLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFDV
-       :.. :.. .  :::.:..:::::: .:  .:  .:  .:.:::.:: .:::.:.:.:.: 
-gi|115 TVVKGSLEDYPSLLEAVRQVDVVICAVPTKQALEQKLLIRAIKDAGCVKRFIPAEYGLDP
-        60        70        80        90       100       110       
-
-     120       130       140       150       160       170         
-A622   DHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPRDKVV
-        ...      ...  :..::..::.: ::.::. ::..  ..::.: :    .::::.: 
-gi|115 TKVQICGMDHGFYEKKIEIRHLIESECIPHTYICCNFLMRYLLPSLVQPGLDAPPRDEVK
-       120       130       140       150       160       170       
-
-     180       190       200       210       220       230         
-A622   IFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKIGKT
-       :::::: ....:.: :.: .:: ..:::::::.::..:: .:. :.:..:.::: ::.: 
-gi|115 IFGDGNTRGVFVEETDVAKFTICTIDDPRTLNNTLYLRPSGNVYSMNKLVDLWEKKINKF
-       180       190       200       210       220       230       
-
-     240       250       260       270       280       290         
-A622   LEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYPKVKY
-       :.:.:..::..:. ....::::. .: . .:.:..::.. ::..  .  :.:.:::.:.:
-gi|115 LNKIYITEEQLLKNIEDAPLPLKMDLIFIYSTFIKGDQTYFEID--SRKEGTQLYPHVNY
-       240       250       260       270       280         290     
-
-     300       310
-A622   TTVDEFYNKFV
-       :::: . .:.:
-gi|115 TTVDGYLDKLV
-         300      
-
->>gi|115488076                                            (312 aa)
- initn: 814 init1: 462 opt: 892  Z-score: 1027.8  bits: 198.3 E(): 7.1e-49
-Smith-Waterman score: 892; 42.9% identity (76.3% similar) in 312 aa overlap (5-310:2-312)
-
-               10        20        30        40        50        60
-A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
-           :::..::.:::::::. .: .:   :::::.:.:     . .: ... .::. :. 
-gi|115    MEKSRVLIVGGTGYIGRRIVAASLAEGHPTFVLLRPEIGLDIDKLQILLAFKAQGAR
-                  10        20        30        40        50       
-
-               70        80        90            100       110     
-A622   LLFGDISNQESLLKAIKQVDVVISTVGGQQFTD-----QVNIIKAIKEAGNIKRFLPSEF
-       :: ........:. :..:::::.:...: .. .     :.....:::::::.::::::::
-gi|115 LLEASLDDHDGLVAAVRQVDVVVSAMSGVHLRSHNLMLQLKLVEAIKEAGNVKRFLPSEF
-        60        70        80        90       100       110       
-
-         120        130       140       150       160       170    
-A622   GFDVDH-ARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPP
-       :.: .. . :.::.   :  :..::: ::   ::.:::  : :: .: :::.:: .  ::
-gi|115 GMDPSRMGNALEPGRVTFDEKMEIRRAIEDAKIPHTYVSSNCFAAYFCPNLSQLTSFLPP
-       120       130       140       150       160       170       
-
-          180       190       200       210       220       230    
-A622   RDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWED
-       ...: ..:::: ::..: :.:..::::...:::::::::...::  : :. ::....:: 
-gi|115 KERVNVYGDGNVKAFFVDEDDVGTYTIKSIDDPRTLNKTIYIRPQDNCLTHNELIAMWEK
-       180       190       200       210       220       230       
-
-          240       250       260       270       280       290    
-A622   KIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELY
-         ::.: :...  :..:  ...  . ......  . .: .:  .::..   .:.::: ::
-gi|115 LSGKSLTKFHIPAEEFLAPMKDMQFAFQVGITHFYHIFYEGCLTNFDIGD-NGAEATILY
-       240       250       260       270       280        290      
-
-          300       310
-A622   PKVKYTTVDEFYNKFV
-       :.:.:: .::: ....
-gi|115 PEVQYTRIDEFLKRYL
-        300       310  
-
->>gi|115488088                                            (314 aa)
- initn: 785 init1: 444 opt: 865  Z-score: 996.8  bits: 192.6 E(): 3.8e-47
-Smith-Waterman score: 865; 41.7% identity (76.4% similar) in 314 aa overlap (5-310:4-314)
-
-               10        20        30        40        50        60
-A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
-           :::..:..::::..:. .: .:  .::::..:.:     . .: ... .::. :. 
-gi|115  MAMEKSRVLVVGGTGFVGRRVVAASLAAGHPTYVLLRPEIGLDIDKLQMLLAFKARGAR
-                10        20        30        40        50         
-
-               70        80        90            100       110     
-A622   LLFGDISNQESLLKAIKQVDVVISTVGGQQFTD-----QVNIIKAIKEAGNIKRFLPSEF
-       :: ........:. :..:.:::.:...: .: .     :.....:::.:::.::::::::
-gi|115 LLEASLDDHDGLVAAVRQADVVVSAMSGVHFRSHNLMLQLKLVEAIKDAGNVKRFLPSEF
-      60        70        80        90       100       110         
-
-         120        130       140       150       160       170    
-A622   GFDVDH-ARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPP
-       :.: .. . :.::.   :  :. ::: ::  .::.:::  : :: .: ::: :...  ::
-gi|115 GMDPSRMGDALEPGRVSFDEKMVIRRAIEDANIPHTYVSANCFAAYFCPNLCQMKTLLPP
-     120       130       140       150       160       170         
-
-          180       190       200       210       220       230    
-A622   RDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWED
-       ...: ..:::: :...: :.:..::.:...:::::::::...::  : :. ::..: :: 
-gi|115 KERVGVYGDGNVKVFFVDENDVGTYAIKSIDDPRTLNKTIYIRPQDNCLTQNELISKWET
-     180       190       200       210       220       230         
-
-          240       250       260         270       280       290  
-A622   KIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICH--SVFVNGDSANFEVQPPTGVEATE
-         ::.:::...  ...:  ...  : . ....: :   .: .:  ::::.   .:.:::.
-gi|115 LTGKSLEKFHIPGDEFLASMKD--LDFASQVGIGHYYHIFYEGCLANFEIGD-NGAEATQ
-     240       250       260         270       280        290      
-
-            300       310
-A622   LYPKVKYTTVDEFYNKFV
-       :::.:.:: .::. ....
-gi|115 LYPEVQYTRMDEYLKRYI
-        300       310    
-
->>gi|15222571                                             (317 aa)
- initn: 725 init1: 449 opt: 827  Z-score: 953.1  bits: 184.5 E(): 1e-44
-Smith-Waterman score: 827; 41.2% identity (72.5% similar) in 313 aa overlap (4-310:7-317)
-
-                  10        20        30        40        50       
-A622      MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSY
-             .::...:..:.:::::: .:..    :: :..: :     . :: .:. .::. 
-gi|152 MGESKRTEKTRVLVVGATGYIGKRIVRACLAEGHETYVLQRPEIGLEIEKVQLFLSFKKL
-               10        20        30        40        50        60
-
-        60        70        80        90            100       110  
-A622   GVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTD-----QVNIIKAIKEAGNIKRFLP
-       :. .. :..:...::..:.: ::::.:...: .: .     :.....:::::::.:::::
-gi|152 GARIVEGSFSDHQSLVSAVKLVDVVVSAMSGVHFRSHNILVQLKLVEAIKEAGNVKRFLP
-               70        80        90       100       110       120
-
-            120        130       140       150       160       170 
-A622   SEFGFDVDH-ARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAK
-       ::::.:  . ..:. :.   :  :...:. ::: :::::::.   :: .:  ::.:. . 
-gi|152 SEFGMDPPRMGHALPPGRETFDQKMEVRQAIEAAGIPYTYVVGACFAAYFAGNLSQMVTL
-              130       140       150       160       170       180
-
-             180       190       200       210       220       230 
-A622   TPPRDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSL
-        ::..:: :.:::: :.... :.::: :: ....::::::::...::: :.:.  :.:..
-gi|152 LPPKEKVNIYGDGNVKVVFADEDDIAKYTAKTLNDPRTLNKTVNIRPPDNVLTQLELVQI
-              190       200       210       220       230       240
-
-             240       250       260       270       280       290 
-A622   WEDKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEAT
-       ::   :: :::  .. .:.:  ...  .: .....  . .: .:  .. ::      ::.
-gi|152 WEKLTGKELEKTNIAAQDFLANIEQMEIPHQAGIGHFYHIFYEGCLTDHEVGEDE--EAS
-              250       260       270       280       290          
-
-             300       310
-A622   ELYPKVKYTTVDEFYNKFV
-        ::: :::  .:..   :.
-gi|152 SLYPDVKYKRMDDYLRMFL
-      300       310       
-
 >>gi|15236330                                             (317 aa)
- initn: 691 init1: 401 opt: 793  Z-score: 914.1  bits: 177.3 E(): 1.5e-42
+ initn: 691 init1: 401 opt: 793  Z-score: 949.8  bits: 183.9 E(): 3.8e-47
 Smith-Waterman score: 793; 41.3% identity (71.2% similar) in 312 aa overlap (5-310:8-317)
 
                   10        20        30        40        50       
@@ -613,262 +212,422 @@ A622   ELYPKVKYTTVDEFYNKFV
 gi|152 KLYPDVKYKRMDEYLKIFV
       300       310       
 
->>gi|15222191                                             (322 aa)
- initn: 1275 init1: 684 opt: 755  Z-score: 870.5  bits: 169.3 E(): 4.1e-40
-Smith-Waterman score: 1194; 57.7% identity (82.4% similar) in 324 aa overlap (2-309:1-321)
+>>gi|15236930                                             (395 aa)
+ initn: 115 init1:  75 opt: 170  Z-score: 200.1  bits: 45.5 E(): 2.2e-05
+Smith-Waterman score: 170; 20.7% identity (54.5% similar) in 242 aa overlap (7-238:80-301)
+
+                                       10        20        30      
+A622                           MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFAL
+                                     ..::..:.:: .:. .:. .   :. .  :
+gi|152 SSLNRERSIVVPVTCSAAAVNLAPGTPVRPTSILVVGATGTLGRQIVRRALDEGYDVRCL
+      50        60        70        80        90       100         
+
+         40        50        60        70        80                
+A622   IRESTLKNPEKSKLIDTFKSYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQ-------
+       .:      :. .   : ....:.:.. .:.:. :..  ..  . .::. . :.       
+gi|152 VR------PRPAP-ADFLRDWGATVVNADLSKPETIPATLVGIHTVIDCATGRPEEPIKT
+     110              120       130       140       150       160  
+
+       90       100       110       120       130       140        
+A622   -QFTDQVNIIKAIKEAGNIKRFLPSEFGFDVDHARAIEPAASLFALKVRIRRMIEAEGIP
+        ..  .: .:.  :  : :....     :   :    .: . :. .:   .....  :. 
+gi|152 VDWEGKVALIQCAKAMG-IQKYV-----FYSIHNCDKHPEVPLMEIKYCTEKFLQESGLN
+            170        180            190       200       210      
+
+      150        160       170       180        190       200      
+A622   YTYV-ICNWFADFFLPNLGQLEAKTPPRDKVVIFGDGNP-KAIYVKEEDIATYTIEAVDD
+       .  . .:...  .    .::  .  :  ..  ..:   : .. :.  .:::  :. :. .
+gi|152 HITIRLCGFMQGL----IGQYAV--PILEEKSVWGTDAPTRVAYMDTQDIARLTLIALRN
+        220           230         240       250       260       270
+
+        210       220       230       240       250       260      
+A622   PRTLNKTLHMRPPANILSFNEIVSLWEDKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLA
+        .  .: : .  :    . .:...: :   :.                            
+gi|152 EKINGKLLTFAGP-RAWTTQEVITLCERLAGQDANVTTVPVSVLRVTRQLTRFFQWTNDV
+              280        290       300       310       320         
+
+        270       280       290       300       310                
+A622   ICHSVFVNGDSANFEVQPPTGVEATELYPKVKYTTVDEFYNKFV                
+                                                                   
+gi|152 ADRLAFSEVLSSDTVFSAPMTETNSLLGVDQKDMVTLEKYLQDYFSNILKKLKDLKAQSK
+     330       340       350       360       370       380         
+
+>>gi|42524311                                             (283 aa)
+ initn: 178 init1:  60 opt: 150  Z-score: 178.5  bits: 41.0 E(): 0.00035
+Smith-Waterman score: 150; 21.4% identity (55.3% similar) in 257 aa overlap (9-260:2-237)
 
                10        20        30        40        50        60
 A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
-        ...::::::.::::::.:...:: :::.:.:::::.::..:..: ::: :..::. :::
-gi|152  MTTEKSKILVIGGTGYMGEFIVEGSAKAGNPTFALVREASLSDPVKSKTIQSFKDLGVT
-                10        20        30        40        50         
+               ::. :.:: .:. ....  :.  :.  .   ....: .:..   ..:. :. 
+gi|425        MILVTGATGQLGQLVIQSLLKKV-PASEIA--AAVRNVQKAQ---NLKDLGIQ
+                      10        20           30           40       
 
-               70        80        90       100       110       120
-A622   LLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFDVD
-       .: ::....:::.::::::::::::.: .:. ::..::.:::::::.:::::.:::.::.
-gi|152 ILHGDLNDHESLVKAIKQVDVVISTIGHKQIFDQTKIISAIKEAGNVKRFLPAEFGIDVE
-      60        70        80        90       100       110         
+               70        80           90       100       110       
+A622   LLFGDISNQESLLKAIKQVDVVISTVG---GQQFTDQVNIIKAIKEAGNIKRFLPSEFGF
+       .  .: .: :.   :.: .. :.   :   :... ..  .: : :.::... .. . .  
+gi|425 VREADYNNPEAWTAALKGIQKVLLISGSEVGSRIQQHKAVIDAAKKAGTVELLVYTSL--
+        50        60        70        80        90       100       
 
-              130       140       150       160       170          
-A622   HARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEA----------
-       .. :.::: :::: ::.::: :::::::::::. :  : :.: .: :.:.          
-gi|152 RTSAVEPAKSLFAGKVQIRRAIEAEGIPYTYVVSNCSAGFYLRTLLQFESGLISHTRDKA
-     120       130       140       150       160       170         
+       120       130       140       150       160       170       
+A622   DVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPRDK
+            ::      :   . . ..::.: :. :. .  .:... .. .     ::.  .  
+gi|425 ----LRADTSPLVLGQEHKETEKMIQASGLRYSLLRNGWYTENYVGS-----AKSAVEHG
+             110       120       130       140            150      
 
-                    180       190       200       210       220    
-A622   ------KTPPRDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILS
-             ..::::::.:.:::: :..  ::::.:.: :.:::: :::::::.. :: ::::
-gi|152 IIFGDKNVPPRDKVTILGDGNAKVVINKEEDVAAYMIKAVDDLRTLNKTLYISPPNNILS
-     180       190       200       210       220       230         
+       180       190       200       210         220       230     
+A622   VVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLN--KTLHMRPPANILSFNEIVSLWEDK
+       .:. .  . .   ...:: :    ::. .  ::.  :...     .  :..:...    .
+gi|425 AVLGAAQDGRIASASREDYA----EAAAQVLTLQNPKAVYELAGDTSYSLKELAAEISKQ
+        160       170           180       190       200       210  
 
-          230       240       250       260       270       280    
-A622   FNEIVSLWEDKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQP
-       .::.:.::: ::::.::: ..:::.::. .:   .:. .  .: :.:::.::...: ..:
-gi|152 MNEMVTLWEKKIGKSLEKTHISEEQILKSIQ---VPIDVFKSINHAVFVKGDQTSFTIEP
-     240       250       260       270          280       290      
-
-          290       300       310
-A622   PTGVEATELYPKVKYTTVDEFYNKFV
-         : ::. ::: ::::..::. ..: 
-gi|152 WFGEEASVLYPDVKYTSIDEYLSQFT
-        300       310       320  
-
->>gi|115468098                                            (215 aa)
- initn: 667 init1: 521 opt: 654  Z-score: 757.1  bits: 147.7 E(): 8.5e-34
-Smith-Waterman score: 654; 52.4% identity (80.1% similar) in 191 aa overlap (6-188:8-198)
-
-                 10        20        30        40                50
-A622     MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPE--------KSKL
-              ::.::::::::..::..: .::..:::: ::.: ..   :         ...:
-gi|115 MEPGDRNKSRILIIGGTGHLGKFIVAASARAGHPTSALVRATAPPPPATGGGGSSSRARL
-               10        20        30        40        50        60
-
-               60        70        80        90       100       110
-A622   IDTFKSYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRF
-       ...:.. :::.: :::.... :.::.. .:::::.:: ..  .:..:: :::::::::::
-gi|115 LQSFRDAGVTILQGDIGDHDLLVKAVRAADVVISVVGYHDVGEQMKIIAAIKEAGNIKRF
-               70        80        90       100       110       120
-
-              120       130       140       150       160       170
-A622   LPSEFGFDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEA
-       .::.:: :.:::. .::: . : ....::: .::::::::.: ::.:: ..::.: :  :
-gi|115 IPSDFGNDADHAHIVEPAKATFDVEAQIRRTVEAEGIPYTFVSCNFFAGYYLPTLVQPGA
-              130       140       150       160       170       180
-
-              180       190       200       210       220       230
-A622   KTPPRDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVS
-       .  : :::::.:::: :.                                          
-gi|115 SGLPADKVVILGDGNTKSNICRRGGHCNVYHQRSG                         
-              190       200       210                              
-
->>gi|115452023                                            (394 aa)
- initn: 734 init1: 562 opt: 568  Z-score: 654.8  bits: 129.6 E(): 4.2e-28
-Smith-Waterman score: 699; 33.6% identity (63.2% similar) in 342 aa overlap (10-310:23-363)
-
-                            10        20        30        40       
-A622                MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEK
-                             ::.:.:::::....:.   ::. :: :.: ..   : .
-gi|115 MAPAAQELLLQEVPQPRRTGAALIVGATGYIGRFVAEACLDSGRDTFILVRPGN-ACPAR
-               10        20        30        40        50          
-
-        50        60        70             80        90       100  
-A622   SKLIDTFKSYGVTLLFGDISNQE---SLLKAIKQ--VDVVISTVGGQQFTDQVNIIKAIK
-       .  .:.... :.... : ....:   :.  :..   :.::::..:: .. ::...:.::.
-gi|115 AASVDALRQKGAVVIEGCVGGKEGRKSVEAALRARGVEVVISVMGGASILDQLGLIEAIR
-      60        70        80        90       100       110         
-
-                                                110       120      
-A622   EAGNIK------------------------------------RFLPSEFGFDVDHARAIE
-        ::..:                                    :::::::: :::.:: . 
-gi|115 AAGTVKVRTLHILHTSACMRASHNSDFWHVKFGLRGACAWVQRFLPSEFGHDVDRARPVG
-     120       130       140       150       160       170         
-
-        130       140       150       160       170       180      
-A622   PAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPRDKVVIFGDGNP
-        .  ..  :  .::  :: :.:::.. :: .: .   .  .     :: :.  :.:::. 
-gi|115 AGLRFYEEKRLVRRAAEASGVPYTFICCNSIAGWPYHDSTHPSELPPPLDRFQIYGDGDV
-     180       190       200       210       220       230         
-
-        190       200       210       220       230       240      
-A622   KAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKIGKTLEKLYLS
-       .:..:   ::. .::.:. : :..:: .:.::  :.:: ::..::::.:::.:: .. :.
-gi|115 RAFFVAGSDIGKFTIRAAYDARSINKIVHFRPACNLLSTNEMASLWESKIGRTLPRVTLT
-     240       250       260       270       280       290         
-
-        250       260       270       280       290       300      
-A622   EEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYPKVKYTTVDEFY
-       :::.. .. .  .:     .. :..:.:: ...: .. :  .: . ::: . . :.:: .
-gi|115 EEDLIAMAADDIIPESIVASLTHDIFINGCQTHFYIDGPRDIEISSLYPDIPFRTIDECF
-     300       310       320       330       340       350         
-
-        310                               
-A622   NKFV                               
-       . ..                               
-gi|115 DDYIHVLNLAEEAKEEEEKKNAPTVGRLAIPPTCA
-     360       370       380       390    
-
->>gi|115488078                                            (174 aa)
- initn: 479 init1: 421 opt: 487  Z-score: 566.8  bits: 112.2 E(): 3.3e-23
-Smith-Waterman score: 487; 40.0% identity (74.9% similar) in 175 aa overlap (136-310:1-174)
-
-         110       120       130       140       150       160     
-A622   NIKRFLPSEFGFDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNL
-                                     ..::: ::  .::.:::  : :: .: :::
-gi|115                               MEIRRAIENANIPHTYVSANCFAAYFSPNL
-                                             10        20        30
-
-         170       180       190       200       210       220     
-A622   GQLEAKTPPRDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSF
-        :...  ::...: ..:::: :...: :.:..::::...:::::::::...::  : :. 
-gi|115 CQMKTLLPPKERVGVYGDGNVKVFFVDEDDVGTYTIKSIDDPRTLNKTIYIRPQDNCLTQ
-               40        50        60        70        80        90
-
-         230       240       250       260       270       280     
-A622   NEIVSLWEDKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPP
-       ::....::   ::.: :...  ...:  ...  .  .....  . .: .:  .::..   
-gi|115 NELIAMWEKLSGKSLTKFHIHGDEFLASMKDTDFAHQVGVTHFYHIFYEGCLTNFDIGD-
-              100       110       120       130       140          
-
-         290       300       310
-A622   TGVEATELYPKVKYTTVDEFYNKFV
-       .:.::: ::: :.:: ..:  ....
-gi|115 NGAEATLLYPDVQYTRINEVIKRYL
-     150       160       170    
-
->>gi|70995732                                             (314 aa)
- initn: 264 init1: 156 opt: 350  Z-score: 406.1  bits: 83.3 E(): 3e-14
-Smith-Waterman score: 350; 27.1% identity (62.2% similar) in 262 aa overlap (4-256:3-260)
-
-               10        20        30        40          50        
-A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNP--EKSKLIDTFKSYG
-          :.  :::..:.:: ::.:.:.. : ..  .:  .   : .:    :.. :. ....:
-gi|709  MPSQLRKILVLGATGVIGRYIVKAIATAAPTSFDRVAIFTSENTINTKKEQIQWLRDHG
-                10        20        30        40        50         
-
-       60        70        80        90       100       110        
-A622   VTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFD
-       : .. ::....  . .: .  :...: .: .... :.:.:.  .   :. ::.:::.: :
-gi|709 VEIIVGDLNDEARVREAYQGFDTIVSCLGRNMIAAQINLIRIAETCPNVIRFFPSEYGTD
-      60        70        80        90       100       110         
-
-      120        130         140       150       160        170    
-A622   VDHA-RAIEPAASLFALKVR--IRRMIEAEGIPYTYVICNWFADFFLPNLGQL-EAKT--
-       .... .. .     : :.::  ::.  :.. . .::.. . .::..: : ..  .: :  
-gi|709 IEYGPQSAHEKPHQFKLQVRKFIRE--EVKRLEHTYLVTGPYADLYLENASKCPRAGTFD
-     120       130       140         150       160       170       
-
-            180       190       200        210       220       230 
-A622   PPRDKVVIFGDGNPKAIYVKEEDIATYTIEAV-DDPRTLNKTLHMRPPANILSFNEIVSL
-           :.:..:::: .   .   :..   . :. ..  . :..:..   .   . :::.. 
-gi|709 VANKKAVLLGDGNGRISLTTMSDVGKVLVAAIINNEASCNQALKVN--SFTTTPNEILAE
-       180       190       200       210       220         230     
-
-             240       250       260       270       280       290 
-A622   WEDKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEAT
-       .: .     :. : :  .. :. ::                                   
-gi|709 FERQTQAKWEREYTSLPELKQLEQELWEANDPLAVVATLRRIWTEGGTLYEMRDNDKIHA
          240       250       260       270       280       290     
+A622   IGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYP
+        :: ..   ::: :   .. .  ::                                   
+gi|425 SGKEVKYNNLSEADYKAFLIQVGLPEGFAGILAQSDSAAAQGGLYDESHELSQLIGRKTT
+            220       230       240       250       260       270  
 
->>gi|46112816                                             (322 aa)
- initn: 199 init1:  96 opt: 343  Z-score: 398.0  bits: 81.8 E(): 8.5e-14
-Smith-Waterman score: 343; 29.8% identity (56.7% similar) in 312 aa overlap (6-305:13-309)
+>>gi|42521779                                             (330 aa)
+ initn: 179 init1:  94 opt: 139  Z-score: 164.2  bits: 38.6 E(): 0.0022
+Smith-Waterman score: 139; 27.6% identity (62.9% similar) in 116 aa overlap (8-111:3-110)
 
-                      10        20        30          40        50 
-A622          MVVSEKSKILIIGGTGYIGKYLVETSAKSG--HPTFALIRESTLKNPEKSKLI
-                   : :. :.:.::  :  ...   .:     . ::.: .....:    : 
-gi|461 MDSIYQQQKNKPKMKVAIVGATGATGGSIINGLLESDTQFDVTALVRPGSIEKPATLAL-
+               10        20        30        40        50        60
+A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
+              :.:. :..:..:..:...  . :: ..::.:      : :: : . ...    
+gi|425      MKKVLVTGANGFLGSWLTKALLEEGHDVYALVR------P-KSDLSE-LEGVKCK
+                    10        20        30               40        
+
+               70        80              90             100        
+A622   LLFGDISNQESLLKAIKQVDVVISTVG------GQQ-FTDQVNI-----IKAIKEAGNIK
+        . ::... .:::.: : .:.:.  .:      .:. . :.::.     . :. .  :..
+gi|425 YVHGDVTDVHSLLEATKGMDTVFHLAGVIAYKKSQRALMDKVNVEGTANVIAVCREHNVR
+        50        60        70        80        90       100       
+
+      110       120       130       140       150       160        
+A622   RFLPSEFGFDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQL
+       :..                                                         
+gi|425 RLVYLSSVVAIGAGYTPDQILNEESPYNIADLNLGYFETKHQAETLVKSACDKNEIDAVM
+       110       120       130       140       150       160       
+
+>>gi|30689062                                             (324 aa)
+ initn: 106 init1:  71 opt: 130  Z-score: 153.5  bits: 36.6 E(): 0.0087
+Smith-Waterman score: 130; 23.7% identity (52.1% similar) in 236 aa overlap (2-216:68-299)
+
+                                             10        20        30
+A622                                MVVSEKSK-ILIIGGTGYIGKYLVETSAKSG
+                                     ..: .:: .:..:::: .:. .: .  : .
+gi|306 SFFLVRNEASLSSSITPVQAFTEEAVDTSDLASSSSKLVLVVGGTGGVGQLVVASLLKRN
+        40        50        60        70        80        90       
+
+               40        50        60        70         80         
+A622   HPTFALIRESTLKNPEKSKLIDTFKSYGVTLLFGDISNQESLLKAI-KQVDVVISTVGGQ
+         .  :.:.      . .::.     :.. .. ::  : :.:  .. . :  :: :.:  
+gi|306 IRSRLLLRDLD----KATKLFGKQDEYSLQVVKGDTRNAEDLDPSMFEGVTHVICTTGTT
+       100           110       120       130       140       150   
+
+      90           100         110            120       130        
+A622   QFT----DQVNIIKAIKEAG--NIKRFLPSEFGF-----DVDHARAIEPAASLFAL--KV
+        :     .. :  . .   :  :.   :::         .:  ... :   :.. :   .
+gi|306 AFPSKRWNEENTPEKVDWEGVKNLISALPSSVKRVVLVSSVGVTKSNELPWSIMNLFGVL
+           160       170       180       190       200       210   
+
+        140           150         160       170       180       190
+A622   RIRRMIEA----EGIPYTYVICNWFAD--FFLPNLGQLEAKTPPRDKVVIFGDGNPKAIY
+       . ..: :      :.:.: .  . ..:  .   .:. :   :  . ..:..:.:.  .  
+gi|306 KYKKMGEDFLRDSGLPFTIIRPGRLTDGPYTSYDLNTLLKATAGERRAVVIGQGDNLVGE
+           220       230       240       250       260       270   
+
+              200       210       220       230       240       250
+A622   VKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKIGKTLEKLYLSEEDI
+       :..  .:   :.:.:   : .:. ..                                  
+gi|306 VSRLVVAEACIQALDIEFTQGKAYEINSVKGDGPGSDPQQWRELFKAAESK         
+           280       290       300       310       320             
+
+>>gi|186515880                                            (305 aa)
+ initn: 147 init1: 102 opt: 128  Z-score: 151.5  bits: 36.1 E(): 0.011
+Smith-Waterman score: 128; 34.2% identity (58.2% similar) in 79 aa overlap (4-82:10-79)
+
+                     10        20        30        40        50    
+A622         MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTF
+                .:. :::. :.:::.:  : ..  . :: . ::.:..       : : :  
+gi|186 MGPKMPNTETENMKILVTGSTGYLGARLCHVLLRRGHSVRALVRRT-------SDLSDLP
+               10        20        30        40               50   
+
+           60        70        80        90       100       110    
+A622   KSYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSE
+           : : .::... .::  : .  :.:                                
+gi|186 PE--VELAYGDVTDYRSLTDACSGCDIVFHAAALVEPWLPDPSRFISVNVGGLKNVLEAV
+              60        70        80        90       100       110 
+
+>>gi|15234163                                             (344 aa)
+ initn: 147 init1: 102 opt: 128  Z-score: 150.7  bits: 36.2 E(): 0.012
+Smith-Waterman score: 128; 34.2% identity (58.2% similar) in 79 aa overlap (4-82:10-79)
+
+                     10        20        30        40        50    
+A622         MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTF
+                .:. :::. :.:::.:  : ..  . :: . ::.:..       : : :  
+gi|152 MGPKMPNTETENMKILVTGSTGYLGARLCHVLLRRGHSVRALVRRT-------SDLSDLP
+               10        20        30        40               50   
+
+           60        70        80        90       100       110    
+A622   KSYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSE
+           : : .::... .::  : .  :.:                                
+gi|152 PE--VELAYGDVTDYRSLTDACSGCDIVFHAAALVEPWLPDPSRFISVNVGGLKNVLEAV
+              60        70        80        90       100       110 
+
+>>gi|42524087                                             (284 aa)
+ initn:  97 init1:  63 opt: 124  Z-score: 147.2  bits: 35.2 E(): 0.019
+Smith-Waterman score: 132; 23.5% identity (52.5% similar) in 238 aa overlap (8-241:2-210)
+
+               10        20        30        40        50        60
+A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
+              :::. ..:: ::. .: :. ..   . .:      ..:.:.  :.        
+gi|425       MKILVTASTGTIGSRVV-TKLRNRSQVEVL---EGCRQPQKAGQIQF-------
+                     10         20           30        40          
+
+               70        80          90       100       110        
+A622   LLFGDISNQESLLKAIKQVD--VVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFD
+           ...: . .:.:.:.:.  :.:. .. :..   : .... : :: .:...     : 
+gi|425 ----NFDNANVVLSALKNVEKAVLITPASPQELETGVRFVQSAKAAG-LKHLV-----FM
+                50        60        70        80         90        
+
+      120       130       140       150         160       170      
+A622   VDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWF--ADFFLPNLGQLEAKTPPRD
+         :     ::   :: :. :.. .:  :. .: .  : :   :.:. . . :.  . :. 
+gi|425 SIHRVEDAPAIPHFASKIAIQKELEKSGLKWTTISPNNFYQNDYFFKS-SLLDHGVYPQP
+           100       110       120       130       140        150  
+
+        180       190       200       210       220       230      
+A622   KVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKI
+           ::  :     :  .:::   ..:.   .  .. . .  : . :. :.   :.   .
+gi|425 ----FG--NIGLSRVDANDIADALVQALFKEELSGQIFPLIGPES-LTVNQTCELYGHYL
+                  160       170       180       190        200     
+
+        240       250       260       270       280       290      
+A622   GKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYPK
+       :. ..                                                       
+gi|425 GRPIQYGGDDLERWYENNKSYLPEWLLNDWKQMYMFFQRQGLKATVADYIQQEKILNHPP
+         210       220       230       240       250       260     
+
+>>gi|42572789                                             (201 aa)
+ initn: 123 init1:  94 opt: 120  Z-score: 144.8  bits: 34.3 E(): 0.026
+Smith-Waterman score: 120; 30.6% identity (64.7% similar) in 85 aa overlap (5-84:3-85)
+
+               10        20          30        40        50        
+A622   MVVSEKSKILIIGGTGYIGKYLVETSAKS--GHPTFALIRESTLKNPEKSKLIDTFK---
+           .:.:.::.:::::.:..:... : .  :.  .  .  .  ..:  ..:.:.:    
+gi|425   MEKKTKVLIVGGTGYLGQHLLQAFAGNYGGECELYDVAFTHHSSPLPARLLDAFPHSP
+                 10        20        30        40        50        
+
+          60        70        80        90       100       110     
+A622   SYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEF
+       .. : :  :   :  :. . ..: :::..                               
+gi|425 AFPVDLKSGLGLN--SISQDFRQPDVVVNCAALSVPRACEQDPDSAMSINVPTSLVNWLS
+       60        70          80        90       100       110      
+
+>>gi|42572791                                             (253 aa)
+ initn: 123 init1:  94 opt: 120  Z-score: 143.2  bits: 34.3 E(): 0.032
+Smith-Waterman score: 120; 30.6% identity (64.7% similar) in 85 aa overlap (5-84:3-85)
+
+               10        20          30        40        50        
+A622   MVVSEKSKILIIGGTGYIGKYLVETSAKS--GHPTFALIRESTLKNPEKSKLIDTFK---
+           .:.:.::.:::::.:..:... : .  :.  .  .  .  ..:  ..:.:.:    
+gi|425   MEKKTKVLIVGGTGYLGQHLLQAFAGNYGGECELYDVAFTHHSSPLPARLLDAFPHSP
+                 10        20        30        40        50        
+
+          60        70        80        90       100       110     
+A622   SYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEF
+       .. : :  :   :  :. . ..: :::..                               
+gi|425 AFPVDLKSGLGLN--SISQDFRQPDVVVNCAALSVPRACEQDPDSAMSINVPTSLVNWLS
+       60        70          80        90       100       110      
+
+>>gi|30678677                                             (327 aa)
+ initn: 123 init1:  94 opt: 120  Z-score: 141.4  bits: 34.4 E(): 0.041
+Smith-Waterman score: 120; 30.6% identity (64.7% similar) in 85 aa overlap (5-84:3-85)
+
+               10        20          30        40        50        
+A622   MVVSEKSKILIIGGTGYIGKYLVETSAKS--GHPTFALIRESTLKNPEKSKLIDTFK---
+           .:.:.::.:::::.:..:... : .  :.  .  .  .  ..:  ..:.:.:    
+gi|306   MEKKTKVLIVGGTGYLGQHLLQAFAGNYGGECELYDVAFTHHSSPLPARLLDAFPHSP
+                 10        20        30        40        50        
+
+          60        70        80        90       100       110     
+A622   SYGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEF
+       .. : :  :   :  :. . ..: :::..                               
+gi|306 AFPVDLKSGLGLN--SISQDFRQPDVVVNCAALSVPRACEQDPDSAMSINVPTSLVNWLS
+       60        70          80        90       100       110      
+
+>>gi|30687527                                             (354 aa)
+ initn: 110 init1:  79 opt: 111  Z-score: 130.1  bits: 32.4 E(): 0.17
+Smith-Waterman score: 111; 24.7% identity (64.9% similar) in 97 aa overlap (4-97:8-101)
+
+                   10        20        30        40        50      
+A622       MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKS
+              :. .   . :..::::..::..  . :. . : .:. . ..  .::  .. . 
+gi|306 MELQGEESKTATYCVTGASGYIGSWLVKSLLQRGYTVHATLRDLAKSEYFQSKWKENER-
                10        20        30        40        50          
 
-              60         70        80        90       100       110
-A622   DTFKSYGVTLLFGDIS-NQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRF
-          :  :: :.  :.. ::. :. :.: .:::::..  : . :.. .  : : :: .::.
-gi|461 ---KEKGVKLVAIDLQGNQNELVAALKGIDVVISAIYYQALHDEIPLSTAAKAAG-VKRY
-         60        70        80        90       100       110      
+         60        70        80        90          100       110   
+A622   YGVTLLFGDISNQESLLKAIKQVDVVISTVGGQQF---TDQVNIIKAIKEAGNIKRFLPS
+         . :. .:. .. :.  :.:  : :. ......:   .:.::.                
+gi|306 --LRLFRADLRDDGSFDDAVKGCDGVFHVAASMEFDISSDHVNLESYVQSKVIEPALKGV
+        60        70        80        90       100       110       
 
-              120       130         140       150       160        
-A622   LPSEFGFDVDHARAIEPAASLFAL--KVRIRRMIEAEGIPYTYVICNWFADFFLPNL--G
-       .:  :.       .. : . . :   : .:   :.   .::: .  .:. .. :: .  :
-gi|461 VPCFFA-------TVAPRGVMKARDNKEEILDHIQRIYLPYTVIDVGWWYQITLPLVPSG
-         120              130       140       150       160        
+           120       130       140       150       160       170   
+A622   EFGFDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTP
+                                                                   
+gi|306 RNVLSSCLKSKSVKRVVFTSSISTLTAKDENERMRSFVDETCKAHVDHVLKTQASGWIYV
+       120       130       140       150       160       170       
 
-        170       180       190       200       210       220      
-A622   QLEAKTPPRDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFN
-       ..:...   .. :: : .::.:. :. .::. :.   ..: ::.:: .     ..  . :
-gi|461 KFEGRVTFGNNNVIGGGNNPSAL-VNLDDIGRYVAVIINDERTINKKVFAYTESK--TQN
-      170       180       190        200       210       220       
+>>gi|22328777                                             (596 aa)
+ initn: 147 init1:  85 opt: 114  Z-score: 130.0  bits: 33.1 E(): 0.18
+Smith-Waterman score: 114; 29.7% identity (60.4% similar) in 91 aa overlap (9-93:125-205)
 
-        230       240       250         260          270       280 
-A622   EIVSLWEDKIGKTLEKLYLSEEDI-LQIVQ-EGPLPLRTNLAICH---SVFVNGDSANFE
-       ::  : :   :.  :.  .:.:.:  :..: . :  :  : ::     :  : ::..  .
-gi|461 EIFELVEKVTGEKPERTEMSKEQIEAQLAQFKDPAELSQNRAIMDYWMSWGVRGDNTAEN
-         230       240       250       260       270       280     
+                                     10        20        30        
+A622                         MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIR
+                                     ::. :.:: .:. .:.   : : :. ::.:
+gi|223 SPLKFVSSVFEKLTNGATEEPVAEMGTSGIILVAGATGGVGRRIVDILRKRGLPVKALVR
+          100       110       120       130       140       150    
 
-             290       300       310        
-A622   VQPPTGVEATELYPKVKYTTVDEFYNKFV        
-       .     : : .:::..   ....:             
-gi|461 AVYLGYVLAKDLYPSLTGQSLEDFIRDVLDGKTKSVY
-         290       300       310       320  
+       40        50          60        70            80        90  
+A622   ESTLKNPEKSKLIDTFKSYG--VTLLFGDISNQESLL----KAIKQVDVVISTVGGQQFT
+            : ::..     :  :  . :. .::.....:.    :....:  ..:.. : .  
+gi|223 -----NEEKAR-----KMLGPEIDLIVADITKENTLVPEKFKGVRKVINAVSVIVGPKEG
+               160            170       180       190       200    
 
->>gi|67903656                                             (359 aa)
- initn: 232 init1: 113 opt: 335  Z-score: 388.1  bits: 80.2 E(): 3e-13
-Smith-Waterman score: 335; 32.8% identity (57.3% similar) in 253 aa overlap (6-248:3-237)
+            100       110       120       130       140       150  
+A622   DQVNIIKAIKEAGNIKRFLPSEFGFDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYV
+       :                                                           
+gi|223 DTPERQKYNQGVRFFEPEIKGDSPELVEYIGMKNLINAVRDGVGLENGKLIFGVGDNTFK
+          210       220       230       240       250       260    
 
+>>gi|42523190                                             (347 aa)
+ initn:  94 init1:  60 opt:  91  Z-score: 106.2  bits: 27.9 E():  3.7
+Smith-Waterman score: 91; 22.2% identity (59.6% similar) in 99 aa overlap (9-106:10-105)
+
+                10        20        30        40        50         
+A622    MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGV
+                .:: :::: .:. ...   :.    .  ::  .  . ... :   ..:  .
+gi|425 MASYFNGKTLLITGGTGSFGNAVLNRFLKT---DIKEIRIFSRDEKKQDDLRKKYRSEKL
                10        20        30           40        50       
-A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTF---ALIRESTLKNPEKSKLIDTFKSY
-            .. .:.::..:  :  ..    .  ::::   ::::  . ..:    : :     
-gi|679    MSRTTVLLIGAAGETGGSIAAGLLE--HPTFEIHALIRPRSAQKPAVLALQDK----
-                  10        20          30        40        50     
 
-        60         70        80        90       100       110      
-A622   GVTLLFGDI-SNQESLLKAIKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFG
-       :: .   :. :..: : ::....::::: ::. .  ::. : .: :.:: .:::.:   :
-gi|679 GVHIRKCDLKSSEEELEKALSDIDVVISCVGSAEQQDQIPIANAAKKAG-VKRFIPC--G
-              60        70        80        90       100           
+      60        70        80        90        100       110        
+A622   TLLFGDISNQESLLKAIKQVDVVISTVGGQQFTD-QVNIIKAIKEAGNIKRFLPSEFGFD
+        . .::. ...:. .: . :: .. ... .:  . . . ..:.:   :            
+gi|425 KFYIGDVRDSRSIENACRGVDFIFHAAALKQVPSCEFHPMEAVKTNVNGTENVLEAAIHA
+        60        70        80        90       100       110       
 
-        120       130          140       150       160          170
-A622   FDVDHARAIEPAASLFAL---KVRIRRMIEAEGIPYTYVICNWFADFFLPNL--GQLE-A
-       : .     . : .... :   :  .   :.   .::: .  .:. ..  : :  :.:. :
-gi|679 FIT-----VAPPGGIMWLRDEKEAVYNHIKQLHLPYTIIDVGWWYQLAYPRLESGKLDYA
-      110            120       130       140       150       160   
+      120       130       140       150       160       170        
+A622   VDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPRDKV
+                                                                   
+gi|425 KVKKVVCLSTDKAVYPINAMGISKAMMEKVMVAKSRGLNDSEIVISGTRYGNVMASRGSV
+       120       130       140       150       160       170       
 
-              180       190       200       210       220       230
-A622   KTPPRDKVVIFGDGNPKAIYVKEEDIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVS
-        :   ...:  ::::     .  .::. :. . . : ::::: .      ..:. ::: .
-gi|679 MTTSNNEIV--GDGNTPLALTDLRDIGRYVARIITDDRTLNKMVFAY--NTVLTQNEIFG
-           170         180       190       200         210         
+>>gi|42523666                                             (456 aa)
+ initn: 115 init1:  83 opt:  90  Z-score: 103.1  bits: 27.8 E():  5.6
+Smith-Waterman score: 90; 25.6% identity (60.0% similar) in 90 aa overlap (8-93:2-83)
 
-              240       250       260       270       280       290
-A622   LWEDKIGKTLEKLYLSEEDILQIVQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEA
-       : :.  :. . . :.:::                                          
-gi|679 LLEEISGEQITRNYISEELVQNRVLAARQSSETYPFDPVKFIPRYLAEYQLSWGIRGDNN
-     220       230       240       250       260       270         
+               10        20        30        40        50        60
+A622   MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSYGVT
+              .::: :.:: ::. : .. :..::  ... :...     :.. .  :      
+gi|425       MRILITGATGLIGRELGKVLAEKGHDLYVVSRDQA-----KARELLPFPC---E
+                     10        20        30             40         
+
+               70        80            90       100       110      
+A622   LLFGDISNQESLLKAIKQVDVVISTVG----GQQFTDQVNIIKAIKEAGNIKRFLPSEFG
+       .. ::..      . . .:..::. .:    :...:.                       
+gi|425 IIEGDLNAGPLHDSRLAKVEAVINLMGESIAGERWTEDKKKRIYQSRVIGTRHLVQSLPE
+         50        60        70        80        90       100      
+
+        120       130       140       150       160       170      
+A622   FDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPRD
+                                                                   
+gi|425 DLKCFVTSSAMGIYGDQKDTSLTEYASHGDDFLANLCKEWESEAAKAPGRSVFVRTGIVL
+        110       120       130       140       150       160      
+
+>>gi|42522750                                             (201 aa)
+ initn:  54 init1:  54 opt:  84  Z-score: 101.6  bits: 26.3 E():  6.7
+Smith-Waterman score: 84; 25.0% identity (53.6% similar) in 140 aa overlap (114-243:46-184)
+
+            90       100       110       120       130       140   
+A622   STVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFDVDHARAIEPAASLFALKVRIRRMIE
+                                     : :..:... :    :..  : .::: .  
+gi|425 AFAQYVVRNGGYVVSCLNQPTVALEMAEAKEEGINVQYSPARSYQAKVSDLIARIRPVNS
+          20        30        40        50        60        70     
+
+           150             160          170       180       190    
+A622   AEGIPYTYVICNWF------ADFFL--PN-LGQLEAKTPPRDKVVIFGDGNPKAIYVKEE
+        ... ::  . .:       :.: :  ::  :..:     : :..:  . : . . ..: 
+gi|425 QKALKYTQWLKQWPQQIRWKASFALEGPNDQGDMELGRGCRLKIAIV-QTNESRFGIQEY
+          80        90       100       110       120        130    
+
+          200       210       220       230        240       250   
+A622   DIATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDK-IGKTLEKLYLSEEDILQI
+       :: . .  ..:. .    ..:     ..:  :   . .: . :.:.:. :          
+gi|425 DIDSLVWSSLDENQKAALVIHEFIYRDVLEENPESNSFEVRFINKSLHDLDSQLRDRRKF
+          140       150       160       170       180       190    
+
+           260       270       280       290       300       310
+A622   VQEGPLPLRTNLAICHSVFVNGDSANFEVQPPTGVEATELYPKVKYTTVDEFYNKFV
+                                                                
+gi|425 TELMHSF                                                  
+          200                                                   
+
+>>gi|42521870                                             (454 aa)
+ initn:  61 init1:  61 opt:  88  Z-score: 100.7  bits: 27.3 E():  7.6
+Smith-Waterman score: 88; 31.4% identity (52.9% similar) in 121 aa overlap (48-166:313-423)
+
+        20        30        40        50         60         70     
+A622   IGKYLVETSAKSGHPTFALIRESTLKNPEKSKLIDTFKSY-GVT-LLFGDISNQESLLKA
+                                     : .:  :  : :.  :. .. :.  ::  :
+gi|425 VNFIFLFLGILLHGTPRRYILAIRSAVISSSGIILQFPFYAGIMGLMVASGSSGVSLAGA
+            290       300       310       320       330       340  
+
+          80        90       100       110       120       130     
+A622   IKQVDVVISTVGGQQFTDQVNIIKAIKEAGNIKRFLPSEFGFDVDHARAIEPAASLFALK
+       ...: : ::::    :   ..       :: .. :.::  :  . .:  . :::. ....
+gi|425 LSNVFVNISTVTTFPFFTFIS-------AGIVNFFVPSGGGQWAVQAPIMLPAAQELGVS
+            350       360              370       380       390     
+
+         140       150       160       170       180       190     
+A622   VRIRRMIEAEGIPYTYVICNWFADFFLPNLGQLEAKTPPRDKVVIFGDGNPKAIYVKEED
+       :    :  : :  .: .:  ..:   :: ::                             
+gi|425 VAKTSMAIAWGDAWTNMIQPFWA---LPALGIAGLGARDIMGFCLIVLLYSGLVISAGFL
+         400       410          420       430       440       450  
+
+         200       210       220       230       240       250     
+A622   IATYTIEAVDDPRTLNKTLHMRPPANILSFNEIVSLWEDKIGKTLEKLYLSEEDILQIVQ
+                                                                   
+gi|425 FL                                                          
+                                                                   
+
+>>gi|42521928                                             (326 aa)
+ initn: 104 init1:  63 opt:  86  Z-score: 100.6  bits: 26.8 E():  7.6
+Smith-Waterman score: 86; 26.4% identity (57.1% similar) in 91 aa overlap (9-98:143-228)
+
+                                     10        20        30        
+A622                         MVVSEKSKILIIGGTGYIGKYLVETSAKSGHPTFALIR
+                                     .:: ::.: ::   .. ..  :  .:    
+gi|425 SVVEAAALPETFFTVWTNLFESGRLQKGESVLIHGGAGGIGTTAIQMASAMGVRVF----
+            120       130       140       150       160            
+
+       40        50        60         70        80        90       
+A622   ESTLKNPEKSKLIDTFKSYGVTLL-FGDISNQESLLKAIKQVDVVISTVGGQQFTDQVNI
+        .:. . :. .. . . .  : :    :. .  . : : : :::... :::. :. ... 
+gi|425 -TTVGKKESVSICQELGAERVILYKEEDFVSVVKSLTADKGVDVILDMVGGDYFARNIEA
+       170       180       190       200       210       220       
+
+       100       110       120       130       140       150       
+A622   IKAIKEAGNIKRFLPSEFGFDVDHARAIEPAASLFALKVRIRRMIEAEGIPYTYVICNWF
+       .                                                           
+gi|425 LAVQGRLVQIATMQGAKVELDLRKVMFKRLTLTGSTLRARPVAEKSRIATALLQNIWPLL
+       230       240       250       260       270       280       
 
 
 
 310 residues in 1 query   sequences
-1287725337 residues in 3657662 library sequences
+3315795 residues in 8964 library sequences
  Scomplib [35.04]
- start: Wed Apr 15 15:30:25 2009 done: Wed Apr 15 15:34:27 2009
- Total Scan time: 220.370 Total Display time:  0.080
+ start: Sun Apr 19 21:12:07 2009 done: Sun Apr 19 21:12:09 2009
+ Total Scan time:  2.040 Total Display time:  0.060
 
 Function used was FASTA [version 35.04 Mar. 8, 2009]

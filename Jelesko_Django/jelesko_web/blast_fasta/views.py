@@ -79,6 +79,17 @@ class FastaForm(forms.Form):
     )
 
 
+class displayform(forms.Form):
+	"""docstring for displayform"""
+	check_box = forms.BooleanField(required = False)
+	gi_number = forms.CharField()
+	bit_score = forms.CharField()
+	e_value = forms.CharField()
+	accession = forms.CharField()
+	genus_species = forms.CharField()
+	annotation = forms.CharField()
+	download_date = forms.CharField()
+
 def fasta(request):
 
     # TODO: Add parameter validation.
@@ -92,7 +103,7 @@ def fasta(request):
         # this will allow the form to remain "filled out"
         f = FastaForm(request.POST)
         if not f.is_valid():
-            return render_to_response('blast_fasta/fasta.html', {'form'
+            return render_to_response('blast_fasta/fasta2.html', {'form'
                     : f, 'res': ''})
 
         query_file.write(f.cleaned_data['seq'])
@@ -128,7 +139,7 @@ def fasta(request):
         os.remove(query_filename)
         os.remove(fasta_output)
         return render_to_response(
-                'blast_fasta/fasta.html',
+                'blast_fasta/fasta2.html',
                 {'form': f, 'res': res, 'duration': duration}
         )
 
@@ -136,7 +147,7 @@ def fasta(request):
     else:
         form = FastaForm()
         return render_to_response(
-                'blast_fasta/fasta.html',
+                'blast_fasta/fasta2.html',
                 {'form': form}
         )
 
