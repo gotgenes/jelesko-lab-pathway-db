@@ -94,17 +94,17 @@ def fasta(request):
 
     # TODO: Add parameter validation.
 
-    timestr = time.strftime('%Y-%m-%d_%H:%M:%S', time.localtime())
-    query_filename = os.sep.join(
-            (
-                OUTPUT_DIR,
-                'query-%s.faa' % (timestr)
-            )
-    )
-    query_file = open(query_filename, 'w')
     # the form was submitted
     if request.method == 'POST':
-        # this will allow the form to remain "filled out"
+        timestr = time.strftime('%Y-%m-%d_%H:%M:%S', time.localtime())
+        query_filename = os.sep.join(
+                (
+                    OUTPUT_DIR,
+                    'query-%s.faa' % (timestr)
+                )
+        )
+        query_file = open(query_filename, 'w')
+
         f = FastaForm(request.POST)
         if not f.is_valid():
             return render_to_response('blast_fasta/fasta2.html', {'form'
