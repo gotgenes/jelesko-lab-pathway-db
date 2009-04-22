@@ -9,10 +9,11 @@ from models import Protein
 from Bio.Blast import NCBIStandalone
 from Bio.Blast import NCBIXML
 import os
-import parsing_fasta2
+import subprocess
 import tempfile
 import time
 
+import parsing_fasta2
 
 # Fill this in with the appropriate path; this is the location where
 # output files from runs will be stored. It should be writeable by the
@@ -138,9 +139,12 @@ def fasta(request):
         s = f.cleaned_data['matrix_file']
         kt = f.cleaned_data['ktup']
         db = f.cleaned_data['database_option']
+        subject = BLAST_DB_PATHS[db]
 
-        outfile_name = os.sep.join(OUTPUT_DIR,
-                '%s_fasta_results.txt' % timestr)
+        outfile_name = os.sep.join((
+                OUTPUT_DIR,
+                '%s_fasta_results.txt' % timestr
+        ))
         cmd = ('fasta35', '-q', '-b', b, '-E', E, '-F', F, '-s', s, '-O',
                 outfile_name, query_filename, subject, kt
         )
