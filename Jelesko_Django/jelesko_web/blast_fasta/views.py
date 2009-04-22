@@ -43,6 +43,11 @@ class BlastForm(forms.Form):
             label='Word Size',
             initial=3
     )
+    database_option = forms.ChoiceField(
+            label='Database',
+            choices=BLAST_DBS,
+            initial=INITIAL_DB_CHOICE
+    )
 
 
 class FastaForm(forms.Form):
@@ -60,8 +65,8 @@ class FastaForm(forms.Form):
     # expected number of scores." Sets the highest E-value shown.
     number_alignment_lowest = forms.FloatField(initial=0.1)
     mfoptions = [
-            ('P250', 'pam250.mat'),
-            ('P120', 'pam120.mat'),
+            ('P250', 'PAM250'),
+            ('P120', 'PAM120'),
             ('BL50', 'BLOSUM50'),
             ('BL62', 'BLOSUM62'),
             ('BL80', 'BLOSUM80')
@@ -71,11 +76,16 @@ class FastaForm(forms.Form):
             choices=mfoptions,
             initial='BLOSUM50'
     )
-    dboptions = BLAST_DBS
     database_option = forms.ChoiceField(
             label='Database',
-            choices=dboptions,
+            choices=BLAST_DBS,
             initial=INITIAL_DB_CHOICE
+    )
+    ktupoptions = [('ktup=1', '1'), ('ktup=2', '2')]
+    ktup = forms.ChoiceField(
+            label='Ktup',
+            choices=ktupoptions,
+            initial = 'ktup=2'
     )
 
 
@@ -89,6 +99,7 @@ class displayform(forms.Form):
 	genus_species = forms.CharField()
 	annotation = forms.CharField()
 	download_date = forms.CharField()
+
 
 def fasta(request):
 
@@ -125,12 +136,13 @@ def fasta(request):
         else:
             F = f.cleaned_data['number_alignment_lowest']
         s = f.cleaned_data['matrix_file']
+        kt = f.cleaned_data['ktup']
         db = f.cleaned_data['database_option']
 
         outfile_name = os.sep.join(OUTPUT_DIR,
                 '%s_fasta_results.txt' % timestr)
         cmd = ('fasta35', '-q', '-b', b, '-E', E, '-F', F, '-s', s, '-O',
-                outfile_name, query_filename, subject
+                outfile_name, query_filename, subject, kt
         )
         start = time.clock()
         subprocess.check_call(cmd)
@@ -144,7 +156,12 @@ def fasta(request):
         os.remove(fasta_output)
         return render_to_response(
                 'blast_fasta/fasta2.html',
-                {'form': f, 'res': res, 'duration': duration}
+                {
+                    'form': f,
+                    'res': res,
+                    'duration': duration,
+                    'form2': displayform()
+                }
         )
 
     # user has not sent a POST request; present user with blank form
