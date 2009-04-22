@@ -82,11 +82,11 @@ class FastaForm(forms.Form):
             choices=BLAST_DBS,
             initial=INITIAL_DB_CHOICE
     )
-    ktupoptions = [('ktup=1', '1'), ('ktup=2', '2')]
+    ktupoptions = [('1', '1'), ('2', '2')]
     ktup = forms.ChoiceField(
             label='Ktup',
             choices=ktupoptions,
-            initial = 'ktup=2'
+            initial = '2'
     )
 
 
@@ -108,7 +108,7 @@ def fasta(request):
 
     # the form was submitted
     if request.method == 'POST':
-        timestr = time.strftime('%Y-%m-%d_%H:%M:%S', time.localtime())
+        timestr = time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime())
         query_filename = os.sep.join(
                 (
                     OUTPUT_DIR,
