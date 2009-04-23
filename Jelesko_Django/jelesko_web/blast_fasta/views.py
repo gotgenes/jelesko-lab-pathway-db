@@ -8,6 +8,8 @@ from models import Protein
 
 from Bio.Blast import NCBIStandalone
 from Bio.Blast import NCBIXML
+
+import datetime
 import os
 import subprocess
 import tempfile
@@ -102,6 +104,19 @@ class displayform(forms.Form):
 	download_date = forms.CharField()
 
 
+def _timedelta_to_minutes(td):
+    """
+    Converts a timedelta to minutes as a floating point.
+
+    :Parameters:
+    - `td` a datetime.timedelta instance
+
+    """
+
+    minutes = 1440 * td.days + td.seconds / 60.0
+    return minutes
+
+
 def fasta(request):
 
     # TODO: Add parameter validation.
@@ -150,10 +165,10 @@ def fasta(request):
                 str(F), '-s', s, '-O', outfile_name, query_filename,
                 subject, kt
         )
-        start = time.clock()
+        start = datetime.datetime.now()
         subprocess.check_call(cmd)
-        end = time.clock()
-        duration = end - start
+        end = datetime.datetime.now()
+        duration = _timedelta_to_minutes(end - start)
         fasta_output = open(outfile_name)
         try:
             res = parsing_fasta2.parsing_fasta(fasta_output)
