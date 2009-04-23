@@ -163,7 +163,7 @@ def fasta(request):
         fasta_output.close()
         # later, these should be stored in the database
         os.remove(query_filename)
-        os.remove(fasta_output)
+        os.remove(outfile_name)
         return render_to_response(
                 'blast_fasta/fasta2.html',
                 {
