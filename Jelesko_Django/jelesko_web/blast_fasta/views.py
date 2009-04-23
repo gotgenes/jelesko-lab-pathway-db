@@ -155,7 +155,11 @@ def fasta(request):
         end = time.clock()
         duration = end - start
         fasta_output = open(outfile_name)
-        res = parsing_fasta2.parsing_fasta(fasta_output)
+        try:
+            res = parsing_fasta2.parsing_fasta(fasta_output)
+        except TypeError:
+            res = []
+
         fasta_output.close()
         # later, these should be stored in the database
         os.remove(query_filename)
