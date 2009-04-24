@@ -60,13 +60,14 @@ class FastaForm(forms.Form):
     # the user-input FASTA formatted protein sequence
     seq = forms.CharField(widget=forms.Textarea)
     # -b "Number of sequence scores to be shown on output."
-    number_sequence = forms.FloatField(initial=10)
+    number_sequence = forms.FloatField(required=False)
     # -E "Limit the number of scores and alignments shown based on the
     # expected number of scores." Overrides the expectation value.
-    number_alignment_highest = forms.FloatField(initial=10)
+    number_alignment_highest = forms.FloatField(initial=10.0,
+            required=False)
     # -F "Limit the number of scores and alignments shown based on the
     # expected number of scores." Sets the highest E-value shown.
-    number_alignment_lowest = forms.FloatField(initial=0.1)
+    number_alignment_lowest = forms.FloatField(required=False)
     mfoptions = [
             ('P250', 'PAM250'),
             ('P120', 'PAM120'),
@@ -77,7 +78,7 @@ class FastaForm(forms.Form):
     matrix_file = forms.ChoiceField(
             label='Matrix File',
             choices=mfoptions,
-            initial='BLOSUM50'
+            initial='BL50'
     )
     database_option = forms.ChoiceField(
             label='Database',
@@ -134,41 +135,41 @@ def fasta(request):
 
         f = FastaForm(request.POST)
         if not f.is_valid():
+            print "Not valid."
             return render_to_response('blast_fasta/fasta2.html', {'form'
                     : f, 'res': ''})
 
         query_file.write(f.cleaned_data['seq'])
         query_file.close()
-        if not f.cleaned_data['number_sequence']:
-            b = 10
-        else:
+
+        # start setting up the command
+        cmd = ['fasta35 -q']
+        if f.cleaned_data['number_sequence']:
             b = f.cleaned_data['number_sequence']
-        if not f.cleaned_data['number_alignment_highest']:
-            E = 10
-        else:
+            cmd.extend(('-b', str(b)))
+        if f.cleaned_data['number_alignment_highest']:
             E = f.cleaned_data['number_alignment_highest']
-        if not f.cleaned_data['number_alignment_lowest']:
-            F = 0
-        else:
+            cmd.extend(('-E', str(E)))
+        if f.cleaned_data['number_alignment_lowest']:
             F = f.cleaned_data['number_alignment_lowest']
+            cmd.extend(('-F', str(F)))
         s = f.cleaned_data['matrix_file']
         kt = f.cleaned_data['ktup']
         db = f.cleaned_data['database_option']
         subject = BLAST_DB_PATHS[db]
-
         outfile_name = os.sep.join((
                 OUTPUT_DIR,
                 '%s_fasta_results.txt' % timestr
         ))
-        cmd = (
-                'fasta35', '-q', '-b', str(b), '-E', str(E), '-F',
-                str(F), '-s', s, '-O', outfile_name, query_filename,
-                subject, kt
+        cmd.extend(
+            ('-s', s, '-O', outfile_name, query_filename, subject, kt)
         )
+
         start = datetime.datetime.now()
         subprocess.check_call(cmd)
         end = datetime.datetime.now()
         duration = _timedelta_to_minutes(end - start)
+
         fasta_output = open(outfile_name)
         try:
             res = parsing_fasta2.parsing_fasta(fasta_output)
