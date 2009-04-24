@@ -15,7 +15,7 @@ import subprocess
 import tempfile
 import time
 
-import parsing_fasta2
+import parsing_fasta
 
 # Fill this in with the appropriate path; this is the location where
 # output files from runs will be stored. It should be writeable by the
