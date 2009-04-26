@@ -180,7 +180,7 @@ def _run_fasta_program(request, cmd, template_path):
 
         fasta_output = open(outfile_name)
         try:
-            res = parsing_fasta2.parsing_fasta(fasta_output)
+            res = parsing_fasta.parsing_fasta(fasta_output)
         except TypeError:
             res = []
 
@@ -245,7 +245,7 @@ def ssearch(request):
                  + SEQUENCE_DATA_DIR + 'ssearch_output.txt'
             os.system(cmd)
             fasta_file = open(SEQUENCE_DATA_DIR + '/ssearch_output.txt')
-        res = parsing_fasta2.parsing_fasta(fasta_file)
+        res = parsing_fasta.parsing_fasta(fasta_file)
     return render_to_response('blast_fasta/ssearch.html', {'form': f,
                               'res': res})
 
