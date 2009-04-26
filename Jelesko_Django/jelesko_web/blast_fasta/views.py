@@ -118,9 +118,16 @@ def _timedelta_to_minutes(td):
     return minutes
 
 
-def fasta(request):
+def _run_fasta_program(request, cmd, template_path):
+    """
+    Runs a FASTA type program (e.g., fasta35, ssearch35)
 
-    # TODO: Add parameter validation.
+    :Parameters:
+    - `request`: a Django HTTPRequest type object
+    - `cmd`: a list containing the initial command (e.g., ['fasta35', '-q'])
+    - `template_path`: path to the template for the result
+
+    """
 
     # the form was submitted
     if request.method == 'POST':
@@ -136,14 +143,15 @@ def fasta(request):
         f = FastaForm(request.POST)
         if not f.is_valid():
             print "Not valid."
-            return render_to_response('blast_fasta/fasta2.html', {'form'
-                    : f, 'res': ''})
+            return render_to_response(
+                    template_path,
+                    {'form': f, 'res': ''}
+            )
 
         query_file.write(f.cleaned_data['seq'])
         query_file.close()
 
         # start setting up the command
-        cmd = ['fasta35 -q']
         if f.cleaned_data['number_sequence']:
             b = f.cleaned_data['number_sequence']
             cmd.extend(('-b', str(b)))
@@ -159,7 +167,7 @@ def fasta(request):
         subject = BLAST_DB_PATHS[db]
         outfile_name = os.sep.join((
                 OUTPUT_DIR,
-                '%s_fasta_results.txt' % timestr
+                '%s_%s_results.txt' % (timestr, cmd[0])
         ))
         cmd.extend(
             ('-s', s, '-O', outfile_name, query_filename, subject, kt)
@@ -181,7 +189,7 @@ def fasta(request):
         os.remove(query_filename)
         os.remove(outfile_name)
         return render_to_response(
-                'blast_fasta/fasta2.html',
+                template_path,
                 {
                     'form': f,
                     'res': res,
@@ -194,9 +202,16 @@ def fasta(request):
     else:
         form = FastaForm()
         return render_to_response(
-                'blast_fasta/fasta2.html',
+                template_path,
                 {'form': form}
         )
+
+
+def fasta(request):
+    cmd = ['fasta35', '-q']
+    template_path = 'blast_fasta/fasta.html'
+    return _run_fasta_program(request, cmd, template_path)
+
 
 def ssearch(request):
 
