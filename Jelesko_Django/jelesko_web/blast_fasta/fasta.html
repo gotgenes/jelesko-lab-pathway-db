@@ -1,14 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="en">
 <head>
-    <title>FASTA search</title>
+  <title>{% block title %}FASTA search{% endblock %}</title>
 </head>
 <body>
 
-<h1 style="text-align:center">FASTA search</h1>
+<h1 style="text-align:center">{% block program_name %}FASTA Search{% endblock%}
+</h1>
 <hr/>
 
 <form action="" method="post">
+  {% block query_form %}
 	<label><b>Your sequence in Fasta format:</b></label><br/>
 	{{form.seq}}<br/>
 	<label><b>Number of sequence scores to be shown: </b></label><br/>
@@ -21,17 +23,18 @@
 	{{form.matrix_file}}<br/> 
 	<label><b>Target database: </b></label><br/>
 	{{form.database_option}}<br/>
-	<label><b>Set Ktup: </b></label><br/>
+	<label><b>Ktup: </b></label><br/>
 	{{form.ktup}}<br/>
 	<input type="submit" name="submit_search" value="Search">
+  {% endblock %}
 </form>
 
 
-
 <!-- Below shows the search result-->
+{% block results %}
 {% if form.cleaned_data.seq %}
   {% if res %}
-  <h3 id="it_takes">This run took {{duration}} minutes.</h3>
+  <h3 id="duration">This run took {{ duration }} minutes.</h3>
 
   <form action="." id="form" method=POST>
   <table cellspacing="5" border="1">
@@ -60,11 +63,10 @@
   <p>Try adjusting your parameters.</p>
   {% endif %} 
 {% endif %}
+{% endblock %}
 <p>
 Questions and comments:
-<a href="mailto:jelesko@vt.edu?subject=Hello%20again">
-Send Emails
-</a>
+<a href="mailto:jelesko@vt.edu?subject=Jelesko%20Search">Send Email</a>
 </p>
 
 </body>
