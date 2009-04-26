@@ -214,40 +214,9 @@ def fasta(request):
 
 
 def ssearch(request):
-
-    my_fasta_file = SEQUENCE_DATA_DIR + 'ssearch_seq.fasta'
-    sqfile = open(my_fasta_file, 'w')
-    if request.method == 'GET':
-        f = FastaForm(request.GET)
-        if not f.is_valid():
-            return render_to_response('blast_fasta/ssearch.html',
-                    {'form': f, 'res': ''})
-        else:
-            sqfile.write(f.cleaned_data['seq'])
-            sqfile.close()
-            if not f.cleaned_data['number_sequence']:
-                b = 10
-            else:
-                b = f.cleaned_data['number_sequence']
-            if not f.cleaned_data['number_alignment_highest']:
-                E = 10
-            else:
-                E = f.cleaned_data['number_alignment_highest']
-            if not f.cleaned_data['number_alignment_lowest']:
-                F = 0
-            else:
-                F = f.cleaned_data['number_alignment_lowest']
-            s = f.cleaned_data['matrix_file']
-            db = f.cleaned_data['database_option']
-            cmd = 'ssearch35 -b ' + str(b) + ' -E ' + str(E) + ' -F '\
-                 + str(F) + ' -s ' + str(s) + ' ' + SEQUENCE_DATA_DIR\
-                 + 'ssearch_seq.fasta ' + str(db) + ' > '\
-                 + SEQUENCE_DATA_DIR + 'ssearch_output.txt'
-            os.system(cmd)
-            fasta_file = open(SEQUENCE_DATA_DIR + '/ssearch_output.txt')
-        res = parsing_fasta.parsing_fasta(fasta_file)
-    return render_to_response('blast_fasta/ssearch.html', {'form': f,
-                              'res': res})
+    cmd = ['ssearch35', '-q']
+    template_path = 'blast_fasta/ssearch.html'
+    return _run_fasta_program(request, cmd, template_path)
 
 
 def blast(request):
