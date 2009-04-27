@@ -6,7 +6,7 @@ from models import Protein
 def parsing_fasta(fasta_file):
 	"""docstring for parsing_fasta"""
 	line = fasta_file.readline()
-	while 1: 
+	while 1:
 		line = fasta_file.readline()
 		if line.startswith("The best scores are:"):
 			break
@@ -15,7 +15,7 @@ def parsing_fasta(fasta_file):
 
 	alignments = []
 	while 1:
-# for line in fasta_file: 		 
+# for line in fasta_file:
 		line = fasta_file.readline()
 		line = line.rstrip()
 		if line == "":
@@ -33,8 +33,8 @@ def parsing_fasta(fasta_file):
 		words_info = info.split()
 		bit = words_info[-2].strip()
 		e_value = words_info[-1].strip()
-		alignments.append({'gi_number':gi_number, 'bit': bit, 'e_value': e_value, 'accession': accession, 'genus_species':genus_species, 'annotation': annotation, 'download_date': download_date}) 
+		alignments.append({'gi_number':gi_number, 'bit': bit, 'e_value': e_value, 'accession': accession, 'genus_species':genus_species, 'annotation': annotation, 'download_date': download_date})
 	#	alignments.append([desc, bit, e_value])
 
-	return alignments 
-	
+	return alignments
+
