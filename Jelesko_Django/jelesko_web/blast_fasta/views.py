@@ -94,16 +94,20 @@ class FastaForm(forms.Form):
     )
 
 
-class displayform(forms.Form):
-	"""docstring for displayform"""
-	check_box = forms.BooleanField(required = False)
-	gi_number = forms.CharField()
-	bit_score = forms.CharField()
-	e_value = forms.CharField()
-	accession = forms.CharField()
-	genus_species = forms.CharField()
-	annotation = forms.CharField()
-	download_date = forms.CharField()
+class SelectionForm(forms.Form):
+    """
+    A form to help select sequences for retrieval from the database.
+
+    Pass in the available sequences to select from as a list or iterable
+    when instantiating this form, or else, it will raise a ValueError.
+
+    """
+
+    def __init__(self, **kwargs):
+        if not 'sequence_ids' in kwargs:
+            raise ValueError('requires the parameter `sequence_ids`')
+        self.sequence_ids = forms.MultipleChoiceField(
+                choices=sequence_ids)
 
 
 def _timedelta_to_minutes(td):
