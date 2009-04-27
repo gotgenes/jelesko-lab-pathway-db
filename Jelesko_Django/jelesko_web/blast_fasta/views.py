@@ -107,7 +107,9 @@ class SelectionForm(forms.Form):
         if not 'sequence_ids' in kwargs:
             raise ValueError('requires the parameter `sequence_ids`')
         self.sequence_ids = forms.MultipleChoiceField(
-                choices=sequence_ids)
+                choices=kwargs['sequence_ids'])
+        del kwargs['sequence_ids']
+        forms.Form.__init__(self, **kwargs)
 
 
 def _timedelta_to_minutes(td):
@@ -196,13 +198,15 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         # later, these should be stored in the database
         os.remove(query_filename)
         os.remove(outfile_name)
+
+        gis = [record['gi_number'] for record in res]
         return render_to_response(
                 template_path,
                 {
                     'form': f,
                     'res': res,
                     'duration': duration,
-                    'form2': displayform()
+                    'selectionform': SelectionForm(sequence_ids=gis),
                 }
         )
 

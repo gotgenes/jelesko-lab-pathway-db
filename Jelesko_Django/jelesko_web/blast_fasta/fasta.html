@@ -38,7 +38,7 @@
   {% if res %}
   <h3 id="duration">This run took {{ duration }} minutes.</h3>
 
-  <form action="." id="form" method=POST>
+  <form action="../seqrequest" id="selectionform" method="post">
   <table cellspacing="5" border="1">
   <thead>
     <tr>
@@ -55,7 +55,7 @@
   <tbody>
     {% for record in res %}
     <tr>
-      <td><INPUT TYPE = CHECKBOX Name=gi_number value = {{record.gi_number}}></td>
+      <td><input type="checkbox" value="{{ record.gi_number }}" /></td>
       <td><a href="http://www.ncbi.nlm.nih.gov/protein/{{record.gi_number}}" target="_blank">{{record.gi_number}} </a></td>
       <td>{{record.bit}}</td>
       <td>{{record.e_value}}</td>
