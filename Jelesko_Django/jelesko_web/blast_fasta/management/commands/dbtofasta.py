@@ -33,11 +33,20 @@ NOTE: This will only write the GIs (or equivalent) for the header line.\
             ),
     )
 
+
     def _records_to_seqs(self, records):
         for record in records:
+            # check if this is a GI number from NCBI; this SHOULD be
+            # indicated by the fact that the identifier is entirely
+            # numbers; all others should be prefixed by a code, e.g.,
+            # JGI
+            if record.gi.isdigit():
+                identifier = 'gi|%s' % record.gi
+            else:
+                identifier = 'lcl|%s' % record.gi
             seq_rec = SeqRecord(
                     Seq(record.sequence.strip(), IUPAC.protein),
-                    record.gi
+                    identifier
             )
             # skip records which, for whatever reason, have no sequence
             if len(seq_rec):
