@@ -89,7 +89,8 @@ class FastaForm(forms.Form):
     ktup = forms.ChoiceField(
             label='Ktup',
             choices=ktupoptions,
-            initial = '2'
+            initial='2',
+            required=False
     )
 
 
@@ -118,7 +119,7 @@ def _timedelta_to_minutes(td):
     return minutes
 
 
-def _run_fasta_program(request, cmd, template_path):
+def _run_fasta_program(request, cmd, template_path, use_ktup=True):
     """
     Runs a FASTA type program (e.g., fasta35, ssearch35)
 
@@ -162,7 +163,8 @@ def _run_fasta_program(request, cmd, template_path):
             F = f.cleaned_data['number_alignment_lowest']
             cmd.extend(('-F', str(F)))
         s = f.cleaned_data['matrix_file']
-        kt = f.cleaned_data['ktup']
+        if use_ktup:
+            kt = f.cleaned_data['ktup']
         db = f.cleaned_data['database_option']
         subject = BLAST_DB_PATHS[db]
         outfile_name = os.sep.join((
@@ -170,8 +172,10 @@ def _run_fasta_program(request, cmd, template_path):
                 '%s_%s_results.txt' % (timestr, cmd[0])
         ))
         cmd.extend(
-            ('-s', s, '-O', outfile_name, query_filename, subject, kt)
+            ('-s', s, '-O', outfile_name, query_filename, subject)
         )
+        if use_ktup:
+            cmd.append(kt)
 
         start = datetime.datetime.now()
         subprocess.check_call(cmd)
@@ -216,7 +220,8 @@ def fasta(request):
 def ssearch(request):
     cmd = ['ssearch35', '-q']
     template_path = 'blast_fasta/ssearch.html'
-    return _run_fasta_program(request, cmd, template_path)
+    return _run_fasta_program(request, cmd, template_path,
+            use_ktup=False)
 
 
 def blast(request):
