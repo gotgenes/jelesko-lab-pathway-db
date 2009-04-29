@@ -94,24 +94,6 @@ class FastaForm(forms.Form):
     )
 
 
-class SelectionForm(forms.Form):
-    """
-    A form to help select sequences for retrieval from the database.
-
-    Pass in the available sequences to select from as a list or iterable
-    when instantiating this form, or else, it will raise a ValueError.
-
-    """
-
-    def __init__(self, **kwargs):
-        if not 'sequence_ids' in kwargs:
-            raise ValueError('requires the parameter `sequence_ids`')
-        self.sequence_ids = forms.MultipleChoiceField(
-                choices=kwargs['sequence_ids'])
-        del kwargs['sequence_ids']
-        forms.Form.__init__(self, **kwargs)
-
-
 def _timedelta_to_minutes(td):
     """
     Converts a timedelta to minutes as a floating point.
@@ -199,14 +181,12 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         os.remove(query_filename)
         os.remove(outfile_name)
 
-        gis = [record['gi_number'] for record in res]
         return render_to_response(
                 template_path,
                 {
                     'form': f,
                     'res': res,
                     'duration': duration,
-                    'selectionform': SelectionForm(sequence_ids=gis),
                 }
         )
 
