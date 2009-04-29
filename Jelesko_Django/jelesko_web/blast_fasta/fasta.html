@@ -13,12 +13,15 @@
   {% block query_form %}
 	<label><b>Your sequence in FASTA format:</b></label><br/>
 	{{form.seq}}<br/>
+	{{form.seq.errors}}
 	<label><b>Number of sequence scores to be shown: </b></label><br/>
 	{{form.number_sequence}}<br/>
+	{{form.number_sequence.errors}}
 	<label><b>Upper E-value:</b></label><br/>
 	{{form.number_alignment_highest}}<br/>
 	<label><b>Lower E-value:</b></label><br/>
 	{{form.number_alignment_lowest}}<br/>
+	{{form.number_alignment_lowest.errors}}
 	<label><b>Substitution matrix: </b></label><br/>
 	{{form.matrix_file}}<br/> 
 	<label><b>Subject database: </b></label><br/>

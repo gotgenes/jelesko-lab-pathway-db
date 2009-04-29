@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django import forms
 from models import Protein
+from django.forms.util import ErrorList
 
 from Bio.Blast import NCBIStandalone
 from Bio.Blast import NCBIXML
@@ -20,19 +21,22 @@ import parsing_fasta
 # Fill this in with the appropriate path; this is the location where
 # output files from runs will be stored. It should be writeable by the
 # user Django runs under (e.g., www-data for most Linux/Unix systems)
-OUTPUT_DIR = ''
+OUTPUT_DIR = '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data'
 OUTPUT_DIR = OUTPUT_DIR.rstrip(os.sep)
 
 # Fill this in with appropriate options of BLASTDB formatted databases
 BLAST_DBS = [
         # Example:
         #('completedb', 'Complete DB'),
+        ('completedb', 'Complete DB'),
+        ('sampledb', 'Sample DB')
 ]
 
 # Specify paths to the actual databases
 BLAST_DB_PATHS = {
         # Example:
         #'completedb': '/var/local/blastdbs/complete.db',
+        'sampledb': '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta', 'completedb': '/Users/caiyizhi/Desktop/db.fasta'
 }
 
 # This should be one of the above. e.g., 'Complete DB'
@@ -92,6 +96,22 @@ class FastaForm(forms.Form):
             initial='2',
             required=False
     )
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        seq = cleaned_data.get("seq")
+        number_sequence = cleaned_data.get("number_sequence")
+        number_alignment_highest = cleaned_data.get("number_alignment_highest")
+        number_alignment_lowest = cleaned_data.get("number_alignment_lowest")
+        if not seq:
+            msg=u"Please enter a sequence"
+            self._errors["seq"] = ErrorList([msg])
+        if number_sequence and number_sequence <= 0:
+            msg=u"Please enter a value greater than 0"
+            self._errors["number_sequence"] = ErrorList([msg])
+        if number_alignment_lowest and  number_alignment_lowest > number_alignment_highest:
+            msg=u"Please enter an E-value smaller than the highest E-Value"
+            self._errors["number_alignment_lowest"] = ErrorList([msg])
+        return cleaned_data
 
 
 class displayform(forms.Form):
