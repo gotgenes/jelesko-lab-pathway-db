@@ -11,3 +11,30 @@ class Protein(models.Model):
     annotation = models.TextField()
     download_date = models.DateTimeField()
     sequence = models.TextField()
+
+    def __unicode__(self):
+        return self.gi
+
+
+class Search(models.Model):
+    """A class to represent search runs."""
+
+    program = models.CharField(max_length=20)
+    results_file = models.FileField(upload_to="searchresults")
+    timestamp = models.DateTimeField()
+
+    def __unicode__(self):
+        return u'%s %s' % (self.program, self.timestamp)
+
+
+class SequenceSelection(models.Model):
+    """A class to represent a selection of sequences."""
+
+    search = models.ForeignKey('Search')
+    sequences_file = models.FileField(upload_to="selections")
+    translation_file = models.FileField(upload_to="selections")
+    timestamp = models.DateTimeField()
+
+    def __unicode__(self):
+        return self.timestamp
+
