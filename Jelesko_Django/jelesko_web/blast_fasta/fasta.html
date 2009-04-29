@@ -55,7 +55,7 @@
   <tbody>
     {% for record in res %}
     <tr>
-      <td><input type="checkbox" value="{{ record.gi_number }}" /></td>
+      <td><input type="checkbox" name="gis" value="{{ record.gi_number }}" /></td>
       <td><a href="http://www.ncbi.nlm.nih.gov/protein/{{record.gi_number}}" target="_blank">{{record.gi_number}} </a></td>
       <td>{{record.bit}}</td>
       <td>{{record.e_value}}</td>

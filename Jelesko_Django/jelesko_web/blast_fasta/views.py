@@ -261,3 +261,19 @@ def blast(request):
     return render_to_response('blast_fasta/blast2.html', {'form': f,
                               'res': res})
 
+
+def seqrequest(request):
+    """
+    Handles requests for sequences in a given result.
+
+    """
+
+    gis = request.POST.getlist('gis')
+    # It's important to note that this will not catch requests for GI
+    # numbers that don't exist in the database; those will silently be
+    # ignored.
+    proteins = Protein.objects.filter(gi__in=gis)
+    # create an entry in the Selections table
+    # create new files using the entry id as the filename designation
+    # redirect user to page containing links to these files
+
