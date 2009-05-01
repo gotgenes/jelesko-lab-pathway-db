@@ -1,4 +1,33 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<SCRIPT LANGUAGE="JavaScript">
+	<!-- 	
+	// by Nannette Thacker
+	// http://www.shiningstar.net
+	// This script checks and unchecks boxes on a form
+	// Checks and unchecks unlimited number in the group...
+	// Pass the Checkbox group name...
+	// call buttons as so:
+	// <input type=button name="CheckAll"   value="Check All"
+		//onClick="checkAll(document.myform.list)">
+		// <input type=button name="UnCheckAll" value="Uncheck All"
+			//onClick="uncheckAll(document.myform.list)">
+			// -->
+
+			<!-- Begin
+			function checkAll(field)
+			{
+				for (i = 0; i < field.length; i++)
+					field[i].checked = true ;
+				}
+
+				function uncheckAll(field)
+				{
+					for (i = 0; i < field.length; i++)
+						field[i].checked = false ;
+					}
+					//  End -->
+				</script>
+
 <html lang="en">
 <head>
   <title>{% block title %}FASTA search{% endblock %}</title>
@@ -13,15 +42,15 @@
   {% block query_form %}
 	<label><b>Your sequence in FASTA format:</b></label><br/>
 	{{form.seq}}<br/>
-	{{form.seq.errors}}
+	<h3 style="color: red;">{{form.seq.errors}}</h3>
 	<label><b>Number of sequence scores to be shown: </b></label><br/>
 	{{form.number_sequence}}<br/>
-	{{form.number_sequence.errors}}
+	<h3 style="color:red;">{{form.number_sequence.errors}}</h3>
 	<label><b>Upper E-value:</b></label><br/>
 	{{form.number_alignment_highest}}<br/>
 	<label><b>Lower E-value:</b></label><br/>
 	{{form.number_alignment_lowest}}<br/>
-	{{form.number_alignment_lowest.errors}}
+	<h3 style="color:red;">{{form.number_alignment_lowest.errors}}</h3>
 	<label><b>Substitution matrix: </b></label><br/>
 	{{form.matrix_file}}<br/> 
 	<label><b>Subject database: </b></label><br/>
@@ -41,11 +70,11 @@
   {% if res %}
   <h3 id="duration">This run took {{ duration }} minutes.</h3>
 
-  <form action="." id="form" method=POST>
+  <form name="resultform" action="." id="form" method=POST>
   <table cellspacing="5" border="1">
   <thead>
-    <tr>
-      <th>Check</th>
+    <tr> 
+	<th><input type="button" name="check_all" value="Check all" onClick="checkAll(document.resultform.gi_number)"><input type="button" name="uncheck_all" value="Uncheck all" onClick="uncheckAll(document.resultform.gi_number)"></th>
       <th>GI</th>
       <th>Bit Score</th>
       <th>E-Value</th>
