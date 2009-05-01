@@ -22,22 +22,19 @@ import parsing_fasta
 # output files from runs will be stored. It should be writeable by the
 # user Django runs under (e.g., www-data for most Linux/Unix systems)
 #OUTPUT_DIR = '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data'
-OUTPUT_DIR = '/tmp'
+OUTPUT_DIR = ''
 OUTPUT_DIR = OUTPUT_DIR.rstrip(os.sep)
 
 # Fill this in with appropriate options of BLASTDB formatted databases
 BLAST_DBS = [
         # Example:
         #('completedb', 'Complete DB'),
-        ('completedb', 'Complete DB'),
-        ('sampledb', 'Sample DB')
 ]
 
 # Specify paths to the actual databases
 BLAST_DB_PATHS = {
         # Example:
         #'completedb': '/var/local/blastdbs/complete.db',
-        'sampledb': '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta', 'completedb': '/Users/caiyizhi/Desktop/db.fasta'
 }
 
 # This should be one of the above. e.g., 'Complete DB'
