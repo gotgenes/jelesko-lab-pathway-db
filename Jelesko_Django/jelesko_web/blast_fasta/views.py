@@ -1,10 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django import forms
-from models import Protein
+from models import Protein, Search, SequenceSelection
 
 from Bio.Blast import NCBIStandalone
 from Bio.Blast import NCBIXML
@@ -17,11 +18,8 @@ import time
 
 import parsing_fasta
 
-# Fill this in with the appropriate path; this is the location where
-# output files from runs will be stored. It should be writeable by the
-# user Django runs under (e.g., www-data for most Linux/Unix systems)
-OUTPUT_DIR = ''
-OUTPUT_DIR = OUTPUT_DIR.rstrip(os.sep)
+# Output files will be stored under the MEDIA_ROOT found in settings.py.
+OUTPUT_DIR = settings.MEDIA_ROOT.rstrip(os.sep)
 
 # Fill this in with appropriate options of BLASTDB formatted databases
 BLAST_DBS = [
@@ -120,7 +118,8 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
 
     # the form was submitted
     if request.method == 'POST':
-        timestr = time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime())
+        timestamp = datetime.datetime.now()
+        timestr = timestamp.strftime('%Y%m%d_%H%M%S')
         query_filename = os.sep.join(
                 (
                     OUTPUT_DIR,
@@ -177,9 +176,12 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
             res = []
 
         fasta_output.close()
-        # later, these should be stored in the database
         os.remove(query_filename)
-        os.remove(outfile_name)
+
+        search_result = Search(
+            results_file = outfile_name,
+            timestamp = timestamp
+        )
 
         return render_to_response(
                 template_path,

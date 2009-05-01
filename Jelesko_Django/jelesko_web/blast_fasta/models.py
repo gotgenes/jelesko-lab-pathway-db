@@ -20,7 +20,9 @@ class Search(models.Model):
     """A class to represent search runs."""
 
     program = models.CharField(max_length=20)
-    results_file = models.FileField(upload_to="searchresults")
+    results_file = models.FileField(
+        upload_to='searchresults/%Y%m%d_%H%M%S'
+    )
     timestamp = models.DateTimeField()
 
     def __unicode__(self):
@@ -31,9 +33,12 @@ class SequenceSelection(models.Model):
     """A class to represent a selection of sequences."""
 
     search = models.ForeignKey('Search')
-    sequences_file = models.FileField(upload_to="selections")
-    translation_file = models.FileField(upload_to="selections")
+    sequences_file = models.FileField(
+        upload_to='selections/%Y%m%d_%H%M%S'
+    )
+    translation_file = models.FileField(upload_to='selections')
     timestamp = models.DateTimeField()
+    comment = models.CharField(max_length=140)
 
     def __unicode__(self):
         return self.timestamp
