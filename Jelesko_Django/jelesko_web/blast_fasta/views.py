@@ -21,7 +21,8 @@ import parsing_fasta
 # Fill this in with the appropriate path; this is the location where
 # output files from runs will be stored. It should be writeable by the
 # user Django runs under (e.g., www-data for most Linux/Unix systems)
-OUTPUT_DIR = '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data'
+#OUTPUT_DIR = '/Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data'
+OUTPUT_DIR = '/tmp'
 OUTPUT_DIR = OUTPUT_DIR.rstrip(os.sep)
 
 # Fill this in with appropriate options of BLASTDB formatted databases
@@ -108,9 +109,13 @@ class FastaForm(forms.Form):
         if number_sequence and number_sequence <= 0:
             msg=u"Please enter a value greater than 0"
             self._errors["number_sequence"] = ErrorList([msg])
-        if number_alignment_lowest and  number_alignment_lowest > number_alignment_highest:
-            msg=u"Please enter an E-value smaller than the highest E-Value"
-            self._errors["number_alignment_lowest"] = ErrorList([msg])
+        if number_alignment_lowest:
+            if number_alignment_lowest > number_alignment_highest:
+                msg=u"Please enter an E-value smaller than the highest E-Value"
+                self._errors["number_alignment_lowest"] = ErrorList([msg])
+            elif number_alignment_lowest < 0:
+                msg=u"Please enter a non-negative value"
+                self._errors["number_alignment_lowest"] = ErrorList([msg])
         return cleaned_data
 
 
