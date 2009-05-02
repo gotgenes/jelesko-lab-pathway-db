@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django import forms
 from models import Protein, Search, SequenceSelection
+from django.forms.util import ErrorList
 
 from Bio.Blast import NCBIStandalone
 from Bio.Blast import NCBIXML
@@ -90,6 +91,26 @@ class FastaForm(forms.Form):
             initial='2',
             required=False
     )
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        seq = cleaned_data.get("seq")
+        number_sequence = cleaned_data.get("number_sequence")
+        number_alignment_highest = cleaned_data.get("number_alignment_highest")
+        number_alignment_lowest = cleaned_data.get("number_alignment_lowest")
+        if not seq:
+            msg=u"Please enter a sequence"
+            self._errors["seq"] = ErrorList([msg])
+        if number_sequence and number_sequence <= 0:
+            msg=u"Please enter a value greater than 0"
+            self._errors["number_sequence"] = ErrorList([msg])
+        if number_alignment_lowest:
+            if number_alignment_lowest > number_alignment_highest:
+                msg=u"Please enter an E-value smaller than the highest E-Value"
+                self._errors["number_alignment_lowest"] = ErrorList([msg])
+            elif number_alignment_lowest < 0:
+                msg=u"Please enter a non-negative value"
+                self._errors["number_alignment_lowest"] = ErrorList([msg])
+        return cleaned_data
 
 
 def _timedelta_to_minutes(td):

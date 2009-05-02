@@ -1,0 +1,2398 @@
+ fasta35 -q -E 10.0 -s BL50 -O /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/2009-04-30_17-10-18_fasta35_results.txt /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/query-1 /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pathway-db/Jelesko_Django/sequence_data/db.fasta 2
+FASTA searches a protein or DNA sequence data bank version 35.04 Mar. 8, 2009
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+Query: gi|2765657|emb|Z78532.1|CCZ78532, 753 aa
+  1>>>gi|2765657|emb|Z78532.1|CCZ78532 C.californicum 5.8S rRNA gene and ITS1 an - 753 aa - 753 aa
+Library: /Users/caiyizhi/Dropbox/Class/Problem_solving/jelesko-lab-pa 3315795 residues in  8964 sequences
+
+       opt      E()
+< 20    99     0:======
+  22     0     0:           one = represents 17 library sequences
+  24     0     0:
+  26     1     0:=
+  28     0     2:*
+  30     4    12:*
+  32    14    48:= *
+  34    81   129:=====  *
+  36   194   265:============   *
+  38   388   438:=======================  *
+  40   542   611:================================   *
+  42   757   747:===========================================*=
+  44   883   824:================================================*===
+  46   966   840:=================================================*=======
+  48   916   804:===============================================*======
+  50   824   733:===========================================*=====
+  52   691   645:=====================================*===
+  54   597   551:================================*===
+  56   431   460:========================== *
+  58   331   378:====================  *
+  60   273   306:=================*
+  62   202   245:============  *
+  64   154   195:========== *
+  66   120   154:======== *
+  68    85   121:=====  *
+  70    64    95:==== *
+  72    65    74:====*
+  74    43    58:===*
+  76    33    45:==*
+  78    24    35:==*
+  80    27    27:=*
+  82    14    21:=*
+  84    17    16:*
+  86    10    13:*
+  88    11    10:*          inset = represents 1 library sequences
+  90    11     8:*
+  92    13     6:*         :=====*=======
+  94    14     5:*         :====*=========
+  96     7     4:*         :===*===
+  98     5     3:*         :==*==
+ 100     3     2:*         :=*=
+ 102     1     2:*         :=*
+ 104     3     1:*         :*==
+ 106     6     1:*         :*=====
+ 108     5     1:*         :*====
+ 110     2     1:*         :*=
+ 112     5     0:=         *=====
+ 114     1     0:=         *=
+ 116     1     0:=         *=
+ 118     0     0:          *
+>120    26     0:==        *==========================
+3315795 residues in  8964 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 6.7740+/-0.00157; mu= -2.1469+/- 0.092
+ mean_var=181.4737+/-35.079, 0's: 0 Z-trim: 124  B-trim: 9 in 2/46
+ Lambda= 0.095207
+ Kolmogorov-Smirnov  statistic: 0.0318 (N=29) at  40
+Algorithm: FASTA (3.5 Sept 2006) [optimized]
+Parameters: BL50 matrix (15:-5) ktup: 2
+ join: 38, opt: 26, open/ext: -10/-2, width:  16
+
+The best scores are:                                      opt bits E(8964)
+gi|42572805                                        ( 579)  633 100.9 1.7e-21
+gi|42524640                                        (1567)  273 52.0 2.4e-06
+gi|42522678                                        (1492)  267 51.1 4.2e-06
+gi|15233440                                        ( 299)  234 45.7 3.4e-05
+gi|42522130                                        ( 403)  224 44.5 0.00011
+gi|42522128                                        ( 461)  216 43.5 0.00025
+gi|42524675                                        ( 717)  215 43.6 0.00037
+gi|15234010                                        ( 203)  202 41.2 0.00056
+gi|15234749                                        ( 162)  180 38.0  0.0039
+gi|42524149                                        ( 843)  186 39.7  0.0064
+gi|30681996                                        (1798)  189 40.5  0.0079
+gi|186511687                                       (1895)  189 40.5  0.0082
+gi|42522087                                        ( 348)  177 38.0  0.0086
+gi|15235002                                        ( 169)  165 36.0   0.017
+gi|42523973                                        (1660)  176 38.7   0.026
+gi|42523988                                        (1164)  171 37.8   0.033
+gi|15234610                                        ( 148)  156 34.7   0.037
+gi|42523208                                        (1365)  169 37.6   0.044
+gi|42524337                                        (1051)  167 37.2   0.045
+gi|15235738                                        ( 787)  164 36.6    0.05
+gi|15235530                                        ( 158)  148 33.6   0.082
+gi|42524273                                        (1112)  158 36.0    0.11
+gi|15233437                                        ( 301)  147 33.8    0.14
+gi|79326326                                        ( 301)  147 33.8    0.14
+gi|42521786                                        ( 486)  150 34.5    0.14
+gi|42522311                                        (1959)  145 34.5    0.55
+gi|79484988                                        ( 260)  124 30.6     1.1
+gi|18415982                                        ( 441)  126 31.1     1.3
+gi|15235180                                        ( 343)  122 30.4     1.6
+gi|42524641                                        (1507)  132 32.6     1.6
+gi|30692254                                        ( 126)  115 29.0     1.6
+gi|42523284                                        (  64)  110 27.9     1.7
+gi|42524279                                        ( 626)  125 31.2     1.8
+gi|42525162                                        ( 294)  119 29.9     1.9
+gi|42523092                                        ( 411)  120 30.2     2.2
+gi|42523045                                        ( 425)  119 30.1     2.4
+gi|79325742                                        ( 126)  110 28.3     2.6
+gi|15234264                                        ( 377)  117 29.8     2.7
+gi|15235296                                        ( 625)  120 30.5     2.8
+gi|15234858                                        (  42)  101 26.5       3
+gi|15233713                                        ( 102)  107 27.8       3
+gi|30679149                                        ( 241)  111 28.7     3.6
+gi|42522164                                        ( 597)  117 30.0     3.7
+gi|18416588                                        ( 320)  112 29.0       4
+gi|79326475                                        ( 323)  112 29.0       4
+gi|42524004                                        (1416)  122 31.2       4
+gi|18420282                                        ( 345)  112 29.1     4.2
+gi|42523046                                        ( 405)  112 29.1     4.6
+gi|42522290                                        (1365)  120 30.9     4.7
+gi|22328624                                        ( 411)  111 29.0     5.1
+gi|15235324                                        ( 313)  106 28.2     6.9
+gi|15235532                                        ( 115)   97 26.4     8.5
+gi|42522127                                        ( 529)  107 28.6     8.8
+gi|15234747                                        ( 107)   96 26.3       9
+gi|42522963                                        (2576)  117 30.8     9.4
+
+
+>>gi|42572805                                             (579 aa)
+ initn: 491 init1: 491 opt: 633  Z-score: 489.5  bits: 100.9 E(): 1.7e-21
+Smith-Waterman score: 759; 33.1% identity (60.4% similar) in 616 aa overlap (2-614:48-572)
+
+                                            10        20        30 
+gi|276                              CGTAACAAGGTTTCCGTAGGTGAACCTGCGG
+                                     :..: :.::..   :..:: :     : ::
+gi|425 LLSTQVLGKLSGTGHDIARSRRHKHGRGSVGVGAGAGGGASGGIGVGGGGG-----GGGG
+        20        30        40        50        60             70  
+
+              40        50        60        70        80        90 
+gi|276 AAGGATCATTGTTGAGACAACAGAATATATGATCGAGTGAATCTGGAGGACCTGTGGTAA
+        .:..  .. : .:.:: .: .:.:.. : :.  : :  ..   :::::.  .: ::..:
+gi|425 IGGSGGVGAGGGVGGGAGGAIGGGASGGAGGGGKGRGRKGG---GGAGGG--VG-GGVGA
+             80        90       100       110            120       
+
+             100       110       120       130       140       150 
+gi|276 CTCAGCTCGTCGTGGCACTGCTTTTGTCGTGACCCTGCTTTGTTGTTGGGCCTCCTCAAG
+          ::   :. :.::    :   . :. : ::   .:    :  : .:::        ::
+gi|425 GGGAG---GSVGAGGGIGGG---AGGAIGGGASGGVGGGGKGRGGKSGGG--------AG
+        130          140          150       160       170          
+
+             160         170       180        190       200        
+gi|276 AGCTTTCATGGCAGGTTT--GAACTTTAGTA-CGGTGCAGTTTGCGCCAAGTCATATAAA
+       .:     ..:: :::..   :.  .  .::.  :: : .:.. : :  .::  ... :..
+gi|425 GGVGGGVGAGGGAGGSVGAGGGIGSGGGGTVGAGGRGSGGASGGGGTVGAGGRGSGGASG
+            180       190       200       210       220       230  
+
+      210       220       230       240       250       260        
+gi|276 GCATCACTGATGAATGACATTATTGTCAGAAAAAATCAGAGGGGCAGTATGCTACTGAGC
+       : .. . .:..:... . .  .. :.  ::...:.  .:::::  .:.. :  .  :.: 
+gi|425 GVGVGGGAGGSGGGSVGGGGRGSGGV--GASGGAGGNVGAGGGLGGGVGGGVGG--GVGG
+            240       250         260       270       280          
+
+      270       280       290       300       310       320        
+gi|276 ATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTGGCTCTAACATCGATGAAGAA
+       ..:  .: ::.  .. . :. .   :  . :::.     ::       :. ::.:.::..
+gi|425 SVGGAVG-GAVGGAVGGGGGGSVGGGGRGSGGAS-----GG-------ASGGASGGAGGS
+      290        300       310       320                   330     
+
+      330       340       350       360       370       380        
+gi|276 CGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTCTTTGA
+        : .: .....: :....:.:: :.:.:. : .:.:.   : :..     :.:   . ::
+gi|425 VGAGGGVGGGVG-GGVGGGVGG-GVGGAVGGAVGGAVGGGGGGSV-----GGGGRGSGGA
+         340        350        360       370            380        
+
+      390       400       410       420       430       440        
+gi|276 ACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTG
+       . : ..:..: : . ::.:  .  .::  .:::. . :  .:  .::: :  :.: :..:
+gi|425 SGGASGGASG-GASGGASGGASGGVGGAGGAGGSVGAGGGVGGGVGGGVGG-GVG-GAVG
+      390        400       410       420       430        440      
+
+      450       460       470       480       490       500        
+gi|276 CGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAAT
+        :        :  .:.:   : ..::      :  ..: .::      . ::..:.:...
+gi|425 -G--------AVGGAVGGGGGGSVGG------GGRGSGGAGG------GTGGSVGAGGGV
+                  450       460             470             480    
+
+      510       520       530       540       550       560        
+gi|276 GATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAA
+       :.  ::      : :    ::.: ::.:::.  ..::.. :..:    ::.:::. :::.
+gi|425 GVGGGG------GIG----GGAG-GGVGGGVGGGVGGGVRGAVG----GAVGGGV-GGAG
+          490                  500       510           520         
+
+      570       580       590       600       610       620        
+gi|276 TGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTG
+        :.:: . :::. ::::...:  .: .:. ...::: ::  :.  :              
+gi|425 RGSGGASGGAGAGGGAGGGVG-GGANVGV-GVGAGGSTGGGAAGGGGVGNRRR       
+      530       540        550        560       570                
+
+      630       640       650       660       670       680        
+gi|276 TTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAACCA
+
+>>gi|42524640                                             (1567 aa)
+ initn: 128 init1:  74 opt: 273  Z-score: 217.3  bits: 52.0 E(): 2.4e-06
+Smith-Waterman score: 310; 24.8% identity (48.8% similar) in 739 aa overlap (9-696:185-904)
+
+                                     10        20          30      
+gi|276                       CGTAACAAGGTTTCCGTAGGTGAACC--TGCGG----A
+                                     : . .: : .:..:..    :. ..    :
+gi|425 AERLGTKTESDFLAKAGLPTCPANTYLTWNGTALSCAGISGANGGTVTDVTSTNSYITIA
+          160       170       180       190       200       210    
+
+             40        50        60        70        80        90  
+gi|276 AGGATCATTGTTGAGACAACAGAATATATGATCGAGTGAATCTGGAGGACCTGTGGTAAC
+        :..: : : ..:..: .. ::   :  : :   .:..:.   :   .   .   :::. 
+gi|425 NGNSTPALTLNVGTAAGTVAAGN-DARFTDARVPTGAAAGDLDGTYPNPSVAKLQGTAVS
+          220       230        240       250       260       270   
+
+            100       110        120       130        140          
+gi|276 TCAGCTCGTCGTGGCACTGCTTT-TGTCGTGACCCTGCTTTG-TTGTTGGGCCTCCT---
+       . :  . .    .: : :  : . . . : .:   .  : .  .:.....:: .  :   
+gi|425 NAAPASGNFLKYNGTAWTPSTIAQSDVTGLSATLSSYMTDAEFSTAVANAGCAAHETMYW
+           280       290       300       310       320       330   
+
+        150       160        170       180        190        200   
+gi|276 -CAAGAGCTTTCAT-GGCAGGTTTGAACTTTAGTACGGTG-CAGTTTGC-GCCAAGTCAT
+         .:: .: .  .. .: .:::  ... .   :..   ::  :: .    :   : .  .
+gi|425 NAVAGFSCQAINVSLAGDVGGTIGASSVNKIKGVTVDTTGLVAGQVLKYDGTKWAPAADN
+           340       350       360       370       380       390   
+
+           210       220       230       240       250       260   
+gi|276 ATAAAGCATCACTGATGAATGACATTATTGTCAGAAAAAATCAGAGGGGCAGTATGCTAC
+        . ..: .:   :: :: . :  ..:.: .     : .:.: :. :.   .:: :  .  
+gi|425 DSNSGGTVTNIATG-TGLSGGPITSTGTISL----ANTAVTAASYGSTTQVGTFT--VDA
+           400        410       420           430       440        
+
+           270       280       290       300                       
+gi|276 TGAGCATGCCAGTGAATTTTTATGACTCTCGCAACGGA--------TATCTTGG------
+        :   :..  : .  .::..  ::: :   : .. :..        ...:: :       
+gi|425 QGRLTAASNAAIAFPVTTVAGRTGAVTLDVGDVGNGAGKYFIYRPNNTACTDGQVLKWIN
+        450       460       470       480       490       500      
+
+           310       320       330       340             350       
+gi|276 ------CTCTAACATCGATGAAGAACGCAGCTAAATGC------GATAAGTGGTG-TGAA
+             :.  .  .. :.    ... : .:   ..::       ..:::. :.:  .:. 
+gi|425 ANSRWECANDTDTSSGGTITNIATGTGLSGGPITSTGTISLANTAVTAASYGSTTQVGTF
+        510       520       530       540       550       560      
+
+        360       370       380       390        400       410     
+gi|276 TTGCAGAATCCCGTGAACCATCGAGTCTTTGAACGCAAG-TTGCGCTCGAGGCCATCAGG
+       :.   :  :   ... :  .:  ::    :::.   ::  :.: :         ..:. :
+gi|425 TVDAQGRLTAASNAAIAFPVTTVAG---RTGAVVLDAADITSGAGKYLTYRPNNTACTDG
+        570       580       590          600       610       620   
+
+             420       430       440       450       460       470 
+gi|276 CT----AAGGGCACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCT
+        .     :..   ::  :   .::   . .:::: :: :  : :   :  : :. : :  
+gi|425 QVLKWVNANSRWECGTDTDTSSGGTVTNIATGTGLTG-GPITSTGTIAL-ANTAVTPGSY
+           630       640       650       660        670        680 
+
+             480       490       500       510       520       530 
+gi|276 TGGCATATCGCTAAGCTGGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTG
+       : .  :.      .. ..: : . :.   .:::   ... ::.    .. .:       :
+gi|425 TRASITVDAQGRLTAASSGAAINLTS--DVTGTLPIANGGTGATTALAAFNGLSPLTTKG
+             690       700         710       720       730         
+
+             540       550       560       570       580       590 
+gi|276 CGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCT
+          .. ::      :  ::.: . :. .. ...   :: : : . .. ::. . .::: :
+gi|425 DVLANDGTNDIRLPA--GTNGQVLTADSAQASGLRWATPTVGTVTNVTGTAPVQVATGTT
+     740       750         760       770       780       790       
+
+             600       610       620       630       640           
+gi|276 AACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTA----
+       .    .   :. :  : . . .: :.     ..  ..  ... ..    ::.  ::    
+gi|425 TPVI-SVDPATTGARGVVQVGSGIAVTSGTISADPANFPSAVPVSKGGTGATSLTADRLL
+       800        810       820       830       840       850      
+
+       650       660       670       680       690       700       
+gi|276 CACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAACCATTGGGCAGTTGATTTCCAT
+        . ..:.:    .   :      :.:  :::  :.::   :. :.  ::           
+gi|425 VSNGTGSAVIPFTCGTAQMLTFNASGVMGCTNFASTA-FFANGGNTLAGNATLGTNDAYS
+        860       870       880       890        900       910     
+
+       710       720       730       740       750                 
+gi|276 TCAGATGCGACCCCAGGTCAGGCGGGGCCACCCGCTGAGTTGAGGC              
+                                                                   
+gi|425 LALETNNVTRMTISNAGYVGIGQTPDTNAGLAVMAPATTKSALILNSPAAGKVEMDFLRN
+         920       930       940       950       960       970     
+
+>>gi|42522678                                             (1492 aa)
+ initn: 202 init1:  66 opt: 267  Z-score: 213.0  bits: 51.1 E(): 4.2e-06
+Smith-Waterman score: 301; 25.6% identity (49.2% similar) in 762 aa overlap (2-699:172-912)
+
+                                                  10         20    
+gi|276                              CGTAACAAG------GTT-TCCGTAGGTGAA
+                                     :  .::.:      ::. :: : .:..:..
+gi|425 NEIRSVPFSAYALSAESLGDKIVDDFLLKAGLPTCAGGTFLTWNGTALTCAGISGANGGT
+             150       160       170       180       190       200 
+
+           30              40        50        60        70        
+gi|276 CCTGCGGAA------GGATCATTGTTGAGACAACAGAATATATGATCGAGTGAATCTGGA
+            .. :      : .: : : ..:. : .. ::   :  . :   .:..:.   :  
+gi|425 VTDVTSSNAYITIANGTSTPALTLNVGTTAGTVAAGN-DARFSDARVPSGAAAGDLDGTY
+             210       220       230        240       250       260
+
+       80        90       100       110        120       130       
+gi|276 GGACCTGTGGTAACTCAGCTCGTCGTGGCACT-GCTTTTGTCGTGACCCTGCTTTG-TTG
+        .   .   :::. . :  . .    .: : : .  . . . : .:   .  : .  ...
+gi|425 PNPSVAKIQGTAVSNAAPANGNFLKYNGTAWTPSAIAQSDVTGLSATLNSYMTDAEFSAA
+              270       280       290       300       310       320
+
+        140           150       160        170       180        190
+gi|276 TTGGGCCTCCT----CAAGAGCTTTCAT-GGCAGGTTTGAACTTTAGTACGGTG-CAGTT
+       ....:: .  :     .:: .: .  .. .: .:::  ... .   :..   ::  ::  
+gi|425 VVNAGCAAHETMYWNAVAGFSCQAINVSLAGDVGGTIGASSVNKIKGVTVDTTGLVAGQI
+              330       340       350       360       370       380
+
+               200       210       220       230       240         
+gi|276 TGC-GCCAAGTCATATAAAGCATCACTGATGAATGACATTATTGTCAGAAAAAATCAGAG
+           :   : .  . . ..: .:   :: :: . :  ..:.: .    :.. ::  . ..
+gi|425 LKYDGTKWAPAADNDANSGGTVTNIATG-TGLSGGPITSTGTISLANTAVTPAAYGSTTS
+              390       400        410       420       430         
+
+     250        260         270            280               290   
+gi|276 GGGCAGTATG-CTACTGAGCA--TGCCAG-TGA----ATTTTTATGA--------CTCTC
+        :  .  : :  :: ..:. :  .   :: :::    :.  :...:          .:: 
+gi|425 VGTFTVDAQGRLTAASNAAIAFPVTTVAGRTGAVVLDAADITSGAGKYLTYRPNNTACTD
+     440       450       460       470       480       490         
+
+                     300       310       320       330       340   
+gi|276 G-----CAA-----CGGATATCTTGGCTCTAACATCGATGAAGAACGCAGCTAAATGCGA
+       :      ::     ::  : : ..:: . . : .: : .:.  .: :    : . .. ..
+gi|425 GQVLKWVAANNRWECGTDTDT-SSGGTVTNIATGT-GLSGGPITATG----TISLANTAV
+     500       510       520        530        540           550   
+
+           350        360       370       380       390        400 
+gi|276 TAAGTGGTGT-GAATTGCAGAATCCCGTGAACCATCGAGTCTTTGAACGCAAG-TTGCGC
+       : .: :.: . :. :.   :  :   ... :  .:  ::    :::.   ::  :.: : 
+gi|425 TPGGYGSTTSVGTFTVDAQGRLTAASNAAIAFPVTTVAGR---TGAVVLDAADITSGAGK
+           560       570       580       590          600       610
+
+             410           420         430       440       450     
+gi|276 TCGAGGCCATCAGGCT----AAGGG--CACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCT
+               ..:. : .    ::..   ::    :   .::   . .:::: :: :  : :
+gi|425 YLTYRPNNTACTDGQVLKWVAANSRWECANDTDTDTSSGGTVTNIATGTGLTG-GPITST
+              620       630       640       650       660          
+
+         460       470       480        490       500       510    
+gi|276 CCTACCAATGCTTGCTTGGCATATC-GCTAAGCTGGCATTATACGGATGTGAATGATTGG
+         :   : :. :.:  : .  :.   :  .:. .:.  . :.    .:::   ... ::.
+gi|425 G-TIALANTAVTAGSYTRASITVDAQGRLTAASSGAAINLAS---DVTGTLPIANGGTGA
+     670        680       690       700       710          720     
+
+          520       530       540       550       560       570    
+gi|276 CCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGC
+           .. .:       :   .. ::  .   :  ::.: . :. .. ...   :: : : 
+gi|425 TTAIAAFNGLSPLTTKGDVLANDGTNDVRLPA--GTNGQVLTADSAQASGLRWATPTVGT
+         730       740       750         760       770       780   
+
+          580       590       600       610       620       630    
+gi|276 ACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTAT
+       . .. ::. . .::: :.    .   :. :  : . . .: :.     ..  ..  ... 
+gi|425 VTSVTGTAPVQVATGTTTPVI-SVDPATTGARGVVQVGSGIAVSSGTISADPANFPSAVP
+           790       800        810       820       830       840  
+
+          640           650       660       670       680       690
+gi|276 TTTTTCGAACCTA----CACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAACCATT
+       .:    ::.  ::     . ..:.:    . . .      :.:  :::. .::.    ..
+gi|425 VTKGGTGATSITADRLLVSNGTGTAVIPFTCAVGQTITFNASGVMGCTSYSATSLF--AN
+            850       860       870       880       890         900
+
+                 700       710       720       730       740       
+gi|276 GG---GCAGTTGATTTCCATTCAGATGCGACCCCAGGTCAGGCGGGGCCACCCGCTGAGT
+       ::   : :.: :                                                
+gi|425 GGNSFGAAATLGTNDNYGLNFETNGTPRMTISNGGAVGIGTTSPSFNLDIQSADAFQARL
+              910       920       930       940       950       960
+
+>>gi|15233440                                             (299 aa)
+ initn: 198 init1: 120 opt: 234  Z-score: 196.6  bits: 45.7 E(): 3.4e-05
+Smith-Waterman score: 236; 26.8% identity (47.2% similar) in 235 aa overlap (54-274:67-296)
+
+            30        40        50        60        70        80   
+gi|276 ACCTGCGGAAGGATCATTGTTGAGACAACAGAATATATGATCGAGTGAATCTGGAGGACC
+                                     : . :. . :  :..    . . : :.   
+gi|152 FVHQSSIVSEGYRSLTVGDAVEFAITQGSDGKTKAVNVTAPGGGSLKKENNSRGNGARRG
+         40        50        60        70        80        90      
+
+            90       100       110       120            130        
+gi|276 TGTGGTAACTCAGCTCGTCGTGGCACTGCTTTTGTCGTGACCCTG-----CTTTGT---T
+        : .:   :   :     :: :: .  :   . :  :   :  ::     ::..:.    
+gi|152 GGGSGCYNCGELGHISKDCGIGGGGGGGERRSRGGEGCYNCGDTGHFARDCTSAGNGDQR
+        100       110       120       130       140       150      
+
+         140       150       160       170        180       190    
+gi|276 GTTGGGCCTCCTCAAGAGCTTTCATGGCAGGTTTGAACTTTAGT-ACGGTGCAGTTTGCG
+       :.: ::   : ::.  .  .  :.  . ..:   ::.   . :  .:: .:    .  : 
+gi|152 GATKGGNDGCYTCGDVGHVARDCTQKSVGNGDQRGAVKGGNDGCYTCGDVG--HFARDCT
+        160       170       180       190       200         210    
+
+           200       210       220         230         240         
+gi|276 C-CAAGTCATATAAAGCATCACTGATGAATGACATT--ATTGT--CAGAAAAAATCAGAG
+          :::.  . ....: .::   :..:  .  :::    . :   :.:..  :  :   :
+gi|152 QKVAAGN--VRSGGGGSGTCYSCGGVGHIARDCATKRQPSRGCYQCGGSGHLARDCDQRG
+          220         230       240       250       260       270  
+
+     250       260       270       280       290       300         
+gi|276 GGGCAGTATGCTACTGAGCATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTGG
+       .:: .:. ..:  :   :  .  :.                                   
+gi|152 SGG-GGNDNACYKCGKEGHFARECSSVA                                
+             280       290                                         
+
+>>gi|42522130                                             (403 aa)
+ initn: 107 init1:  91 opt: 224  Z-score: 187.7  bits: 44.5 E(): 0.00011
+Smith-Waterman score: 236; 28.2% identity (49.0% similar) in 308 aa overlap (299-589:59-348)
+
+      270       280       290       300       310       320        
+gi|276 ATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTGGCTCTAACATCGATGAAGAA
+                                     :  ::    ..:.  :. ..  :..:: ::
+gi|425 ISETSYSCDEKNDSGMSGIANTASQLSLMFGQQTAGSIQAACSKMASFSS--AANAAVAA
+       30        40        50        60        70          80      
+
+      330       340       350       360       370           380    
+gi|276 CGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTG----AACCATCGAGTCT
+           .: .: :.:   .:   ..  .  ...:  ::.   :::    :.  :  .:  :.
+gi|425 YRL-NCQSAITSC--RSACDQAVEFAQQNAACLDAAA--GGTGISRQAVASAENSAKRCN
+          90         100       110       120         130       140 
+
+          390         400       410       420       430       440  
+gi|276 TTGAACGCA--AGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGT
+          .    :  : ..  :   .:. : .  .:  ::    :  .     : : .   : :
+gi|425 DFDSKVQEANQAINNFAGTMQNAAQCASLTSGDSTALPELCKANPSLPGCEGVAAVDC-T
+             150       160       170       180       190        200
+
+            450             460        470       480       490     
+gi|276 GTGTTGCGTCTCT------CCTACCAATGCT-TGCTTGGCATATCGCTAAGCTGGCATTA
+       . . .:  .:.:.       : .   ..: : .. :. :   .: :   .:  :   .  
+gi|425 NPAMSGNKVCVCAKNPSDPVCMSEKNSAGSTFVSSTNPGSRLSTNGADLSG--GDLPSLP
+              210       220       230       240       250          
+
+         500       510       520       530       540         550   
+gi|276 TACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAG--GATTGTTGC
+       .   :  :.:.:  :. :       :.:  . :: : ::..::   :::  :   :.   
+gi|425 SILPGKPGSGGAGEAVDGKQ---GGGAGISSMGGGGGGGASGG---AAGEEGLEDGVQ--
+      260       270          280       290          300       310  
+
+            560       570        580       590       600       610 
+gi|276 TTTG-ATGGGTAGGAATGTG-GCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTAT
+       ...:   :::. ::.. : : :   .:: .:.:::: :                      
+gi|425 VNAGFYGGGGSFGGSGYGGGSGERNAAGMAGAAGAAKGKGGPDLSKFLPGGQYDPKLRGL
+              320       330       340       350       360       370
+
+             620       630       640       650       660       670 
+gi|276 TTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAA
+                                                                   
+gi|425 AGSGGPDGITGPHSNIWQKIQNRYRVMSPTLLP                           
+              380       390       400                              
+
+>>gi|42522128                                             (461 aa)
+ initn: 355 init1: 114 opt: 216  Z-score: 181.1  bits: 43.5 E(): 0.00025
+Smith-Waterman score: 259; 28.7% identity (50.5% similar) in 307 aa overlap (299-589:118-406)
+
+      270       280       290       300       310       320        
+gi|276 ATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTGGCTCTAACATCGATGAAGAA
+                                     :  ::    ..:.  :. ..  :..:: ::
+gi|425 VTDTTYTCDEKNDSGMSGIANSASQLSLMFGQQTAGSIQAACSKMASFSS--AANAAVAA
+        90       100       110       120       130         140     
+
+      330       340        350       360       370         380     
+gi|276 CGCAGCTAAATGC-GATAAGTGGTGTGAATTGCAGAATCCCGTGAA--CCATCGAGTCTT
+          . : .. :.: .:    .  .....:    ::.:    :..:     :  .:: :. 
+gi|425 YRLT-CQSSITSCHSACDQVVEYVSSNSACLDAAGGA----GSSAQMRSSAESAAGRCND
+          150       160       170       180           190       200
+
+         390         400       410       420       430       440   
+gi|276 TGAACGCA--AGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTG
+         :  . :  : ..  :   .:. : .  .:  ::    :  .     : : .   : :.
+gi|425 FDAKVAEANQAINNFAGTMQNAAQCASLTSGDSTALPELCKANPSLPGCEGVAAVDC-TN
+              210       220       230       240       250          
+
+           450             460        470       480       490      
+gi|276 TGTTGCGTCTCT------CCTACCAATGCT-TGCTTGGCATATCGCTAAGCTGGCATTAT
+        . .:  .:.:.       : .  ...: :  . :. :   .: :   .:  :   .  .
+gi|425 PAMSGNKVCVCAKNPSDPVCMSEKSSAGSTFISSTNPGSRLSTNGADLSG--GDLPSLPS
+     260       270       280       290       300         310       
+
+        500       510       520       530       540         550    
+gi|276 ACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAG--GATTGTTGCT
+          :  :.:.:  :. :       :.:  . :: : ::..::   :::  :   :.   .
+gi|425 ILPGKPGSGGAGEAVDGKQ---GGGAGISSMGGGGGGGASGG---AAGEEGLEDGVQ--V
+       320       330          340       350          360           
+
+           560       570       580        590       600       610  
+gi|276 TTG-ATGGGTAGGAATGTGGCACGAGG-TGGAGAATGCTAACAGTCATAAGGCTGCTATT
+       ..:   :::. ::.. :.::   ::.: .:.:::: :                       
+gi|425 NAGFYGGGGSFGGSGMGSGGGERGAAGMAGAAGAAKGKGAPDLRQFLPGGKFDPKSRGLA
+     370       380       390       400       410       420         
+
+            620       630       640       650       660       670  
+gi|276 TGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAAT
+                                                                   
+gi|425 GNGGPDGITGPHSNIWLKIQNRYQVLSPTLMP                            
+     430       440       450       460                             
+
+>>gi|42524675                                             (717 aa)
+ initn: 199 init1: 112 opt: 215  Z-score: 178.1  bits: 43.6 E(): 0.00037
+Smith-Waterman score: 217; 27.8% identity (42.0% similar) in 324 aa overlap (294-603:309-606)
+
+           270       280       290       300       310       320   
+gi|276 TGAGCATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTGGCTCTAACATCGATG
+                                     : .: : . .  . ::   ..  .. :.  
+gi|425 AGYKTNQMIADANSNIGWPTDPWASMGYGYGLGAIGTGIGQMVGGG---SGIYGSIGGGI
+      280       290       300       310       320          330     
+
+           330       340       350       360       370       380   
+gi|276 AAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTC
+       .:::  :::: ...: :  .  .: .:.:  .   :  : .    : :         :  
+gi|425 GAGA-FGCAGNNGGAYGMMGPYGGMNGNGMWGNPYGMPGMG----GLG---------GGI
+          340       350       360       370                    380 
+
+           390       400        410       420       430       440  
+gi|276 TTTGAACGCAAGTTGCGCTCGA-GGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGT
+          : .    ::  : :   :. ::  .  :::  .:  :   :   :   ::  :  : 
+gi|425 YMPGMGPWGMAGPWGMGGPYGGMGGIIGGMAGGMMGAYPGAMMGGYPGSMMGGMGGMAGM
+             390       400       410       420       430       440 
+
+                450       460       470       480       490        
+gi|276 -GT---GTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATA-
+        :.   :  : :. .        .  :   :   ::   ..   .  :  :: :    : 
+gi|425 MGAYPGGMMGMGALAS-------GIIGAYPGAMMGGGMMGAYPGAMMGGMGGMAGMMGAY
+             450              460       470       480       490    
+
+           500         510       520       530       540           
+gi|276 ----CGGATG--TGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAG--GATTG
+            :: .:   ::  ::  ::    .   :  .  :.  :: :: .   .:  :: .:
+gi|425 PGAMVGGLAGGMMGAYPGAMMGGMGGMAGMMG--AYPGAMMGGMGGMAGMMGGMPGAMVG
+          500       510       520         530       540       550  
+
+     550       560       570       580       590       600         
+gi|276 TTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCT
+         .    ::  :.  :: .  .:  .   ::  : :: .:  :. .:  .  ::      
+gi|425 GLAGGMMGAYPGAMMGGMGGMAGMMGAYPGGMMGMGAMAGGMAGMGGMAGGMAGSLGMLQ
+            560       570       580       590       600       610  
+
+     610       620       630       640       650       660         
+gi|276 ATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCC
+                                                                   
+gi|425 MQQQMMQMQMQQYQQYIQQQQSYMQQQVQRQQVVASLQQELYGLLYRIQQVQYGVGGVGG
+            620       630       640       650       660       670  
+
+>>gi|15234010                                             (203 aa)
+ initn: 612 init1: 122 opt: 202  Z-score: 174.8  bits: 41.2 E(): 0.00056
+Smith-Waterman score: 207; 33.6% identity (52.7% similar) in 131 aa overlap (481-606:79-199)
+
+              460       470       480       490        500         
+gi|276 TCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATA-CGGATGTGAATG
+                                     :  . : .:: .. . .  ::. : : ..:
+gi|152 RSLAAEEAVEFEVEIDNNNRPKAIDVSGPDGAPVQGNSGGGSSGGRGGFGGGRGGGRGSG
+       50        60        70        80        90       100        
+
+     510       520       530       540       550           560     
+gi|276 ATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGAT----GGGTAG
+       .  ::      : :    :: : :: ::. :   :     .  :.  :.     ::: .:
+gi|152 GGYGG-----GGGG---YGGRGGGGRGGSDCYKCGEPGHMARDCSEGGGGYGGGGGGYGG
+      110               120       130       140       150       160
+
+         570       580       590       600       610       620     
+gi|276 GAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATG
+       :.. : :: . :.:: ::.:.. .: . : :  .  :  ::                   
+gi|152 GGGYGGGGGGYGGGGRGGGGGGGSCYS-C-GESGHFARDCTSGGR               
+              170       180         190       200                  
+
+         630       640       650       660       670       680     
+gi|276 TTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAA
+
+>>gi|15234749                                             (162 aa)
+ initn: 185 init1: 121 opt: 180  Z-score: 159.6  bits: 38.0 E(): 0.0039
+Smith-Waterman score: 185; 32.2% identity (51.4% similar) in 146 aa overlap (421-566:38-160)
+
+              400       410       420       430       440       450
+gi|276 GCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTGCG
+                                     :: . :   :   ::: .  :.:.:. : :
+gi|152 SSLILITLILATSVLVSESRVARKDLGLDLGGIGAGIGIGIGIGGGGSGSGAGAGS-GSG
+        10        20        30        40        50        60       
+
+              460       470       480       490       500       510
+gi|276 TCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAATGA
+           .  ..  .... ..:   :: : .  : . ::  .: ..     :: .:.: . :.
+gi|152 GGGSSSSSSSSSSSSSSSG-GGGGDAGSEAG-SYAGSHAGSGS-----GGRSGSGRGRGS
+         70        80         90        100            110         
+
+              520       530       540       550       560       570
+gi|276 TTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATG
+         ::      : :   .:: : :: :::     ::. .:  :    :. ::: .::    
+gi|152 GGGG------GHG---GGGGGGGGRGGG-----GGSGNGE-GYGEGGGYGGGYGGGDD  
+     120                130            140        150       160    
+
+              580       590       600       610       620       630
+gi|276 TGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTT
+
+>>gi|42524149                                             (843 aa)
+ initn: 263 init1:  96 opt: 186  Z-score: 155.8  bits: 39.7 E(): 0.0064
+Smith-Waterman score: 215; 25.2% identity (47.1% similar) in 539 aa overlap (6-513:226-739)
+
+                                        10        20        30     
+gi|276                          CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGG
+                                     :::: .      ..::. .: :  :::.  
+gi|425 YAKIADLATEVPNNENDPTVQAFAKSALPTCAAGEVL----KSNGTSFSCVTDTGGAVPV
+         200       210       220       230           240       250 
+
+          40        50        60        70        80        90     
+gi|276 ATCATTGTTGAGACAACAGAATATATGATCGAGTGAATCTGGAGGACCTGTGGTAACTCA
+       :: :.::.. .:.  .  ::.. .. .   .  .:  :             .    :: .
+gi|425 ATAASTGVVQVGSGLSVNGAGVLSVGSLPISQIAGLQTALDDR-----LQMSLLQQCTSS
+             260       270       280       290            300      
+
+         100       110       120       130           140       150 
+gi|276 GCTCGTCGTGGCACTGCTTTTGTCGTGACCCTGCTTTGTTGTT----GGGCCTCCTCAAG
+         .  .  .   ::.. . :..  .       . .... :..     .::  :     .:
+gi|425 QVSIWNSVSDTFACSNISITASQMSDFNTAVDARVSAADTANPKLPLNGGTMTGDLNMGG
+        310       320       330       340       350       360      
+
+                  160       170       180       190        200     
+gi|276 -----AGCTTTCATGGCAGGTTTGAACTTTAGTACGGTGCAGTTTGCGCCAA-GTCATAT
+            .:  :  ::     :. : :   . . .: :  : .  ..           :  :
+gi|425 EDVLSVGHITMGATKTLLLGNFTQAQEDALVLNA-GHKGLSWYNSDLKALRYYDGAAKLT
+        370       380       390       400        410       420     
+
+         210           220       230       240              250    
+gi|276 AAAGCATCA----CTGATGAATGACATTATTGTCAGAAAAAA-------TCAGAGG----
+       .::. ..::        . : :  : .. ..::  : :. ::       : : ..:    
+gi|425 VAASTSACADGQILKWNNTAKTWDC-SVDSSGTTPGDASYAAKGLVRFDTSADVSGMTVA
+         430       440       450        460       470       480    
+
+                260       270       280       290       300        
+gi|276 GGCAG--TATGCTACTGAGCATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTG
+       .: :.  :.:: .  .  :  .   :  :.: :. .:..  : : : ..    :   : :
+gi|425 SGLASVNTGTGANQIVKLGADSKLPAVDGSALTNINASNIATGTVGTSVL--PTIPVTKG
+          490       500       510       520       530         540  
+
+      310       320       330       340       350       360        
+gi|276 GCTCTAACATCGATGAAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCC
+       :   ::  .: :  :      : .  ..::   .... : ::.:.. .::. ::.:.   
+gi|425 GTGLTA--GTSG--GIPYYNSGTTMASSAALVQNGVVLG-GGAGASPVTTS-AGTANQVL
+              550         560       570        580        590      
+
+      370       380       390       400       410       420        
+gi|276 GTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCC
+        . :.     :: :  .   : . ..::.    . :. :  :: :.. :: : : :    
+gi|425 RVPAGG----GAPTFGAIDLASADVVGTSVLPIANGGTGA-ATAANARTALGLGTAAVAT
+        600           610       620       630        640       650 
+
+      430           440       450       460       470       480    
+gi|276 TGCCTGG----GCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTA
+       ::  .:.    : :   ..   :. :: :   :..   .:.   :  :   . : :    
+gi|425 TGSASGNVPVLGVGGMTANKMCTSDGTGTGIICNVNIPGTSTLMGSLTM-LGKAGCQWEH
+             660       670       680       690       700        710
+
+          490       500       510       520       530       540    
+gi|276 AGCTGGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAG
+       :. . .  ....::. :: :: :.. : :                               
+gi|425 ANTSFASFSNVVACNTATVTGLASAPTEGKIPGIRFANLPAGDYELTVLIFSMYPVDAGV
+              720       730       740       750       760       770
+
+>>gi|30681996                                             (1798 aa)
+ initn: 152 init1:  68 opt: 189  Z-score: 154.2  bits: 40.5 E(): 0.0079
+Smith-Waterman score: 233; 27.8% identity (42.1% similar) in 259 aa overlap (334-570:62-307)
+
+           310       320       330       340       350       360   
+gi|276 TCTTGGCTCTAACATCGATGAAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGA
+                                     ::.   : .::   ..:.: .   .. ...
+gi|306 EGISSSSSDVDPRFMQNSPTGLMISQSSSMCTVPP-GMAATPPISSGSGLSQQLNNSSSS
+              40        50        60         70        80        90
+
+           370       380       390       400       410       420   
+gi|276 ATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGC
+         :    :    :  ..: : . :..  :        :  :: :  . :     : ::: 
+gi|306 KLCQV-EGCQKGARDASGRCISHGGGRRCQKP----DCQKGAEGKTVYCK----AHGGGR
+               100       110       120           130           140 
+
+           430         440       450           460       470       
+gi|276 ACGCCTGCCTG--GGCGTCGTGTGTTGCGTCTCTCC----TACCAATGCTTGCTTGGCAT
+        :    ::  :  :.   : .  :   :.   ::      :  :.  :  . : : ::. 
+gi|306 RCEY-LGCTKGAEGSTDFCIAHGGGRRCNHEDCTRSAWGRTEFCVKHGGGARCKTYGCGK
+              150       160       170       180       190       200
+
+       480           490       500        510       520       530  
+gi|276 ATCG----CTAAGCTGGCATTATACGG-ATGTGAATGATTGGCCCCTTGTGCCTAGGTG-
+       .. :    : : :  ::   .   : : : : ..      ::  :   .    . : .: 
+gi|306 SASGPLPFCRAHG--GGKKCSHEDCTGFARGRSGLCLMHGGGKRCQRENCTKSAEGLSGL
+              210         220       230       240       250        
+
+             540       550                 560       570       580 
+gi|276 CGGTGGGTCTAAGGATTGTTG-------CTTT---GATGGGTAGGAATGTGGCACGAGGT
+       : . :::    . : : :. :       : :       :::. ::..::           
+gi|306 CISHGGGRRCQSIGCTKGAKGSKMFCKACITKRPLTIDGGGNMGGVTTGDALNYLKAVKD
+      260       270       280       290       300       310        
+
+             590       600       610       620       630       640 
+gi|276 GGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCG
+                                                                   
+gi|306 KFEDSEKYDTFLEVLNDCKHQGVDTSGVIARLKDLFKGHDDLLLGFNTYLSKEYQITILP
+      320       330       340       350       360       370        
+
+>>gi|186511687                                            (1895 aa)
+ initn: 152 init1:  68 opt: 189  Z-score: 153.9  bits: 40.5 E(): 0.0082
+Smith-Waterman score: 233; 27.8% identity (42.1% similar) in 259 aa overlap (334-570:62-307)
+
+           310       320       330       340       350       360   
+gi|276 TCTTGGCTCTAACATCGATGAAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGA
+                                     ::.   : .::   ..:.: .   .. ...
+gi|186 EGISSSSSDVDPRFMQNSPTGLMISQSSSMCTVPP-GMAATPPISSGSGLSQQLNNSSSS
+              40        50        60         70        80        90
+
+           370       380       390       400       410       420   
+gi|276 ATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGC
+         :    :    :  ..: : . :..  :        :  :: :  . :     : ::: 
+gi|186 KLCQV-EGCQKGARDASGRCISHGGGRRCQKP----DCQKGAEGKTVYCK----AHGGGR
+               100       110       120           130           140 
+
+           430         440       450           460       470       
+gi|276 ACGCCTGCCTG--GGCGTCGTGTGTTGCGTCTCTCC----TACCAATGCTTGCTTGGCAT
+        :    ::  :  :.   : .  :   :.   ::      :  :.  :  . : : ::. 
+gi|186 RCEY-LGCTKGAEGSTDFCIAHGGGRRCNHEDCTRSAWGRTEFCVKHGGGARCKTYGCGK
+              150       160       170       180       190       200
+
+       480           490       500        510       520       530  
+gi|276 ATCG----CTAAGCTGGCATTATACGG-ATGTGAATGATTGGCCCCTTGTGCCTAGGTG-
+       .. :    : : :  ::   .   : : : : ..      ::  :   .    . : .: 
+gi|186 SASGPLPFCRAHG--GGKKCSHEDCTGFARGRSGLCLMHGGGKRCQRENCTKSAEGLSGL
+              210         220       230       240       250        
+
+             540       550                 560       570       580 
+gi|276 CGGTGGGTCTAAGGATTGTTG-------CTTT---GATGGGTAGGAATGTGGCACGAGGT
+       : . :::    . : : :. :       : :       :::. ::..::           
+gi|186 CISHGGGRRCQSIGCTKGAKGSKMFCKACITKRPLTIDGGGNMGGVTTGDALNYLKAVKD
+      260       270       280       290       300       310        
+
+             590       600       610       620       630       640 
+gi|276 GGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCG
+                                                                   
+gi|186 KFEDSEKYDTFLEVLNDCKHQGVDTSGVIARLKDLFKGHDDLLLGFNTYLSKEYQITILP
+      320       330       340       350       360       370        
+
+>>gi|42522087                                             (348 aa)
+ initn: 416 init1: 138 opt: 177  Z-score: 153.6  bits: 38.0 E(): 0.0086
+Smith-Waterman score: 185; 33.3% identity (63.7% similar) in 102 aa overlap (480-581:31-124)
+
+     450       460       470       480       490       500         
+gi|276 GTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAATG
+                                     :.   . :.: ::  ...  .. :.:...:
+gi|425 MNGRILRKIRNFRVLSALIIASLTIVSFQNCAPQNSFCSGECAEEGSTTEASKGSGSSAG
+               10        20        30        40        50        60
+
+     510       520       530       540       550       560         
+gi|276 ATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAAT
+       . :        :::  . :: : ...:.:. ...::.     : .: :. :::..:: .:
+gi|425 GRTDIWGSRPGGTGGVNMGG-GSNSSGSGSGSSSGGG-----GAVTIGG-GGGSSGGIST
+               70        80         90            100        110   
+
+     570       580       590       600       610       620         
+gi|276 GTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGT
+       : :: . :.::.                                                
+gi|425 G-GGSSSGGGGSSDGTFRITTQPASVSVQENGDFQLDVAVTGGTQPYTYQWYANSKAISG
+            120       130       140       150       160       170  
+
+>>gi|15235002                                             (169 aa)
+ initn: 134 init1: 134 opt: 165  Z-score: 148.3  bits: 36.0 E(): 0.017
+Smith-Waterman score: 165; 36.0% identity (61.8% similar) in 89 aa overlap (519-604:84-168)
+
+      490       500       510       520       530       540        
+gi|276 GGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATT
+                                     . :.:   .:: : ::.:::  ...::. .
+gi|152 FKDEKAMRDAIEEMNGKELDGRVITVNEAQSRGSG---GGGGGRGGSGGGYRSGGGGGYS
+            60        70        80           90       100       110
+
+      550       560          570       580       590       600     
+gi|276 GTTGCTTTGATGGG---TAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGC
+       :  :   .:. :::    .:: ..: :: . : :: ::   . :  .. .:. . ..:: 
+gi|152 GGGGGGYSGGGGGGYERRSGGYGSGGGGGGRGYGG-GGRREGGGYGGGDGGSYGGGGGGW
+              120       130       140        150       160         
+
+         610       620       630       640       650       660     
+gi|276 TGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAA
+
+>>gi|42523973                                             (1660 aa)
+ initn: 163 init1:  81 opt: 176  Z-score: 145.0  bits: 38.7 E(): 0.026
+Smith-Waterman score: 229; 24.9% identity (46.0% similar) in 630 aa overlap (28-615:486-1084)
+
+                  10        20        30        40        50       
+gi|276    CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTGTTGAGACA---ACAG
+                                     : :.: . :.:... : : .. .    :  
+gi|425 ATDDQKFLKYVDGTGWVPHYVKLSELKDSLGTGSAFNVASCTASQTMGWSSITDKFECQD
+         460       470       480       490       500       510     
+
+           60         70        80        90       100       110   
+gi|276 AATATATGATCGAG-TGAATCTGGAGGACCTGTGGTAACTCAGCTCGTCGTGGCACTGCT
+          . :     :.: ::.   : :       ::: .:: : :.   :  :.:.       
+gi|425 IQLSLA-----GTGVTGTLPVTKG-------GTGLSAAGT-ANQLLGMNGAGSALEYKTI
+         520            530              540        550       560  
+
+                 120       130       140       150       160       
+gi|276 TTTGTC------GTGACCCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTTTCATGGCAGGT
+        : :.       ::.  : .:  . .. :   :   .    :.:.. : : .:    : .
+gi|425 PTCGANQYVTFNGTSFSCVNGAPSGSAGGDLTGTYPNPTLKATGTAGTYTKVTTDAQGRV
+            570       580       590       600       610       620  
+
+       170        180         190       200       210       220    
+gi|276 TTGAACTTT-AGTACGGTGC--AGTTTGCGCCAAGTCATATAAAGCATCACTGATGAATG
+       :.::: ...   :: : :    :: ..  .    .: ..   ...  : . :: . :: :
+gi|425 TSGAAVAAADITTALGYTPVNKAGDSVTGNLIFDNTKGSEYKGTSANTATLTGPN-AAIG
+            630       640       650       660       670        680 
+
+          230       240       250               260           270  
+gi|276 ACATTATTGTCAGAAAAAATCAGAGGGG--------CAGTATGC----TACTGAGCATGC
+       .  .    .:  :.:  . .  :.:. :         .::...     :: . :. .:: 
+gi|425 TSYVLRLPAT-QGTANQVMSVDGSGNLGWMTLGSLATSGTVNNSNWSGTALSIANGGTGA
+             690        700       710       720       730       740
+
+            280           290       300       310       320        
+gi|276 CAGTGAAT----TTTTATGACTCTCGCAACGGATATCTTGGCTCTAACATCGATGAAGAA
+        . .:::.    . .: .:    : :  .  .:. : : :    ::. :  :    :: .
+gi|425 TTQAGAANAVLPSQSTNAGKYLTTNGTDVSWAAVPTVTYG---TTAGTALQGNQTFAGDV
+              750       760       770       780          790       
+
+      330       340       350       360       370       380        
+gi|276 CGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTCTTTGA
+        : .:   .    . ..:.:. :. : .     :..:   .. .   .:  :::  . . 
+gi|425 TGTVGVMKVEKLQNRSVAATAPTN-GQVLKWNNGTSTWEPSADTDTNTTYTAGTGLSLA-
+       800       810       820        830       840       850      
+
+      390       400       410       420       430       440        
+gi|276 ACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTG
+         : . ..     . :. :  .: ::. :: : : :    ::  .:      :  :: :.
+gi|425 --GTVFSVDTVPLANGGTGA-TTQAGAQTALGIGTAGTKDTGTISGK-VPLIGL-TGITA
+           860       870        880       890        900        910
+
+      450       460       470          480                 490     
+gi|276 CGTCTCTCCTACCAATGCTTGC---TTGGCATATCGCTAAGCT----------GGCATTA
+        . ::    ..    .   ::    ..:.    . : .. : :          ::   : 
+gi|425 NSMCTSDGTSSLVCNSPIPTGSKWTSAGSDIYYNTGNVGIGLTSPQRKLHVSGGGIQLTN
+              920       930       940       950       960       970
+
+         500       510       520       530       540       550     
+gi|276 TACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTT
+       .. : ... :  .  .:.     .   :     ::. : .   : .:.:..  :::: ::
+gi|425 STVGDGVNDGFLVDYATNDVVLSNRKIGGSLRFGTN-GFSDKLTISASGNVGIGTTGPTT
+              980       990      1000       1010      1020         
+
+         560       570       580       590       600       610     
+gi|276 TGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGA
+          . : . . :  : :     .: :: ..: .:       . : : .: .    ..:.:
+gi|425 KLDVVGTVKATAFQGDG-----SGLTGVSAAPAGADMQIQFNNAGAMSGASKLFWNNTNA
+    1030      1040           1050      1060      1070      1080    
+
+         620       630       640       650       660       670     
+gi|276 ATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGA
+                                                                   
+gi|425 GLSVGIGYDNSASYPLYVGKAATNTRVAISNESTDLAGNTAEIEFRLGGNDRGGIKMRTM
+         1090      1100      1110      1120      1130      1140    
+
+>>gi|42523988                                             (1164 aa)
+ initn: 255 init1:  86 opt: 171  Z-score: 143.0  bits: 37.8 E(): 0.033
+Smith-Waterman score: 271; 26.6% identity (48.9% similar) in 605 aa overlap (33-628:309-870)
+
+             10        20        30        40        50        60  
+gi|276 TAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTGTTGAGACAACAGAATATATG
+                                     ::  :  ..: ... .     .: .:....
+gi|425 SVVALQGVAVANSVPASGNYFKYNGAQWAPAGINTSDVNGLSATLSTYLTQSAFNAAVSS
+      280       290       300       310       320       330        
+
+             70        80        90       100       110       120  
+gi|276 ATCGAGTGAATCTGGAGGACCTGTGGTAACTCAGCTCGTCGTGGCACTGCTTTTGTCGTG
+       :.:::. .:   . .:.  : : . :... .         ::.:   ..  .:: : . .
+gi|425 ASCGANQAAYWNSVSANFQCQTINVGVTTVS---------GTAGQIVVSNGSTTPTLSLA
+      340       350       360                370       380         
+
+               130         140       150       160       170       
+gi|276 ACCCTGC---TTTGTTG--TTGGGCCTCCTCAAGAGCTTTCATGGCAGGTTTGAACTTTA
+       .   .:    .:: . :  :.: .  :     : .    :       .:     : :..:
+gi|425 SVGTSGSYFKVTTDAQGRVTAGQSSLTAADIPALSWTKITSDLPTTLAGYGITNAVTNVA
+     390       400       410       420       430       440         
+
+       180       190       200       210       220       230       
+gi|276 GTACGGTGCAGTTTGCGCCAAGTCATATAAAGCATCACTGATGAATGACATTATTGTCAG
+       ::    ::  ..  . :  .::   .:.      :      ::..    :..: .:   :
+gi|425 GTPSLQTGLDASKPAVG--TAGRLYVASD-----TKRIYRDTGSVWDLIASAAGAG---G
+     450       460         470            480       490            
+
+       240       250       260       270       280       290       
+gi|276 AAAAAATCAGAGGGGCAGTATGCTACTGAGCATGCCAGTGAATTTTTATGACTCTCGCAA
+       .....:: .:  ::  . :.:   : : :  : .  ..: . : :. : :  : . . . 
+gi|425 TVTSVATGTGLTGGPISTTGTISLANT-AVTAGSYGSATQVPTYTVDAQGRLTAASNVTI
+     500       510       520        530       540       550        
+
+       300       310       320       330          340       350    
+gi|276 CGGATATCTTGGCTCTAACATCGATGAAGAACGCAGCTA---AATGCGATAAGTGGTGTG
+        : . .  . :  : :    :  :::.....   .   :   ...: . .::   .  :.
+gi|425 SGVSPGGAAGGDLTGTYPNPTLTATGVTAGTYPKVTVDAKGRVTAGAALVAADIPALDTS
+      560       570       580       590       600       610        
+
+          360       370       380       390       400       410    
+gi|276 AATTGCAGAATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCGAGGCCATCAG
+         :::  .::     .: :   :  ::: . : :  : ::::   . :  . :   . ::
+gi|425 KITTGTFAAARMPAFSGDA---TSVAGTTALTLADSGVAAGTYK-SVTVDTKG--RVTAG
+      620       630          640       650        660         670  
+
+          420       430       440       450       460       470    
+gi|276 GCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGG
+       .  ..  . : :  ::  :::      : ::: . .. . :  .   :.   :    . :
+gi|425 SNPTSVTSVATG--TGL-TGGPI----TTTGTISLANTAVTAGSYGSATQVPTYTVDAQG
+            680          690           700       710       720     
+
+          480       490       500        510       520       530   
+gi|276 CATATCGCTAAGCTGGCATTATACGGATG-TGAATGATTGGCCCCTTGTGCCTAGGTGCG
+         ::. . : .: . : :. .   :   . : .:::.:.:     :.     : : .  :
+gi|425 RLTAASNVTISGVSPGGAAGGDLTGTYPNPTLTATGVTAGTYPKVTVD----TKGRVTAG
+         730       740       750       760       770           780 
+
+           540       550       560       570       580       590   
+gi|276 GTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAA
+       .. ...   :  ..  :::    .  : :.. :. ::.:. . .::::.      . : .
+gi|425 AALAAADIPALDTSKLTTGTLPIARGGTGSTTGSITGSGALTFAAGGTN-----QNITLT
+             790       800       810       820       830           
+
+           600       610       620       630       640       650   
+gi|276 CAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAG
+        .::  :. .: .:  .::: ::      : :. :                         
+gi|425 PSGTGRTVLNGNVG-IGTTTPAADLEIKRAFGAGGHLRIGDGYDANSFASLGYSAYGANL
+        840       850        860       870       880       890     
+
+           660       670       680       690       700       710   
+gi|276 AACCTAATTGAACCCCAATGGAGCTAAAATAACCATTGGGCAGTTGATTTCCATTCAGAT
+                                                                   
+gi|425 IISSGSYWNGSDWQATHTSASHVAVGPDGVMFKNTKGLTIGGTDPLKNMLLVGGIQNRLE
+         900       910       920       930       940       950     
+
+>>gi|15234610                                             (148 aa)
+ initn: 429 init1: 134 opt: 156  Z-score: 142.3  bits: 34.7 E(): 0.037
+Smith-Waterman score: 156; 34.5% identity (56.6% similar) in 113 aa overlap (518-627:31-137)
+
+       490       500       510       520       530       540       
+gi|276 TGGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGAT
+                                     :::     . :: : .  :::. ...::: 
+gi|152 MKITKTRAHFVTNYAAKLAVLLIITLLLVNCTT---VVAKGGGGGAHGGGGVHVSVGGAH
+               10        20        30           40        50       
+
+       550       560          570       580       590       600    
+gi|276 TGTTGCTTTGATGGGTA---GGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGG
+       ... :  ..:  ::: :   :: :.: :: :  .:: .:.:.. :     .:     .::
+gi|152 ASVGGGHASG--GGGHASVGGGHASGGGGHAVEGGGHAGGGGG-GHGEEEGGHGIGRGGG
+        60          70        80        90        100       110    
+
+          610       620       630       640       650       660    
+gi|276 CTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGA
+        .   :: .:..:     . :.:                                     
+gi|152 MVHRPATRNGGSTLTIPFVDGSTTVFMIIFFLFN                          
+          120       130       140                                  
+
+>>gi|42523208                                             (1365 aa)
+ initn: 145 init1:  73 opt: 169  Z-score: 140.7  bits: 37.6 E(): 0.044
+Smith-Waterman score: 201; 22.7% identity (49.4% similar) in 682 aa overlap (20-681:189-838)
+
+                          10        20        30        40         
+gi|276            CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTGTTGAGAC
+                                     :: :  :.  .:::::.   .: .:.... 
+gi|425 AEKLGNKVEADFVLKAAVPTCLANEFLSWNGT-AMVCAPVSGAAGGT---VTEVTSSNSY
+      160       170       180       190        200          210    
+
+      50        60        70        80        90         100       
+gi|276 AACAGAATATATGATCGAGTGAATCTGGAGGACCTGTGGTAACTCAGC--TCGTCGTGGC
+        . :....: :   . :...:...  .    .      :.:.   ::   . ..    : 
+gi|425 ITVANSTSAPALTLNVGSAAGTVAAGNDPRLSDSRTPTGSAGGDLAGTFPSPSVVKIQGV
+          220       230       240       250       260       270    
+
+       110       120       130       140       150       160       
+gi|276 ACTGCTTTTGTCGTGACCCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTTTCATGGCAGGT
+       : .. . :.:            ..   : .:.         .  :.  :: : .. .:..
+gi|425 AVSSTAPTSGKFFKHDGAQWIPSSIEITDVTN-------LSTNLASYHTTAAFNAAVGSA
+          280       290       300              310       320       
+
+       170       180       190       200         210       220     
+gi|276 TTGAACTTTAGTACGGTGCAGTTTGCGCCAAGTCATATAAA--GCATCACTGATGAAT--
+       . .:  :   ... :.  : . ... .  ..:. ...:.    :  .     ::: .   
+gi|425 NCAAYETPYWSSVSGSFQCQAINVSVAGDVSGSIGAVTVNKIKGVNVDITGLATGQVLKY
+       330       340       350       360       370       380       
+
+            230       240       250       260       270       280  
+gi|276 -GACATTATTGTCAGAAAAAATCAGAGGGGCAGTATGCTACTGAGCATGCCAGTGAATTT
+        :.  . :. .. .:...  :: .: .::  ..:.:   : :..  : .  ::: . . :
+gi|425 DGTKWAPANDSNGGGTVTNIATGTGLSGGPITSTGTISLANTSV-TAGSYGAGTQVPSFT
+       390       400       410       420       430        440      
+
+            290         300       310       320       330       340
+gi|276 TTATGACTCTCGCA--ACGGATATCTTGGCTCTAACATCGATGAAGAACGCAGCTAAATG
+       . : :  : . . :  . .:.::   :.    :       :.  :: . : ..  ..   
+gi|425 VDAQGRLTAAGNVAIPTSSGSTAGLLTSTDWNTFNNKLSTASTFAGDVSGTSAALSVDKI
+        450       460       470       480       490       500      
+
+              350               360       370        380           
+gi|276 CGATAAGTGGT--------GTGAATTGCAGAATCCCGTGAACCATCG-AGTCT--TTGAA
+        :.....:. :        ::  . .. .: ::   .::..   . : ::: :  :: : 
+gi|425 KGTAVSATAPTSAQILIYNGTQYTPSSLSGDATMS-ATGVVTLKNTGTAGTYTKVTTDAQ
+        510       520       530       540        550       560     
+
+     390       400       410       420       430       440         
+gi|276 CGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTGC
+          ..:::  .    .       .:  :. .:    :   .  ..::  .  .:: ..  
+gi|425 GRVTSGTTLAAADVPSLDWTKITTGKPTTLSGY---GITDSVQNAGGTPSVQSGTVASRP
+         570       580       590          600       610       620  
+
+     450       460       470       480       490       500         
+gi|276 GTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAATG
+       .. :         .:  ..     : : .  :  .:: .:  ..::.:  ...: :.. .
+gi|425 AAATA---GRLYIGTDDNSLYRDTGSAWVKVG-DGAGSNGVTTVTASAPLASSG-GTSPN
+               630       640       650        660       670        
+
+     510       520       530       540       550       560         
+gi|276 ATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAAT
+        :       :.:    :  .:  .  : :.  .  : ..::.: :..    : ..  :: 
+gi|425 ITLTQANTTTNGYLSSTDWNTFNNKLGTGSTFS--GDVSGTSGTTSVDKIKGKAVTPAAY
+       680       690       700       710         720       730     
+
+     570       580       590       600       610       620         
+gi|276 GTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGT
+       .::  .   .::  ...  :  :  .:. ::.    .  .   ::...       .. ::
+gi|425 ATGQ-TLRYNGTDWVNTLLGF-ADISGSIATSQLPVVPVSKGGTGVSSLTANRLLASDGT
+          740       750        760       770       780       790   
+
+     630       640       650       660       670       680         
+gi|276 TGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAACCAT
+          ::.:. ::...   .   ..  .: . :..:       :.:: .  :::        
+gi|425 G--ATVTAFTCAVGQLMTFDAGGVMGCTSYASSGLF-----ANGGNSFGAAATLGTNDAQ
+             800       810       820            830       840      
+
+     690       700       710       720       730       740         
+gi|276 TGGGCAGTTGATTTCCATTCAGATGCGACCCCAGGTCAGGCGGGGCCACCCGCTGAGTTG
+                                                                   
+gi|425 ALNLETNSTTRMTVLSTGEVGIGTTTPTFPLEVQASATTSKGIQINNTNNTGGAYINAKA
+        850       860       870       880       890       900      
+
+>>gi|42524337                                             (1051 aa)
+ initn: 196 init1:  83 opt: 167  Z-score: 140.6  bits: 37.2 E(): 0.045
+Smith-Waterman score: 170; 22.5% identity (57.2% similar) in 325 aa overlap (7-318:130-451)
+
+                                       10        20        30      
+gi|276                         CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGG-
+                                     :. :..   :. :..:    .: .:  :. 
+gi|425 GSNGVLGNNGNNGNNGNNGNNGNNGNNGNNAVLGNNGVLGNNGNNGNNVNNGNNGNNGNN
+     100       110       120       130       140       150         
+
+          40        50        60        70        80        90     
+gi|276 ATCATTGTTGAGACAACAGAATATATGATCGAGTGAATCTGGAGGACCTGTGGTAACTCA
+       .. ...:..: ..  .  :  . ...... : ..:    .:  :.    :..:. . .  
+gi|425 VNNGNNGNNGNNVNNGNNGNNVNNGNNGNNG-NNGNYGTNGTKGSNGSYGNNGNNGNNGN
+     160       170       180       190        200       210        
+
+         100       110       120        130        140       150   
+gi|276 GCTCGTCGTGGCACTGCTTTTGTCGT-GACCCTGCT-TTGTTGTTGGGCCTCCTCAAGA-
+       . . :. :..:   .: . ..:. :. :    .: . ..:..:..:..  .  .   :  
+gi|425 NGNNGNNGNNG--NNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNN
+      220         230       240       250       260       270      
+
+            160        170       180       190       200       210 
+gi|276 GCTTTCATGGCAGGT-TTGAACTTTAGTACGGTGCAGTTTGCGCCAAGTCATATAAAGCA
+       : . . ...:  :.. ..:   ..  .   :..:  :.. . :  . .     ..  : .
+gi|425 GNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGNNGHNGHNGHKGST
+        280       290       300       310       320       330      
+
+             220       230        240       250       260       270
+gi|276 TCACTGATGAATGACATTATTG-TCAGAAAAAATCAGAGGGGCAGTATGCTACTGAGCAT
+       :   :: : . : . .:  ::: : .: .... : .: . :  ..:. : .. : .  .:
+gi|425 TGYSTGYTTGYTTGYSTGYTTGYTSTGYTSTGYTSTGYSTGYTTATTYGPSTSTYGPTST
+        340       350       360       370       380       390      
+
+              280         290            300       310       320   
+gi|276 GCCAGTGAATTTTTATGAC--TCTCG-----CAACGGATATCTTGGCTCTAACATCGATG
+       .   .  ..::.::::..   : : :      .. ...:.: :::  : :.. .:     
+gi|425 ATTYNPDTSTTVTTATSTSVTTSTTGEVTSSSSSSSSSTSTSTTGESTATSSSSTGFKEE
+        400       410       420       430       440       450      
+
+           330       340       350       360       370       380   
+gi|276 AAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTC
+                                                                   
+gi|425 EKNKLRAKLKPLFHLSFDYGQYIVNLTPHFRNVQPSSIVKYDYRPTSDTLIYGDYRDGFQ
+        460       470       480       490       500       510      
+
+>>gi|15235738                                             (787 aa)
+ initn: 183 init1: 128 opt: 164  Z-score: 139.8  bits: 36.6 E(): 0.05
+Smith-Waterman score: 190; 37.6% identity (52.7% similar) in 93 aa overlap (661-753:683-765)
+
+              640       650       660       670       680       690
+gi|276 GTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAACCATT
+                                     :: .:      .::: : .   ..      
+gi|152 KANGITEESTEIDVLSQEKLEEETMMDVDTTTPVAVAAEKINGGARCFSKELSGNMIEEE
+            660       670       680       690       700       710  
+
+              700       710       720       730       740       750
+gi|276 GGGCAGTTGATTTCCATTCAGATGCGACCCCAGGTCAGGCGGGGCCACCCGCTGAGTTGA
+       :: :.:  :     :.  :.:. :::.   :.: :   :::::.: .   : :: :. : 
+gi|152 GGHCGGCGG-----CGG-CGGGGGCGGGGRCGGMTKIEGCGGGSCTG---GSTGCGNCG-
+            720             730       740       750          760   
+
+                                
+gi|276 GGC                      
+       :::                      
+gi|152 GGCGNMMKNNANGNAPSVENDAVTA
+            770       780       
+
+>>gi|15235530                                             (158 aa)
+ initn: 517 init1: 116 opt: 148  Z-score: 136.0  bits: 33.6 E(): 0.082
+Smith-Waterman score: 177; 37.6% identity (60.6% similar) in 109 aa overlap (495-598:49-151)
+
+          470       480       490       500       510       520    
+gi|276 GCTTGCTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAATGATTGGCCCCTTGT-G
+                                     :.. ::: :.::. :...::    . :. :
+gi|152 VTATRPAPTKNVGAGLDDQKNFVAFAGVGGAAGIGGAGGVGAGLGGVAGG----VGGVAG
+       20        30        40        50        60            70    
+
+           530        540       550       560         570       580
+gi|276 CCTAGGTGCGGTGG-GTCTAAGGATTGTTGCTTTGATGGGTAG--GAATGTGGCACGAGG
+          .::.: :: :: :  ... :.  :  : .  :   :: .:  : ..: :: . ::::
+gi|152 VLPVGGVG-GGIGGLGGGVGGLGGLGGLGGGSGLGHGVGGIGGDPGIGSGIGGLG-GAGG
+           80         90       100       110       120        130  
+
+              590        600       610       620       630         
+gi|276 TGGAGAATGCTAACAGT-CATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTT
+        :: :.. :  .  .:. :                                         
+gi|152 LGGIGGVGGLGGIGGGSDCGGVIPHH                                  
+            140       150                                          
+
+>>gi|42524273                                             (1112 aa)
+ initn: 241 init1: 125 opt: 158  Z-score: 133.6  bits: 36.0 E(): 0.11
+Smith-Waterman score: 197; 26.6% identity (51.3% similar) in 271 aa overlap (223-489:810-1067)
+
+            200       210       220       230       240       250  
+gi|276 CGCCAAGTCATATAAAGCATCACTGATGAATGACATTATTGTCAGAAAAAATCAGAGGGG
+                                     ::. :.:: .     .   .:    ::.::
+gi|425 AVAASPRTFVVRVNPTVKVSSNDPALPAMRTGSLAATARVRLINDGLIIGA----AGAGG
+     780       790       800       810       820       830         
+
+            260       270       280       290       300       310  
+gi|276 CAGTATGCTACTGAGCATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTGGCTC
+        : .::. .   :   .:.  . .  :..:   .:      : .. ::.  . . .: . 
+gi|425 LAPAATAGSLRMGQHGGTAFKVEAQYANVTILNNGMIYGGGGGGGRGGTDDSDAGAGGAG
+         840       850       860       870       880       890     
+
+              320       330        340       350        360        
+gi|276 TAAC--ATCGATGAAGAACGCAGCTAA-ATGCGATAAGTGGTGTGAATT-GCAGAATCCC
+        :.   :. ...:::::. : .: .:: :.. ::. ::    ..:.:   : :: .   :
+gi|425 GAGEGPAAAAVSGAAGASSGGSGGSAATAVAGGASPAGDYTPSNGVARIQGAAGQGGSTC
+         900       910       920       930       940       950     
+
+      370       380       390       400       410       420        
+gi|276 GTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCC
+         :.:   . : .     : . : ..:. .:  : :.::     .::  ..:::   :  
+gi|425 LIGSALGNNPGEAFFGRGGFGAGFGGGAGACDVTFGGGG-----GGGHFGGGGG--AGGL
+         960       970       980       990           1000          
+
+      430       440       450       460       470       480        
+gi|276 TGCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCT
+       .    .:. .:  .: .  : :  .    .:  . .  . . . :: ..   ::.    .
+gi|425 ADMNDAGNLNTDTNGYNG-GNGGAAIEVPSAVSVPADIAISIVPGG-GSQIAGCVWNDIS
+     1010      1020       1030      1040      1050       1060      
+
+      490       500       510       520       530       540        
+gi|276 GGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATT
+       :                                                           
+gi|425 GVYLSNVASDTDINNRVLTYSSTASQNVNSPSGLKIWSNGRGKAYR              
+       1070      1080      1090      1100      1110                
+
+>>gi|15233437                                             (301 aa)
+ initn: 171 init1:  80 opt: 147  Z-score: 132.0  bits: 33.8 E(): 0.14
+Smith-Waterman score: 147; 26.3% identity (44.1% similar) in 213 aa overlap (150-347:41-240)
+
+     120       130       140       150       160       170         
+gi|276 GTGACCCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTTTCATGGCAGGTTTGAACTTTA--
+                                     .::: .   .::   . : : .    .:  
+gi|152 LLILVFIYGVSSTTFTIVNQCSYTVWPGLLSGAGTSPLPTTGFSLNPTETRVIPIPAAWS
+               20        30        40        50        60        70
+
+       180        190       200       210       220                
+gi|276 GTACGGTGCA-GTTTGCGCCAAGTCATATAAAGCATCACTGATGAAT-------GACATT
+       :   : : :.  .:::   : .: :...:     . :. .::.  ::       :: .  
+gi|152 GRIWGRTLCTQDATTGRFTCITGDCGSST-----VECSGSGAAPPATLAEFTLNGANGLD
+               80        90            100       110       120     
+
+     230       240       250       260       270          280      
+gi|276 ATTGTCAGAAAAAATCAGAGGGGCAGTATGCTACTGAGCATGCCA---GTGAATTTTTAT
+           . . .     : .  :::  .:.: .::.       ::: :   :   :   ...:
+gi|152 FYDVSLVDGYNIPMTIVPQGGGDAGGVAGNCTT-------TGCVAELNGPCPAQLKVATT
+         130       140       150              160       170        
+
+          290       300       310       320       330       340    
+gi|276 GA--CTCTCGCAACGGATATCTTGGCTCTAACATCGATGAAGAACGCAGCTAAATGCGAT
+       ::   .:  .: : : .   : .:.     .:     .     ::  :   :   : .. 
+gi|152 GAEGVACKSACEAFG-TPEYCCSGAFGTPDTCKPSEYSQFFKNACPRAYSYAYDDGTSTF
+      180       190        200       210       220       230       
+
+          350       360       370       380       390       400    
+gi|276 AAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCG
+       . :                                                         
+gi|152 TCGGADYVITFCPSPNPSVKSATKGVQPVAVSYSKASPNASPTLSAVFSIGVLAVASWVM
+       240       250       260       270       280       290       
+
+>>gi|79326326                                             (301 aa)
+ initn: 171 init1:  80 opt: 147  Z-score: 132.0  bits: 33.8 E(): 0.14
+Smith-Waterman score: 147; 26.3% identity (44.1% similar) in 213 aa overlap (150-347:41-240)
+
+     120       130       140       150       160       170         
+gi|276 GTGACCCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTTTCATGGCAGGTTTGAACTTTA--
+                                     .::: .   .::   . : : .    .:  
+gi|793 LLILVFIYGVSSTTFTIVNQCSYTVWPGLLSGAGTSPLPTTGFSLNPTETRVIPIPAAWS
+               20        30        40        50        60        70
+
+       180        190       200       210       220                
+gi|276 GTACGGTGCA-GTTTGCGCCAAGTCATATAAAGCATCACTGATGAAT-------GACATT
+       :   : : :.  .:::   : .: :...:     . :. .::.  ::       :: .  
+gi|793 GRIWGRTLCTQDATTGRFTCITGDCGSST-----VECSGSGAAPPATLAEFTLNGANGLD
+               80        90            100       110       120     
+
+     230       240       250       260       270          280      
+gi|276 ATTGTCAGAAAAAATCAGAGGGGCAGTATGCTACTGAGCATGCCA---GTGAATTTTTAT
+           . . .     : .  :::  .:.: .::.       ::: :   :   :   ...:
+gi|793 FYDVSLVDGYNIPMTIVPQGGGDAGGVAGNCTT-------TGCVAELNGPCPAQLKVATT
+         130       140       150              160       170        
+
+          290       300       310       320       330       340    
+gi|276 GA--CTCTCGCAACGGATATCTTGGCTCTAACATCGATGAAGAACGCAGCTAAATGCGAT
+       ::   .:  .: : : .   : .:.     .:     .     ::  :   :   : .. 
+gi|793 GAEGVACKSACEAFG-TPEYCCSGAFGTPDTCKPSEYSQFFKNACPRAYSYAYDDGTSTF
+      180       190        200       210       220       230       
+
+          350       360       370       380       390       400    
+gi|276 AAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCG
+       . :                                                         
+gi|793 TCGGADYVITFCPSPNPSVKSATKGVQPVAVSYSKASPNASPTLSAVFSIGVLAVASWVM
+       240       250       260       270       280       290       
+
+>>gi|42521786                                             (486 aa)
+ initn: 181 init1: 105 opt: 150  Z-score: 131.8  bits: 34.5 E(): 0.14
+Smith-Waterman score: 209; 24.7% identity (45.8% similar) in 437 aa overlap (155-566:18-424)
+
+          130       140       150       160       170       180    
+gi|276 CCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTTTCATGGCAGGTTTGAACTTTAGTACGGT
+                                     :.. : .  :::.:: :: . .:  :   .
+gi|425              MRSLKTSLLSGLIALSFTASLAHAEGAGGSTTPAAASGAAKDARTEV
+                            10        20        30        40       
+
+          190       200       210       220       230              
+gi|276 GCAGTTTGCGCCAAGTCATATAAAGCATCACTGATGAATGACATTATT------GTCAGA
+       .  : :   :   :      ::    :. .  :: :.:.    . ::.      :::. .
+gi|425 SDEGYTEKPGEFKAEITKLETALN--AAESLGGAPGVAAFKDLSQATSFYSNLHGTCVKT
+        50        60        70          80        90       100     
+
+      240        250           260       270       280       290   
+gi|276 AAAAA-TCAGAGGGGCAGT----ATGCTACTGAGCATGCCAGTGAATTTTTATGACTCTC
+        ..:.  :    .     :     :  .  ::..   .:   .. :  .  : :. :   
+gi|425 QSTASWLCREKTSPELQKTLNNINTVASMITGVAVQDAC---SNLAKIARLAQGGLTAYT
+         110       120       130       140          150       160  
+
+           300       310       320             330       340       
+gi|276 GCAACGGATATCTTGGCTCTAACATCGATGAAGAAC------GCAGCTAAATGCGATAAG
+         :::..: :.: ..  : ..       :   . ::      . ..:..  :  .:..: 
+gi|425 --AACSSARAACEASCSTVATNLERIVKTDLNAIACKTRTLENTTACNSLDTQLNAVSAK
+              170       180       190       200       210       220
+
+           350       360       370       380          390       400
+gi|276 ----TGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTCTTTGA---ACGCAAGTTGCG
+           ..  .. : . . :   . :    :   .. :::  .  ..   .  :   ..: :
+gi|425 IKDLAATDNSKADNKSIAKKNVACTYEYANMIVSAGAGIASMISSFKQGQQCDEESNGTG
+              230       240       250       260       270       280
+
+              410       420       430       440       450       460
+gi|276 CTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCTCCTAC
+           . .    :: . .::.    : : ..  : :    :...   .. ::      :. 
+gi|425 TDTTTTAAVDKCADATVAANDP-ECICKANPRTPG----CSNSYQKANDGT------TSR
+              290       300        310           320               
+
+              470        480       490       500       510         
+gi|276 CAATGCTTGCTTG-GCATATCGCTAAGCTGGCATTATACGGATGTGAATGATTGGCCCCT
+        :. :   : ..: : :..  :  .   ..    ..:  ::. ..::  ::  ::     
+gi|425 LASQGAELGTANGKGDASTLPGIESDPFAALRDLASTNAGGGDSSGA--GAPMGG-----
+     330       340       350       360       370         380       
+
+     520       530       540       550       560       570         
+gi|276 TGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAG
+        :.:    :: . ::.:.   .:  : .:   :    :: ::: .::             
+gi|425 -GSGLSGFGGGSGGGAGAQGEAAKKGLNTDILG----GAGGGGGGGGFGGFKGSDSKLRQ
+             390       400       410           420       430       
+
+     580       590       600       610       620       630         
+gi|276 GTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTT
+                                                                   
+gi|425 YLPGGAKDPSQGLAGQQAWKNEVTGQGGKSNWEKIKERYRDNKNTLLNN           
+       440       450       460       470       480                 
+
+>>gi|42522311                                             (1959 aa)
+ initn: 121 init1:  74 opt: 145  Z-score: 121.1  bits: 34.5 E(): 0.55
+Smith-Waterman score: 254; 26.0% identity (47.3% similar) in 791 aa overlap (10-717:417-1181)
+
+                                    10        20        30         
+gi|276                      CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCA
+                                     :::.    ..:.:    :. :: .:::   
+gi|425 QEATLTGGLSAAHKGYTWYNSEAHQVKFWNGTTVQALGVAGSGI---TSIGGQTGGAQAF
+        390       400       410       420       430          440   
+
+      40        50              60         70        80        90  
+gi|276 TTGTTGAGACAACAGAATAT------ATGA-TCGAGTGAATCTGGAGGACCTGTGGTAAC
+       .:::.:. : :  .:. : :      :::. : :  ..:   . .:  .  :. :: .. 
+gi|425 ATGTVGT-APAWSSGSDTHTLNIPMAATGSVTAGLLSNADYAAFAAKLGTATNFGGDVTG
+           450        460       470       480       490       500  
+
+            100         110       120       130                140 
+gi|276 TCAGCTCGTC--GTGGCACTGCTTTTGTCGTGACCCTGCTTT---GTT------GTTGGG
+       :  . : .:   . ::   :: ::.:.. :. .   :   .    ::.      :. : .
+gi|425 TYNAITLNTVPIAKGG---TGQTTATAAFGALSPLTTKGDVLVHDGTANLRMAVGSDGKA
+            510          520       530       540       550         
+
+             150           160       170       180           190   
+gi|276 CCTCCTCAAGAG----CTTTCATGGCAGGTTTGAACTTTAGTACG----GTGCAGTT--T
+         .  . :::.      .:   .   .: .  ..: . .: :. :    ..:  :..  :
+gi|425 LIADSAEAAGVKWGDIFSTDLLSMVTTGIVQRNGAGSYSAVTVNGPLTYSSGALGVNVGT
+     560       570       580       590       600       610         
+
+             200       210       220       230                     
+gi|276 GCGCCAAGTCATATAAAGCATCACTGATGAATGACATTAT-----TGTCAGAA-------
+       : :  :::  :  :.:   .  . ::. : .: . :  ::     ..:  : :       
+gi|425 GAGSVAAGDDARITGALQRSGGTMTGVLGLGTYSNAQEATLVGTLNATHKGYAWFNSDAN
+     620       630       640       650       660       670         
+
+           240       250         260       270       280           
+gi|276 ------AAAATCAGAGGGGCA--GTATGCTACTGAGCATGCCAGTGAATTTTTA---TGA
+             ..::   : .:.: .  :  .: .   . : . .  : ..:. : :     ..:
+gi|425 QVKIWNGSAAQALGIAGSGISSFGGQSGNSQSLAIGTSGNSPAWSSASDTHTLNIPMASA
+     680       690       700       710       720       730         
+
+      290       300         310       320       330         340    
+gi|276 CTCTCGCAACGG--ATATCTTGGCTCTAACATCGATGAAGAACGCAG--CTAAATGCGA-
+        . : :  .     : :.  ..:   ::  .   :.: ..::   :.   :.:  . :. 
+gi|425 ASVTAGLLSKTDYDAFASKQAAGNYVTALTGDVTAAGPGSAAATIAADAVTSAKIANGTI
+     740       750       760       770       780       790         
+
+           350       360       370           380       390         
+gi|276 TAAGTGGTGTGAATTGCAGAATCCCGTGA----ACCATCGAGTCTTTGAACGCAA-GTTG
+       ..:    ::...:::. :       :::     :: .:  . : :..: .:  :: :   
+gi|425 VGADMDFTGVNTATTSFAMKD----GTGKFFNFACATTGHVPTWTVAGFVCQAAASGDFK
+     800       810       820           830       840       850     
+
+      400       410       420           430       440              
+gi|276 CGCTCGAGGCCATCAGGCTAAG----GGCACGCCTGCCTGGGCGTCGT------GTGTTG
+          : .  :   . .:. .: :    :    :   .   . : .: :.      :.: : 
+gi|425 ADGTVNMTGPLKAVVGSAAAPGYTFVGDTNTGMFGAAADALGFSTAGVERMRLDGSGMTV
+         860       870       880       890       900       910     
+
+      450       460       470             480         490       500
+gi|276 CGTCTCTCCTACCAATGCTTGC------TTGGCATATCGCTA--AGCTGGCATTATACGG
+        :  .        ..    .:       .::: .. . : .   :   .    . :. .:
+gi|425 QGPSSFLVVKDTVSGGDTESGLFIEGDGATGGLTALSDGYSNHPAWADSLMLYSDTVNSG
+         920       930       940       950       960       970     
+
+              510         520       530       540       550        
+gi|276 ATGTGAATGATT--GGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGA
+       .    : .:  :  .:    .       .:..: :    :.   . :    :.: ::.: 
+gi|425 GLRLHANAGNITLSNGWSPNVDRMVLLPSGNVGIGTLTPGSALEVKGEIR-TSG-TTSGY
+         980       990      1000      1010      1020        1030   
+
+      560         570       580       590       600       610      
+gi|276 TG--GGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAA
+       ::  . ..:.  : :     :: ::..   .:. ... . : . :::: :.  . :.:. 
+gi|425 TGFRAPASGNNITYTLP---GADGTNNQVLTTNGSGTLSWT-SPAAGGITSLGGLTAGTQ
+          1040      1050         1060      1070       1080         
+
+        620       630       640       650       660       670      
+gi|276 TCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAG
+       :     : ::.:.. . ...:.:           :: :.  ..  . :     ::  .::
+gi|425 TF----AIGTSGNAPAFSSATSTH----TLNIPMAATASVTAGLISKAEYDSFAAKQAAG
+    1090          1100          1110      1120      1130      1140 
+
+        680       690       700       710       720       730      
+gi|276 CTAAAATAACCATTGGGCAGTTGATTTCCATTCAGATGCGACCCCAGGTCAGGCGGGGCC
+         ..: :.   ::  :. :.: .:...  :    : :  ::                   
+gi|425 NYVTALTGDVTATGPGSVAATIAANAVTSAKIANG-TIVGADLDFTGVNTATTSFAMKDS
+            1150      1160      1170       1180      1190      1200
+
+        740       750                                              
+gi|276 ACCCGCTGAGTTGAGGC                                           
+                                                                   
+gi|425 TGKFYNFACATTSHVPTWTATGFACQAPGANITSGNVTTALGYTPVNDAGDTMTGDLTFD
+             1210      1220      1230      1240      1250      1260
+
+>>gi|79484988                                             (260 aa)
+ initn:  61 init1:  61 opt: 124  Z-score: 115.7  bits: 30.6 E():  1.1
+Smith-Waterman score: 129; 29.0% identity (46.0% similar) in 124 aa overlap (462-578:85-208)
+
+             440       450       460       470         480         
+gi|276 CTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGG--CATATCGCTAAGCTG
+                                     : :::. .  ::   : :. :: . . :.:
+gi|794 SGDIGTTGFELVPGGSRSFQAPASWSGRFWARTGCNFNSDTGQGTCLTGDCGSNQVECNG
+           60        70        80        90       100       110    
+
+      490       500       510       520       530       540        
+gi|276 -GCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATT
+        :    ::    . :.: :  :        .   :  .   .  .: . ::: ..: .: 
+gi|794 AGAKPPATLAEFTIGSGPADPARKQDFYDVSLVDGYNVPMLVEASGGSEGTCLTTGCVTD
+          120       130       140       150       160       170    
+
+      550       560       570           580       590       600    
+gi|276 GTTGCTTTGATGGGTAGGAATGTGG----CACGAGGTGGAGAATGCTAACAGTCATAAGG
+        .  : :    :.:.:  .:  . :    :  ::                          
+gi|794 LNQKCPTELRFGSGSACKSACEAFGSPEYCCSGAYASPTECKPSMYSEIFKSACPRSYSY
+          180       190       200       210       220       230    
+
+          610       620       630       640       650       660    
+gi|276 CTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGA
+                                                                   
+gi|794 AFDDATSTFTCTDADYTITFCPSLPR                                  
+          240       250       260                                  
+
+>>gi|18415982                                             (441 aa)
+ initn: 168 init1: 100 opt: 126  Z-score: 114.5  bits: 31.1 E():  1.3
+Smith-Waterman score: 126; 34.3% identity (43.4% similar) in 99 aa overlap (481-577:291-382)
+
+              460       470       480       490       500       510
+gi|276 TCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAATGA
+                                     :   .:  ::      . :   : :.  :.
+gi|184 RDRLRRRAEAQAAYDKAKKEEQSSSSRPSGGGFPGGMPGGFPGGMPG-GFPGGMGGMPGG
+              270       280       290       300        310         
+
+              520       530       540       550       560          
+gi|276 TTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGT--AGGAA
+         ::      : :    ::   :: :::  .. ::.  :  :   .:  :::   :::. 
+gi|184 FPGG----MGGMGG-MPGGFP-GGMGGGMPAGMGGGMPGMGGGMPAGMGGGGMPGAGGGM
+     320            330        340       350       360       370   
+
+      570       580       590       600       610       620        
+gi|276 TGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTG
+        : ::   :                                                   
+gi|184 PGGGGMPGGMDFSKILNDPELMTAFSDPEVMAALQDVMKNPANLAKHQANPKVAPVIAKM
+           380       390       400       410       420       430   
+
+>>gi|15235180                                             (343 aa)
+ initn: 169 init1:  54 opt: 122  Z-score: 112.8  bits: 30.4 E():  1.6
+Smith-Waterman score: 130; 25.0% identity (63.0% similar) in 108 aa overlap (529-634:33-134)
+
+      500       510       520       530       540       550        
+gi|276 GGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGA
+                                     :.: .:..::      :  .:..: .. ..
+gi|152 VLYCGRKLLVVLMVTAFVFSGSAEAWSWSWGSGQSGSNGGW-----GWRSGNSGGSSGSG
+             10        20        30        40             50       
+
+      560         570       580       590       600       610      
+gi|276 TGGG--TAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAA
+       .::.  ..::.. : :  . :.  . : :...: .   .:: .:  :  .: . ... ..
+gi|152 SGGSDSNSGGSSWGWGWSSDGTDTNWGWGSSSG-SNHSSGTGSTHNGHSSGSNHSSATGS
+        60        70        80        90        100       110      
+
+        620       630       640       650       660       670      
+gi|276 TCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAG
+       :     .::.. ..:...                                          
+gi|152 THNGHTSTGSNHSSGNGSRHNGYSSGSNHSSSTGSNHSSSTGSTHNNHSSGSNHSSILGS
+        120       130       140       150       160       170      
+
+>>gi|42524641                                             (1507 aa)
+ initn: 114 init1:  67 opt: 132  Z-score: 112.8  bits: 32.6 E():  1.6
+Smith-Waterman score: 248; 23.7% identity (47.9% similar) in 768 aa overlap (2-703:171-910)
+
+                                            10        20        30 
+gi|276                              CGTAACAAGGTTTCCGTAGGTGAACCTGCGG
+                                     :  .::::   .  ::     :  :.: .:
+gi|425 NEIRTVPYAAYALSSEKLGTKTEEDFLQKAGLPTCAAGTFLSWNGT-----ALSCSGVSG
+              150       160       170       180            190     
+
+                        40                50        60        70   
+gi|276 AAGGA----TCA------TTGTT--------GAGACAACAGAATATATGATCGAGTGAAT
+       : ::.    : :      :.:::        : .:  . ::      : :   .:..:. 
+gi|425 ANGGTVSDVTSANAYITITNGTTTPQLTLNVGQNANQVAAGN-DPRFTDARVPSGAAAGD
+         200       210       220       230        240       250    
+
+            80        90       100        110       120       130  
+gi|276 CTGGAGGACCTGTGGTAACTCAGCTCGTCGTGGCA-CTGCTTTTGTCGTGACCCTGCTTT
+         :   .   .   :.:. . :  .      .:    ..  .:. . : ..   .  : .
+gi|425 LGGTYPNPSVAKLQGVAVSATAPTNGHFLKFNGTQWLSAQISTSDVNGLNTTLDNYMTEA
+          260       270       280       290       300       310    
+
+             140           150        160       170       180      
+gi|276 G-TTGTTGGGCCTCCT----CAAGAGCTT-TCATGGCAGGTTTGAACTTTAGTACGGTG-
+         .:......: .  :     ..: .: . . ...: ..::  ..: .   : .   :: 
+gi|425 DFNTAVANANCAAHQTMYWNAVTGFSCQSINVSVAGDVSGTIGAVAVNKIKGITVDTTGL
+          320       330       340       350       360       370    
+
+         190        200       210       220       230       240    
+gi|276 CAGTTTGC-GCCAAGTCATATAAAGCATCACTGATGAATGACATTATTGTCAGAAAAAAT
+        :: .    :   : .  . . ..: .:   :: :: . :  ..:.: .     : .:.:
+gi|425 VAGQVLKYDGTKFAPAADNDANSGGTVTNIATG-TGLSGGPITSTGTISL----ANTAVT
+          380       390       400        410       420             
+
+          250       260       270       280       290        300   
+gi|276 CAGAGGGGCAGTATGCTACTGAGCATGCCAGTGAATTTTTATGACTCTCGCAACG-GATA
+        :. :..  .:: :  .   :   :..  : .  .::..  ::: :   .  . : :   
+gi|425 AASYGSSTQVGTFT--VDAQGRLTAANNAAIAFPVTTVAGRTGAITLDAADIGSGAGKYL
+     430       440         450       460       470       480       
+
+           310       320       330       340       350       360   
+gi|276 TCTTGGCTCTAACATCGATGAAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGA
+       :   .. .:: . .   ...     ::    :...      :.::: .:   ..::  . 
+gi|425 TYRPNNTACTDGQVLKWVSANNRWECGTDTDTSSGGTVTNIATGTGLSGGPITSTGTISL
+       490       500       510       520       530       540       
+
+           370       380           390       400       410         
+gi|276 ATCCCGTGAACCATCGAGTCTTTG----AACGCAAGTTGCGCTCGAGGCCATCAGGCTAA
+       :.    : :.  ..  .:: :. .    .: . :: .     . :  :  .  .:    .
+gi|425 ANTTV-TPAVYGSNTQVGTFTVDAQGRLTAASNAAIAFPVTTVAGRTGSVTLDVGDVGNG
+       550        560       570       580       590       600      
+
+     420                 430       440       450       460         
+gi|276 GG----------GCACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTG
+       .:          .:. :      ....   ::: : :.. :: :         :::  ::
+gi|425 AGKYFVYRPNNTACTDGQVLKWVSANNRWECGTDTDTSSGGTVTN-------IATG--TG
+        610       620       630       640       650                
+
+     470        480       490       500         510       520      
+gi|276 CTTGG-CATATCGCTAAGCTGGCATTATACGGATG--TGAATGATTGGCCCCTTGTGCCT
+        : :   .:.: . . .  :.:  : :.    : :  :.:..::. .      :::   .
+gi|425 LTGGPITSTGTIALANTTVTAGSYTRASITVDAQGRLTAASSGAAIN-LASDITGTLPIA
+       660       670       680       690       700        710      
+
+        530       540                        550       560         
+gi|276 AGGTGCGGTGGGTCTAAGGATT-----------------GTTGCTTTGATGGGTAGGAAT
+        ::::   :. :. .: .  ::                 ::.: . :. .. ...   ::
+gi|425 NGGTGTT-TALGAFNALSPLTTKGDVLVRDATNNIRLPVGTNGQVLTADSAVAAGVKWAT
+        720        730       740       750       760       770     
+
+     570       580       590       600       610       620         
+gi|276 GTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGT
+        ..: . ...::. . .::: ..   .. : :. :  : . . .: :.     ..  .. 
+gi|425 PNAGTVTNVSGTAPVQVATGTSTPVISVDA-ATTGARGVVQVGSGIAVSSGTISADPANF
+         780       790       800        810       820       830    
+
+     630       640           650       660       670       680     
+gi|276 TGTATTTTTTCGAACCTA----CACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAA
+        ... ..    ::.  ::     . ..:.:    .   :      :.:  :::. .... 
+gi|425 PSAVPVSKGGTGATSLTADRLLVSNGTGSAVIPFTCGTAQMLTFNASGVMGCTSYSSSGI
+          840       850       860       870       880       890    
+
+         690       700       710       720       730       740     
+gi|276 CCATTGGGCAGTTGATTTCCATTCAGATGCGACCCCAGGTCAGGCGGGGCCACCCGCTGA
+          ..::.  ::...  :                                          
+gi|425 F--ANGGNSFGTAAVLGTNDAQSLTFETDANPRMTILATGKVGVNETAPTGNLHLSNTGA
+            900       910       920       930       940       950  
+
+>>gi|30692254                                             (126 aa)
+ initn: 229 init1: 109 opt: 115  Z-score: 112.6  bits: 29.0 E():  1.6
+Smith-Waterman score: 115; 41.7% identity (64.6% similar) in 48 aa overlap (519-566:84-125)
+
+      490       500       510       520       530       540        
+gi|276 GGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATT
+                                     . :.:   .:: : ::.:::  ...::. .
+gi|306 FKDEKAMRDAIEEMNGKELDGRVITVNEAQSRGSG---GGGGGRGGSGGGYRSGGGGGYS
+            60        70        80           90       100       110
+
+      550       560       570       580       590       600        
+gi|276 GTTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGC
+       :  :    : .::: .::                                          
+gi|306 GGGG---GGYSGGGGGGGW                                         
+                 120                                               
+
+>>gi|42523284                                             (64 aa)
+ initn: 124 init1:  81 opt: 110  Z-score: 112.3  bits: 27.9 E():  1.7
+Smith-Waterman score: 110; 40.0% identity (62.0% similar) in 50 aa overlap (570-616:13-62)
+
+     540       550       560       570       580         590       
+gi|276 CTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGG--TGGAGAATGCTAACAGT
+                                     : ..::  : .  . : :.: .  .::.::
+gi|425                   MKMLLLSSVLVLGLASCAHKAHNHENCGCGGAKAEKSACSGT
+                                 10        20        30        40  
+
+        600       610       620       630       640       650      
+gi|276 -CATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAAC
+        :::  :::. :.    .::                                        
+gi|425 ECATKKGGCADCAKKEEAAAAK                                      
+             50        60                                          
+
+>>gi|42524279                                             (626 aa)
+ initn: 118 init1:  89 opt: 125  Z-score: 112.0  bits: 31.2 E():  1.8
+Smith-Waterman score: 136; 27.3% identity (52.6% similar) in 209 aa overlap (458-641:419-621)
+
+       430       440       450       460       470       480       
+gi|276 CTGCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGC
+                                     ::  : .. ::.  . : .: .      . 
+gi|425 SAKIEDGTIVTSDIADAAINSAKIADGSIATADMANSAVTTAKIADGNVTDA----KINS
+      390       400       410       420       430       440        
+
+       490       500        510       520          530             
+gi|276 TGGCATTATACGGATGT-GAATGATTGGCCCCTTGT--GCCTAG-GTGCGGT----GGGT
+       ..:  .:..  :.:.:  :. .: .:::    .. .  :  .:. : : : .    :.  
+gi|425 VSGSKVTGNIPGNAAGFYGSLSGDVTGGQASTVVQALQGRSVANVGPGAGQVLKWNGSQW
+          450       460       470       480       490       500    
+
+     540       550         560       570       580       590       
+gi|276 CTAAGGATTGT-TGC-TTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAG-
+          : . . :: ::   .:: :::: .:... :  . . .::  ::. :. .  .   : 
+gi|425 TPQADNNSGGTITGVWPSTGLTGGGGSGSVSLGLTNTGVAAGWYGGSTAVPSFYVDSQGR
+          510       520       530       540       550       560    
+
+             600       610            620           630       640  
+gi|276 -----TCATAAGGCTGCTATTTG-----AATCCCC----CATGTTGTTGTATTTTTTCGA
+            . :.:::.  .: .:  :     ..::       : .:.: . ::... ..  : 
+gi|425 ITSVSNVAVAAGA--ACGGTPHGRVYFSGGTCSSVGIYQCFNGSTLSLGTVSVPSSCDGD
+          570         580       590       600       610       620  
+
+            650       660       670       680       690       700  
+gi|276 ACCTACACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAACCATTGGGCAGTTGATT
+                                                                   
+gi|425 GDGF                                                        
+                                                                   
+
+>>gi|42525162                                             (294 aa)
+ initn: 108 init1:  84 opt: 119  Z-score: 111.4  bits: 29.9 E():  1.9
+Smith-Waterman score: 149; 28.0% identity (54.8% similar) in 157 aa overlap (460-606:61-210)
+
+     430       440       450       460       470       480         
+gi|276 GCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTA---AG
+                                     :    :   .  .   :.   ::.:   ::
+gi|425 IIVALLIGLTSQIIKPMDAFIKNYMGSYVQCLLEMGELPSIGSEDTAVEDEGCNARFQAG
+               40        50        60        70        80        90
+
+         490       500       510       520       530       540     
+gi|276 C-TGGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGG
+         ..:   .... ::..:.:....   .:     .:.:   ..:.: ::..:::   ::.
+gi|425 TWANGRPPNGSGSGGSSGSGSGSNKDGSG-----SGSGSDGSSGSGGGGSSGGT--YAGS
+              100       110            120       130         140   
+
+         550         560       570        580         590          
+gi|276 ATTGTTGCTTTG--ATGGGTAGGAATG-TGGCACGAGGTGG--AGAATGCTAACAG-TCA
+        . : .   . :   ..:  .::.: : .   :  .::.::   :.. :  .   : : .
+gi|425 QSRGGSRFMNRGRRPSSGVESGGGAQGKVVEIALEGGGSGGFFRGSSGGSYGLRPGKTRS
+           150       160       170       180       190       200   
+
+     600       610       620       630       640       650         
+gi|276 TAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTA
+       .: .: :                                                     
+gi|425 VAISGLTEMERKKLEKKANGEGKASIVTGESLTPPVKKLAVKKPPVKTFEKEEEPFTIGN
+           210       220       230       240       250       260   
+
+>>gi|42523092                                             (411 aa)
+ initn: 251 init1: 120 opt: 120  Z-score: 110.4  bits: 30.2 E():  2.2
+Smith-Waterman score: 120; 48.6% identity (78.4% similar) in 37 aa overlap (542-578:359-395)
+
+             520       530       540       550       560       570 
+gi|276 TGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGT
+                                     :::: :::  : . .:..:.:.:::...:.
+gi|425 GATREIVAVVMDLQKTASKVKSYVDKDKKAAAGGDTTGGGGSSGSGGSGSGAAGGSGAGA
+      330       340       350       360       370       380        
+
+             580       590       600       610       620       630 
+gi|276 GGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTG
+       ::   .:                                                     
+gi|425 GGNNANATQIPKGPPRVVYWNER                                     
+      390       400       410                                      
+
+>>gi|42523045                                             (425 aa)
+ initn: 142 init1:  88 opt: 119  Z-score: 109.5  bits: 30.1 E():  2.4
+Smith-Waterman score: 146; 26.2% identity (47.2% similar) in 248 aa overlap (377-600:153-385)
+
+        350       360       370       380       390       400      
+gi|276 GTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCGAG
+                                     .:   .:. ..:: :  .:. : :    ::
+gi|425 LNLSAAIDHTQQVVSLTELKNNPDQAEPFKSCTLMSCVGVAAANGSHGGAGGNGRD--AG
+            130       140       150       160       170         180
+
+                410       420       430       440       450        
+gi|276 G--------CCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCTCCT
+       :           .  ::  :.::. : :  .:   .:. :. : ..        .   :.
+gi|425 GKIKWGIPQSTPSSDGGAGASGGAGANGR-NG--DNGAPGVAGLNAHKLFMQFESVDLCS
+              190       200        210         220       230       
+
+      460        470       480       490            500       510  
+gi|276 AC-CAATGCTTGCTTGGCATATCGCTAAGCTGGCATTA-----TACGGATGTGAATGATT
+       .   .:.: .      :  .   :  . :  :: .  :     .. ::  :.:.: :  .
+gi|425 GVEIVASGGAGLKGLKGLNAQDAGQGGNGGKGGRGGGAKWDRKASRGGRGGNGGAGG--N
+       240       250       260       270       280       290       
+
+            520       530       540             550       560      
+gi|276 GGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGG------ATTGTTGCTTTGATGG--GTA
+       ::    . : :    :  : :: :: . ...         .. . .  ..:. ::  :. 
+gi|425 GG----NGGFG----GDGGKGGDGGLVVVVVKPRFLDMVKVNDNINVLVAGGKGGPGGAK
+             300           310       320       330       340       
+
+          570       580         590       600       610       620  
+gi|276 GGAATGTGGCACGAGGTGGAGA--ATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCC
+       : :. :  :   : ::.:: :.  . : ... ::. .:                      
+gi|425 GLAGKGGRGGHGGEGGNGGDGSVFSHGGSSGLAGSAGTQGQDGKDGQEGRPGVEGREGLV
+       350       360       370       380       390       400       
+
+            630       640       650       660       670       680  
+gi|276 ATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAGCTAAAA
+                                                                   
+gi|425 TKAEIYISNDVSIESFQF                                          
+       410       420                                               
+
+>>gi|79325742                                             (126 aa)
+ initn:  82 init1:  58 opt: 110  Z-score: 108.9  bits: 28.3 E():  2.6
+Smith-Waterman score: 140; 26.4% identity (43.6% similar) in 110 aa overlap (355-456:18-126)
+
+          330       340       350       360       370         380  
+gi|276 AGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAA--CCATCGAGT
+                                     :.. . ..: ::  : :    : . : :  
+gi|793              MEKALSLVVFIIFSIMLASVENKVNANTCIEGIGNCQQCDVRCKARH
+                            10        20        30        40       
+
+            390       400       410          420       430         
+gi|276 CTTTGAACGCAAGTTGCGCTCGAGGCCAT---CAGGCTAAGGGCACGCCTGCCT---GGG
+         .. .::        :.  :: :        : ::    .  :.  ::.  :.   . :
+gi|793 GPAAKGACDSKFQLCTCNYPCGQGPSPPQPKKCYGGAGICSDRCGAQCCNQNCAQKYNQG
+        50        60        70        80        90       100       
+
+        440       450       460       470       480       490      
+gi|276 CGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTAT
+        : : .  .:. :  :  .:                                        
+gi|793 SGFCDSIGNTSLC-KCQYNC                                        
+       110       120                                               
+
+>>gi|15234264                                             (377 aa)
+ initn: 178 init1:  97 opt: 117  Z-score: 108.6  bits: 29.8 E():  2.7
+Smith-Waterman score: 117; 45.7% identity (71.7% similar) in 46 aa overlap (545-589:3-46)
+
+          520       530       540       550       560       570    
+gi|276 CCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGC
+                                     :  :: :   :....::: :: .: ..:: 
+gi|152                             MPGEQTGET--PTVAGVGGGGAGCSAGNSGGS
+                                             10        20        30
+
+           580       590       600       610       620       630   
+gi|276 A-CGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTA
+       . ::::: ::.... :                                            
+gi|152 SGCGAGGGGGGSGGGGGGGGDSQRSIPTPFLTKTYQLVEDPVYDELISWNEDGTTFIVWR
+               40        50        60        70        80        90
+
+>>gi|15235296                                             (625 aa)
+ initn:  64 init1:  64 opt: 120  Z-score: 108.3  bits: 30.5 E():  2.8
+Smith-Waterman score: 153; 27.2% identity (47.5% similar) in 158 aa overlap (81-227:394-543)
+
+               60        70        80           90       100       
+gi|276 ACAGAATATATGATCGAGTGAATCTGGAGGACCTG---TGGTAACTCAGCTCGTC--GTG
+                                     : :.:   :.  : :  .:   . :  ..:
+gi|152 GNRGDVTILPTLVINNAQYRGRLERTAVLKAICAGFNETSEPAICLNTGLETNECLENNG
+           370       380       390       400       410       420   
+
+         110       120         130       140       150       160   
+gi|276 GCACTGCTTTTGTCGT--GACCCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTTTCATGGC
+       ::     .. :.   :  :  :   : ..  .   : :  : ::  . : :: .  .:::
+gi|152 GCWQDTKANITACQDTFRGRLC--ECPVVKGVQYKGDGY-TSCTPYGPARCTMN--NGGC
+           430       440         450       460        470          
+
+           170          180        190       200       210         
+gi|276 AGGTTTG---AACTTTAGTACG-GTGCAGTTTGCGCCAAGTCATATAAAGCATCACTGAT
+        . : .:   .::. ...:.:    :  :   :  :   . :   ..   :. : : .. 
+gi|152 WSDTRNGLTFSACSDSVSTGCKCPEGFQG--DGLTCEDINECKERSVCQ-CSGCRCKNSW
+      480       490       500         510       520        530     
+
+     220       230       240       250       260       270         
+gi|276 GAATGACATTATTGTCAGAAAAAATCAGAGGGGCAGTATGCTACTGAGCATGCCAGTGAA
+       :.   .:.                                                    
+gi|152 GGYKCSCSGDRLYINDQDTCIERYGSKTAWWLTFLILAIVAVAGLAGYIFYKYRFRSYMD
+         540       550       560       570       580       590     
+
+>>gi|15234858                                             (42 aa)
+ initn: 144 init1:  92 opt: 101  Z-score: 107.8  bits: 26.5 E():    3
+Smith-Waterman score: 101; 63.0% identity (70.4% similar) in 27 aa overlap (560-586:17-40)
+
+     530       540       550       560       570       580         
+gi|276 TGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATG
+                                     ::: .:::. : ::   :::: :: ::   
+gi|152               MAAKIYLLEISGGAGGGGGHGGGAGGGFGG---GAGGGGGHGARF 
+                             10        20        30           40   
+
+     590       600       610       620       630       640         
+gi|276 CTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACA
+
+>>gi|15233713                                             (102 aa)
+ initn: 222 init1:  90 opt: 107  Z-score: 107.8  bits: 27.8 E():    3
+Smith-Waterman score: 114; 35.7% identity (52.4% similar) in 84 aa overlap (503-582:20-96)
+
+            480       490       500       510       520       530  
+gi|276 GGCATATCGCTAAGCTGGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGC
+                                     :   :: : .:     . :.:  ..:: : 
+gi|152            MMPDKFSDILNKRFSLKDLGIDQATRADAG---LTVIGVGV-SGGGRGL
+                          10        20        30            40     
+
+                540       550       560       570       580        
+gi|276 ----GGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAAT
+           :: :::  :..::...:. :     .:: :..:    : :  : : :  :      
+gi|152 KKPGGGGGGGGATSGGGSNSGVGGRGRLTGTGFGVTG---IGLGRKAFGEGLKGKTFGRA
+          50        60        70        80           90       100  
+
+      590       600       610       620       630       640        
+gi|276 GCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTAC
+
+>>gi|30679149                                             (241 aa)
+ initn: 200 init1:  81 opt: 111  Z-score: 106.4  bits: 28.7 E():  3.6
+Smith-Waterman score: 111; 35.5% identity (48.4% similar) in 62 aa overlap (528-589:134-194)
+
+       500       510       520       530       540       550       
+gi|276 CGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTG
+                                     :  : :: ::    .. :.  :       :
+gi|306 WDKWVDEDDEGSAGAADMDMAGMEGMGGMGGMGGMGGMGGMGGMGGMGGMEGMDFSKLMG
+           110       120       130       140       150       160   
+
+       560       570       580       590       600       610       
+gi|276 ATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAAT
+       . ::  . :.  : :: . : :: :: :.  :                            
+gi|306 GMGGMGGMGGLEGLGGMG-GMGGMGGMGGMGGMEEFEDSDDEEETAKSGDKKDDAVKEEG
+           170       180        190       200       210       220  
+
+       620       630       640       650       660       670       
+gi|276 CCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAGC
+                                                                   
+gi|306 LATEKAPAAEETTSVKEDK                                         
+            230       240                                          
+
+>>gi|42522164                                             (597 aa)
+ initn: 227 init1: 106 opt: 117  Z-score: 106.3  bits: 30.0 E():  3.7
+Smith-Waterman score: 139; 28.7% identity (48.3% similar) in 143 aa overlap (465-607:331-464)
+
+          440       450       460       470       480       490    
+gi|276 GGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATT
+                                     :: .: .  :  ... : :.:   ::   .
+gi|425 QSYPALSYGYPYLMAGLYGAVSGGTGQGSFGCGSGMNGTGNMNGAMGMTGAYGMGGMYGN
+              310       320       330       340       350       360
+
+          500       510       520       530       540       550    
+gi|276 ATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCT
+       : . ::: :  :.  ..: :    ..: :    .: . :: ::      :::  :     
+gi|425 A-GMGGAFGYPAGMMGNTMGGGMYASGMGPWGMNGMNMGGMGG--LGMYGGAMMGG---M
+               370       380       390       400         410       
+
+          560       570       580       590       600       610    
+gi|276 TTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTG
+         .  : :.  :.  : .  .  .:: .: :.  :   .  :. ..  :. ::       
+gi|425 MGNMMGYGSMMGSMMGGSMMSSMVGGLAGYGGMMG---SMMGNYGSMMGSMTGSMMGSMM
+          420       430       440          450       460       470 
+
+          620       630       640       650       660       670    
+gi|276 AATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGG
+                                                                   
+gi|425 GTYSGSMMGYGSMMGSMTGYDSSSMALQQQMMQMQMQQYQTAMQYQQQYQQQMVQKYQTV
+             480       490       500       510       520       530 
+
+>>gi|18416588                                             (320 aa)
+ initn: 132 init1:  87 opt: 112  Z-score: 105.7  bits: 29.0 E():    4
+Smith-Waterman score: 126; 40.3% identity (52.2% similar) in 67 aa overlap (520-585:6-70)
+
+     490       500       510       520       530       540         
+gi|276 GCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTG
+                                     ::.:   .:: : :: .::   . :: . :
+gi|184                          MRPPLTGSGGGFSGGRGRGGYSGGR--GDGGFSGG
+                                        10        20          30   
+
+     550       560       570        580       590       600        
+gi|276 TTGCTTTGATGGGTAGGAATGTGGCACGA-GGTGGAGAATGCTAACAGTCATAAGGCTGC
+         :    :. : .  :: . : :    :: :: : ::                       
+gi|184 RGGGGRGGGRGFSDRGGRGRGRGPPRGGARGGRGPAGRGGMKGGSKVIVEPHRHAGVFIA
+            40        50        60        70        80        90   
+
+      610       620       630       640       650       660        
+gi|276 TATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCC
+                                                                   
+gi|184 KGKEDALVTKNLVPGEAVYNEKRISVQNEDGTKTEYRVWNPFRSKLAAAILGGVDNIWIK
+           100       110       120       130       140       150   
+
+>>gi|79326475                                             (323 aa)
+ initn: 103 init1:  69 opt: 112  Z-score: 105.7  bits: 29.0 E():    4
+Smith-Waterman score: 165; 24.8% identity (44.9% similar) in 274 aa overlap (150-406:26-283)
+
+     120       130       140       150       160         170       
+gi|276 GTGACCCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTTTCATGGC--AGGTTTGAACTTTA
+                                     ..::  :  .::     : . .  : :  .
+gi|793      MLKGSYGSTFTFANRCGYTVWPGILSNAGSPTLSTTGFELPKGTSRSLQAPTGWS
+                    10        20        30        40        50     
+
+       180       190       200       210       220       230       
+gi|276 GTACGGTGCAGTTTGCGCCAAGTCATATAAAGCATCACTGATGAATGACATTATTGT---
+       :   . :::   ..: : : .: :.. ..      ::  ::.  .: :  : .: :    
+gi|793 GRFWARTGCKFDSSGSGTCKTGDCGSNAVE-----CAGLGAAPPVTLAEFTLGTGGDDFY
+          60        70        80             90       100       110
+
+              240       250       260       270       280       290
+gi|276 ----CAGAAAAAATCAGAGGGGCAGTATGCTACTGAGCATGCCAGTGAATTTTTATGACT
+             :      . ...:.: ::  .::::.  .  : .    : : :  ..  .    
+gi|793 DVSLVDGYNIPMIVEVAGGSGQCA--STGCTTDLNIQCPAELRFGDGDACKSACLAFRSP
+              120       130         140       150       160        
+
+              300            310         320       330       340   
+gi|276 CTCGCAACGGATAT---C--TTGGCTCTAAC--ATCGATGAAGAACGCAGCTAAATGCGA
+         :    :.:: ::   :  .. .    :::  .   :   : ..  :::   ..: : .
+gi|793 EYC----CSGAYATPSSCRPSVYSEMFKAACPRSYSYAYDDATSTFTCAGGDYTVTFCPS
+      170           180       190       200       210       220    
+
+           350       360       370        380       390       400  
+gi|276 TAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCG-AGTCTTTGAACGCAAGTTGCGCT
+       . .  . . .  .:     ...   :.  .  .  : ::    : .  : . :. : :  
+gi|793 SPSQKSTSYSPPVT----DSSSTSQGSDPVPGSDTGYAGQGQQTPGQ-GNVYGSQGTGSE
+          230           240       250       260        270         
+
+            410       420       430       440       450       460  
+gi|276 CGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCA
+        :.:                                                        
+gi|793 MGTGETMLQDGSWMAGLAMGEASRPAGVSLTVLLAAFTFPFIFS                
+     280       290       300       310       320                   
+
+>>gi|42524004                                             (1416 aa)
+ initn: 124 init1:  82 opt: 122  Z-score: 105.7  bits: 31.2 E():    4
+Smith-Waterman score: 210; 24.6% identity (48.9% similar) in 808 aa overlap (4-702:176-971)
+
+                                          10        20        30   
+gi|276                            CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAA
+                                     : :.::.  :  ...   :   :.: .::.
+gi|425 VPFAGFASSAATLGSHVATDFVMKTEVNAGADCGAGSFLTWNAATKEFG---CAGVSGAS
+         150       160       170       180       190          200  
+
+            40            50        60                70        80 
+gi|276 GGATCATTGTTGAG----ACAACAGAATATATGATCG---AG-----TGAATCTGGAGGA
+       ::.. ......:..    . :  .. . .  .:.. :   ::     . : : ::.:::.
+gi|425 GGTVQSVAASAGSNPYLTVSADNVNPVITLNVGTVAGTVAAGNDARFSDARTPTGAAGGV
+            210       220       230       240       250       260  
+
+                 90         100        110           120       130 
+gi|276 CCTGT---GGTA--ACTCAGCTCGTCGTGGC-ACTGCT----TTTGTCGTGACCCTGCTT
+         :::    : :  : :    . :. .:    :  : .    : ..: .: :    : . 
+gi|425 L-TGTYPNPGLADNAVTTPKLAAGAVSTEKLFANPGISRLVMTDSSTGATLAPLSCGANQ
+             270       280       290       300       310       320 
+
+             140        150       160       170       180          
+gi|276 TGTTGTTGGGCCTCCTC-AAGAGCTTTCATGGCAGGTTTGAACTTTAGTACGGTG--CAG
+         : ... :  ::  :  :.:.. ...  ::. :: .: :.  .:..:   :      . 
+gi|425 LLTWSVALGWQCTNQTSLAVGSASVSANFTGSLAGDVT-GTQGATVVGQIKGYPLDFTVV
+             330       340       350        360       370       380
+
+      190       200         210             220       230       240
+gi|276 TTTGCGCCAAGTC--ATATAAAGCATCACTG------ATGAATGACATTATTGTCAGAAA
+        :::      ::   :.: . :: ..   ::      :::..: . . . .. :  :  .
+gi|425 PTTGQVLKFNGTSWYAAADSNAGGTVTNVTGTSPISVATGTTTPVISISQANTTTNGYLS
+              390       400       410       420       430       440
+
+              250                    260       270          280    
+gi|276 AAATCAGAGGGGCAG-------------TATGCTACTGAGCATGCCA---GTGAATTTTT
+       ..   .  :  .  :             :::. :: :. : .:.      ..: ::.. .
+gi|425 SVDWNTFNGKQNALGFTPLNPANNLSELTATAATARTNLGLGTAAVKDAPAAGDATAAQV
+              450       460       470       480       490       500
+
+          290       300       310        320             330       
+gi|276 ATGACTCTCGCAACGGATATCTTGGCTC-TAACATCGATG------AAGAACGCAGCTAA
+       . :  .   .  : .::..   ::     : : .. ..::      : : . . .: .:.
+gi|425 VLGNDSRLTNSRAPSGAAGGDLTGTYPSPTLATVVTAGTGTKITYDAKGRVTASTGLAAG
+              510       520       530       540       550       560
+
+                 340       350       360       370       380       
+gi|276 ----------ATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGT---CT
+                 ..:  .: .: : : . ....:  :. .   :: ::  :. .::.    .
+gi|425 DIPNLDWSKITSGKPTTLSGYGITDALVSNAG--GSPSIQSGTDAAKPASPAAGAIYFAS
+              570       580       590         600       610        
+
+          390        400       410       420       430       440   
+gi|276 TTGAACGCAAGT-TGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTG
+        : .     .:. .. . . ::::  .. .:  ::.:.: . .  ..    ::  . ...
+gi|425 DTKVIYQYNSGAWVAIASSAGAGGTITALTGDVTASGNGTVSATVNSV---GGSTAANVN
+      620       630       640       650       660          670     
+
+           450       460                470          480       490 
+gi|276 TGTTGCGTCTCTCCTACC---------AATGCTTGCTT---GGCATATCGCTAAGCTGGC
+       :.:.. .. :    ..           :: . ..: ..   .:  :.:    .:  :.  
+gi|425 TATVAANAATNLNTASAIVRRDASGNFAAGAVSAGSVVLRDSGSNTVTLQAPTAVSTSYV
+         680       690       700       710       720       730     
+
+             500                510         520       530          
+gi|276 ATTATACGGATG--TGAATG-------ATTGGCCCCT--TGTGCCTAGGTG---CGGTGG
+           :: :.:.   :  :.:       :.:.:    .  ...:  .: . :    .:. .
+gi|425 LRFPTAVGAANQVLTTDASGNLSWTSPAVTSGVAVTSPIVNSGTASAPNIGIQVANGSQN
+         740       750       760       770       780       790     
+
+       540       550       560        570       580       590      
+gi|276 GTCTAAGGATTGTTGCTTTGATGGGTAG-GAATGTGGCACGAGGTGGAGAATGCTA---A
+       :  ..:   :: ..  ..: : :.  .: :....:.    :     .::: :   .   :
+gi|425 GYLSSADW-TTFNNKLSATLAPGNIRVGNGSSVATAVAPSGDVTMTNAGAFTVTKVQGTA
+         800        810       820       830       840       850    
+
+           600       610       620       630       640       650   
+gi|276 CAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAG
+        ..:  ::::     ..::  : .        .: :   .. ..:.:...       :. 
+gi|425 VSATAPTAAGQVLRYNGTTQYAPAFLQLGDLRSTITPFGGVFASTACSTSQTMYYNAATD
+          860       870       880       890       900       910    
+
+           660       670                680       690       700    
+gi|276 AACCTAATTGAACCCCAA---------TGGAGCTAAAATAACCATTGGGCAGTTGATTTC
+       .  : . .. ::     :         .::::  :  . ::    : :  :::  ..:  
+gi|425 TFLCQSISVTAANFANQAQNSFFAGPSSGGAGAPAFRTIAAADLPTVG-TAGTYRSVTVD
+          920       930       940       950       960        970   
+
+          710       720       730       740       750              
+gi|276 CATTCAGATGCGACCCCAGGTCAGGCGGGGCCACCCGCTGAGTTGAGGC           
+                                                                   
+gi|425 AYGRVTAGTNPTTASGYGLTDVFVNGGNSFGAAATVGTNDAQSLQLETGNVVRMTVDTSG
+           980       990      1000      1010      1020      1030   
+
+>>gi|18420282                                             (345 aa)
+ initn: 103 init1:  69 opt: 112  Z-score: 105.3  bits: 29.1 E():  4.2
+Smith-Waterman score: 168; 25.2% identity (44.3% similar) in 298 aa overlap (131-406:24-305)
+
+              110       120       130       140            150     
+gi|276 TCGTGGCACTGCTTTTGTCGTGACCCTGCTTTGTTGTTGGGCCTCCTCA-----AGAGCT
+                                     .::. :.:      :   .     ..::  
+gi|184        MMNLSSRRASSTLTLSFTVLLLASTGSYGSTFTFANRCGYTVWPGILSNAGSP
+                      10        20        30        40        50   
+
+         160         170       180       190       200       210   
+gi|276 TTCATGGC--AGGTTTGAACTTTAGTACGGTGCAGTTTGCGCCAAGTCATATAAAGCATC
+       :  .::     : . .  : :  .:   . :::   ..: : : .: :.. ..      :
+gi|184 TLSTTGFELPKGTSRSLQAPTGWSGRFWARTGCKFDSSGSGTCKTGDCGSNAVE-----C
+            60        70        80        90       100             
+
+           220       230              240       250       260      
+gi|276 ACTGATGAATGACATTATTGT-------CAGAAAAAATCAGAGGGGCAGTATGCTACTGA
+       :  ::.  .: :  : .: :          :      . ...:.: ::  .::::.  . 
+gi|184 AGLGAAPPVTLAEFTLGTGGDDFYDVSLVDGYNIPMIVEVAGGSGQCA--STGCTTDLNI
+      110       120       130       140       150         160      
+
+        270       280       290       300            310           
+gi|276 GCATGCCAGTGAATTTTTATGACTCTCGCAACGGATAT---C--TTGGCTCTAAC--ATC
+        : .    : : :  .  :  :      :  :.:: ::   :  .. .    :::  .  
+gi|184 QCPAELRFGDGDACKS--ACLAFRSPEYC--CSGAYATPSSCRPSVYSEMFKAACPRSYS
+        170       180         190         200       210       220  
+
+     320       330       340       350       360       370         
+gi|276 GATGAAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCG
+        :   : ..  :::   ..: : .. .  . . .  .:     ...   :.  .  .  :
+gi|184 YAYDDATSTFTCAGGDYTVTFCPSSPSQKSTSYSPPVTD----SSSTSQGSDPVPGSDTG
+            230       240       250       260           270        
+
+      380       390       400       410       420       430        
+gi|276 -AGTCTTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCG
+        ::    : .  : . :. : :   :.:                                
+gi|184 YAGQGQQTPGQ-GNVYGSQGTGSEMGTGETMLQDGSWMAGLAMGEASRPAGVSLTVLLAA
+      280        290       300       310       320       330       
+
+>>gi|42523046                                             (405 aa)
+ initn: 382 init1: 105 opt: 112  Z-score: 104.5  bits: 29.1 E():  4.6
+Smith-Waterman score: 127; 26.2% identity (44.9% similar) in 214 aa overlap (414-607:130-336)
+
+           390       400       410       420       430       440   
+gi|276 TTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTG
+                                     :.  : ::.   :  :     :: :  : .
+gi|425 VEGFMNVESIRGVKGQQGEFASAVLEIANTGSAGARGGNGRGGSLTDSPEDGGRGQHGYN
+     100       110       120       130       140       150         
+
+                450       460       470       480       490        
+gi|276 -----TGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATAC
+             :..:      .  .   .  .   : :.:    :. :  ..:  :: .  . . 
+gi|425 GMDGRDGNNGAPGEPGVHASDIVVKINRIQG-TVGFRIRAVGGEGGTGGKGGRGQQG-GN
+     160       170       180       190        200       210        
+
+      500       510       520       530       540       550        
+gi|276 GGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTG------
+       ::. : :.  :..        .: :   .:  : ::.::.  ... :.  :. :      
+gi|425 GGVGGDGG-RGGNQKYAIWNRSGDGG-DGGDGGHGGNGGNGGAGGDGGRGGNGGKIALYV
+       220        230       240        250       260       270     
+
+               560             570       580       590       600   
+gi|276 ---CTTTGATG------GGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAG
+           .:   ::      :: .:  . :  : . : :: :: :...: ::  ...: .   
+gi|425 AEVFNTLELTGDEFDNRGGPGGQPGMGGEGGVGGKGGEGGKGGSSG-TALVTSSCDVPP-
+         280       290       300       310       320        330    
+
+           610       620       630       640       650       660   
+gi|276 GCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTG
+        : :                                                        
+gi|425 -CEGDNGRHGKKGLDGKPGLAGPQGRLGQDGLAGVKILDPKFKFVKSVPDDYFDKLPELG
+            340       350       360       370       380       390  
+
+>>gi|42522290                                             (1365 aa)
+ initn: 139 init1: 109 opt: 120  Z-score: 104.4  bits: 30.9 E():  4.7
+Smith-Waterman score: 174; 22.1% identity (46.3% similar) in 611 aa overlap (4-597:230-802)
+
+                                          10        20        30   
+gi|276                            CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAA
+                                     ..::::   :  :::     .: .  :::.
+gi|425 IRSVPFANYAYSAAKLGDKSDIDFVLKSAVSTCAAGQYLTFNGTA----FVCQNDAGGAG
+     200       210       220       230       240           250     
+
+            40        50        60              70        80       
+gi|276 GGATCATTGTTGAGACAACAGAATATATGA-TCGAGT-----GAATCTGGAGGACCTGTG
+         .   ...    :. :.    .  ..:.: : .::.     .:    :   .:     :
+gi|425 MVSDVNVSAPLVKGGTASIPVISLNVGTAAGTVAAGNDVRFLNAEKIRGLDVSATAPTMG
+         260       270       280       290       300       310     
+
+        90        100       110       120         130       140    
+gi|276 GTAACTCAGCTC-GTCGTGGCACTGCTTTTGTCGT--GACCCTGCTTTGTTGTTGGGCCT
+        .     :.    .: :::  .  . . .. . .:   : : .: . . .: ..   : .
+gi|425 QVLKLDGANTWVPSTLGTGDVSGLSAALSNKVDATMFPASCTAGQSLVFVTPANKFDCYN
+         320       330       340       350       360       370     
+
+           150       160       170       180       190       200   
+gi|276 CC-TCAAGAGCTTTCATGGCAGGTTTGAACTTTAGTACGGTGCAGTTTGCGCCAAGTCAT
+          : :  .:  .    .:  .: ..:   :.:  .: :::. . . .      ...   
+gi|425 ISITEAQITGTIAGAKISGDISGKASGL--TATLPVAQGGTNSSTALNDNRIMISSAGKI
+         380       390       400         410       420       430   
+
+           210       220       230       240       250       260   
+gi|276 ATAAAGCATCACTGATGAATGACATTATTGTCAGAAAAAATCAGAGGGGCAGTATGCTAC
+       . : .        : :: :  .   .: .:.  . . .. : ...:.::   ..:. :. 
+gi|425 VEAPVMTDGQLLIGKTGDAPQVANLVAGSGVTIANSPGGITISATGAGGTITSVTAGTGL
+           440       450       460       470       480       490   
+
+           270       280       290       300       310       320   
+gi|276 TGAGCATGCCAGTGAATTTTTATGACTCTCGCAACGGATATCTTGGCTCTAACATCGATG
+       .:.:       ..:..: . . ::. . : : :.     :. . :  : ..  .  :.  
+gi|425 SGGG-------SSGGVTLNLANTGVGAGTYGTATKVPQLAVDAQGRLTSVSEVTISGV--
+                  500       510       520       530       540      
+
+           330       340       350       360       370       380   
+gi|276 AAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTC
+          :  : ::   ..:  .  ..   :   .:..   :: .    ::: .      :   
+gi|425 ---APAGTAGGDLGGTYPNPDVVKLRGKTISATAPTAAGQVLRYDGTGYVPNFLSLADIR
+             550       560       570       580       590       600 
+
+           390       400       410       420       430       440   
+gi|276 TTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCACGCCTGCCTGGGCGTCGTG
+       .:.  :     .:.   :: .     .. . . :     :     :     :  ..  . 
+gi|425 STVTPANTIFPSTA---CTAAQTLTWSSLTDSFT-----CQSISITESNITGTIAAAKVD
+             610          620       630            640       650   
+
+           450       460       470       480         490       500 
+gi|276 TGTTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAAGC--TGGCATTATACGGA
+        :. . ::       :  :. : . .  . . .    :   ..    :: .  .::  : 
+gi|425 FGSQSAGTF-----FAAPAGGGGAPAFRALASTDLPAGAYDSSYFKQGGNSFGTTAVLG-
+           660            670       680       690       700        
+
+             510       520       530       540       550       560 
+gi|276 TGTGAATGATTGGCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGG
+       :. . . :  :.:    ::     .::..: : :   .  ..:  .: . :  :.. :::
+gi|425 TNDANSLGFETNG----TTRMTVSSAGNVGIGMTPVHVLDVSG--STINMGRFTSSDTGG
+       710       720           730       740         750       760 
+
+             570            580       590       600       610      
+gi|276 GTAGGAATGTGG-----CACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAA
+       .  . :....::      . :.:..::::. .    . .::                   
+gi|425 SRLALASSSAGGKTWNLVSTGSGSAGGAGSLVFADFSTSGTGQFIFKSDSSVGIGTVSPA
+             770       780       790       800       810       820 
+
+        620       630       640       650       660       670      
+gi|276 TCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAATTGAACCCCAATGGAG
+                                                                   
+gi|425 STVHVLKAQNATTELRVENNMAAGNTSAQATVQLVGTGVSGQLSVYPNDHTSAQYQDRLV
+             830       840       850       860       870       880 
+
+>>gi|22328624                                             (411 aa)
+ initn: 220 init1:  97 opt: 111  Z-score: 103.7  bits: 29.0 E():  5.1
+Smith-Waterman score: 142; 26.5% identity (46.9% similar) in 211 aa overlap (391-589:196-388)
+
+              370       380       390       400       410          
+gi|276 AGAATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCGCTCGAGGCCATCAGGCTA--
+                                     : . :  : :   : ::  ..  :   .  
+gi|223 SVLHKTFHDLSGKQVEVKRALPKDANPGGGGRSMGGGGSGGYQGYGGNESSYDGRMDSNR
+         170       180       190       200       210       220     
+
+            420       430       440       450       460       470  
+gi|276 ------AGGGCACGCCTGCCTGGGCGTCGTGTGTTGCGTCTCTCCTACCAATGCTTGCTT
+             .:.:      .:  .: : :. :.: :. :  : .         : :  .: :.
+gi|223 FLQHQSVGNGLPSYGSSGYGAGYGNGSNGAGYGAYGGYTGS---------AGGYGAGATA
+         230       240       250       260                270      
+
+            480       490           500       510       520        
+gi|276 GGCATATCGCTAAGCTGGCATTAT----ACGGATGTGAATGATTGGCCCCTTGTGCCTAG
+       :  ::   : .. : . : :   .    : .:  . : ..::. .:    . :..  : .
+gi|223 GYGATNIPG-AGYGSSTGVAPRNSWDTPASSGYGNPGYGSGAAHSGY--GVPGAAPPTQS
+        280        290       300       310       320         330   
+
+      530       540       550       560       570       580        
+gi|276 GTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAAT
+        .: .. : :     :: . . .:  . .: :  ..::  .: :.   :.::  :.: . 
+gi|223 PSGYSNQGYGY----GGYSGSDSGYGNQAAYG--VVGGRPSGGGSNNPGSGGYMGGGYGD
+           340           350       360         370       380       
+
+      590       600       610       620       630       640        
+gi|276 GCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTAC
+       :                                                           
+gi|223 GSWRSDPSQGYGGGYNDGQGRQGQ                                    
+       390       400       410                                     
+
+>>gi|15235324                                             (313 aa)
+ initn:  83 init1:  83 opt: 106  Z-score: 101.4  bits: 28.2 E():  6.9
+Smith-Waterman score: 133; 23.0% identity (59.5% similar) in 148 aa overlap (500-642:34-180)
+
+     470       480       490       500       510       520         
+gi|276 CTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGG
+                                     : .:...  : ..::     .: .  ..::
+gi|152 SAARKLLVFLMVTVFLFSGSADAWSWSWGSGQSGSNGDWGWSSGGSFGSGSGGSDSNSGG
+            10        20        30        40        50        60   
+
+     530         540        550       560         570       580    
+gi|276 T--GCGGTGGGTCTAAG-GATTGTTGCTTTGATGGGTAGGA--ATGTGGCACGAGGTGGA
+       .  : : .. :: :  : :...:..  . ::.: .: ..:.  ..:::.   : .. .. 
+gi|152 SSWGWGWSSDGTDTNWGWGSSSGSNHSSGTGSTHNGHSSGSNHSSGTGSTHNGHSSGSNH
+            70        80        90       100       110       120   
+
+          590       600       610       620       630       640    
+gi|276 GAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAAC
+       ...:: :    .. ..  .. .: :  . :...     :  : .  ..... ..  :.  
+gi|152 SSSTGSTHNNHSS-GSNHSSIVGSTHKNHGSGSNHSSIAGPTHNGHSSGSNHSSIIGSTH
+           130        140       150       160       170       180  
+
+          650       660       670       680       690       700    
+gi|276 CTACACAAGAACCTAATTGAACCCCAATGGAGCTAAAATAACCATTGGGCAGTTGATTTC
+                                                                   
+gi|152 NHTAPSLGRKIAVTVWKNGYGYTEWTAKHAPFYVNDVLVFTYNNNDQTQSKTKHHHDKKK
+            190       200       210       220       230       240  
+
+>>gi|15235532                                             (115 aa)
+ initn: 169 init1:  95 opt:  97  Z-score: 99.7  bits: 26.4 E():  8.5
+Smith-Waterman score: 150; 35.4% identity (56.2% similar) in 96 aa overlap (494-588:16-104)
+
+           470       480       490       500        510       520  
+gi|276 TGCTTGCTTGGCATATCGCTAAGCTGGCATTATACGG-ATGTGAATGATTGGCCCCTTGT
+                                     .: :::.  . .: .   .  :     .:.
+gi|152                MAKWFFTIFLVFALASALACGARNVPVGLSDQKNYLGYGGGYSGV
+                              10        20        30        40     
+
+            530       540       550       560       570       580  
+gi|276 GCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGGTG
+       :    .:   ::.:::.   .:.   :  :  . :. ::: .:::..: ::   : :: .
+gi|152 G---DNGLPFGGVGGGVSGPGGNLGYGGFG-GAGGGLGGGLGGGAGSGLGG---GLGGGS
+             50        60        70         80        90           
+
+            590       600       610       620       630       640  
+gi|276 GAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGA
+       : ::.:                                                      
+gi|152 GIGAGTSGGSTGGVHFP                                           
+      100       110                                                
+
+>>gi|42522127                                             (529 aa)
+ initn: 163 init1:  98 opt: 107  Z-score: 99.5  bits: 28.6 E():  8.8
+Smith-Waterman score: 226; 23.7% identity (45.0% similar) in 476 aa overlap (154-589:56-507)
+
+           130       140       150        160            170       
+gi|276 CCCTGCTTTGTTGTTGGGCCTCCTCAAGAGCTT-TCATGGCAG-----GTTTGAACTTTA
+                                     :.. :   : :.:     ::::  .     
+gi|425 TFLGCAEWCRSMYLPKSGQADQSQIRRYDMCVVQTQNEGRCGGTPRSSGTTTRPTQRQQE
+          30        40        50        60        70        80     
+
+       180       190        200          210       220         230 
+gi|276 GTACGGTGCAGTTTGCGC-CAAGTCATATAAA---GCATCACTGATGAATGACAT--TAT
+        .  .. .    :. ::  :  . :. .....    :     .:.: .. . :..  :  
+gi|425 PAQSSNYNPEPGTVPCGGRCPFSECVDVNGSGRDYQCRMDIINGTTQTGGNDCTSQYTEL
+          90       100       110       120       130       140     
+
+             240           250       260          270        280   
+gi|276 TGTCAGAAAAAA-TC---AGAGGGGCAGTATGCTACTG---AGCATGCCAGTGA-ATTTT
+        . :..:.  .. ::     .: .: :.::.      :   .:   . :.  .. .....
+gi|425 LNECSNAVQETSHTCDEKNDSGMSGVANTASQLGLMLGQQTSGSIQSACSQMASFSAAAN
+         150       160       170       180       190       200     
+
+           290       300         310       320        330       340
+gi|276 TATGACTCTCGCAACGGATATCT--TGGCTCTAACATCGATGAAGA-ACGCAGCTAAATG
+       .:..:   .:. .: :   .::.  .     . .:.  :  :.::  :    .  . :  
+gi|425 AAVAAYRLNCN-SALGTCRSTCSRLVEFVQNNPTCTIQGFQGTAGQNAMLLQNAESKAER
+         210        220       230       240       250       260    
+
+              350       360       370       380       390       400
+gi|276 CGATAAGTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTCTTTGAACGCAAGTTGCG
+       :    . .    .  : .. ::.       .:: ::.  .:  .     :    .  :: 
+gi|425 CDQFESKV--QEATQAINNVAGTMR-----NAASCAAATSGDSAPLPEICKTNPNLPGCV
+          270         280            290       300       310       
+
+              410       420              430       440       450   
+gi|276 CTCGAGGCCATCAGGCTAAGGGCACG-------CCTGCCTGGGCGTCGTGTGTTGCGTCT
+        : :   :     .:  .    :.:.       : .   .::.    .:. :.    . .
+gi|425 AT-GPMDCTKPELAGTKV----CVCSKNPTDPICMSENSSGGSTFLSSTNPGARLNTSGV
+        320       330           340       350       360       370  
+
+           460       470       480       490       500       510   
+gi|276 CTCCTACCAATGCTTGCTTGGCATATCGCTAAGCTGGCATTATACGGATGTGAATGATTG
+               .  :   :   .: :    : .. :  :: :  ..  ::  : :.:.::  :
+gi|425 DLPGGDLPSLPGIEHGKRGAGGA----GEAVDGKMGGGAGISSLGGG--GGGGAAGAGEG
+            380       390           400       410         420      
+
+           520       530       540       550       560       570   
+gi|276 GCCCCTTGTGCCTAGGTGCGGTGGGTCTAAGGATTGTTGCTTTGATGGGTAGGAATGT--
+       :      :    .::  : ::. ::    .::.  : .:     :. ::.::  ..    
+gi|425 GGAEGEDGGHAVNAGFYGGGGSFGGY---GGGSGEGRVG--QGQANQGGVAGKNGSPDLR
+        430       440       450          460         470       480 
+
+                     580       590       600       610       620   
+gi|276 ----GGC----ACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCTATTTGAATCCCCCA
+           ::     : :..::::  . ::                                  
+gi|425 QFLPGGKYDPKARGVAGTGGPDGITGPHSNIWKKIQNRYQVLAPTLIP            
+             490       500       510       520                     
+
+>>gi|15234747                                             (107 aa)
+ initn: 229 init1:  92 opt:  96  Z-score: 99.4  bits: 26.3 E():    9
+Smith-Waterman score: 120; 28.3% identity (75.0% similar) in 60 aa overlap (521-579:45-104)
+
+              500       510       520       530        540         
+gi|276 CATTATACGGATGTGAATGATTGGCCCCTTGTGCCTAGGTGCG-GTGGGTCTAAGGATTG
+                                     : :   .::.: : :.:.:. ... .....
+gi|152 ISSLVMLTESRLARKDLGIDLGGIGIGLGVGLGIGLGGGSGSGAGAGSGSGSGSRSSSSS
+           20        30        40        50        60        70    
+
+     550       560       570       580       590       600         
+gi|276 TTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAAGGCTGCT
+       ... ..... .::.::..: . .:   :.:                              
+gi|152 SSSSSSSSSGSGGSAGSSAGSFAGSRAGSGSGN                           
+           80        90       100                                  
+
+>>gi|42522963                                             (2576 aa)
+ initn: 132 init1:  61 opt: 117  Z-score: 99.0  bits: 30.8 E():  9.4
+Smith-Waterman score: 212; 23.8% identity (44.8% similar) in 647 aa overlap (8-618:1875-2492)
+
+                                      10        20        30       
+gi|276                        CGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAG-GA
+                                     :: . ::  :..:.  . : : .:::  : 
+gi|425 ITGGTSYISNADIFINDNDSPAGKDAVDVVAGDNHTCALTSNGN--VYCWGHNGAAPLGQ
+         1850      1860      1870      1880        1890      1900  
+
+         40        50        60         70        80        90     
+gi|276 TCATTGTTGAGACAACAGAATATATGATCGA-GTGAATCTGGAGGACCTGTGGTAACTCA
+            ...   .  :  . . :.  . .:.. .:::  : : .. .   : : :.. . .
+gi|425 GHYYPSSSPLLVPLAAPAMGIASLYNNVCAVLNTGALYCWGQGSHGTYPGGGFTGTSSIS
+           1910      1920      1930      1940      1950      1960  
+
+         100       110           120         130       140         
+gi|276 GCTCGTCGTGGCACTGCTTTT----GTCG--TGACCCTGCTTTGTTGTTGGGCCTCCTCA
+            :  ::    .: : ..    ..:.  .::  : :    :  :  . .  :    :
+gi|425 TRLTPTLVTG--MNSGVTQVSIGWGNSCAIQNGAVYCWGIKEGGILGDPATASPTTAPVA
+           1970        1980      1990      2000      2010      2020
+
+     150                   160         170          180       190  
+gi|276 A---GAGCTT-------TCA--TGG--CAGGTTTG---AACTTTAGTACGGTGCAGTTTG
+           ..: :        .::  .::  : : ...:   .. :: .::  . .:  ::.: 
+gi|425 IPSLNSGVTKISSGQFHACAIKSGGLYCWGQNSNGEVGVGSTTLVGTPTAINGL-GTVTD
+             2030      2040      2050      2060      2070          
+
+            200       210       220       230        240       250 
+gi|276 CGCCAAGTCATATAAAGCATCACTGATGAATGACATTA-TTGTCAGAAAAAATCAGAGGG
+             ::::  ..        : : ..       ::: .:.    :  :.::    :  
+gi|425 VWTGYYGTCAKNNSN----QVYCWGNNSDNQLLSNTTADVTSPLLMAELAGATDIYFGIQ
+    2080      2090          2100      2110      2120      2130     
+
+             260       270       280       290       300        310
+gi|276 GCAGTATGCTACTGAGCATGCCAGTGAATTTTTATGACTCTCGCAACGGATATC-TTGGC
+        ::.  .:   : :     .  . .:    : :..   : . :  . ::.::.  .::. 
+gi|425 FCAAL-SGDLHCKG----RNYFGEAGINQPTGTSVIPLTPVVG--GSGGVTAVAGSTGAH
+        2140           2150      2160      2170        2180        
+
+              320       330       340       350       360       370
+gi|276 TCTAACATCGATGAAGAACGCAGCTAAATGCGATAAGTGGTGTGAATTGCAGAATCCCGT
+       :: .  .    :: .:      :  .      ..:   .   .::.. .     .:   .
+gi|425 TCFVRSGQVYCTGFSG-----FGQHGDQQPLQSNAHVLSPKFSGASSISIFTEHACGIFS
+     2190      2200           2210      2220      2230      2240   
+
+              380       390          400       410       420       
+gi|276 GAACCATCGAGTCTTTGAACG---CAAGTTGCGCTCGAGGCCATCAGGCTAAGGGCAC-G
+       ::. :   : .  . ::         : :   . : ::    .. .: :....::  : :
+gi|425 GAVKCL--GDSYYSKTGNLLTDRIYQAPTQVKNLTSGATKLVSSSTGTCAVVSGGVQCWG
+            2250      2260      2270      2280      2290      2300 
+
+        430       440        450       460       470       480     
+gi|276 CCTGCCTGGGCGTCGTGTG-TTGCGTCTCTCCTACCAATGCTTGCTTGGCATATCGCTAA
+             .:.  :. .  .: ..:    . .  .. ::  .    :   : .        :
+gi|425 RNFIRASGSTSGNPNIPAGLSSGATDLAMSFGSTVCAIKAGKLYCW--GQVDIIPYLDLA
+            2310      2320      2330      2340        2350         
+
+         490       500       510       520        530       540    
+gi|276 GCTGGCATTATACGGATGTGAATGATTGGCCCCTTGTGCCTA-GGTGCGGTGGGTCTAAG
+              .  :: :  ... ..: .   .:   :  :  ::. .. :  : :  :   . 
+gi|425 VDFYYAPVEITAAG--SNNVSVTLGRHHACVLKTDKTVWCTGYNAHGQLGQGDTTDRISL
+    2360      2370        2380      2390      2400      2410       
+
+          550       560       570       580       590       600    
+gi|276 GATTGTTGCTTTGATGGGTAGGAATGTGGCACGAGGTGGAGAATGCTAACAGTCATAA--
+         . : :.     :.. ::   :  :: .  : .  ::..  ..  : .  :. ....  
+gi|425 HQVPGLTNVDELQASSYGTC--ARIGTTSIKCWGQITGNGTNTNQKTPVDIGSFTNVTRL
+      2420      2430        2440      2450      2460      2470     
+
+             610       620       630       640       650       660 
+gi|276 -GGCTGCTATTTGAATCCCCCATGTTGTTGTATTTTTTCGAACCTACACAAGAACCTAAT
+        .: :.  : ..::: :                                           
+gi|425 ISGYTNHCAINNGAAYCWGFNRYDQHGLNDYQTNEYHFSPTALTTLNAIGTVTDLEVRGA
+        2480      2490      2500      2510      2520      2530     
+
+
+
+
+753 residues in 1 query   sequences
+3315795 residues in 8964 library sequences
+ Scomplib [35.04]
+ start: Thu Apr 30 17:16:37 2009 done: Thu Apr 30 17:16:39 2009
+ Total Scan time:  0.760 Total Display time:  0.660
+
+Function used was FASTA [version 35.04 Mar. 8, 2009]
