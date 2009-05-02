@@ -203,12 +203,18 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
             results_file = outfile_name,
             timestamp = timestamp
         )
+        search_result.save()
+
+        resdata = {
+            'records': res,
+            'search_id': search_result.id
+        }
 
         return render_to_response(
                 template_path,
                 {
                     'form': f,
-                    'res': res,
+                    'resdata': resdata,
                     'duration': duration,
                 }
         )
@@ -292,6 +298,20 @@ def seqrequest(request):
     """
 
     gis = request.POST.getlist('gis')
+    search_id = request.POST.get('search_id')
+    if not search_id:
+        return HttpResponse('Problem with the search_id.')
+
+    try:
+        search_id = int(search_id)
+    except ValueError:
+        return HttpResponse('search_id is not an int.')
+
+    try:
+        search = Search.objects.get(id=search_id)
+    except Search.DoesNotExist:
+        return HttpResponse('A search of id %d does not exist.' % (
+                            search_id))
     # It's important to note that this will not catch requests for GI
     # numbers that don't exist in the database; those will silently be
     # ignored.

@@ -65,10 +65,11 @@
 <!-- Below shows the search result-->
 {% block results %}
 {% if form.cleaned_data.seq %}
-  {% if res %}
+  {% if resdata.records %}
   <h3 id="duration">This run took {{ duration }} minutes.</h3>
 
   <form name="selectionform" action="../seqrequest" id="selectionform" method="post">
+  <input type="hidden" name="search_id" value="{{ resdata.search_id }}" />
   <table cellspacing="5" border="1">
   <thead>
     <tr> 
@@ -88,7 +89,7 @@
     </tr>
   </thead>
   <tbody>
-    {% for record in res %}
+    {% for record in resdata.records %}
     <tr>
       <td><input type="checkbox" name="gis" value="{{ record.gi_number }}" /></td>
       <td><a href="http://www.ncbi.nlm.nih.gov/protein/{{record.gi_number}}" target="_blank">{{record.gi_number}} </a></td>
