@@ -39,7 +39,7 @@ class SequenceSelection(models.Model):
     sequences_file = models.FileField(
         upload_to=(SELECTIONS_DIR)
     )
-    translation_file = models.FileField(upload_to='selections')
+    map_file = models.FileField(upload_to='selections')
     timestamp = models.DateTimeField()
     comment = models.CharField(max_length=140)
 

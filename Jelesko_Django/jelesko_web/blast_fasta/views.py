@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.http import HttpResponse
+from django.shortcuts import render_to_response, redirect
 from django import forms
 import models
 from django.forms.util import ErrorList
@@ -14,9 +14,7 @@ from Bio.Blast import NCBIXML
 import datetime
 import os
 import subprocess
-import tempfile
 import textwrap
-import time
 
 import parsing_fasta
 
@@ -362,6 +360,10 @@ def seqrequest(request):
 
     gis = request.POST.getlist('gis')
     search_id = request.POST.get('search_id')
+    comment = request.POST.get('comment', '')
+
+    # TODO: This parameter checking is all bullshit. This needs to be
+    # written into a real Form class with real parameter checking.
     if not search_id:
         return HttpResponse('Problem with the search_id.')
 
@@ -375,6 +377,9 @@ def seqrequest(request):
     except models.Search.DoesNotExist:
         return HttpResponse('A search of id %d does not exist.' % (
                             search_id))
+
+    if len(comment) > 140:
+        return HttpResponse('comment was too long.')
 
 
     # It's important to note that this line below will not catch
@@ -430,5 +435,18 @@ def seqrequest(request):
         map_fileh.close()
 
     # create an entry in the Selections table
-    # redirect user to page containing links to these files
+    selection = SequenceSelection(
+        search=search,
+        sequences_file=fasta_file_path,
+        map_file=map_file_path,
+        timestamp=timestamp,
+        comment=comment
+    )
+    selection.save()
 
+    # redirect user to page containing links to these files
+    return redirect(seqselection, args=[selection.id])
+
+
+def seqselection(request, selection_id):
+    pass
