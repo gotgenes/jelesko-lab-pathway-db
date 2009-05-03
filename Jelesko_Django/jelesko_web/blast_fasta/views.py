@@ -20,7 +20,7 @@ import time
 import parsing_fasta
 
 # Output files will be stored under the MEDIA_ROOT found in settings.py.
-OUTPUT_DIR = settings.MEDIA_ROOT.rstrip(os.sep)
+OUTPUT_DIR = settings.MEDIA_ROOT.rstrip('/')
 
 
 # Fill this in with appropriate options of BLASTDB formatted databases
@@ -145,7 +145,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         query_filename = os.sep.join(
                 (
                     OUTPUT_DIR,
-                    SEARCH_RESULTS_DIR,
+                    models.SEARCH_RESULTS_DIR,
                     'query-%s.faa' % (timestr)
                 )
         )
@@ -180,7 +180,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
 
         outfile_dir = models.SEARCH_RESULTS_DIR % timestr
         full_outfile_dir = os.sep.join(
-            (settings.MEDIA_ROOT, outfile_dir)
+            (OUTPUT_DIR, outfile_dir)
         )
         os.mkdir(full_outfile_dir)
         # TODO: change this to take user-defined name later
