@@ -15,6 +15,7 @@ import datetime
 import os
 import subprocess
 import tempfile
+import textwrap
 import time
 
 import parsing_fasta
@@ -37,6 +38,8 @@ BLAST_DB_PATHS = {
 
 # This should be one of the above. e.g., 'Complete DB'
 INITIAL_DB_CHOICE = ''
+
+MAPPING_HEADER = "Jelesko ID\tGI\tGenus species\n"
 
 class BlastForm(forms.Form):
 
@@ -297,18 +300,65 @@ def blast(request):
                               'res': res})
 
 
+def _make_jelesko_id(protein, suffix_no=None):
+    """
+    Creates the Jelesko ID for a given protein.
+
+    :Parameters:
+    - `protein`: a Protein model instance
+    - `suffix_no`: an integer for a suffix (optional; if None, no suffix
+      is appended)
+
+    """
+
+    genus, species = protein.genus_species.split()[:2]
+    genus = genus[:3]
+    species = species[:3]
+    if suffix_no is not None:
+        jelesko_id = "%s %s.%d" % (genus, species, suffix_no)
+    else:
+        jelesko_id = "%s %s" % (genus, species)
+    return jelesko_id
+
+
+def _protein_to_fasta(header, protein):
+    """
+    Creates an output string in FASTA format for a given protein.
+
+    """
+
+    fastastr_list = ['>%s' % header]
+    fastastr_list.extend(textwrap.textwrap(protein.sequence, 60))
+    fastastr_list.append('')
+    fastastr = '\n'.join(fastastr_list)
+    return fastastr
+
+
+def _protein_to_mapping(id_str, protein):
+    """
+    Creates a mapping line for a protein.
+
+    """
+
+    mapping_line = '%s\t%s\t%s\n' % (
+        id_str, protein.gi, protein.genus_species
+    )
+    return mapping_line
+
+
+def _output_to_sel_files(jelesko_id, protein, fasta_fileh, map_fileh):
+
+    fasta_str = _protein_to_fasta(jelesko_id, protein)
+    fasta_fileh.write(fasta_str)
+    map_str = _protein_to_mapping(jelesko_id, protein)
+    map_fileh.write(map_str)
+
+
 def seqrequest(request):
     """
     Handles requests for sequences in a given result.
 
     """
-
-    timestamp = datetime.datetime.now()
-    outfile_dir = timestamp.strftime(models.SELECTIONS_DIR)
-    full_outfile_dir = os.sep.join(
-        (OUTPUT_DIR, outfile_dir)
-    )
-    os.mkdir(full_outfile_dir)
 
     gis = request.POST.getlist('gis')
     search_id = request.POST.get('search_id')
@@ -332,14 +382,52 @@ def seqrequest(request):
     # will silently be ignored.
     proteins = models.Protein.objects.filter(gi__in=gis)
     species_dict = {}
-    for protein in proteins:
-        if protein.genus_species in species_dict:
-            species_dict[protein.genus_species].append(protein)
-        else:
-            species_dict[protein.genus_species] = [protein]
-    for species_str, proteins in species_dict.items():
-        genus, species = species_str.split()[:2]
-        if len(proteins) > 1:
+
+    timestamp = datetime.datetime.now()
+    outfile_dir = timestamp.strftime(models.SELECTIONS_DIR)
+    full_outfile_dir = os.sep.join(
+        (OUTPUT_DIR, outfile_dir)
+    )
+    os.mkdir(full_outfile_dir)
+
+    # TODO: change this to take input from user for names
+    fasta_file_name = 'selections.faa'
+    fasta_file_path = os.sep.join((outfile_dir, fasta_file_name))
+    full_fasta_file_path = os.sep.join(
+        (full_outfile_dir, fasta_file_name)
+    )
+    fasta_fileh = open(full_fasta_file_path, 'w')
+    map_file_name = 'mapping.txt'
+    map_file_path = os.sep.join((outfile_dir, map_file_name))
+    full_map_file_path = os.sep.join((full_outfile_dir, map_file_name))
+    map_fileh = open(full_map_file_path, 'w')
+
+    try:
+        for protein in proteins:
+            if protein.genus_species in species_dict:
+                species_dict[protein.genus_species].append(protein)
+            else:
+                species_dict[protein.genus_species] = [protein]
+
+        map_fileh.write(MAPPING_HEADER)
+
+        for species_str, proteins in species_dict.items():
+            genus, species = species_str.split()[:2]
+            if len(proteins) > 1:
+                for i, protein in enumerate(proteins):
+                    jelesko_id = _make_jelesko_id(protein, i + 1)
+                    _output_to_sel_files(
+                        jelesko_id, protein, fasta_fileh, map_fileh
+                    )
+            else:
+                jelesko_id = _make_jelesko_id(protein)
+                _output_to_sel_files(
+                    jelesko_id, protein, fasta_fileh, map_fileh
+                )
+
+    finally:
+        fasta_fileh.close()
+        map_fileh.close()
 
     # create an entry in the Selections table
     # redirect user to page containing links to these files
