@@ -435,7 +435,7 @@ def seqrequest(request):
         map_fileh.close()
 
     # create an entry in the Selections table
-    selection = SequenceSelection(
+    selection = models.SequenceSelection(
         search=search,
         sequences_file=fasta_file_path,
         map_file=map_file_path,
@@ -452,7 +452,9 @@ def seqrequest(request):
 
 def seqselection(request, selection_id):
 
-    selection = get_object_or_404(SequenceSelection, id=selection_id)
+    selection = get_object_or_404(
+        models.SequenceSelection, id=selection_id
+    )
     rundate = selection.search.timestamp.strftime('%Y-%m-%d %H:%M:%S')
     selectiondate = selection.timestamp.strftime('%Y-%m-%d %H:%M:%S')
     return render_to_response(
