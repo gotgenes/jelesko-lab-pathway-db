@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 SEARCH_RESULTS_DIR = 'searches/%Y%m%d%H%M%S'
-SELECTIONS_DIR = 'selecs/%Y%m%d%H%M%S'
+SELECTIONS_DIR = 'selects/%Y%m%d%H%M%S'
 
 class Protein(models.Model):
     """A class to represent a protein downloaded from a repository."""
