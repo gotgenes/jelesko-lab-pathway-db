@@ -146,6 +146,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
             (OUTPUT_DIR, outfile_dir)
         )
         os.mkdir(full_outfile_dir)
+
         query_filename = os.sep.join((full_outfile_dir, 'query.faa'))
         query_file = open(query_filename, 'w')
 
@@ -302,6 +303,13 @@ def seqrequest(request):
 
     """
 
+    timestamp = datetime.datetime.now()
+    outfile_dir = timestamp.strftime(models.SELECTIONS_DIR)
+    full_outfile_dir = os.sep.join(
+        (OUTPUT_DIR, outfile_dir)
+    )
+    os.mkdir(full_outfile_dir)
+
     gis = request.POST.getlist('gis')
     search_id = request.POST.get('search_id')
     if not search_id:
@@ -317,11 +325,22 @@ def seqrequest(request):
     except models.Search.DoesNotExist:
         return HttpResponse('A search of id %d does not exist.' % (
                             search_id))
-    # It's important to note that this will not catch requests for GI
-    # numbers that don't exist in the database; those will silently be
-    # ignored.
+
+
+    # It's important to note that this line below will not catch
+    # requests for GI numbers that don't exist in the database; those
+    # will silently be ignored.
     proteins = models.Protein.objects.filter(gi__in=gis)
+    species_dict = {}
+    for protein in proteins:
+        if protein.genus_species in species_dict:
+            species_dict[protein.genus_species].append(protein)
+        else:
+            species_dict[protein.genus_species] = [protein]
+    for species_str, proteins in species_dict.items():
+        genus, species = species_str.split()[:2]
+        if len(proteins) > 1:
+
     # create an entry in the Selections table
-    # create new files using the entry id as the filename designation
     # redirect user to page containing links to these files
 
