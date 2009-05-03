@@ -141,14 +141,12 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
     # the form was submitted
     if request.method == 'POST':
         timestamp = datetime.datetime.now()
-        timestr = timestamp.strftime('%Y%m%d_%H%M%S')
-        query_filename = os.sep.join(
-                (
-                    OUTPUT_DIR,
-                    models.SEARCH_RESULTS_DIR,
-                    'query-%s.faa' % (timestr)
-                )
+        outfile_dir = timestamp.strftime(models.SEARCH_RESULTS_DIR)
+        full_outfile_dir = os.sep.join(
+            (OUTPUT_DIR, outfile_dir)
         )
+        os.mkdir(full_outfile_dir)
+        query_filename = os.sep.join((full_outfile_dir, 'query.faa'))
         query_file = open(query_filename, 'w')
 
         f = FastaForm(request.POST)
@@ -178,11 +176,6 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         db = f.cleaned_data['database_option']
         subject = BLAST_DB_PATHS[db]
 
-        outfile_dir = models.SEARCH_RESULTS_DIR % timestr
-        full_outfile_dir = os.sep.join(
-            (OUTPUT_DIR, outfile_dir)
-        )
-        os.mkdir(full_outfile_dir)
         # TODO: change this to take user-defined name later
         outfile_name = '%s_results.txt' % cmd[0]
         outfile_path = os.sep.join((outfile_dir, outfile_name))
