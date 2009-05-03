@@ -456,13 +456,9 @@ def seqselection(request, selection_id):
     selection = get_object_or_404(
         models.SequenceSelection, id=selection_id
     )
-    rundate = selection.search.timestamp.strftime('%Y-%m-%d %H:%M:%S')
-    selectiondate = selection.timestamp.strftime('%Y-%m-%d %H:%M:%S')
     return render_to_response(
         'blast_fasta/selection.html',
         {
-            'selection': selection,
-            'rundate': rundate,
-            'selectiondate': selectiondate
+            'selection': selection
         }
     )
