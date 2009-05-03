@@ -204,8 +204,9 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         os.remove(query_filename)
 
         search_result = models.Search(
-            results_file = outfile_path,
-            timestamp = timestamp
+            program=cmd[0],
+            results_file=outfile_path,
+            timestamp=timestamp
         )
         search_result.save()
 
