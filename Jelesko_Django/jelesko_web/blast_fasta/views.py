@@ -3,7 +3,7 @@
 
 from django.conf import settings
 from django.http import HttpResponse
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import get_object_or_404, render_to_response, redirect
 from django import forms
 import models
 from django.forms.util import ErrorList
@@ -449,4 +449,15 @@ def seqrequest(request):
 
 
 def seqselection(request, selection_id):
-    pass
+
+    selection = get_object_or_404(SequenceSelection, id=selection_id)
+    rundate = selection.search.timestamp.strftime('%Y-%m-%d %H:%M:%S')
+    selectiondate = selection.timestamp.strftime('%Y-%m-%d %H:%M:%S')
+    return render_to_response(
+        'blast_fasta/selection.html',
+        {
+            'selection': selection,
+            'rundate': rundate,
+            'selectiondate': selectiondate
+        }
+    )
