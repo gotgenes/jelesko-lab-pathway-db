@@ -5,7 +5,7 @@ from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django import forms
-from models import Protein, Search, SequenceSelection
+import models
 from django.forms.util import ErrorList
 
 from Bio.Blast import NCBIStandalone
@@ -21,6 +21,7 @@ import parsing_fasta
 
 # Output files will be stored under the MEDIA_ROOT found in settings.py.
 OUTPUT_DIR = settings.MEDIA_ROOT.rstrip(os.sep)
+
 
 # Fill this in with appropriate options of BLASTDB formatted databases
 BLAST_DBS = [
@@ -144,6 +145,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         query_filename = os.sep.join(
                 (
                     OUTPUT_DIR,
+                    SEARCH_RESULTS_DIR,
                     'query-%s.faa' % (timestr)
                 )
         )
@@ -175,12 +177,21 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
             kt = f.cleaned_data['ktup']
         db = f.cleaned_data['database_option']
         subject = BLAST_DB_PATHS[db]
-        outfile_name = os.sep.join((
-                OUTPUT_DIR,
-                '%s_%s_results.txt' % (timestr, cmd[0])
-        ))
+
+        outfile_dir = models.SEARCH_RESULTS_DIR % timestr
+        full_outfile_dir = os.sep.join(
+            (settings.MEDIA_ROOT, outfile_dir)
+        )
+        os.mkdir(full_outfile_dir)
+        # TODO: change this to take user-defined name later
+        outfile_name = '%s_results.txt' % cmd[0]
+        outfile_path = os.sep.join((outfile_dir, outfile_name))
+        full_outfile_path = os.sep.join(
+            (full_outfile_dir, outfile_name)
+        )
+
         cmd.extend(
-            ('-s', s, '-O', outfile_name, query_filename, subject)
+            ('-s', s, '-O', full_outfile_path, query_filename, subject)
         )
         if use_ktup:
             cmd.append(kt)
@@ -190,7 +201,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         end = datetime.datetime.now()
         duration = _timedelta_to_minutes(end - start)
 
-        fasta_output = open(outfile_name)
+        fasta_output = open(full_outfile_path)
         try:
             res = parsing_fasta.parsing_fasta(fasta_output)
         except TypeError:
@@ -199,8 +210,8 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         fasta_output.close()
         os.remove(query_filename)
 
-        search_result = Search(
-            results_file = outfile_name,
+        search_result = models.Search(
+            results_file = outfile_path,
             timestamp = timestamp
         )
         search_result.save()
@@ -274,7 +285,7 @@ def blast(request):
                     for hsp in a.hsps:
                         title_desc = a.title.split('|')
                         gi_number = title_desc[-1]
-                        b = Protein.objects.get(gi=gi_number)
+                        b = models.Protein.objects.get(gi=gi_number)
                         accession = b.accession.strip()
                         genus_species = b.genus_species.strip()
                         annotation = b.annotation.strip()
@@ -308,14 +319,14 @@ def seqrequest(request):
         return HttpResponse('search_id is not an int.')
 
     try:
-        search = Search.objects.get(id=search_id)
-    except Search.DoesNotExist:
+        search = models.Search.objects.get(id=search_id)
+    except models.Search.DoesNotExist:
         return HttpResponse('A search of id %d does not exist.' % (
                             search_id))
     # It's important to note that this will not catch requests for GI
     # numbers that don't exist in the database; those will silently be
     # ignored.
-    proteins = Protein.objects.filter(gi__in=gis)
+    proteins = models.Protein.objects.filter(gi__in=gis)
     # create an entry in the Selections table
     # create new files using the entry id as the filename designation
     # redirect user to page containing links to these files

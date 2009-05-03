@@ -2,6 +2,9 @@ from django.db import models
 
 # Create your models here.
 
+SEARCH_RESULTS_DIR = 'searchresults/%Y%m%d_%H%M%S'
+SELECTIONS_DIR = 'selections/%Y%m%d_%H%M%S'
+
 class Protein(models.Model):
     """A class to represent a protein downloaded from a repository."""
 
@@ -21,7 +24,7 @@ class Search(models.Model):
 
     program = models.CharField(max_length=20)
     results_file = models.FileField(
-        upload_to='searchresults/%Y%m%d_%H%M%S'
+        upload_to=(SEARCH_RESULTS_DIR)
     )
     timestamp = models.DateTimeField()
 
@@ -34,7 +37,7 @@ class SequenceSelection(models.Model):
 
     search = models.ForeignKey('Search')
     sequences_file = models.FileField(
-        upload_to='selections/%Y%m%d_%H%M%S'
+        upload_to=(SELECTIONS_DIR)
     )
     translation_file = models.FileField(upload_to='selections')
     timestamp = models.DateTimeField()
