@@ -326,7 +326,7 @@ def _protein_to_fasta(header, protein):
     """
 
     fastastr_list = ['>%s' % header]
-    fastastr_list.extend(textwrap.textwrap(protein.sequence, 60))
+    fastastr_list.extend(textwrap.wrap(protein.sequence, 60))
     fastastr_list.append('')
     fastastr = '\n'.join(fastastr_list)
     return fastastr
