@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render_to_response, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render_to_response
 from django import forms
 import models
 from django.forms.util import ErrorList
@@ -445,7 +445,9 @@ def seqrequest(request):
     selection.save()
 
     # redirect user to page containing links to these files
-    return redirect(seqselection, args=[selection.id])
+    return HttpResponseRedirect(
+        reverse('seqselection', args=[selection.id])
+    )
 
 
 def seqselection(request, selection_id):
