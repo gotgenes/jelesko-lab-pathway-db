@@ -1,9 +1,24 @@
 from django.db import models
 
-# Create your models here.
+# Fill this in with appropriate options of BLASTDB formatted databases
+# NOTE: keep the value (e.g., 'completedb') 25 characters or less
+BLAST_DBS = [
+        # Example:
+        #('completedb', 'Complete DB'),
+]
+
+# Specify paths to the actual databases
+BLAST_DB_PATHS = {
+        # Example:
+        #'completedb': '/var/local/blastdbs/complete.db',
+}
+
+# This must be one of the values above. e.g., 'completedb'
+INITIAL_DB_CHOICE = ''
 
 SEARCH_RESULTS_DIR = 'searches/%Y%m%d%H%M%S'
 SELECTIONS_DIR = 'selects/%Y%m%d%H%M%S'
+
 
 class Protein(models.Model):
     """A class to represent a protein downloaded from a repository."""

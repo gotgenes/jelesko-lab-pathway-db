@@ -6,7 +6,6 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render_to_response
 from django import forms
-import models
 from django.forms.util import ErrorList
 
 from Bio.Blast import NCBIStandalone
@@ -19,24 +18,10 @@ import textwrap
 
 import parsing_fasta
 
+import models
+
 # Output files will be stored under the MEDIA_ROOT found in settings.py.
 OUTPUT_DIR = settings.MEDIA_ROOT.rstrip('/')
-
-# Fill this in with appropriate options of BLASTDB formatted databases
-# NOTE: keep the value (e.g., 'completedb') 25 characters or less
-BLAST_DBS = [
-        # Example:
-        #('completedb', 'Complete DB'),
-]
-
-# Specify paths to the actual databases
-BLAST_DB_PATHS = {
-        # Example:
-        #'completedb': '/var/local/blastdbs/complete.db',
-}
-
-# This should be one of the above. e.g., 'Complete DB'
-INITIAL_DB_CHOICE = ''
 
 MAPPING_HEADER = "Jelesko ID\tGI\tGenus species\n"
 
@@ -50,8 +35,8 @@ class BlastForm(forms.Form):
     )
     database_option = forms.ChoiceField(
             label='Database',
-            choices=BLAST_DBS,
-            initial=INITIAL_DB_CHOICE
+            choices=models.BLAST_DBS,
+            initial=models.INITIAL_DB_CHOICE
     )
 
 
@@ -143,7 +128,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         if use_ktup:
             kt = f.cleaned_data['ktup']
         db = f.cleaned_data['database_option']
-        subject = BLAST_DB_PATHS[db]
+        subject = models.BLAST_DB_PATHS[db]
 
         # TODO: change this to take user-defined name later
         outfile_name = '%s_results.txt' % cmd[0]
