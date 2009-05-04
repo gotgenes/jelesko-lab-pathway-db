@@ -38,7 +38,7 @@
 <form action="" method="post">
   {% block query_form %}
 	<label><b>Your sequence in FASTA format:</b></label><br/>
-	{{form.seq}}<br/>
+	{{form.query_seq}}<br/>
 	<h3 style="color: red;">{{form.seq.errors}}</h3>
 	<label><b>Number of sequence scores to be shown: </b></label><br/>
 	{{form.number_sequence}}<br/>
