@@ -47,6 +47,18 @@ class Search(models.Model):
         return u'%s %s' % (self.program, self.timestamp)
 
 
+class Hit(models.Model):
+    """A class to represent a hit to a Protein."""
+
+    search = models.ForeignKey('Search')
+    protein = models.ForeignKey('Protein')
+    bitscore = models.FloatField()
+    evalue = models.FloatField()
+
+    def __unicode__(self):
+        return u'%s-%s' % (self.search, self.protein)
+
+
 class SequenceSelection(models.Model):
     """A class to represent a selection of sequences."""
 
