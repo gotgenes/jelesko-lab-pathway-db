@@ -64,6 +64,7 @@ class SequenceSelection(models.Model):
 
 class FastaRun(models.Model):
 
+    search = models.OneToOneField('Search', primary_key=True)
     # the user-input FASTA formatted protein sequence
     query_seq = models.TextField()
     # -b "Number of sequence scores to be shown on output."
