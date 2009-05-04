@@ -22,8 +22,8 @@ import parsing_fasta
 # Output files will be stored under the MEDIA_ROOT found in settings.py.
 OUTPUT_DIR = settings.MEDIA_ROOT.rstrip('/')
 
-
 # Fill this in with appropriate options of BLASTDB formatted databases
+# NOTE: keep the value (e.g., 'completedb') 25 characters or less
 BLAST_DBS = [
         # Example:
         #('completedb', 'Complete DB'),
@@ -55,45 +55,11 @@ class BlastForm(forms.Form):
     )
 
 
-class FastaForm(forms.Form):
+class FastaForm(forms.ModelForm):
 
-    # TODO: Add parameter validation.
+    class Meta:
+        model = models.FastaRun
 
-    # the user-input FASTA formatted protein sequence
-    seq = forms.CharField(widget=forms.Textarea)
-    # -b "Number of sequence scores to be shown on output."
-    number_sequence = forms.FloatField(required=False)
-    # -E "Limit the number of scores and alignments shown based on the
-    # expected number of scores." Overrides the expectation value.
-    number_alignment_highest = forms.FloatField(initial=10.0,
-            required=False)
-    # -F "Limit the number of scores and alignments shown based on the
-    # expected number of scores." Sets the highest E-value shown.
-    number_alignment_lowest = forms.FloatField(required=False)
-    mfoptions = [
-            ('P250', 'PAM250'),
-            ('P120', 'PAM120'),
-            ('BL50', 'BLOSUM50'),
-            ('BL62', 'BLOSUM62'),
-            ('BL80', 'BLOSUM80')
-    ]
-    matrix_file = forms.ChoiceField(
-            label='Matrix File',
-            choices=mfoptions,
-            initial='BL50'
-    )
-    database_option = forms.ChoiceField(
-            label='Database',
-            choices=BLAST_DBS,
-            initial=INITIAL_DB_CHOICE
-    )
-    ktupoptions = [('1', '1'), ('2', '2')]
-    ktup = forms.ChoiceField(
-            label='Ktup',
-            choices=ktupoptions,
-            initial='2',
-            required=False
-    )
     def clean(self):
         cleaned_data = self.cleaned_data
         seq = cleaned_data.get("seq")

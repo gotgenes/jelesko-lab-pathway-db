@@ -41,8 +41,45 @@ class SequenceSelection(models.Model):
     )
     map_file = models.FileField(upload_to='selections')
     timestamp = models.DateTimeField()
-    comment = models.CharField(max_length=140)
+    comment = models.CharField(max_length=140, blank=True)
 
     def __unicode__(self):
         return self.timestamp
 
+
+class FastaRun(models.Model):
+
+    # the user-input FASTA formatted protein sequence
+    query_seq = models.TextField()
+    # -b "Number of sequence scores to be shown on output."
+    number_sequence = models.PositiveIntegerField(blank=True)
+    # -E "Limit the number of scores and alignments shown based on the
+    # expected number of scores." Overrides the expectation value.
+    number_alignment_highest = models.FloatField(default=10.0,
+            blank=True)
+    # -F "Limit the number of scores and alignments shown based on the
+    # expected number of scores." Sets the highest E-value shown.
+    number_alignment_lowest = models.FloatField(blank=True)
+    mfoptions = [
+            ('P250', 'PAM250'),
+            ('P120', 'PAM120'),
+            ('BL50', 'BLOSUM50'),
+            ('BL62', 'BLOSUM62'),
+            ('BL80', 'BLOSUM80')
+    ]
+    matrix_file = models.CharField(
+            max_length=4,
+            choices=mfoptions,
+            default='BL50'
+    )
+    database_option = models.CharField(
+            max_length=25,
+            choices=BLAST_DBS,
+            default=INITIAL_DB_CHOICE
+    )
+    ktupoptions = [(1, 1), (2, 2)]
+    ktup = models.PositiveIntegerField(
+            choices=ktupoptions,
+            default=2,
+            blank=True
+    )
