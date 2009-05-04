@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+  <title>Sequence Selection</title>
+</head>
+<body>
+  <h1>Search Files</h1>
+  <a href="{{ selection.search.results_file.url }}">
+    Results from {{ selection.search.program }} search made on
+    {{ selection.search.timestamp|date:"D d M Y" }} at
+    {{ selection.search.timestamp|time:"H:i" }}
+  </a><br />
+
+  <h1>Selection Files</h1>
+  {% if selection.comment %}
+  <p>Selection comment: {{ selection.comment }}</p>
+  {% endif %}
+  <p>Selections made on {{ selection.timestamp|date:"D d M Y" }}
+  at {{ selection.timestamp|time:"H:i" }}</p>
+  <a href="{{ selection.sequences_file.url }}">FASTA file of selected
+    sequences</a><br />
+  <a href="{{ selection.map_file.url }}">Mapping file for sequences</a><br />
+</body>
+</html>

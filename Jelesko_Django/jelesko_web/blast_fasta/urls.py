@@ -5,5 +5,7 @@ urlpatterns = patterns('jelesko_web.blast_fasta.views',
     (r'^blast/$', 'blast'),
     (r'^fasta/$', 'fasta'),
     (r'^ssearch/$', 'ssearch'),
+    (r'^selection/(\d+)/$', 'seqselection'),
+    (r'^seqrequest/$', 'seqrequest'),
 )
 
