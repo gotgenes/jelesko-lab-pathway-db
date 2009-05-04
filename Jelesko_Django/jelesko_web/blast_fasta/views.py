@@ -314,9 +314,9 @@ def _make_jelesko_id(protein, suffix_no=None):
     genus = genus[:3]
     species = species[:3]
     if suffix_no is not None:
-        jelesko_id = "%s %s.%d" % (genus, species, suffix_no)
+        jelesko_id = "%s_%s_%d" % (genus, species, suffix_no)
     else:
-        jelesko_id = "%s %s" % (genus, species)
+        jelesko_id = "%s_%s" % (genus, species)
     return jelesko_id
 
 
