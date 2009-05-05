@@ -172,12 +172,27 @@ def _run_fasta_program(
         fasta_output.close()
         os.remove(query_filename)
 
+        # Save the search [save the world]
         search_result = models.Search(
             program=cmd[0],
             results_file=outfile_path,
             timestamp=timestamp
         )
         search_result.save()
+        # Save the hits
+        # NOTE: This is going to get really expensive with DB
+        # transactions occuring at every save. This should be moved to a
+        # more lax DB transaction scheme that waits to commit a bunch of
+        # these at a time.
+        for result in res:
+            protein = Protein.objects.get(id=result['gi_number'])
+            hit = models.Hit(
+                search=search_result,
+                protein=protein,
+                bitscore=float(result['bit']),
+                e_value=float(result['e_value'])
+            )
+            hit.save()
 
         resdata = {
             'records': res,

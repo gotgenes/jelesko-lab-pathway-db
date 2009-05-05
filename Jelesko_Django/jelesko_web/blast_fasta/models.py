@@ -53,7 +53,7 @@ class Hit(models.Model):
     search = models.ForeignKey('Search')
     protein = models.ForeignKey('Protein')
     bitscore = models.FloatField()
-    evalue = models.FloatField()
+    e_value = models.FloatField()
 
     def __unicode__(self):
         return u'%s-%s' % (self.search, self.protein)
