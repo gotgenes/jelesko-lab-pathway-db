@@ -35,7 +35,7 @@
 </h1>
 <hr/>
 
-<form action="{{ search_url }}" method="post">
+<form action="{{ submit_to }}" method="post">
   {% block query_form %}
 	<label><b>Your sequence in FASTA format:</b></label><br/>
 	{{form.query_seq}}<br/>

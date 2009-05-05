@@ -25,6 +25,9 @@ OUTPUT_DIR = settings.MEDIA_ROOT.rstrip('/')
 
 MAPPING_HEADER = "Jelesko ID\tGI\tGenus species\n"
 
+FASTA_PROG = 'fasta35'
+SSEARCH_PROG = 'ssearch35'
+
 class BlastForm(forms.Form):
 
     seq = forms.CharField(widget=forms.Textarea)
@@ -80,7 +83,13 @@ def _timedelta_to_minutes(td):
     return minutes
 
 
-def _run_fasta_program(request, cmd, template_path, use_ktup=True):
+def _run_fasta_program(
+        request,
+        cmd,
+        template_path,
+        view_name,
+        use_ktup=True
+    ):
     """
     Runs a FASTA type program (e.g., fasta35, ssearch35)
 
@@ -88,8 +97,14 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
     - `request`: a Django HTTPRequest type object
     - `cmd`: a list containing the initial command (e.g., ['fasta35', '-q'])
     - `template_path`: path to the template for the result
+    - `view_name`: the name of the view to send a search request to
+      (this should usually come from a url name in urls.py)
+    - `use_ktup`: if `True`, uses the ktup paramater
 
     """
+
+    # Get the URL to submit to
+    submit_to = reverse(view_name)
 
     # the form was submitted
     if request.method == 'POST':
@@ -108,7 +123,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
             print "Not valid."
             return render_to_response(
                     template_path,
-                    {'form': f, 'res': ''}
+                    {'form': f, 'res': '', 'submit_to': submit_to}
             )
 
         query_file.write(f.cleaned_data['seq'])
@@ -173,6 +188,7 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
                 template_path,
                 {
                     'form': f,
+                    'submit_to': submit_to,
                     'resdata': resdata,
                     'duration': duration,
                 }
@@ -183,20 +199,20 @@ def _run_fasta_program(request, cmd, template_path, use_ktup=True):
         form = FastaForm()
         return render_to_response(
                 template_path,
-                {'form': form}
+                {'form': form, 'submit_to': submit_to}
         )
 
 
 def fasta(request):
-    cmd = ['fasta35', '-q']
+    cmd = [FASTA_PROG, '-q']
     template_path = 'blast_fasta/fasta.html'
-    return _run_fasta_program(request, cmd, template_path)
+    return _run_fasta_program(request, cmd, template_path, 'fasta')
 
 
 def ssearch(request):
-    cmd = ['ssearch35', '-q']
+    cmd = [SSEARCH_PROG, '-q']
     template_path = 'blast_fasta/ssearch.html'
-    return _run_fasta_program(request, cmd, template_path,
+    return _run_fasta_program(request, cmd, template_path, 'ssearch',
             use_ktup=False)
 
 
@@ -265,9 +281,9 @@ def _make_jelesko_id(protein, suffix_no=None):
     genus = genus[:3]
     species = species[:3]
     if suffix_no is not None:
-        jelesko_id = "%s %s.%d" % (genus, species, suffix_no)
+        jelesko_id = "%s_%s_%d" % (genus, species, suffix_no)
     else:
-        jelesko_id = "%s %s" % (genus, species)
+        jelesko_id = "%s_%s" % (genus, species)
     return jelesko_id
 
 
