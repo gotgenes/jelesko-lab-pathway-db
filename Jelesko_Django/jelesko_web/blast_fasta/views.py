@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+from django.db import transaction
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
@@ -81,6 +82,31 @@ def _timedelta_to_minutes(td):
 
     minutes = 1440 * td.days + td.seconds / 60.0
     return minutes
+
+
+# We add this decorator below so that all hits will be processed before
+# commiting to the DB; this saves a lot of overhead as it saves them all
+# in one transaction.
+@transaction.commit_on_success
+def _process_hits(hits, search):
+    """
+    Takes information about hits and stores them in the database.
+
+    :Parameters:
+    - `hits`: a dictionary of information on the hits
+    - `search`: the search these hits are linked to
+
+    """
+
+    for hit_info in hits:
+        protein = Protein.objects.get(id=result['gi_number'])
+        hit = models.Hit(
+            search=search_result,
+            protein=protein,
+            bitscore=float(result['bit']),
+            e_value=float(result['e_value'])
+        )
+        hit.save()
 
 
 def _run_fasta_program(
@@ -180,19 +206,7 @@ def _run_fasta_program(
         )
         search_result.save()
         # Save the hits
-        # NOTE: This is going to get really expensive with DB
-        # transactions occuring at every save. This should be moved to a
-        # more lax DB transaction scheme that waits to commit a bunch of
-        # these at a time.
-        for result in res:
-            protein = Protein.objects.get(id=result['gi_number'])
-            hit = models.Hit(
-                search=search_result,
-                protein=protein,
-                bitscore=float(result['bit']),
-                e_value=float(result['e_value'])
-            )
-            hit.save()
+        _process_hits(res, search_result)
 
         resdata = {
             'records': res,
