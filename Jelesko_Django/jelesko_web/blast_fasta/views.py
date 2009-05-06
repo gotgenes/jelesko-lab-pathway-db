@@ -114,7 +114,8 @@ def _run_fasta_program(
         cmd,
         template_path,
         view_name,
-        use_ktup=True
+        use_ktup=True,
+        search_id=None
     ):
     """
     Runs a FASTA type program (e.g., fasta35, ssearch35)
@@ -126,6 +127,8 @@ def _run_fasta_program(
     - `view_name`: the name of the view to send a search request to
       (this should usually come from a url name in urls.py)
     - `use_ktup`: if `True`, uses the ktup paramater
+    - `search_id`: an integer representing the id of a previous search,
+      or None if this is a new search
 
     """
 
@@ -223,26 +226,50 @@ def _run_fasta_program(
                 }
         )
 
-    # user has not sent a POST request; present user with blank form
-    else:
+    # If the user has sent a GET request, present user with either a
+    # previous search result, or a blank form, depending on whether a
+    # search ID was given.
+    # If no search ID is given, give the blank form.
+    elif search_id is None:
         form = FastaForm()
         return render_to_response(
                 template_path,
                 {'form': form, 'submit_to': submit_to}
         )
 
+    # Give the results from the search of the search ID
+    else:
+        search = get_object_or_404(models.Search, id=search_id)
+        # Redirect the user to the proper search page if they chose the
+        # wrong one
+        # Populate the search form with their parameters
+        # Populate the selection form with hits
+        # Render and return
 
-def fasta(request):
+
+def fasta(request, search_id=None):
     cmd = [FASTA_PROG, '-q']
     template_path = 'blast_fasta/fasta.html'
-    return _run_fasta_program(request, cmd, template_path, 'fasta')
+    return _run_fasta_program(
+        request,
+        cmd,
+        template_path,
+        'fasta',
+        search_id=search_id
+    )
 
 
-def ssearch(request):
+def ssearch(request, search_id=None):
     cmd = [SSEARCH_PROG, '-q']
     template_path = 'blast_fasta/ssearch.html'
-    return _run_fasta_program(request, cmd, template_path, 'ssearch',
-            use_ktup=False)
+    return _run_fasta_program(
+        request,
+        cmd,
+        template_path,
+        'ssearch',
+        use_ktup=False,
+        search_id=search_id
+    )
 
 
 def blast(request):
