@@ -194,6 +194,16 @@ the FASTA to Flat script.
     cd $REPO_PATH/fastatoflat
     python fastatoflat.py --help
 
+Once you've generated your flat file, you can use your database's import tool
+to load it into the ``blast_fasta_protein`` table. For example, with MySQL,
+you can use ``mysqlimport``:
+
+::
+
+    mysqlimport -d --columns="gi,accession,genus_species,annotation,download_date,sequence" --ignore-lines=1 -p DATABASE /path/to/blast_fasta_protein.txt
+
+Read the documentation for your database to learn how to do this properly.
+
 
 .. _Prof. John Jelesko: http://www.ppws.vt.edu/~jelesko/
 .. _Django: http://www.djangoproject.com/
