@@ -37,59 +37,44 @@ For example, say you downloaded the Git repository to ``/usr/local/``. Then
 Configuring the application
 ---------------------------
 
-You must define the ``MEDIA_ROOT`` and ``MEDIA_URL``. ``MEDIA_ROOT`` must have
-read and write access for the user that Django is run under. When using Django
-with Apache, this user is usually ``www-data`` on Debian-type systems, or
-``apache`` on Red Hat type systems. Verify this by looking under
+The first step involves filling out settings under under ``$DJANGO_SITE/settings.py``. This includes, but is not limited to the following settings:
+
+* ``DATABASE_ENGINE``
+* ``DATABASE_NAME``
+* ``DATABASE_USER``
+* ``DATABASE_PASSWORD``
+* ``MEDIA_ROOT``
+* ``MEDIA_URL``
+* ``TEMPLATE_DIRS``
+
+You must define the ``MEDIA_ROOT`` and ``MEDIA_URL``. ``MEDIA_ROOT`` must
+have read and write access for the user that Django is run under. When using
+Django with Apache, this user is usually ``www-data`` on Debian-type systems,
+or ``apache`` on Red Hat type systems. Verify this by looking under
 ``/etc/passwd``.
 
-It is a **really good idea** to keep ``MEDIA_ROOT`` short. FASTA has a
-character limit of 121 characters for file paths; the input and output to the
-FASTA programs is saved under the ``MEDIA_ROOT`` in time-stamped directories.
-Thus, keep ``MEDIA_ROOT`` short. Additionally, to serve files under this
-directory by Apache, it must be under the DocumentRoot. For example,
-``/var/www/html/jdbmedia/``.
+It is a *really* good idea to keep ``MEDIA_ROOT`` short. The FASTA programs
+have a character limit of 121 characters for file paths, and the input and
+output to the FASTA programs will be saved under the ``MEDIA_ROOT`` in
+time-stamped directories.  Thus, *keep ``MEDIA_ROOT`` short*. Additionally, to
+serve files under this directory by Apache, it must be under the DocumentRoot.
+For example, ``/var/www/html/jdbmedia/``. And in case you didn't realize this
+yet, **it is a really good idea to keep ``MEDIA_ROOT`` short**!
 
 Under the ``MEDIA_ROOT``, there must be two directories (also read-write-able
 by the Django/Apache user): ``MEDIA_ROOT/selects/`` and
 ``MEDIA_ROOT/searches/``, to store selections and search program outputs,
-respectively.
+respectively. Make sure all directories and files under ``MEDIA_ROOT`` have
+the proper permissions for the Django/Apache user.
 
-Fill out the following under ``$REPO_PATH/Jeleskso_
-DATABASE_ENGINE
-DATABASE_NAME
-DATABASE_USER
-DATABASE_PASSWORD
+In ``TEMPLATE_DIRS``, add the path of ``$DJANGO_SITE``.
 
-In TEMPLATE_DIRS, add the path to the template, which is under
-``$REPO_PATH/Jelesko_Django/jelesko_web/`` in the Git repository
+Next, in ``$DJANGO_SITE/blast_fasta/views.py``, fill out ``BLAST_DBS`` and
+``BLAST_DB_PATHS``, making sure to use the proper path to the database on the
+local filesystem. Make sure the paths in ``BLAST_DB_PATHS`` are accessible to
+the Django/Apache user (i.e., under the ``DocumentRoot`` or otherwise aliased,
+and with proper permissions).
 
-in ``REPO_PATH/Jelesko_Django/jelesko_web/blast_fasta/views.py``, fill in
-choices for BLAST_DBS and BLAST_DB_PATHS, making sure to use the proper path
-to the database on the local filesystem.
-
-dump the database to FASTA file by python manage.py dbtofasta -o
-/your/desired/path. Make sure this path and the output are owned by the Apache
-user, e.g.,
-
-::
-    chown -R apache:apache /your/desired/path
-
-Make a directory for your static files (MEDIA_ROOT), e.g.,
-
-::
-    mkdir /var/www/jeleskodb
-
-Then make subdirectories under this
-
-::
-    mkdir /var/www/jeleskodb/selects
-    mkdir /var/www/jeleskodb/searches
-
-Then make sure these are writeable by the Apache user
-
-::
-    chown -R apache:apache /var/www/jeleskodb
 
 How do I ...
 ============
@@ -108,5 +93,4 @@ See the help documentation for more information
 
     python manage.py dbtofasta --help
 
-
-.. _`Prof. John Jelesko` http://www.ppws.vt.edu/~jelesko/
+.. _Prof. John Jelesko: http://www.ppws.vt.edu/~jelesko/
