@@ -26,16 +26,21 @@ OUTPUT_DIR = settings.MEDIA_ROOT.rstrip('/')
 BLAST_DBS = [
         # Example:
         #('completedb', 'Complete DB'),
+        ('completedb', 'Complete DB'),
+        ('toydb', 'Toy DB')
 ]
 
 # Specify paths to the actual databases
 BLAST_DB_PATHS = {
         # Example:
         #'completedb': '/var/local/blastdbs/complete.db',
+        'completedb':
+        '/home/chris/files/downloads/sequences/dbs/jeleskodb.faa',
+        'toydb': '/home/chris/files/downloads/sequences/dbs/test.faa',
 }
 
 # This should be one of the above. e.g., 'Complete DB'
-INITIAL_DB_CHOICE = ''
+INITIAL_DB_CHOICE = 'toydb'
 
 MAPPING_HEADER = "Jelesko ID\tGI\tGenus species\n"
 
