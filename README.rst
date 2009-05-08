@@ -1,8 +1,32 @@
+============================
+Jelesko Pathway Evolution DB
+============================
+
 Introduction
 ============
 
 This repository contains code and documentation for the GBCB 5874 project
 with `Prof. John Jelesko`_.
+
+For the impatient
+=================
+
+See if your question is in `How do I ...`_. Otherwise, keep reading.
+
+Git repository layout
+=====================
+
+* ``Jelesko_Django``: Contains the code for the Django application. See
+  `Deploying the FASTA Django Application`_
+* ``README.rst``: this file
+* ``fastatoflat``: converts FASTA formatted files to a flat file for DB
+  import. See
+  `How do I insert the FASTA-formatted protein sequences I've downloaded into the database?`
+* ``ftpfetch``: contains the script to fetch NCBI protein data. See
+  `How do I download all the protein sequences from the NCBI whole genome projects?`
+* ``paper``: final report for the GBCB 5874 course
+* ``rmduplicates``: removes duplicate entries from flat files for DB import.
+  See `How do I remove duplicate entries from the flat file?`_
 
 
 Deploying the FASTA Django Application
@@ -176,7 +200,7 @@ See the help documentation for more information
 How do I download all the protein sequences from the NCBI whole genome projects?
 --------------------------------------------------------------------------------
 
-Use the NCBI FASTA Fetch script.
+Use the ``ncbifastafetch.py`` script.
 
 ::
 
@@ -187,7 +211,7 @@ How do I insert the FASTA-formatted protein sequences I've downloaded into the d
 ----------------------------------------------------------------------------------------
 
 First, generate a flat tab-separated-values file from the FASTA files using
-the FASTA to Flat script.
+the ``fastatoflat.py`` script.
 
 ::
 
@@ -203,6 +227,20 @@ you can use ``mysqlimport``:
     mysqlimport -d --columns="gi,accession,genus_species,annotation,download_date,sequence" --ignore-lines=1 -p DATABASE /path/to/blast_fasta_protein.txt
 
 Read the documentation for your database to learn how to do this properly.
+
+**NOTE:** Before you do this, you may need to remove duplicate entries (more
+than one entry may have the same GI/identifier). See `How do I remove
+duplicate entries from the flat file?`_
+
+How do I remove duplicate entries from the flat file?
+-----------------------------------------------------
+
+Use the ``rmduplicates.py`` script.
+
+::
+
+    cd $REPO_PATH/rmduplicates
+    python rmduplicates.py --help
 
 
 .. _Prof. John Jelesko: http://www.ppws.vt.edu/~jelesko/
