@@ -21,9 +21,9 @@ Git repository layout
 * ``README.rst``: this file
 * ``fastatoflat``: converts FASTA formatted files to a flat file for DB
   import. See
-  `How do I insert the FASTA-formatted protein sequences I've downloaded into the database?`
+  `How do I export all the database's sequences in FASTA format?`_
 * ``ftpfetch``: contains the script to fetch NCBI protein data. See
-  `How do I download all the protein sequences from the NCBI whole genome projects?`
+  `How do I download all the protein sequences from the NCBI whole genome projects?`_
 * ``paper``: final report for the GBCB 5874 course
 * ``rmduplicates``: removes duplicate entries from flat files for DB import.
   See `How do I remove duplicate entries from the flat file?`_
