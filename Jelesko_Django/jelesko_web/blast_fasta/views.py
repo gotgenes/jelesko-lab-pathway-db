@@ -325,7 +325,10 @@ def _make_jelesko_id(protein, suffix_no=None):
 
     """
 
-    genus, species = protein.genus_species.split()[:2]
+    try:
+        genus, species = protein.genus_species.split()[:2]
+    except:
+        genus, species = ('Unknown', 'unknown')
     genus = genus[:3]
     species = species[:3]
     if suffix_no is not None:
