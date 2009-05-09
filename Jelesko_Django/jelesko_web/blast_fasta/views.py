@@ -502,7 +502,6 @@ def seqrequest(request):
         map_fileh.write(MAPPING_HEADER)
 
         for species_str, proteins in species_dict.items():
-            genus, species = species_str.split()[:2]
             if len(proteins) > 1:
                 for i, protein in enumerate(proteins):
                     jelesko_id = _make_jelesko_id(protein, i + 1)
