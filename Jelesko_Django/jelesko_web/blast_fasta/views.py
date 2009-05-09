@@ -254,7 +254,8 @@ def _run_fasta_program(
 def _run_blast_program(
         request,
         cmd,
-        template_path
+        template_path,
+        view_name
     ):
     """
     Runs a BLAST type program (e.g., blastall)
@@ -266,7 +267,7 @@ def _run_blast_program(
     """
 
     # Get the URL to submit to
-    submit_to = reverse('blast')
+    submit_to = reverse(view_name)
 
     # the form was submitted
     if request.method == 'POST':
