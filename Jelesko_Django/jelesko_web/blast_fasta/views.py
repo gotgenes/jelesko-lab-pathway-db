@@ -443,6 +443,7 @@ def seqrequest(request):
                         jelesko_id, protein, fasta_fileh, map_fileh
                     )
             else:
+                protein = proteins[0]
                 jelesko_id = _make_jelesko_id(protein)
                 _output_to_sel_files(
                     jelesko_id, protein, fasta_fileh, map_fileh
