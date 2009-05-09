@@ -325,16 +325,16 @@ def _make_jelesko_id(protein, suffix_no=None):
 
     """
 
+    split_gs = protein.genus_species.split()
+    genus_species_code = [item[:3] for item in split_gs[:2]]
     try:
-        genus, species = protein.genus_species.split()[:2]
-    except:
-        genus, species = ('Unknown', 'unknown')
-    genus = genus[:3]
-    species = species[:3]
+        if genus_species_code[1] == 'sp.':
+            genus_species_code.extend(split_gs[2:])
+    except IndexError:
+        pass
     if suffix_no is not None:
-        jelesko_id = "%s_%s_%d" % (genus, species, suffix_no)
-    else:
-        jelesko_id = "%s_%s" % (genus, species)
+        genus_species_code.append(str(suffix_no))
+    jelesko_id = '_'.join(genus_species_code)
     return jelesko_id
 
 
