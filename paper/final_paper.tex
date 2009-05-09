@@ -1,13 +1,30 @@
-\documentclass[twoside,letterpaper,11pt]{article}
+%% LyX 1.6.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,letterpaper,twoside,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{graphicx}
+\usepackage[authoryear]{natbib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
 
 \usepackage{fullpage}
 
 \ifx\pdfoutput\undefined
     % we are running LaTeX, not pdflatex
-    \usepackage{graphicx}
+    
 \else
     % we are running pdflatex, so convert .eps files to .pdf
-    \usepackage[pdftex]{graphicx}
+    
     \usepackage{epstopdf}
 \fi
 
@@ -17,43 +34,91 @@
 
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
-\pagestyle{fancy}
+
 \lhead{GBCB 5874 Final Paper}
 \rhead{Cai \& Lasher}
 
+\usepackage{babel}
+
 \begin{document}
-\maketitle
 
 \section{Introduction}
+
 
 \section{Methods}
 
 % overall pipeline figure goes here
 
+
+%
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/work_flow\lyxdot 022-001}
+
+\caption{The workflow of this project}
+
+\end{figure}
+
+
+
 \subsection{Data Retrieval}
 
 % Chris
+
+
 
 \subsection{Data Integration}
 
 % Chris
 
+
+
 \subsection{Web Interface}
 
-% Patrick
+% Patrick   
+
+
+% Describe the design rationable
+
+
+% Describe data models
+
+
 
 \subsubsection{Integration with FASTA and BLAST}
 
-% Patrick
+Biopython\citet{Cock:2009p22197}
+
+% Patrick 
+
+
+% Compare BLAST and FASTA/Ssearch algorthms  
+
+
+% Describe the Biopython module for BLAST
+
+
+% Describe the customized parser for FASTA and SSearch
+
+
 
 \subsubsection{Output Generation}
 
 % Patrick
 
+
+
 \section{Results}
 
 % ? Not sure about this yet. Would be nice if we could prove a use case.
 
+
+% Compare the number of hits in these regions: 0 ~ 10^-20, 10^-20 ~ 10^-2
+
+
+
 \section{Conclusions}
+
+\bibliographystyle{IEEEtran}
+\bibliography{Bio}
 
 \end{document}
