@@ -42,6 +42,9 @@ class SequenceSelection(models.Model):
     map_file = models.FileField(upload_to='selections')
     timestamp = models.DateTimeField()
     comment = models.CharField(max_length=140)
+    gi_sequences_file = models.FileField(
+        upload_to=(SELECTIONS_DIR)
+    )
 
     def __unicode__(self):
         return self.timestamp

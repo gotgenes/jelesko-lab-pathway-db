@@ -338,6 +338,22 @@ def _make_jelesko_id(protein, suffix_no=None):
     return jelesko_id
 
 
+def guess_defline_prefix(identifier):
+    """
+    Attempts to guess the Defline prefix (e.g., 'gi|' or 'lcl|') for a
+    given identifier.
+
+    :Parameters:
+    - `identifier`: a sequence identifier (e.g., a GI number)
+
+    """
+
+    if identifier.isdigit():
+        return 'gi|'
+    else:
+        return 'lcl|'
+
+
 def _protein_to_fasta(header, protein):
     """
     Creates an output string in FASTA format for a given protein.
@@ -363,10 +379,18 @@ def _protein_to_mapping(id_str, protein):
     return mapping_line
 
 
-def _output_to_sel_files(jelesko_id, protein, fasta_fileh, map_fileh):
+def _output_to_sel_files(
+        jelesko_id, protein,
+        fasta_fileh,
+        gi_fasta_fileh,
+        map_fileh
+        ):
 
     fasta_str = _protein_to_fasta(jelesko_id, protein)
     fasta_fileh.write(fasta_str)
+    gi_header = guess_defline_prefix(protein.gi) + protein.gi
+    gi_fasta_str = _protein_to_fasta(gi_header, protein)
+    gi_fasta_fileh.write(gi_fasta_str)
     map_str = _protein_to_mapping(jelesko_id, protein)
     map_fileh.write(map_str)
 
@@ -416,11 +440,17 @@ def seqrequest(request):
 
     # TODO: change this to take input from user for names
     fasta_file_name = 'selections.faa'
+    gi_fasta_file_name = 'selections_gi.faa'
     fasta_file_path = os.sep.join((outfile_dir, fasta_file_name))
     full_fasta_file_path = os.sep.join(
         (full_outfile_dir, fasta_file_name)
     )
     fasta_fileh = open(full_fasta_file_path, 'w')
+    gi_fasta_file_path = os.sep.join((outfile_dir, gi_fasta_file_name))
+    full_gi_fasta_file_path = os.sep.join(
+        (full_outfile_dir, gi_fasta_file_name)
+    )
+    gi_fasta_fileh = open(full_gi_fasta_file_path, 'w')
     map_file_name = 'mapping.txt'
     map_file_path = os.sep.join((outfile_dir, map_file_name))
     full_map_file_path = os.sep.join((full_outfile_dir, map_file_name))
@@ -440,23 +470,33 @@ def seqrequest(request):
                 for i, protein in enumerate(proteins):
                     jelesko_id = _make_jelesko_id(protein, i + 1)
                     _output_to_sel_files(
-                        jelesko_id, protein, fasta_fileh, map_fileh
+                        jelesko_id,
+                        protein,
+                        fasta_fileh,
+                        gi_fasta_fileh,
+                        map_fileh
                     )
             else:
                 protein = proteins[0]
                 jelesko_id = _make_jelesko_id(protein)
                 _output_to_sel_files(
-                    jelesko_id, protein, fasta_fileh, map_fileh
+                    jelesko_id,
+                    protein,
+                    fasta_fileh,
+                    gi_fasta_fileh,
+                    map_fileh
                 )
 
     finally:
         fasta_fileh.close()
+        gi_fasta_fileh.close()
         map_fileh.close()
 
     # create an entry in the Selections table
     selection = models.SequenceSelection(
         search=search,
         sequences_file=fasta_file_path,
+        gi_sequences_file=gi_fasta_file_path,
         map_file=map_file_path,
         timestamp=timestamp,
         comment=comment
