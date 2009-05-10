@@ -1,10 +1,7 @@
-%% LyX 1.6.2 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[11pt,letterpaper,twoside,english]{article}
+\usepackage{fullpage}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{babel}
 
 \usepackage{float}
@@ -15,41 +12,29 @@
  breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
  {hyperref}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-
-
-\usepackage{fullpage}
 
 \ifx\pdfoutput\undefined
     % we are running LaTeX, not pdflatex
-    
+
 \else
     % we are running pdflatex, so convert .eps files to .pdf
-    
+
     \usepackage{epstopdf}
 \fi
 
-\author{Yizhi Cai \& Chris Lasher}
+\author{Yizhi Cai \& Chris Lasher\\
+Supervised by Dr. John Jelesko}
 \title{GBCB 5874 Final Paper: Jelesko Pathway Evolution Database}
 \date{May 6, 2009}
 
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
+\pagestyle{fancy}
 
 \lhead{GBCB 5874 Final Paper}
 \rhead{Cai \& Lasher}
 
 \begin{document}
-
-\title{GBCB 5874 Final Paper: Jelesko Pathway Evolution Database}
-
-
-\author{Yizhi Cai, Chris Larsher\\
-Supervised by Dr. John Jelesko}
-
-
-\date{2009-05-09}
-
 \maketitle
 
 \section{Introduction}
@@ -90,7 +75,7 @@ to run homology search. Users can select hits of interests to download,
 and this will link to the third major component of this project: the
 user-specified output functionality. This component takes user-selected
 gi numbers to query taxonomic information from the MySQL database
-and provides users with output files in different formats. 
+and provides users with output files in different formats.
 
 % overall pipeline figure goes here
 
@@ -121,7 +106,7 @@ and provides users with output files in different formats.
 
 \subsection{Web Interface}
 
-% Patrick   
+% Patrick
 
 
 % Describe the design rationable
@@ -140,7 +125,7 @@ substitution matrix, and the subject database to search against. Before
 sending the input sequence and parameters to run search, it is important
 to check the validity of those inputs. The validation includes non-empty
 input of sequence, non-negative value of number of hits, and so on.
-The validation increases the robustness of the entire web application. 
+The validation increases the robustness of the entire web application.
 
 Once input sequence and user-specified parameters have been validated,
 homology searches will be run in the backend. Outputs of the searches
@@ -153,7 +138,7 @@ geneus species, annotation and download date of each hit. Finally,
 all the information is integrated and render in a nice representation
 (see Figure \ref{fig:Homology-search-result}). Users can check certain
 hits they are interested in to take a closer look. We also provide
-checkall/uncheck all functionality by intergrating a java script. 
+checkall/uncheck all functionality by intergrating a java script.
 
 Once a user specifies the hits to download, he/she will be redirected
 to a download Page (see Figure \ref{fig:Users-selected-files}). The
@@ -207,7 +192,7 @@ module is used to interpret input URL requests and map them to specific
 functions in the view module. The view module is the core component
 of the whole framework: it contains a list of functions to process
 data from the data model according to the request from the URL module.
-After the data has been processed, it will be render with HTML templates. 
+After the data has been processed, it will be render with HTML templates.
 
 %
 \begin{figure}[h]
@@ -258,12 +243,12 @@ been implemented to process the output text file. The parsed output
 of BLAST and FASTA includes a gi number, e-value and bit scores of
 each hit. Then we developed scripts to query the MySQL database using
 the gi numbers. The intergrated information finally is sent to the
-Django web interface. 
+Django web interface.
 
-% Patrick 
+% Patrick
 
 
-% Compare BLAST and FASTA/Ssearch algorthms  
+% Compare BLAST and FASTA/Ssearch algorthms
 
 
 % Describe the Biopython module for BLAST
@@ -295,7 +280,7 @@ Searches are performed against the complete database, which contains
 4 million sequences. The result suggests that both FASTA and Ssearch
 are more computationally expensive than BLAST, but both obtain more
 hits than BLAST. Also, we observe that with the close computational
-time, Ssearch outperforms FASTA, especially in the case of A622. 
+time, Ssearch outperforms FASTA, especially in the case of A622.
 
 %
 \begin{figure}[H]
@@ -317,16 +302,16 @@ we have completed the project by accomplishing these tasks:
 \item We have fetched more than 4 million sequences from NCBI, JGI and other
 sources.
 \item We have developed custom parser for interpreting FASTA outputs, and
-leveraged BioPython for data integration. 
-\item We have created MySQL, BLAST and FASTA databases for data storage. 
+leveraged BioPython for data integration.
+\item We have created MySQL, BLAST and FASTA databases for data storage.
 \item We have built web interface for running BLAST, FASTA and Ssearch homology
-searches. 
-\item We also have implemented user-specified output functionality. 
+searches.
+\item We also have implemented user-specified output functionality.
 \end{enumerate}
 We envisage and would like to suggest a few future work for the continuation
 of the project. First, additional sequence data should be retrieved
 from NCBI. Second, we need to incorporate sequences from JGI and other
-sources. Last, it will be helpful to save web searches for later reviewing. 
+sources. Last, it will be helpful to save web searches for later reviewing.
 
 
 \section{Acknowledgements}
@@ -334,7 +319,7 @@ sources. Last, it will be helpful to save web searches for later reviewing.
 YC and CL would like to thank Dr.John Jelesko for overseeing the project
 and giving valuable supervision, Dr's David Bevan and Alexey Onufriev
 for teaching this class, and Alexander James Weisberg for assistance
-on Linux administration. 
+on Linux administration.
 
 \bibliographystyle{IEEEtran}
 \bibliography{Bio}
