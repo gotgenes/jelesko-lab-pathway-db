@@ -41,6 +41,7 @@ MAPPING_HEADER = "Jelesko ID\tGI\tGenus species\n"
 
 FASTA_PROG = 'fasta35'
 SSEARCH_PROG = 'ssearch35'
+BLAST_PROG = 'blastall'
 
 class BlastForm(forms.Form):
 
@@ -250,6 +251,111 @@ def _run_fasta_program(
                 {'form': form, 'submit_to': submit_to}
         )
 
+def _run_blast_program(
+        request,
+        cmd,
+        template_path,
+        view_name
+    ):
+    """
+    Runs a BLAST type program (e.g., blastall)
+
+    :Parameters:
+    - `request`: a Django HTTPRequest type object
+    - `cmd`: a list containing the initial command (e.g., ['fasta35', '-q'])
+    - `template_path`: path to the template for the result
+    """
+
+    # Get the URL to submit to
+    submit_to = reverse(view_name)
+
+    # the form was submitted
+    if request.method == 'POST':
+        timestamp = datetime.datetime.now()
+        outfile_dir = timestamp.strftime(models.SEARCH_RESULTS_DIR)
+        full_outfile_dir = os.sep.join(
+            (OUTPUT_DIR, outfile_dir)
+        )
+        os.mkdir(full_outfile_dir)
+
+        query_filename = os.sep.join((full_outfile_dir, 'query.faa'))
+        query_file = open(query_filename, 'w')
+
+        f = BlastForm(request.POST)
+        if not f.is_valid():
+            print "Not valid."
+            return render_to_response(
+                    template_path,
+                    {'form': f, 'res': '', 'submit_to': submit_to}
+            )
+
+        query_file.write(f.cleaned_data['seq'])
+        query_file.close()
+
+        # start setting up the command
+        if f.cleaned_data['evalue']:
+            E = f.cleaned_data['evalue']
+            cmd.extend(('-e', str(E)))
+        db = f.cleaned_data['database_option']
+        subject = BLAST_DB_PATHS[db]
+
+        # TODO: change this to take user-defined name later
+        outfile_name = '%s_results.txt' % cmd[0]
+        outfile_path = os.sep.join((outfile_dir, outfile_name))
+        full_outfile_path = os.sep.join(
+            (full_outfile_dir, outfile_name)
+        )
+
+        cmd.extend(
+        ('-i', query_filename, '-d', subject, '-o', full_outfile_path)
+        )
+
+        start = datetime.datetime.now()
+        subprocess.check_call(cmd)
+        end = datetime.datetime.now()
+        duration = _timedelta_to_minutes(end - start)
+
+        fasta_output = open(full_outfile_path)
+        try:
+            res = parsing_fasta.parsing_blast(fasta_output)
+            print res
+        except TypeError:
+            res = []
+
+        fasta_output.close()
+        os.remove(query_filename)
+
+        search_result = models.Search(
+            program=cmd[0],
+            results_file=outfile_path,
+            timestamp=timestamp
+        )
+        search_result.save()
+
+        resdata = {
+            'records': res,
+            'search_id': search_result.id
+        }
+
+        return render_to_response(
+                template_path,
+                {
+                    'form': f,
+                    'submit_to': submit_to,
+                    'resdata': resdata,
+                    'duration': duration,
+                }
+        )
+
+    # user has not sent a POST request; present user with blank form
+    else:
+        form = FastaForm()
+        return render_to_response(
+                template_path,
+                {'form': form, 'submit_to': submit_to}
+        )
+                                     
+
 
 def fasta(request):
     cmd = [FASTA_PROG, '-q']
@@ -263,55 +369,15 @@ def ssearch(request):
     return _run_fasta_program(request, cmd, template_path, 'ssearch',
             use_ktup=False)
 
-
 def blast(request):
-    """docstring for blast"""
-
-    my_blast_dir = SEQUENCE_DATA_DIR
-    my_blast_file = SEQUENCE_DATA_DIR + '/seq.fasta'
-    sqfile = open(my_blast_file, 'w')
-    my_blast_db = SEQUENCE_DATA_DIR + '/db.fasta'
-    if request.method == 'GET':
-        f = BlastForm(request.GET)
-        if not f.is_valid():
-            return render_to_response('blast_fasta/blast.html', {'form'
-                    : f, 'res': ''})  # do sth else
-        else:
-            sqfile.write(f.cleaned_data['seq'])
-            sqfile.close()
-            if not f.cleaned_data['evalue']:  # does not work
-                e = 1
-            else:
-                e = f.cleaned_data['evalue']
-
-            my_blast_exe = '/usr/bin/blastall'
-
-            (result_handle, error_handle) = \
-                NCBIStandalone.blastall(blastcmd=my_blast_exe,
-                    program='blastp', database=my_blast_db,
-                    infile=my_blast_file, expectation=e)
-            blast_records = NCBIXML.parse(result_handle)
-            res = []
-            for br in blast_records:
-                for a in br.alignments:
-                    for hsp in a.hsps:
-                        title_desc = a.title.split('|')
-                        gi_number = title_desc[-1]
-                        b = models.Protein.objects.get(gi=gi_number)
-                        accession = b.accession.strip()
-                        genus_species = b.genus_species.strip()
-                        annotation = b.annotation.strip()
-                        download_date = b.download_date
-                        res.append((
-                            gi_number,
-                            hsp.expect,
-                            accession,
-                            genus_species,
-                            annotation,
-                            download_date,
-                            ))
-    return render_to_response('blast_fasta/blast2.html', {'form': f,
-                              'res': res})
+	"""docstring for blast2"""
+	cmd = [BLAST_PROG]
+	program = 'blastp'
+	cmd.extend(
+	('-p', program)
+	)
+	template_path = 'blast_fasta/blast.html'
+	return _run_blast_program(request, cmd, template_path, 'blast') 
 
 
 def _make_jelesko_id(protein, suffix_no=None):
