@@ -26,16 +26,21 @@ OUTPUT_DIR = settings.MEDIA_ROOT.rstrip('/')
 BLAST_DBS = [
         # Example:
         #('completedb', 'Complete DB'),
+        ('completedb', 'Complete DB'),
+        ('toydb', 'Toy DB')
 ]
 
 # Specify paths to the actual databases
 BLAST_DB_PATHS = {
         # Example:
         #'completedb': '/var/local/blastdbs/complete.db',
+        'completedb':
+        '/home/chris/files/downloads/sequences/dbs/jeleskodb.faa',
+        'toydb': '/home/chris/files/downloads/sequences/dbs/test.faa',
 }
 
 # This should be one of the above. e.g., 'Complete DB'
-INITIAL_DB_CHOICE = ''
+INITIAL_DB_CHOICE = 'toydb'
 
 MAPPING_HEADER = "Jelesko ID\tGI\tGenus species\n"
 
@@ -370,7 +375,7 @@ def ssearch(request):
             use_ktup=False)
 
 def blast(request):
-	"""docstring for blast2"""
+	"""docstring for blast"""
 	cmd = [BLAST_PROG]
 	program = 'blastp'
 	cmd.extend(
@@ -391,17 +396,6 @@ def _make_jelesko_id(protein, suffix_no=None):
 
     """
 
-<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/views.py
-<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/views.py
-    try:
-        genus, species = protein.genus_species.split()[:2]
-    except:
-        genus, species = ('Unknown', 'unknown')
-    genus = genus[:3]
-    species = species[:3]
-=======
-=======
->>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/views.py
     split_gs = protein.genus_species.split()
     genus_species_code = [item[:3] for item in split_gs[:2]]
     try:
@@ -409,10 +403,6 @@ def _make_jelesko_id(protein, suffix_no=None):
             genus_species_code.extend(split_gs[2:])
     except IndexError:
         pass
-<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/views.py
->>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/views.py
-=======
->>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/views.py
     if suffix_no is not None:
         genus_species_code.append(str(suffix_no))
     jelesko_id = '_'.join(genus_species_code)

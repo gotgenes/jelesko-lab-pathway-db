@@ -1,16 +1,11 @@
 {% extends "blast_fasta/fasta.html" %}
 
-<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
-<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
-{% block title %}BLAST search{% endblock %} 
-=======
+
 {% block title %}BLAST search{% endblock %}
->>>>>>> 5a6e19e6750f713beb0a0b7ee7162f7702f328a5:Jelesko_Django/jelesko_web/blast_fasta/blast.html
 
 {% block query_form %}
 <label><b>Your sequence in Fasta format:</b></label><br/>
 {{form.seq}}<br/>
-<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
 <label><b>Set e-value cutoff:</b></label>{{form.evalue}}<label><br/>
 <label><b>Target database: </b></label><br/>
 {{form.database_option}}<br/>
@@ -18,100 +13,3 @@
 {% endblock %}
 
 {% block program_name %}BLAST search{% endblock %}
-=======
-      function checkAll(field)
-      {
-        for (i = 0; i < field.length; i++)
-          field[i].checked = true ;
-      }
-
-      function uncheckAll(field)
-      {
-        for (i = 0; i < field.length; i++)
-          field[i].checked = false ;
-      }
-      //  -->
-    </script>
-</head>
-<body>
-
-
-<h1 style="text-align:center">BLAST search</h1>
-<hr/>
-
-<form action="{{ submit_to }}" method="POST">
-    {% block query_form %}
-	<label><b>Your sequence in Fasta format:</b></label><br/>
-	{{form.seq}}<br/>
-	<label><b>Set e-value cutoff:</b></label><br/>
-	{{form.evalue}}<br/>
-	<label><b>Target database: </b></label><br/>
-	{{form.database_option}}<br/>
-	<input type="submit" name="submit_search" value="Search">
-    {% endblock %}
-</form>
-
-<!-- Below shows the search result-->
-{% block results %}
-{% if form.cleaned_data.seq %}
-  {% if resdata.records %}
-  <h3 id="duration">This run took {{ duration }} minutes.</h3>
-
-  <form name="selectionform" action="../seqrequest/" id="selectionform" method="post">
-  <input type="hidden" name="search_id" value="{{ resdata.search_id }}" />
-  <table cellspacing="5" border="1">
-  <thead>
-    <tr> 
-      <th>
-        <input type="button" name="check_all" value="Check all"
-        onClick="checkAll(document.selectionform.gis)">
-        <input type="button" name="uncheck_all" value="Uncheck all"
-        onClick="uncheckAll(document.selectionform.gis)">
-      </th>
-      <th>GI</th>
-      <th>Bit Score</th>
-      <th>E-Value</th>
-      <th>Accession</th>
-      <th>Genus_species</th>
-      <th>Annotation</th>
-      <th>Download Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for record in resdata.records %}
-    <tr>
-      <td><input type="checkbox" name="gis" value="{{ record.gi_number }}" /></td>
-      <td><a href="http://www.ncbi.nlm.nih.gov/protein/{{record.gi_number}}" target="_blank">{{record.gi_number}} </a></td>
-      <td>{{record.bit}}</td>
-      <td>{{record.e_value}}</td>
-      <td>{{record.accession}}</td>
-      <td>{{record.genus_species}}</td>
-      <td>{{record.annotation}}</td>
-      <td>{{record.download_date}}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-  </table>
-  <p><input type=submit value="Submit"></p>
-  </form>
-  {% else %}
-  <h3>No hits found.</h3>
-  <p>Try adjusting your parameters.</p>
-  {% endif %} 
-{% endif %}
-=======
-<label><b>Set e-value cutoff:</b></label><br/>
-{{form.evalue}}<br/>
-<label><b>Target database: </b></label><br/>
-{{form.database_option}}<br/>
-<input type="submit" name="submit_search" value="Search">
->>>>>>> 5a6e19e6750f713beb0a0b7ee7162f7702f328a5:Jelesko_Django/jelesko_web/blast_fasta/blast.html
-{% endblock %}
-
-<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
-</body>
-</html>
->>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/blast.html
-=======
-{% block program_name %}BLAST search{% endblock %}
->>>>>>> 5a6e19e6750f713beb0a0b7ee7162f7702f328a5:Jelesko_Django/jelesko_web/blast_fasta/blast.html
