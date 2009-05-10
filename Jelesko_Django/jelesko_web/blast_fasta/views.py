@@ -307,7 +307,7 @@ def _run_blast_program(
         )
 
         cmd.extend(
-            ('-i', query_filename, '-d', subject, '-o', full_outfile_path)
+        ('-i', query_filename, '-d', subject, '-o', full_outfile_path)
         )
 
         start = datetime.datetime.now()
@@ -317,7 +317,8 @@ def _run_blast_program(
 
         fasta_output = open(full_outfile_path)
         try:
-            res = parsing_fasta.parsing_fasta(fasta_output)
+            res = parsing_fasta.parsing_blast(fasta_output)
+            print res
         except TypeError:
             res = []
 
@@ -353,6 +354,7 @@ def _run_blast_program(
                 template_path,
                 {'form': form, 'submit_to': submit_to}
         )
+                                     
 
 
 def fasta(request):
@@ -367,61 +369,15 @@ def ssearch(request):
     return _run_fasta_program(request, cmd, template_path, 'ssearch',
             use_ktup=False)
 
-def blast2(request):
-	"""docstring for blast2"""
-	cmd = [BLAST_PROG, '-p blastp']
-	template_path = 'blast_fasta/blast2.html'
-	return _run_blast_program(request, cmd, template_path, 'blast')
-
-
 def blast(request):
-    """docstring for blast"""
-
-    my_blast_dir = SEQUENCE_DATA_DIR
-    my_blast_file = SEQUENCE_DATA_DIR + '/seq.fasta'
-    sqfile = open(my_blast_file, 'w')
-    my_blast_db = SEQUENCE_DATA_DIR + '/db.fasta'
-    if request.method == 'GET':
-        f = BlastForm(request.GET)
-        if not f.is_valid():
-            return render_to_response('blast_fasta/blast.html', {'form'
-                    : f, 'res': ''})  # do sth else
-        else:
-            sqfile.write(f.cleaned_data['seq'])
-            sqfile.close()
-            if not f.cleaned_data['evalue']:  # does not work
-                e = 1
-            else:
-                e = f.cleaned_data['evalue']
-
-            my_blast_exe = '/usr/bin/blastall'
-
-            (result_handle, error_handle) = \
-                NCBIStandalone.blastall(blastcmd=my_blast_exe,
-                    program='blastp', database=my_blast_db,
-                    infile=my_blast_file, expectation=e)
-            blast_records = NCBIXML.parse(result_handle)
-            res = []
-            for br in blast_records:
-                for a in br.alignments:
-                    for hsp in a.hsps:
-                        title_desc = a.title.split('|')
-                        gi_number = title_desc[-1]
-                        b = models.Protein.objects.get(gi=gi_number)
-                        accession = b.accession.strip()
-                        genus_species = b.genus_species.strip()
-                        annotation = b.annotation.strip()
-                        download_date = b.download_date
-                        res.append((
-                            gi_number,
-                            hsp.expect,
-                            accession,
-                            genus_species,
-                            annotation,
-                            download_date,
-                            ))
-    return render_to_response('blast_fasta/blast2.html', {'form': f,
-                              'res': res})
+	"""docstring for blast2"""
+	cmd = [BLAST_PROG]
+	program = 'blastp'
+	cmd.extend(
+	('-p', program)
+	)
+	template_path = 'blast_fasta/blast.html'
+	return _run_blast_program(request, cmd, template_path, 'blast') 
 
 
 def _make_jelesko_id(protein, suffix_no=None):
@@ -436,6 +392,7 @@ def _make_jelesko_id(protein, suffix_no=None):
     """
 
 <<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/views.py
+<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/views.py
     try:
         genus, species = protein.genus_species.split()[:2]
     except:
@@ -443,6 +400,8 @@ def _make_jelesko_id(protein, suffix_no=None):
     genus = genus[:3]
     species = species[:3]
 =======
+=======
+>>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/views.py
     split_gs = protein.genus_species.split()
     genus_species_code = [item[:3] for item in split_gs[:2]]
     try:
@@ -450,6 +409,9 @@ def _make_jelesko_id(protein, suffix_no=None):
             genus_species_code.extend(split_gs[2:])
     except IndexError:
         pass
+<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/views.py
+>>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/views.py
+=======
 >>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/views.py
     if suffix_no is not None:
         genus_species_code.append(str(suffix_no))
