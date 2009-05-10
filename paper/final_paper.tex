@@ -1,7 +1,5 @@
 \documentclass[11pt,letterpaper,twoside,english]{article}
 \usepackage{fullpage}
-\usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
 \usepackage{babel}
 
 \usepackage{float}
@@ -39,27 +37,58 @@ Supervised by Dr. John Jelesko}
 
 \section{Introduction}
 
-%
-\begin{figure}[btph]
-\begin{centering}
-\includegraphics[width=.65\linewidth]{figures/pyridine_alkaloid_biosynthesis}
-\par\end{centering}
-
-\caption{Nicotine pathway}
-
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[width=0.65\linewidth]{figures/Phylogenetic_tree_hgt}
+    \end{center}
+    \caption{A widely recognized representation of the phylogenetic tree
+    across all known domains of life. The first split from the last common
+    ancestor gave rise to the domain of modern day bacteria. The next split
+    came between archaea and eukaryotes. Most phylogenetic analyses for genes
+    conserved across domains produce similar trees as this one. Two notable
+    exception to the evolutionary history of genes occured as mass horizontal
+    gene transfer events in the form of the ancestral origins of the
+    mitochondrion, arising from a symbiosis between ancestral
+    $\alpha$-proteobacteria and the progenitor to modern eukaryotes
+    (illustrated as the horizontal black arrow), and the origins of the
+    chloroplast and plant plastids, arising from a symbiosis between ancestral
+    cyanobacteria and the progenitor to plants (illustrated as the horizontal
+    cyan arrow).}
 \end{figure}
 
-
-%
-\begin{figure}[h]
-\begin{centering}
-\includegraphics[width=1\linewidth]{figures/Tree_of_life}
-\par\end{centering}
-
-\caption{Tree of life}
-
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{figures/pyridine_alkaloid_biosynthesis}
+    \end{center}
+    \caption{The nicotine biosynthetic pathway in tobacco consists of two
+    sub-pathways, each representing a portion of the two rings of the nicotine
+    molecule. The Jelesko lab analyzed each of the known enzymes to determine
+    its evolutionary history. The result is a mosaic of putative most likely
+    origins, illustrated in colors corresponding to closest known homologs as
+    determined by rigorous phylogenetic analysis.}
 \end{figure}
 
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[width=0.3\linewidth]{figures/ODC_figure}
+        \includegraphics[width=0.3\linewidth]{figures/ADC_figure}
+        \includegraphics[width=0.3\linewidth]{figures/QPT_figure}
+    \end{center}
+    \caption{Examples of three different phylogenetic histories for enzymes
+    responsible for nicotine biosynthesis. The tree for ornithine
+    decarboxylase (ODC, left) illustrates phylogeny to be expected for an
+    evolutionary history consistent with that widely accepted for the tree of
+    life--the plant sequences (dark green) are most closely associated with
+    other eukaryotes (fungi in blue, and metazoans in red). The tree for
+    arginine decarboxylase (ADC, center) is consistent with accepted
+    horizontal gene transfer that occurred during the incorporation of
+    ancestral cyanobacterial (cyan) genetic material that gave rise to the
+    modern day chloroplast. The tree for quinolate phosphoribosyl transferase
+    (QPT, right) illustrates a much more complex evolutionary history, which
+    indicates its most likely origins were from a horizontal gene transfer
+    event from CFB bacteria (orange).}
+    \label{fig:phylo_histories}
+\end{figure}
 
 
 \section{Methods}
@@ -313,7 +342,7 @@ sources. Last, it will be helpful to save web searches for later reviewing.
 
 Y.C. created MySQL and BLAST2 databases for data storage, develped
 web interface for running BLAST, FASTA and SSearch, implemented parsers
-for parsing homology search results, wrote part of the final paper. 
+for parsing homology search results, wrote part of the final paper.
 
 
 \section{Acknowledgements}
