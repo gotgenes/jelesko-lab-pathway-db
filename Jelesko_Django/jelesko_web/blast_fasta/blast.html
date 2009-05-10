@@ -1,11 +1,16 @@
 {% extends "blast_fasta/fasta.html" %}
 
 <<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
+<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
 {% block title %}BLAST search{% endblock %} 
+=======
+{% block title %}BLAST search{% endblock %}
+>>>>>>> 5a6e19e6750f713beb0a0b7ee7162f7702f328a5:Jelesko_Django/jelesko_web/blast_fasta/blast.html
 
 {% block query_form %}
 <label><b>Your sequence in Fasta format:</b></label><br/>
 {{form.seq}}<br/>
+<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
 <label><b>Set e-value cutoff:</b></label>{{form.evalue}}<label><br/>
 <label><b>Target database: </b></label><br/>
 {{form.database_option}}<br/>
@@ -94,12 +99,19 @@
   <p>Try adjusting your parameters.</p>
   {% endif %} 
 {% endif %}
+=======
+<label><b>Set e-value cutoff:</b></label><br/>
+{{form.evalue}}<br/>
+<label><b>Target database: </b></label><br/>
+{{form.database_option}}<br/>
+<input type="submit" name="submit_search" value="Search">
+>>>>>>> 5a6e19e6750f713beb0a0b7ee7162f7702f328a5:Jelesko_Django/jelesko_web/blast_fasta/blast.html
 {% endblock %}
-<p>
-Questions and comments:
-<a href="mailto:jelesko@vt.edu?subject=Jelesko%20Search">Send Email</a>
-</p>
 
+<<<<<<< HEAD:Jelesko_Django/jelesko_web/blast_fasta/blast.html
 </body>
 </html>
 >>>>>>> chris/master:Jelesko_Django/jelesko_web/blast_fasta/blast.html
+=======
+{% block program_name %}BLAST search{% endblock %}
+>>>>>>> 5a6e19e6750f713beb0a0b7ee7162f7702f328a5:Jelesko_Django/jelesko_web/blast_fasta/blast.html
