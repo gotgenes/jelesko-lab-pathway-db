@@ -1,77 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html lang="en">
-<head>
-    <title>Blast search</title>
-    <script language="JavaScript">
-      <!-- 	
-      // by Nannette Thacker
-      // http://www.shiningstar.net
-      // This script checks and unchecks boxes on a form
-      // Checks and unchecks unlimited number in the group...
-      // Pass the Checkbox group name...
-      // call buttons as so:
-      // <input type=button name="CheckAll"   value="Check All"
-      //onClick="checkAll(document.myform.list)">
-      // <input type=button name="UnCheckAll" value="Uncheck All"
-      //onClick="uncheckAll(document.myform.list)">
+{% extends "blast_fasta/fasta.html" %}
 
-      function checkAll(field)
-      {
-        for (i = 0; i < field.length; i++)
-          field[i].checked = true ;
-      }
+{% block title %}BLAST search{% endblock %} 
 
-      function uncheckAll(field)
-      {
-        for (i = 0; i < field.length; i++)
-          field[i].checked = false ;
-      }
-      //  -->
-    </script>
-</head>
-<body>
+{% block query_form %}
+<label><b>Your sequence in Fasta format:</b></label><br/>
+{{form.seq}}<br/>
+<label><b>Set e-value cutoff:</b></label>{{form.evalue}}<label><br/>
+<label><b>Target database: </b></label><br/>
+{{form.database_option}}<br/>
+<input type="submit" name="submit_search" value="Search">
+{% endblock %}
 
-
-<h1 style="text-align:center">BLAST search</h1>
-<hr/>
-
-<form action="" method="post">
-	<label><b>Your sequence in Fasta format:</b></label><br/>
-	{{form.seq}}<br/>
-
-	<label><b>Set e-value cutoff:</b></label>{{form.evalue}}<label><br/>
-	<label><b>Target database: </b></label><br/>
-	{{form.database_option}}<br/>
-	<input type="submit" name="submit_search" value="Search">
-</form>
-
-<!-- Below shows the search result-->
-{% if res %} 
-<h3 id="it_takes">It takes {{duration}} minutes</h3> 
-<table cellspacing="5" border="1">
-<thead>
-	<tr><th>Check</th><th>GI</th><th>E-value</th><th>Accession</th><th>Genus_species</th><th>Annotation</th><th>Download_date</th></tr>
-</thead>
-<tbody>
-        {% for record in res %}
-        <tr>                   
-	  <td><INPUT TYPE = CHECKBOX Name="Entry"}></td>
-	          {% for i in record %}
-		  <td>{{i}}</td>
-	          {% endfor %}
-        </tr>
-        {% endfor %}
-</tbody>
-</table>
-{% endif %} 
-
-<p>
-Questions and comments:
-<a href="mailto:jelesko@vt.edu?subject=Hello%20again">
-Send Emails</a>
-</p>
-
-</body>
-</html> 
-
-
+{% block program_name %}BLAST search{% endblock %}
