@@ -35,7 +35,13 @@ Supervised by Dr. John Jelesko}
 \begin{document}
 \maketitle
 
-\section{Introduction}
+\section{Introduction (Chris Lasher)}
+
+Through the process of evolution, life has taken diverse forms, made possible
+through a concomitantly diverse range of metabolic capabilities. When examined
+across evolutionary time, the vast majority of biological processes display
+consistent histories that follow what biologists casually refer to as the
+``tree of life''. (See Figure \ref{fig:tree_of_life}.)
 
 \begin{figure}[htbp]
     \begin{center}
@@ -53,7 +59,8 @@ Supervised by Dr. John Jelesko}
     (illustrated as the horizontal black arrow), and the origins of the
     chloroplast and plant plastids, arising from a symbiosis between ancestral
     cyanobacteria and the progenitor to plants (illustrated as the horizontal
-    cyan arrow).}
+    cyan arrow). \textit{Image modified from public domain work.}}
+    \label{fig:tree_of_life}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -65,7 +72,9 @@ Supervised by Dr. John Jelesko}
     molecule. The Jelesko lab analyzed each of the known enzymes to determine
     its evolutionary history. The result is a mosaic of putative most likely
     origins, illustrated in colors corresponding to closest known homologs as
-    determined by rigorous phylogenetic analysis.}
+    determined by rigorous phylogenetic analysis. \textit{Image courtesy of
+    Prof. John Jelesko.}}
+    \label{fig:nicotine}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -86,12 +95,13 @@ Supervised by Dr. John Jelesko}
     modern day chloroplast. The tree for quinolate phosphoribosyl transferase
     (QPT, right) illustrates a much more complex evolutionary history, which
     indicates its most likely origins were from a horizontal gene transfer
-    event from CFB bacteria (orange).}
+    event from CFB bacteria (orange). \textit{Image courtesy of Prof. John
+    Jelesko.}}
     \label{fig:phylo_histories}
 \end{figure}
 
 
-\section{Methods}
+\section{Methods (Yizhi Cai)}
 
 Figure \ref{fig:The-workflow-of} shows the overall workflow of this
 project. The whole project is database driven and composed of three
@@ -116,28 +126,11 @@ and provides users with output files in different formats.
 \end{figure}
 
 
-\subsection{\label{sub:Data-Retrieval}Data Retrieval}
+\subsection{\label{sub:Data-Retrieval}Data Retrieval (Chris Lasher)}
 
-% Chris
+\subsection{Data Integration (Chris Lasher)}
 
-
-
-\subsection{Data Integration}
-
-% Chris
-
-
-
-\subsection{Web Interface}
-
-% Patrick
-
-
-% Describe the design rationable
-
-
-% Describe data models
-
+\subsection{Web Interface (Yizhi Cai)}
 
 Figure \ref{fig:Web-interface} outlines the web interface for running
 FASTA search. There are three sections of this page. On the top of
@@ -230,7 +223,8 @@ After the data has been processed, it will be render with HTML templates.
 
 
 
-\subsubsection{\label{sub:Integration-with-FASTA}Integration with FASTA and BLAST}
+\subsubsection{\label{sub:Integration-with-FASTA}Integration with FASTA and
+BLAST (Yizhi Cai)}
 
 %
 \begin{figure}[H]
@@ -282,19 +276,10 @@ Django web interface.
 
 
 
-\subsubsection{\label{sub:Output-Generation}Output Generation}
-
-% Patrick
+\subsubsection{\label{sub:Output-Generation}Output Generation (Chris Lasher)}
 
 
-
-\section{Results}
-
-% ? Not sure about this yet. Would be nice if we could prove a use case.
-
-
-% Compare the number of hits in these regions: 0 ~ 10^-20, 10^-20 ~ 10^-2
-
+\section{Results (Yizhi Cai)}
 
 In order to illustrate the application of this project, we used three
 protein sequences (namely A622, NtNUP1 and NtMPO1) to benchmark three
@@ -318,7 +303,7 @@ time, Ssearch outperforms FASTA, especially in the case of A622.
 
 
 
-\section{Summaries and future workflow}
+\section{Summaries and future work}
 
 We began this project from scratch, and by the end of the semester
 we have completed the project by accomplishing these tasks:
@@ -340,7 +325,7 @@ sources. Last, it will be helpful to save web searches for later reviewing.
 
 \section{Author contributions}
 
-Y.C. created MySQL and BLAST2 databases for data storage, develped
+Yizhi Cai created MySQL and BLAST2 databases for data storage, develped
 web interface for running BLAST, FASTA and SSearch, implemented parsers
 for parsing homology search results, wrote part of the final paper.
 
