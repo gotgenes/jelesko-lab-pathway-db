@@ -43,6 +43,24 @@ across evolutionary time, the vast majority of biological processes display
 consistent histories that follow what biologists casually refer to as the
 ``tree of life''. (See Figure \ref{fig:tree_of_life}.)
 
+Two very notable exceptions to the tree of life came about through two massive
+horizontal gene transfer events that gave rise, first, to mitochondria, and
+second, to plastids (e.g., chloroplasts). The mechanism for these phenomena is
+described by the endosymbiotic hypothesis. Summarized briefly, ancestral
+bacteria most closely related to the $\alpha$-proteobacteria engaged in a
+tight endosymbiotic relationship with the progenitor to modern day eukaryotes,
+living inside the primordial eukaryotic cells. Over time the two became
+interdependent, and a large amount of the ancient $\alpha$-proteobacterial
+genome was lost or transfered over to the primordial eukaryotic cells' genomes
+in very large portions, eventually giving rise to what we now know as modern
+mitochondria. Similar events are believed to have led to the creation of
+plastids in plants. Keeling and Palmer \cite{keeling_horizontal_2008} provide
+an excellent recent review on this topic.
+
+While the origins of mitochondria and plastids provide the most grand examples
+of horizontal gene transfer between domains of the tree of life, smaller
+events do occur.
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=0.65\linewidth]{figures/Phylogenetic_tree_hgt}
@@ -73,7 +91,7 @@ consistent histories that follow what biologists casually refer to as the
     its evolutionary history. The result is a mosaic of putative most likely
     origins, illustrated in colors corresponding to closest known homologs as
     determined by rigorous phylogenetic analysis. \textit{Image courtesy of
-    Prof. John Jelesko.}}
+    Prof.~John Jelesko.}}
     \label{fig:nicotine}
 \end{figure}
 
@@ -95,7 +113,7 @@ consistent histories that follow what biologists casually refer to as the
     modern day chloroplast. The tree for quinolate phosphoribosyl transferase
     (QPT, right) illustrates a much more complex evolutionary history, which
     indicates its most likely origins were from a horizontal gene transfer
-    event from CFB bacteria (orange). \textit{Image courtesy of Prof. John
+    event from CFB bacteria (orange). \textit{Image courtesy of Prof.~John
     Jelesko.}}
     \label{fig:phylo_histories}
 \end{figure}
@@ -252,7 +270,8 @@ text file containing 4 million sequence data. This text file has been
 imported as a table in MySQL database, and also been converted into
 BLAST2 database format using formatdb command. Both BLAST and FASTA
 search programs recognize the BLAST2 format. For running BLAST search,
-we leveraged to use the BLAST module of Biopython \citet{Cock:2009p22197},
+we leveraged to use the BLAST module of Biopython
+\citet{cock_biopython:_2009},
 and also used the built-in parse to process the output XML files.
 Since there is no available modules for running FASTA and parsing
 its output, we decided to use system call to run FASTA program and
@@ -262,19 +281,6 @@ of BLAST and FASTA includes a gi number, e-value and bit scores of
 each hit. Then we developed scripts to query the MySQL database using
 the gi numbers. The intergrated information finally is sent to the
 Django web interface.
-
-% Patrick
-
-
-% Compare BLAST and FASTA/Ssearch algorthms
-
-
-% Describe the Biopython module for BLAST
-
-
-% Describe the customized parser for FASTA and SSearch
-
-
 
 \subsubsection{\label{sub:Output-Generation}Output Generation (Chris Lasher)}
 
@@ -337,7 +343,7 @@ and giving valuable supervision, Dr's David Bevan and Alexey Onufriev
 for teaching this class, and Alexander James Weisberg for assistance
 on Linux administration.
 
-\bibliographystyle{IEEEtran}
-\bibliography{Bio}
+\bibliographystyle{naturemag}
+\bibliography{gbcbpaper}
 
 \end{document}
