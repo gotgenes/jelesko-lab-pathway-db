@@ -21,9 +21,9 @@
 \fi
 
 \author{Yizhi Cai \& Chris Lasher\\
-Supervised by Dr. John Jelesko}
+Supervised by Prof.~John Jelesko}
 \title{GBCB 5874 Final Paper: Jelesko Pathway Evolution Database}
-\date{May 6, 2009}
+\date{May 11, 2009}
 
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
@@ -37,29 +37,15 @@ Supervised by Dr. John Jelesko}
 
 \section{Introduction (Chris Lasher)}
 
+\textit{Disclaimer: Much of the research described in the motivation behind
+this work is pending publication. Please exercise discretion in discussing
+them with colleagues.}
+
 Through the process of evolution, life has taken diverse forms, made possible
 through a concomitantly diverse range of metabolic capabilities. When examined
 across evolutionary time, the vast majority of biological processes display
 consistent histories that follow what biologists casually refer to as the
 ``tree of life''. (See Figure \ref{fig:tree_of_life}.)
-
-Two very notable exceptions to the tree of life came about through two massive
-horizontal gene transfer events that gave rise, first, to mitochondria, and
-second, to plastids (e.g., chloroplasts). The mechanism for these phenomena is
-described by the endosymbiotic hypothesis. Summarized briefly, ancestral
-bacteria most closely related to the $\alpha$-proteobacteria engaged in a
-tight endosymbiotic relationship with the progenitor to modern day eukaryotes,
-living inside the primordial eukaryotic cells. Over time the two became
-interdependent, and a large amount of the ancient $\alpha$-proteobacterial
-genome was lost or transfered over to the primordial eukaryotic cells' genomes
-in very large portions, eventually giving rise to what we now know as modern
-mitochondria. Similar events are believed to have led to the creation of
-plastids in plants. Keeling and Palmer \cite{keeling_horizontal_2008} provide
-an excellent recent review on this topic.
-
-While the origins of mitochondria and plastids provide the most grand examples
-of horizontal gene transfer between domains of the tree of life, smaller
-events do occur.
 
 \begin{figure}[htbp]
     \begin{center}
@@ -81,24 +67,36 @@ events do occur.
     \label{fig:tree_of_life}
 \end{figure}
 
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[width=.6\linewidth]{figures/pyridine_alkaloid_biosynthesis}
-    \end{center}
-    \caption{The nicotine biosynthetic pathway in tobacco consists of two
-    sub-pathways, each representing a portion of the two rings of the nicotine
-    molecule. The Jelesko lab analyzed each of the known enzymes to determine
-    its evolutionary history. The result is a mosaic of putative most likely
-    origins, illustrated in colors corresponding to closest known homologs as
-    determined by rigorous phylogenetic analysis. \textit{Image courtesy of
-    Prof.~John Jelesko.}}
-    \label{fig:nicotine}
-\end{figure}
+Two very notable exceptions to the tree of life came about through two massive
+horizontal gene transfer events that gave rise, first, to mitochondria, and
+second, to plastids (e.g., chloroplasts). The mechanism for these phenomena is
+described by the endosymbiotic hypothesis. Summarized briefly, ancestral
+bacteria most closely related to the $\alpha$-proteobacteria engaged in a
+tight endosymbiotic relationship with the progenitor to modern day eukaryotes,
+living inside the primordial eukaryotic cells. Over time the two became
+interdependent, and a large amount of the ancient $\alpha$-proteobacterial
+genome was lost or transfered over to the primordial eukaryotic cells' genomes
+in very large portions, eventually giving rise to what we now know as modern
+mitochondria. Similar events are believed to have led to the creation of
+plastids in plants. Keeling and Palmer \cite{keeling_horizontal_2008} provide
+an excellent recent review on this topic.
 
-\begin{figure}[htbp]
+While the origins of mitochondria and plastids provide the most grand examples
+of horizontal gene transfer between domains of the tree of life, smaller
+events do occur, possibly introducing additional metabolic capabilities to the
+receiving host. For recently involved eukaryotes, there is a great gap between
+metabolic capabilities; fungi and plants possess fairly broad biochemical
+repertoires, while metazoans (animals) have comparatively narrower abilities.
+The exact reasons for this divide are still the subject of active research.
+While gene loss certainly plays a role, it's becoming increasingly apparent
+that introduction of genes via horizontal gene transfer also remains key.
+
+\begin{figure}[tbhp]
     \begin{center}
         \includegraphics[width=0.3\linewidth]{figures/ODC_figure}
+        \hspace{0.02\linewidth}
         \includegraphics[width=0.3\linewidth]{figures/ADC_figure}
+        \hspace{0.02\linewidth}
         \includegraphics[width=0.3\linewidth]{figures/QPT_figure}
     \end{center}
     \caption{Examples of three different phylogenetic histories for enzymes
@@ -118,6 +116,67 @@ events do occur.
     \label{fig:phylo_histories}
 \end{figure}
 
+The Jelesko lab encountered such an illustrative case in earlier research on
+the origins behind a very important secondary metabolite: nicotine.  Exploring
+the evolutionary histories of each enzyme individually, they discovered rather
+unexpected results. While evolutionary evidence indicated that some of the
+enzymes in the nicotine biosynthesis pathway likely descended from traditional
+eukaryotic origins, for five of the seven known enzymes, the closest homolog
+resided not with other eukaryotes, but with prokaryotes. (See Figure
+\ref{fig:phylo_histories} for examples of the deduced phylogenetic histories.)
+Even more interesting was the patchwork history that arose when viewing the
+pathway overlayed with the evolutionary information. (See Figure
+\ref{fig:nicotine}.)
+
+\begin{figure}[tbhp]
+    \begin{center}
+        \includegraphics[width=.6\linewidth]{figures/pyridine_alkaloid_biosynthesis}
+    \end{center}
+    \caption{The nicotine biosynthetic pathway in tobacco consists of two
+    sub-pathways, each representing a portion of the two rings of the nicotine
+    molecule. The Jelesko lab analyzed each of the known enzymes to determine
+    its evolutionary history. The result is a mosaic of putative most likely
+    origins, illustrated in colors corresponding to closest known homologs as
+    determined by rigorous phylogenetic analysis. \textit{Image courtesy of
+    Prof.~John Jelesko.}}
+    \label{fig:nicotine}
+\end{figure}
+
+Inspired by the intricate mosaic unveiled by their investigation into nicotine
+biosynthesis, the Jelesko lab desired to expand their analyses to include
+additional pathways. Their investigation of the nicotine pathway, however,
+proved very time consuming, tedious, and prone to human error, as much of it
+was a manual process. Additionally, Prof.~John Jelesko felt more sensitive
+search by way of FASTA \cite{pearson_improved_1988} would prove helpful in
+detecting homologous sequences more distantly related than BLAST could detect,
+but unfortunately, NCBI does not provide FASTA search against their database,
+due to its significantly costlier performance. Lastly, Prof.~Jelesko desired
+to limit the search space to only sequences with full-genome sequencing
+projects in NCBI, plus additional sequences from outside sources including
+JGI. This would necessitate setting up a local database for storage of these
+sequences and a means to integrate this database with homology search programs
+in the FASTA and BLAST suites.
+
+These challenges provided the motivation for our project:
+\begin{enumerate}
+    \item Collect all predicted protein sequences from NCBI belonging to
+        organisms with whole genome sequencing projects either completed or
+        undergoing completion.
+    \item Collect additional sequences from JGI from pertinent genome
+        projects.
+    \item Organize these sequences into databases for storage and usable by
+        the FASTA and BLAST suites of programs.
+    \item Provide a user interface to homology searching against these
+        sequences capable of easily being used by a bench biologist.
+    \item Provide output from search programs and output sequences based on
+        user selections from the search results in the format most useful for
+        using the sequences for phylogenetic tree construction programs.
+\end{enumerate}
+
+Herein we describe our mostly successful attempts to meet these goals over the
+semester by using high level tools to meet the short deadline, the
+architecture behind the entire application we constructed, and our initial
+results from deployment of the application.
 
 \section{Methods (Yizhi Cai)}
 
@@ -131,24 +190,75 @@ takes a protein sequence in FASTA format and user-specified parameters
 to run homology search. Users can select hits of interests to download,
 and this will link to the third major component of this project: the
 user-specified output functionality. This component takes user-selected
-gi numbers to query taxonomic information from the MySQL database
+GI numbers to query taxonomic information from the MySQL database
 and provides users with output files in different formats.
 
-\begin{figure}[tbph]
-\begin{centering}
-\includegraphics[width=0.95\linewidth]{figures/workflow.png}
-\par\end{centering}
-
-\caption{\label{fig:The-workflow-of}The workflow of this project}
-
+\begin{figure}[btp]
+    \begin{center}
+        \includegraphics[width=0.95\linewidth]{figures/workflow.png}
+    \end{center}
+    \caption{\label{fig:The-workflow-of}The workflow of this project}
 \end{figure}
-
 
 \subsection{\label{sub:Data-Retrieval}Data Retrieval (Chris Lasher)}
 
+Foremost, we were to retrieve all predicted protein sequences for all
+organisms in NCBI's GenBank repository with completed or draft phase whole
+genome sequencing projects, so that for later analyses, intron-exon
+information for each gene could be guaranteed to be found, since the genes
+were mapped to actual replicons (i.e., chromosomes and plasmids) rather than
+fragmented scaffolds. Every organism that could be was to be included for
+breadth of sequence diversity.
+
+NCBI provides all whole-genome data via their FTP site, however, the directory
+structure for the FTP site is somewhat troublesome to navigate in an automated
+fashion. Chris Lasher developed a decently sophisticated Python script to
+navigate the FTP site using a recursion algorithm modeled after the Python
+standard library's \texttt{os.walk()} function, detect sequences in FASTA
+format, and download them to local directories on the Jelesko lab server.
+
+While we would have preferred to download more information-rich
+representations of the sequences, such as the GenBank file format
+representations, these more verbose formats were several times larger in size
+than FASTA files, due to inclusion of entire nucleotide genome sequences. We
+settled for retrieving the FASTA sequences, which only contained protein
+sequence and limited information in the header lines of each record, instead,
+given that later, functionality to look up the sequences via NCBI's EUtils
+could be implemented.
+
+These sequences were supplemented with current predictions from whole genome
+plant projects hosted at NCBI that were unavailable via FTP, but available via
+NCBI's Plant Genomes Central. The protein predictions for \textit{Glycine
+max}, \textit{Medicago truncatula}, \textit{Oryza sativa}, \textit{Populus
+trichocarpa}, \textit{Sorghum bicolor}, \textit{Vitis vinifera}, and
+\textit{Zea mays} were manually downloaded and used to augment the collection.
+
+Overall, we downloaded approximately 1.7 Gigabytes of data from NCBI,
+amounting to greater than four million sequences.
+
+Due to time constraints, no data from JGI was obtained, however, this should
+be a fairly straightforward task for a technically proficient undergraduate.
+
 \subsection{Data Integration (Chris Lasher)}
 
+We developed a table in our database schema by which we could load in our
+downloaded sequences and keep track of a minimal amount of desired
+information, including download date, inferred genus and species information,
+and annotations. Using Python scripts, we were able to massage the data into
+formats acceptable for our MySQL database. Initial tests have shown that the
+performance for queries over this table is acceptable, though certain queries
+can take on the order of minutes. While this is not a problem for the Jelesko
+lab, it should be taken into account should the application be considered for
+opening to a greater community.
+
 \subsection{Web Interface (Yizhi Cai)}
+
+\begin{figure}[tbph]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{figures/web_interface}
+    \end{center}
+    \caption{\label{fig:Web-interface}Web interface}
+\end{figure}
 
 Figure \ref{fig:Web-interface} outlines the web interface for running
 FASTA search. There are three sections of this page. On the top of
@@ -161,6 +271,13 @@ sending the input sequence and parameters to run search, it is important
 to check the validity of those inputs. The validation includes non-empty
 input of sequence, non-negative value of number of hits, and so on.
 The validation increases the robustness of the entire web application.
+
+\begin{figure}[tbp]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{figures/Result_selection}
+    \end{center}
+    \caption{\label{fig:Homology-search-result}Homology search result}
+\end{figure}
 
 Once input sequence and user-specified parameters have been validated,
 homology searches will be run in the backend. Outputs of the searches
@@ -185,39 +302,6 @@ information of the search. The second file is a file containing all
 selected sequences in FASTA format. And finally, the last file is
 a file that maps internal-used Jelesko-ids to gi numbers.
 
-%
-\begin{figure}[h]
-\begin{centering}
-\includegraphics[width=1\linewidth]{figures/web_interface}
-\par\end{centering}
-
-\caption{\label{fig:Web-interface}Web interface}
-
-\end{figure}
-
-
-%
-\begin{figure}[h]
-\begin{centering}
-\includegraphics[width=1\linewidth]{figures/Result_selection}
-\par\end{centering}
-
-\caption{\label{fig:Homology-search-result}Homology search result}
-
-\end{figure}
-
-
-%
-\begin{figure}[h]
-\begin{centering}
-\includegraphics[width=0.8\linewidth]{figures/User_selection}
-\par\end{centering}
-
-\caption{\label{fig:Users-selected-files}Users selected files download}
-
-\end{figure}
-
-
 The web site is built using Django, which is a Python driven framework
 for rapid web development. Figure \ref{fig:Django-framework} shows
 how Django works. The module of data model is used to interact with
@@ -229,31 +313,26 @@ of the whole framework: it contains a list of functions to process
 data from the data model according to the request from the URL module.
 After the data has been processed, it will be render with HTML templates.
 
-%
 \begin{figure}[h]
-\begin{centering}
+\begin{center}
 \includegraphics[width=0.6\linewidth]{figures/Django}
-\par\end{centering}
+\end{center}
 
 \caption{\label{fig:Django-framework}Django framework}
 
 \end{figure}
 
-
-
 \subsubsection{\label{sub:Integration-with-FASTA}Integration with FASTA and
 BLAST (Yizhi Cai)}
 
-%
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[width=0.7\linewidth]{figures/Data_flow}
-\par\end{centering}
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figures/Data_flow}
+\end{center}
 
 \caption{\label{fig:Integration-with-FASTA}Integration with FASTA and BLAST}
 
 \end{figure}
-
 
 Sequences database similarity search algorithms include two major
 categories: algorithms based on dynamic programming and algorithms
@@ -264,26 +343,50 @@ BLAST is faster than FASTA while FASTA outperforms BLAST in terms
 of sensitivity. A benchmark comparison of BLAST and FASTA is described
 in section \ref{fig:Benchmark-result}.
 
-To enjoy the advantages of both, we need to integrate BLAST and FASTA.
-After the data retrieve and integration steps, we got a giant flat
-text file containing 4 million sequence data. This text file has been
-imported as a table in MySQL database, and also been converted into
-BLAST2 database format using formatdb command. Both BLAST and FASTA
-search programs recognize the BLAST2 format. For running BLAST search,
-we leveraged to use the BLAST module of Biopython
-\citet{cock_biopython:_2009},
-and also used the built-in parse to process the output XML files.
-Since there is no available modules for running FASTA and parsing
-its output, we decided to use system call to run FASTA program and
-save its output in the format of text file. Then a custom parser has
-been implemented to process the output text file. The parsed output
-of BLAST and FASTA includes a gi number, e-value and bit scores of
-each hit. Then we developed scripts to query the MySQL database using
-the gi numbers. The intergrated information finally is sent to the
-Django web interface.
+To enjoy the advantages of both, we need to integrate BLAST and FASTA.  After
+the data retrieve and integration steps, we got a giant flat text file
+containing 4 million sequence data. This text file has been imported as a
+table in MySQL database, and also been converted into BLAST2 database format
+using formatdb command. Both BLAST and FASTA search programs recognize the
+BLAST2 format. For running BLAST search, we leveraged to use the BLAST module
+of Biopython \citet{cock_biopython:_2009}, and also used the built-in parse to
+process the output XML files.  Since there is no available modules for running
+FASTA and parsing its output, we decided to use system call to run FASTA
+program and save its output in the format of text file. Then a custom parser
+has been implemented to process the output text file. The parsed output of
+BLAST and FASTA includes a gi number, e-value and bit scores of each hit. Then
+we developed scripts to query the MySQL database using the gi numbers. The
+intergrated information finally is sent to the Django web interface.
 
 \subsubsection{\label{sub:Output-Generation}Output Generation (Chris Lasher)}
 
+\begin{figure}[tbp]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{figures/User_selection}
+    \end{center}
+    \caption{\label{fig:Users-selected-files}Users selected files download}
+\end{figure}
+
+
+After running a homology search, the users can select among the hits returned
+sequences that they would like to download for further analyses. (See Figure
+\ref{fig:Users-selected-files}.) Typically,
+these analyses involve constructing phylogenetic trees. The Jelesko lab uses
+particular ID codes to facilitate readability of their phylogenetic trees.
+Previously, translation of FASTA headers to these ``Jelesko IDs'' was handled
+by a Perl script run manually. We implemented a simple version of this script
+in Python using data stored in our database to help generate these Jelesko IDs
+on the fly for each selection of a set of sequences users request from our
+application.
+
+Once the user has made his or her selections, the application presents the
+user with a page at which he or she can download the results from his or her
+search, a FASTA-formatted file containing the selected sequences with Jelesko
+IDs as headers, and a mapping file that allows the user to back-translate from
+the Jelesko IDs in their selections to GI numbers or equivalent unique
+identifiers.  Alternatively, the application also presents the user with a
+FASTA-formatted file that uses GI numbers or equivalent identifiers in the
+headers of each record, should the user prefer those.
 
 \section{Results (Yizhi Cai)}
 
@@ -297,25 +400,29 @@ are more computationally expensive than BLAST, but both obtain more
 hits than BLAST. Also, we observe that with the close computational
 time, Ssearch outperforms FASTA, especially in the case of A622.
 
-%
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[width=0.8\linewidth]{figures/Bench_mark_result}
-\par\end{centering}
-
-\caption{\label{fig:Benchmark-result}Benchmark result}
-
+\begin{figure}[tbph]
+    \begin{center}
+        \includegraphics[width=1\linewidth]{figures/Bench_mark_result}
+    \end{center}
+    \caption{\label{fig:Benchmark-result}Benchmark result}
 \end{figure}
 
+\section{Source code availability and further documentation (Chris Lasher)}
 
+This paper does not cover actual deployment of the application we developed or
+some of the more technical details. For these, we point the user to the GitHub
+repository available at \\
+\href{http://github.com/gotgenes/jelesko-lab-pathway-db/tree/master}{http://github.com/gotgenes/jelesko-lab-pathway-db/tree/master}
 
-\section{Summaries and future work}
+This page contains technical documentation, and also directs the user to
+obtaining the source code, contained within a Git repository hosted at GitHub.
+
+\section{Summaries and future work (Yizhi Cai)}
 
 We began this project from scratch, and by the end of the semester
 we have completed the project by accomplishing these tasks:
 \begin{enumerate}
-\item We have fetched more than 4 million sequences from NCBI, JGI and other
-sources.
+\item We have fetched more than 4 million sequences from NCBI.
 \item We have developed custom parser for interpreting FASTA outputs, and
 leveraged BioPython for data integration.
 \item We have created MySQL, BLAST and FASTA databases for data storage.
@@ -328,20 +435,26 @@ of the project. First, additional sequence data should be retrieved
 from NCBI. Second, we need to incorporate sequences from JGI and other
 sources. Last, it will be helpful to save web searches for later reviewing.
 
-
 \section{Author contributions}
 
 Yizhi Cai created MySQL and BLAST2 databases for data storage, develped
 web interface for running BLAST, FASTA and SSearch, implemented parsers
 for parsing homology search results, wrote part of the final paper.
 
+Chris Lasher developed the scripts to automate downloads from NCBI, all the
+Django models to interface with the MySQL database, the views and logic behind
+the web interface, the Python code to run the homology search programs, and the
+code to generate output for user download. In conjunction with Alex Weisberg,
+he deployed the production version of the site on the Jelesko lab server.
+He wrote all technical documentation for the application.
 
 \section{Acknowledgements}
 
-YC and CL would like to thank Dr.John Jelesko for overseeing the project
-and giving valuable supervision, Dr's David Bevan and Alexey Onufriev
-for teaching this class, and Alexander James Weisberg for assistance
-on Linux administration.
+Yizhi Cai and Chris Lasher would like to thank Prof.~John Jelesko for
+overseeing the project and giving valuable supervision, Profs.~David Bevan and
+Alexey Onufriev their instruction and additional input in the project and
+presentations, and Alex Weisberg for his assistance with system administration
+and deployment of the application on the production server.
 
 \bibliographystyle{naturemag}
 \bibliography{gbcbpaper}
